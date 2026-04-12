@@ -19,7 +19,7 @@ export const componentConfigs = {
     variantsConfigRaw: buttonVariantsConfig,
     additionalProps: [
       {
-        name: 'children',
+        name: 'BUTTON VALUE ',
         type: 'text',
         defaultValue: 'Button',
         placeholder: 'Button text',
@@ -57,7 +57,7 @@ export const componentConfigs = {
       {
         name: 'triggerText',
         type: 'text',
-        defaultValue: 'Open Dialog',
+        defaultValue: 'CLOSE Dialog ',
         placeholder: 'Trigger button text',
         description: 'Text for the trigger button',
       },
@@ -78,7 +78,7 @@ export const componentConfigs = {
       {
         name: 'bodyText',
         type: 'text',
-        defaultValue: 'This will permanently delete your account and remove your data from our servers.',
+        defaultValue: 'This will HAMESHA KE LIYE delete your account and remove your data from our servers.',
         placeholder: 'Body content',
         description: 'Main body content of the dialog',
       },
@@ -146,6 +146,37 @@ export const componentConfigs = {
       },
     ],
   },
+
+  input: {
+    id: 'input',
+    name: 'Input bhai',
+    type: 'simple',
+    path: '@repo/components',
+    importName: 'Input',
+    // additionalProps: [
+    //   {
+    //     name: 'type',
+    //     type: 'select',
+    //     options: ['text', 'email', 'password', 'number', 'tel', 'url', 'search'],
+    //     defaultValue: 'text',
+    //     description: 'HTML input type',
+    //   },
+    //   {
+    //     name: 'placeholder',
+    //     type: 'text',
+    //     defaultValue: 'bhai Enter text ...',
+    //     placeholder: 'Placeholder text',
+    //     description: 'Placeholder text shown when empty',
+    //   },
+    //   {
+    //     name: 'disabled',
+    //     type: 'boolean',
+    //     defaultValue: false,
+    //     description: 'Disables the input',
+    //   }
+    // ],
+  },
+
 
 };
 

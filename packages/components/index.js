@@ -32,3 +32,4 @@ export {
   TooltipProvider,
   TooltipDemo,
 } from './ui/tooltip/index.js';
+export { Input } from "./ui/input/index.js"

@@ -7,7 +7,7 @@
    pnpm generate:theme
    
    Current Theme:
-   - Accent: indigo
+   - Accent: purple
    - Gray: slate
    - Error: red
    - Success: green
@@ -18,28 +18,28 @@
 
 /* Import Radix Color Scales - Light Mode */
 @import "@radix-ui/colors/slate.css";
-@import "@radix-ui/colors/indigo.css";
+@import "@radix-ui/colors/purple.css";
 @import "@radix-ui/colors/red.css";
 @import "@radix-ui/colors/green.css";
 @import "@radix-ui/colors/amber.css";
 
 /* Import Radix Alpha Variants - Light Mode */
 @import "@radix-ui/colors/slate-alpha.css";
-@import "@radix-ui/colors/indigo-alpha.css";
+@import "@radix-ui/colors/purple-alpha.css";
 @import "@radix-ui/colors/red-alpha.css";
 @import "@radix-ui/colors/green-alpha.css";
 @import "@radix-ui/colors/amber-alpha.css";
 
 /* Import Radix Color Scales - Dark Mode */
 @import "@radix-ui/colors/slate-dark.css";
-@import "@radix-ui/colors/indigo-dark.css";
+@import "@radix-ui/colors/purple-dark.css";
 @import "@radix-ui/colors/red-dark.css";
 @import "@radix-ui/colors/green-dark.css";
 @import "@radix-ui/colors/amber-dark.css";
 
 /* Import Radix Alpha Variants - Dark Mode */
 @import "@radix-ui/colors/slate-dark-alpha.css";
-@import "@radix-ui/colors/indigo-dark-alpha.css";
+@import "@radix-ui/colors/purple-dark-alpha.css";
 @import "@radix-ui/colors/red-dark-alpha.css";
 @import "@radix-ui/colors/green-dark-alpha.css";
 @import "@radix-ui/colors/amber-dark-alpha.css";
@@ -105,34 +105,34 @@
     --gray-a12: var(--slate-a12);
 
     /* ============================================
-       ACCENT SCALE (indigo) - 12 Steps
+       ACCENT SCALE (purple) - 12 Steps
        ============================================ */
-    --accent-1: var(--indigo-1);
-    --accent-2: var(--indigo-2);
-    --accent-3: var(--indigo-3);
-    --accent-4: var(--indigo-4);
-    --accent-5: var(--indigo-5);
-    --accent-6: var(--indigo-6);
-    --accent-7: var(--indigo-7);
-    --accent-8: var(--indigo-8);
-    --accent-9: var(--indigo-9);
-    --accent-10: var(--indigo-10);
-    --accent-11: var(--indigo-11);
-    --accent-12: var(--indigo-12);
+    --accent-1: var(--purple-1);
+    --accent-2: var(--purple-2);
+    --accent-3: var(--purple-3);
+    --accent-4: var(--purple-4);
+    --accent-5: var(--purple-5);
+    --accent-6: var(--purple-6);
+    --accent-7: var(--purple-7);
+    --accent-8: var(--purple-8);
+    --accent-9: var(--purple-9);
+    --accent-10: var(--purple-10);
+    --accent-11: var(--purple-11);
+    --accent-12: var(--purple-12);
 
     /* Accent Alpha Variants */
-    --accent-a1: var(--indigo-a1);
-    --accent-a2: var(--indigo-a2);
-    --accent-a3: var(--indigo-a3);
-    --accent-a4: var(--indigo-a4);
-    --accent-a5: var(--indigo-a5);
-    --accent-a6: var(--indigo-a6);
-    --accent-a7: var(--indigo-a7);
-    --accent-a8: var(--indigo-a8);
-    --accent-a9: var(--indigo-a9);
-    --accent-a10: var(--indigo-a10);
-    --accent-a11: var(--indigo-a11);
-    --accent-a12: var(--indigo-a12);
+    --accent-a1: var(--purple-a1);
+    --accent-a2: var(--purple-a2);
+    --accent-a3: var(--purple-a3);
+    --accent-a4: var(--purple-a4);
+    --accent-a5: var(--purple-a5);
+    --accent-a6: var(--purple-a6);
+    --accent-a7: var(--purple-a7);
+    --accent-a8: var(--purple-a8);
+    --accent-a9: var(--purple-a9);
+    --accent-a10: var(--purple-a10);
+    --accent-a11: var(--purple-a11);
+    --accent-a12: var(--purple-a12);
 
     /* ============================================
        ERROR/DESTRUCTIVE SCALE (red) - 12 Steps

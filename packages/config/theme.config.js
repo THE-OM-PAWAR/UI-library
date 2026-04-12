@@ -11,7 +11,7 @@ export const themeConfig = {
      ============================================ */
   
   // Accent color - used for primary buttons, links, focus rings
-  accent: 'indigo', // Options: blue, violet, purple, pink, crimson, red, orange, amber, yellow, lime, green, teal, cyan, sky, indigo
+  accent: 'purple', // Options: blue, violet, purple, pink, crimson, red, orange, amber, yellow, lime, green, teal, cyan, sky, indigo
   
   // Gray color - used for backgrounds, borders, text
   gray: 'slate', // Options: slate, gray, mauve, sage, olive, sand

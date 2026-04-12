@@ -17,6 +17,7 @@ import {
   Tooltip,
   TooltipTrigger,
   TooltipContent,
+  Input,
 } from '@repo/components';
 import { extractPropsFromVariants, getDefaultProps } from '../utils/extractComponentProps.js';
 import { generateComponentCode } from '../utils/generateCode.js';
@@ -149,7 +150,15 @@ export function ComponentRenderer({ componentId }) {
             </TooltipContent>
           </Tooltip>
         );
-      
+       case 'input':
+        return (
+          <div className="w-full max-w-sm">
+            <Input
+              {...restProps}
+              className={customClassName || ''}
+            />
+          </div>
+        );
 
       
       default:

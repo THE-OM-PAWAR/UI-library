@@ -1,3 +1,5 @@
+@@create component 
+
 ###input.jsx 
 
 import React from 'react';

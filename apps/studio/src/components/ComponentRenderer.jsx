@@ -22,6 +22,7 @@ import {
   AlertTitle,
   AlertDescription,
 } from '@repo/components';
+import { toast } from 'sonner';
 import { extractPropsFromVariants, getDefaultProps } from '../utils/extractComponentProps.js';
 import { generateComponentCode } from '../utils/generateCode.js';
 import { componentConfigs } from '../registry/componentConfigs.js';
@@ -169,6 +170,9 @@ export function ComponentRenderer({ componentId }) {
             </AlertDescription>
           </Alert>
         );
+      
+      case 'sonner':
+        return <SonnerDemo propValues={propValues} />;
 
       
       default:
@@ -231,5 +235,68 @@ function DialogDemo({ propValues, customClassName }) {
         </DialogFooter>
       </DialogContent>
     </Dialog>
+  );
+}
+
+// Sonner Demo Component
+function SonnerDemo({ propValues }) {
+  const showToast = () => {
+    const type = propValues.type || 'default';
+    const title = propValues.title || 'Event has been created';
+    const description = propValues.description || 'Monday, January 3rd at 6:00pm';
+    const hasAction = propValues.action;
+    const hasCancel = propValues.cancel;
+
+    const options = {
+      description: description,
+    };
+
+    if (hasAction) {
+      options.action = {
+        label: 'Undo',
+        onClick: () => console.log('Undo'),
+      };
+    }
+
+    if (hasCancel) {
+      options.cancel = {
+        label: 'Cancel',
+        onClick: () => console.log('Cancel'),
+      };
+    }
+
+    switch (type) {
+      case 'success':
+        toast.success(title, options);
+        break;
+      case 'error':
+        toast.error(title, { description });
+        break;
+      case 'warning':
+        toast.warning(title, { description });
+        break;
+      case 'info':
+        toast.info(title, { description });
+        break;
+      case 'loading':
+        toast.loading(title, { description });
+        break;
+      case 'promise':
+        const promise = () => new Promise((resolve) => setTimeout(resolve, 2000));
+        toast.promise(promise, {
+          loading: 'Loading...',
+          success: title,
+          error: 'Error',
+        });
+        break;
+      default:
+        toast(title, options);
+    }
+  };
+
+  return (
+    <Button onClick={showToast}>
+      Show Toast
+    </Button>
   );
 }

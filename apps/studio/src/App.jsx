@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TooltipProvider } from '@repo/components';
+import { TooltipProvider, Toaster } from '@repo/components';
 import { Navigation } from './components/Navigation.jsx';
 import { ComponentRenderer } from './components/ComponentRenderer.jsx';
 import { componentList } from './registry/componentConfigs.js';
@@ -22,6 +22,9 @@ function App() {
           <ComponentRenderer componentId={activeComponent} />
         </main>
       </div>
+      
+      {/* Toast notifications */}
+      <Toaster />
     </TooltipProvider>
   );
 }

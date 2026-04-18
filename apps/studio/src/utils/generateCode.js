@@ -79,6 +79,44 @@ export function generateJSXCode(componentId, componentName, propValues, customCl
       const inputPropsString = inputPropsArray.length > 0 ? ' ' + inputPropsArray.join(' ') : '';
       return `<Input${inputPropsString} />`;
 
+    case 'sonner':
+      const toastType = propValues.type || 'default';
+      const toastTitle = propValues.title || 'Event has been created';
+      const toastDesc = propValues.description || 'Monday, January 3rd at 6:00pm';
+      const hasAction = propValues.action;
+      const hasCancel = propValues.cancel;
+
+      let toastCode = '';
+      if (toastType === 'promise') {
+        toastCode = `const promise = () => new Promise((resolve) => setTimeout(resolve, 2000));
+toast.promise(promise, {
+  loading: 'Loading...',
+  success: '${toastTitle}',
+  error: 'Error',
+});`;
+      } else {
+        const method = toastType === 'default' ? 'toast' : `toast.${toastType}`;
+        const options = [];
+        if (toastDesc) options.push(`description: '${toastDesc}'`);
+        if (hasAction) options.push(`action: { label: 'Undo', onClick: () => console.log('Undo') }`);
+        if (hasCancel) options.push(`cancel: { label: 'Cancel', onClick: () => console.log('Cancel') }`);
+        
+        const optionsStr = options.length > 0 ? `, {\n  ${options.join(',\n  ')}\n}` : '';
+        toastCode = `${method}('${toastTitle}'${optionsStr});`;
+      }
+
+      return `// Add Toaster to your app root:
+// <Toaster />
+
+// Then trigger toast:
+import { toast } from 'sonner';
+
+<Button onClick={() => {
+  ${toastCode}
+}}>
+  Show Toast
+</Button>`;
+
     case 'button':
     default:
       // Simple component with props
@@ -106,7 +144,7 @@ export function generateJSXCode(componentId, componentName, propValues, customCl
 
 export function generateCSSClasses(componentId, variantsConfig, propValues, customClassName = '') {
   // Compound components don't have direct CSS classes
-  if (['dialog', 'dropdown-menu', 'tooltip'].includes(componentId)) {
+  if (['dialog', 'dropdown-menu', 'tooltip', 'sonner'].includes(componentId)) {
     return customClassName 
       ? `Custom classes:\n  ${customClassName.split(' ').join('\n  ')}\n\nCompound component - styles applied to sub-components`
       : 'Compound component - styles applied to sub-components';

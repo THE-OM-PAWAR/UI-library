@@ -202,6 +202,49 @@ export const componentConfigs = {
       },
     ],
   },
+  sonner: {
+    id: 'sonner',
+    name: 'Sonner',
+    type: 'compound',
+    path: '@repo/components',
+    importName: 'Toaster',
+    description: 'Toast notifications powered by Sonner',
+    demoProps: [
+      {
+        name: 'type',
+        type: 'select',
+        options: ['default', 'success', 'error', 'warning', 'info', 'loading', 'promise'],
+        defaultValue: 'default',
+        description: 'Type of toast notification',
+      },
+      {
+        name: 'title',
+        type: 'text',
+        defaultValue: 'Event has been created',
+        placeholder: 'Toast title',
+        description: 'The title of the toast',
+      },
+      {
+        name: 'description',
+        type: 'text',
+        defaultValue: 'Monday, January 3rd at 6:00pm',
+        placeholder: 'Toast description',
+        description: 'The description text',
+      },
+      {
+        name: 'action',
+        type: 'boolean',
+        defaultValue: false,
+        description: 'Show action button',
+      },
+      {
+        name: 'cancel',
+        type: 'boolean',
+        defaultValue: false,
+        description: 'Show cancel button',
+      },
+    ],
+  },
 
 
 };

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import {
   Button,
   Dialog,
@@ -21,25 +21,29 @@ import {
   Alert,
   AlertTitle,
   AlertDescription,
-} from '@repo/components';
-import { extractPropsFromVariants, getDefaultProps } from '../utils/extractComponentProps.js';
-import { generateComponentCode } from '../utils/generateCode.js';
-import { componentConfigs } from '../registry/componentConfigs.js';
-import { PreviewCanvas } from './PreviewCanvas.jsx';
-import { PropertiesPanel } from './PropertiesPanel.jsx';
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from "@repo/components";
+import { extractPropsFromVariants, getDefaultProps } from "../utils/extractComponentProps.js";
+import { generateComponentCode } from "../utils/generateCode.js";
+import { componentConfigs } from "../registry/componentConfigs.js";
+import { PreviewCanvas } from "./PreviewCanvas.jsx";
+import { PropertiesPanel } from "./PropertiesPanel.jsx";
 
 export function ComponentRenderer({ componentId }) {
   const config = componentConfigs[componentId];
   const [propValues, setPropValues] = useState({});
   const [propsConfig, setPropsConfig] = useState([]);
-  const [generatedCode, setGeneratedCode] = useState({ jsxCode: '', cssClasses: '' });
-  const [customClassName, setCustomClassName] = useState('');
+  const [generatedCode, setGeneratedCode] = useState({ jsxCode: "", cssClasses: "" });
+  const [customClassName, setCustomClassName] = useState("");
 
   useEffect(() => {
     if (!config) return;
 
     let extractedProps = [];
-    
+
     // For simple components with CVA variants
     if (config.variantsConfigRaw) {
       extractedProps = extractPropsFromVariants(config.variantsConfigRaw);
@@ -63,22 +67,16 @@ export function ComponentRenderer({ componentId }) {
     setPropsConfig(extractedProps);
     const defaults = getDefaultProps(extractedProps);
     setPropValues(defaults);
-    setCustomClassName(''); // Reset custom class on component change
-    
-    updateGeneratedCode(defaults, '');
+    setCustomClassName(""); // Reset custom class on component change
+
+    updateGeneratedCode(defaults, "");
   }, [componentId, config]);
 
   const updateGeneratedCode = (values, customClass = customClassName) => {
     if (!config) return;
-    
-    const code = generateComponentCode(
-      componentId,
-      config.name,
-      values,
-      config.variantsConfig,
-      customClass
-    );
-    
+
+    const code = generateComponentCode(componentId, config.name, values, config.variantsConfig, customClass);
+
     setGeneratedCode(code);
   };
 
@@ -87,7 +85,7 @@ export function ComponentRenderer({ componentId }) {
       ...propValues,
       [propName]: value,
     };
-    
+
     setPropValues(newValues);
     updateGeneratedCode(newValues);
   };
@@ -108,24 +106,24 @@ export function ComponentRenderer({ componentId }) {
   // Render component based on type and ID
   const renderComponent = () => {
     const { children, className: _, ...restProps } = propValues;
-    
+
     switch (componentId) {
-      case 'button':
+      case "button":
         return (
-          <Button {...restProps} className={customClassName || ''}>
-            {children || 'Button'}
+          <Button {...restProps} className={customClassName || ""}>
+            {children || "Button"}
           </Button>
         );
-      
-      case 'dialog':
+
+      case "dialog":
         return <DialogDemo propValues={propValues} customClassName={customClassName} />;
-      
-      case 'dropdown-menu':
+
+      case "dropdown-menu":
         return (
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline" className={customClassName}>
-                {propValues.triggerText || 'Open Menu'}
+                {propValues.triggerText || "Open Menu"}
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
@@ -139,52 +137,54 @@ export function ComponentRenderer({ componentId }) {
             </DropdownMenuContent>
           </DropdownMenu>
         );
-      
-      case 'tooltip':
+
+      case "tooltip":
         return (
           <Tooltip>
             <TooltipTrigger asChild>
               <Button variant="outline" className={customClassName}>
-                {propValues.triggerText || 'Hover me'}
+                {propValues.triggerText || "Hover me"}
               </Button>
             </TooltipTrigger>
-            <TooltipContent side={propValues.side || 'top'}>
-              <p>{propValues.content || 'Tooltip content'}</p>
+            <TooltipContent side={propValues.side || "top"}>
+              <p>{propValues.content || "Tooltip content"}</p>
             </TooltipContent>
           </Tooltip>
         );
-       case 'input':
+
+      case "input":
+        return <Input {...restProps} className={customClassName || ""} />;
+
+      case "alert":
         return (
-            <Input
-              {...restProps}
-              className={customClassName || ''}
-            />
-        );
-      case 'alert':
-        return (
-          <Alert {...restProps} className={customClassName || ''}>
-            <AlertTitle>{propValues.title || 'Alert Title '}</AlertTitle>
-            <AlertDescription>
-              {propValues.description || 'Alert description goes here.'}
-            </AlertDescription>
+          <Alert {...restProps} className={customClassName || ""}>
+            <AlertTitle>{propValues.title || "Alert Title "}</AlertTitle>
+            <AlertDescription>{propValues.description || "Alert description goes here."}</AlertDescription>
           </Alert>
         );
 
-      
-      default:
+      case "tabs":
         return (
-          <div className="text-sm text-muted-foreground">
-            Component preview not implemented
-          </div>
+          <Tabs defaultValue="tab1" className={customClassName}>
+            <TabsList>
+              <TabsTrigger value="tab1">{propValues.tab1}</TabsTrigger>
+              <TabsTrigger value="tab2">{propValues.tab2}</TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="tab1">{propValues.content1}</TabsContent>
+
+            <TabsContent value="tab2">{propValues.content2}</TabsContent>
+          </Tabs>
         );
+
+      default:
+        return <div className="text-sm text-muted-foreground">Component preview not implemented</div>;
     }
   };
 
   return (
     <>
-      <PreviewCanvas componentName={config.name}>
-        {renderComponent()}
-      </PreviewCanvas>
+      <PreviewCanvas componentName={config.name}>{renderComponent()}</PreviewCanvas>
 
       <PropertiesPanel
         props={propsConfig}
@@ -207,27 +207,23 @@ function DialogDemo({ propValues, customClassName }) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button className={customClassName}>{propValues.triggerText || 'Open Dialog'}</Button>
+        <Button className={customClassName}>{propValues.triggerText || "Open Dialog"}</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>{propValues.title || 'Dialog Title'}</DialogTitle>
-          <DialogDescription>
-            {propValues.description || 'Dialog description goes here.'}
-          </DialogDescription>
+          <DialogTitle>{propValues.title || "Dialog Title"}</DialogTitle>
+          <DialogDescription>{propValues.description || "Dialog description goes here."}</DialogDescription>
         </DialogHeader>
         <div className="py-4">
           <p className="text-sm text-muted-foreground">
-            {propValues.bodyText || 'This is the dialog body content. You can add any content here.'}
+            {propValues.bodyText || "This is the dialog body content. You can add any content here."}
           </p>
         </div>
         <DialogFooter>
           <Button variant="outline" onClick={() => setOpen(false)}>
-            {propValues.cancelText || 'Cancel'}
+            {propValues.cancelText || "Cancel"}
           </Button>
-          <Button onClick={() => setOpen(false)}>
-            {propValues.confirmText || 'Continue'}
-          </Button>
+          <Button onClick={() => setOpen(false)}>{propValues.confirmText || "Continue"}</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

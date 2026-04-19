@@ -156,7 +156,6 @@ export function ComponentRenderer({ componentId }) {
 
     switch (componentId) {
       case "button":
-      case "button":
         return (
           <Button
             {...restProps}
@@ -262,7 +261,27 @@ export function ComponentRenderer({ componentId }) {
           })),
         });
 
+        return (
+          <RadioGroup
+            key={radioGroupKey}
+            defaultValue={propValues.defaultValue}
+            disabled={Boolean(propValues.disabled)}
+            className={customClassName || ''}
+          >
+            {radioOptions.map((option, index) => {
+              const optionValue = String(option.value ?? `option${index + 1}`);
+              const optionLabel = option.label || optionValue;
+              const optionId = `radio-${optionValue}-${index}`;
 
+              return (
+                <label key={`${optionValue}-${index}`} htmlFor={optionId} className="flex items-center gap-2">
+                  <RadioGroupItem value={optionValue} id={optionId} />
+                  <span>{optionLabel}</span>
+                </label>
+              );
+            })}
+          </RadioGroup>
+        );
       case 'badge':
         return (
           <Badge {...restProps} className={customClassName || ''}>
@@ -295,31 +314,6 @@ export function ComponentRenderer({ componentId }) {
             </Card>
           </div>
         );
-
-
-      case "radio-group" :
-        return (
-          <RadioGroup
-            key={radioGroupKey}
-            defaultValue={propValues.defaultValue}
-            disabled={Boolean(propValues.disabled)}
-            className={customClassName || ''}
-          >
-            {radioOptions.map((option, index) => {
-              const optionValue = String(option.value ?? `option${index + 1}`);
-              const optionLabel = option.label || optionValue;
-              const optionId = `radio-${optionValue}-${index}`;
-
-              return (
-                <label key={`${optionValue}-${index}`} htmlFor={optionId} className="flex items-center gap-2">
-                  <RadioGroupItem value={optionValue} id={optionId} />
-                  <span>{optionLabel}</span>
-                </label>
-              );
-            })}
-          </RadioGroup>
-        );
-
       case 'field':
         return <FieldDemoPreview propValues={propValues} customClassName={customClassName} />;
 

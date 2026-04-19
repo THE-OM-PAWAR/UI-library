@@ -1,4 +1,46 @@
-export { Button, ButtonDemo, buttonVariants } from './ui/button/index.js';
+// Button
+export { Button, buttonVariants } from './ui/button.jsx';
+
+// Alert
+export { Alert, AlertTitle, AlertDescription, AlertAction, alertVariants } from './ui/alert.jsx';
+
+// Badge
+export { Badge, badgeVariants } from './ui/badge.jsx';
+
+// Card
+export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './ui/card.jsx';
+
+// Input
+export { Input } from './ui/input.jsx';
+
+// Label
+export { Label } from './ui/label.jsx';
+
+// Separator
+export { Separator } from './ui/separator.jsx';
+
+// Table
+export { Table, TableHeader, TableBody, TableFooter, TableHead, TableRow, TableCell, TableCaption } from './ui/table.jsx';
+
+// Radio Group
+export { RadioGroup, RadioGroupItem } from './ui/radio-group.jsx';
+
+// Field
+export {
+  Field,
+  FieldContent,
+  FieldDescription,
+  FieldError,
+  FieldGroup,
+  FieldLabel,
+  FieldLegend,
+  FieldSeparator,
+  FieldSet,
+  FieldTitle,
+  fieldVariants,
+} from './ui/field.jsx';
+
+// Dialog
 export {
   Dialog,
   DialogPortal,
@@ -10,8 +52,9 @@ export {
   DialogFooter,
   DialogTitle,
   DialogDescription,
-  DialogDemo,
-} from './ui/dialog/index.js';
+} from './ui/dialog.jsx';
+
+// Dropdown Menu
 export {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -24,64 +67,21 @@ export {
   DropdownMenuPortal,
   DropdownMenuSub,
   DropdownMenuRadioGroup,
-  DropdownMenuDemo,
-} from './ui/dropdown-menu/index.js';
+} from './ui/dropdown-menu.jsx';
+
+// Tooltip
 export {
   Tooltip,
   TooltipTrigger,
   TooltipContent,
   TooltipProvider,
-  TooltipDemo,
-} from './ui/tooltip/index.js';
-export { Input} from './ui/input/index.js';
-export { Alert, AlertTitle, AlertDescription, AlertAction, alertVariants, alertVariantsConfig } from './ui/alert/index.js';
-export { Tabs, TabsList, TabsTrigger, TabsContent, TabsDemo } from './ui/tabs/index.js';
-export { RadioGroup, RadioGroupItem, RadioItem, RadioDemo } from "./ui/radio-group/index.js"
-export { Label } from './ui/label/index.js';
-export { Separator } from './ui/separator/index.js';
-export { DataTable } from './ui/data-table/index.js';
-export {
-  Table,
-  TableHeader,
-  TableBody,
-  TableFooter,
-  TableHead,
-  TableRow,
-  TableCell,
-  TableCaption,
-} from './ui/table/index.js';
-export {
-  Field,
-  FieldContent,
-  FieldDescription,
-  FieldError,
-  FieldGroup,
-  FieldLabel,
-  FieldLegend,
-  FieldSeparator,
-  FieldSet,
-  FieldTitle,
-  FieldDemo,
-  fieldVariants,
-  fieldVariantsConfig,
-} from './ui/field/index.js';
-export { Toaster } from './ui/sonner/index.js';
- 
-// Badge
-export {
-  Badge,
-  BadgeDemo,
-  badgeVariants,
-} from './ui/badge/index.js';
+} from './ui/tooltip.jsx';
 
-// Card
-export {
-  Card,
-  CardHeader,
-  CardFooter,
-  CardTitle,
-  CardDescription,
-  CardContent,
-  CardDemo,
-} from './ui/card/index.js';
+// Tabs
+export { Tabs, TabsList, TabsTrigger, TabsContent } from './ui/tabs.jsx';
 
+// Sonner
+export { Toaster } from './ui/sonner.jsx';
+
+// Data Table
+export { DataTable } from './ui/data-table.jsx';

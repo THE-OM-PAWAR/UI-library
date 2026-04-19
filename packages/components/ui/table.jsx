@@ -1,7 +1,7 @@
-import React from 'react';
+import * as React from 'react';
 import { cn } from '@repo/utils';
 
-export const Table = React.forwardRef(({ className, ...props }, ref) => {
+const Table = React.forwardRef(({ className, ...props }, ref) => {
   return (
     <div data-slot="table-container" className="relative w-full overflow-x-auto">
       <table
@@ -13,10 +13,9 @@ export const Table = React.forwardRef(({ className, ...props }, ref) => {
     </div>
   );
 });
-
 Table.displayName = 'Table';
 
-export const TableHeader = React.forwardRef(({ className, ...props }, ref) => {
+const TableHeader = React.forwardRef(({ className, ...props }, ref) => {
   return (
     <thead
       ref={ref}
@@ -26,10 +25,9 @@ export const TableHeader = React.forwardRef(({ className, ...props }, ref) => {
     />
   );
 });
-
 TableHeader.displayName = 'TableHeader';
 
-export const TableBody = React.forwardRef(({ className, ...props }, ref) => {
+const TableBody = React.forwardRef(({ className, ...props }, ref) => {
   return (
     <tbody
       ref={ref}
@@ -39,10 +37,9 @@ export const TableBody = React.forwardRef(({ className, ...props }, ref) => {
     />
   );
 });
-
 TableBody.displayName = 'TableBody';
 
-export const TableFooter = React.forwardRef(({ className, ...props }, ref) => {
+const TableFooter = React.forwardRef(({ className, ...props }, ref) => {
   return (
     <tfoot
       ref={ref}
@@ -52,10 +49,9 @@ export const TableFooter = React.forwardRef(({ className, ...props }, ref) => {
     />
   );
 });
-
 TableFooter.displayName = 'TableFooter';
 
-export const TableRow = React.forwardRef(({ className, ...props }, ref) => {
+const TableRow = React.forwardRef(({ className, ...props }, ref) => {
   return (
     <tr
       ref={ref}
@@ -68,10 +64,9 @@ export const TableRow = React.forwardRef(({ className, ...props }, ref) => {
     />
   );
 });
-
 TableRow.displayName = 'TableRow';
 
-export const TableHead = React.forwardRef(({ className, ...props }, ref) => {
+const TableHead = React.forwardRef(({ className, ...props }, ref) => {
   return (
     <th
       ref={ref}
@@ -84,10 +79,9 @@ export const TableHead = React.forwardRef(({ className, ...props }, ref) => {
     />
   );
 });
-
 TableHead.displayName = 'TableHead';
 
-export const TableCell = React.forwardRef(({ className, ...props }, ref) => {
+const TableCell = React.forwardRef(({ className, ...props }, ref) => {
   return (
     <td
       ref={ref}
@@ -97,10 +91,9 @@ export const TableCell = React.forwardRef(({ className, ...props }, ref) => {
     />
   );
 });
-
 TableCell.displayName = 'TableCell';
 
-export const TableCaption = React.forwardRef(({ className, ...props }, ref) => {
+const TableCaption = React.forwardRef(({ className, ...props }, ref) => {
   return (
     <caption
       ref={ref}
@@ -110,5 +103,6 @@ export const TableCaption = React.forwardRef(({ className, ...props }, ref) => {
     />
   );
 });
-
 TableCaption.displayName = 'TableCaption';
+
+export { Table, TableHeader, TableBody, TableFooter, TableRow, TableHead, TableCell, TableCaption };

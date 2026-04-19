@@ -258,15 +258,15 @@ ${warningMappings.alphaMappings}
        ============================================ */
     
     /* Base Colors */
-    --background: var(--gray-1);
+    --background: var(--gray-2);
     --foreground: var(--gray-12);
     
     /* Card/Surface */
-    --card: var(--gray-1);
+    --card: var(--gray-2);
     --card-foreground: var(--gray-12);
     
     /* Popover/Dropdown */
-    --popover: var(--gray-1);
+    --popover: var(--gray-2);
     --popover-foreground: var(--gray-12);
     
     /* Primary (Accent) */
@@ -276,18 +276,18 @@ ${warningMappings.alphaMappings}
     --primary-foreground: white;
     
     /* Secondary */
-    --secondary: var(--gray-3);
-    --secondary-hover: var(--gray-4);
+    --secondary: var(--gray-4);
+    --secondary-hover: var(--gray-5);
     --secondary-foreground: var(--gray-12);
     
     /* Muted */
-    --muted: var(--gray-3);
-    --muted-hover: var(--gray-4);
+    --muted: var(--gray-4);
+    --muted-hover: var(--gray-5);
     --muted-foreground: var(--gray-11);
     
     /* Accent (for hover states) */
-    --accent: var(--accent-3);
-    --accent-hover: var(--accent-4);
+    --accent: var(--accent-4);
+    --accent-hover: var(--accent-5);
     --accent-foreground: var(--accent-11);
     
     /* Destructive */
@@ -296,12 +296,12 @@ ${warningMappings.alphaMappings}
     --destructive-foreground: white;
     
     /* Borders */
-    --border: var(--gray-6);
-    --border-hover: var(--gray-7);
+    --border: var(--gray-7);
+    --border-hover: var(--gray-8);
     
     /* Input */
-    --input: var(--gray-7);
-    --input-hover: var(--gray-8);
+    --input: var(--gray-8);
+    --input-hover: var(--gray-9);
     
     /* Focus Ring */
     --ring: var(--accent-8);

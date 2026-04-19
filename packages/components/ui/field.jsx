@@ -1,14 +1,33 @@
-"use client";
+'use client';
 
-import { useMemo } from 'react';
+import * as React from 'react';
+import { cva } from 'class-variance-authority';
 import { cn } from '@repo/utils';
-import { Label } from '../label/index.js';
-import { Separator } from '../separator/index.js';
-import { fieldVariants } from './field.styles.js';
+import { Label } from './label.jsx';
+import { Separator } from './separator.jsx';
 
-function FieldSet({ className, ...props }) {
+const fieldVariants = cva(
+  'group/field flex w-full gap-2 data-[invalid=true]:text-destructive',
+  {
+    variants: {
+      orientation: {
+        vertical: 'flex-col *:w-full [&>.sr-only]:w-auto',
+        horizontal:
+          'flex-row items-center has-[>[data-slot=field-content]]:items-start *:data-[slot=field-label]:flex-auto has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px',
+        responsive:
+          'flex-col *:w-full @md/field-group:flex-row @md/field-group:items-center @md/field-group:*:w-auto @md/field-group:has-[>[data-slot=field-content]]:items-start @md/field-group:*:data-[slot=field-label]:flex-auto [&>.sr-only]:w-auto @md/field-group:has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px',
+      },
+    },
+    defaultVariants: {
+      orientation: 'vertical',
+    },
+  }
+);
+
+const FieldSet = React.forwardRef(({ className, ...props }, ref) => {
   return (
     <fieldset
+      ref={ref}
       data-slot="field-set"
       className={cn(
         'flex flex-col gap-4 has-[>[data-slot=checkbox-group]]:gap-3 has-[>[data-slot=radio-group]]:gap-3',
@@ -17,11 +36,13 @@ function FieldSet({ className, ...props }) {
       {...props}
     />
   );
-}
+});
+FieldSet.displayName = 'FieldSet';
 
-function FieldLegend({ className, variant = 'legend', ...props }) {
+const FieldLegend = React.forwardRef(({ className, variant = 'legend', ...props }, ref) => {
   return (
     <legend
+      ref={ref}
       data-slot="field-legend"
       data-variant={variant}
       className={cn(
@@ -31,11 +52,13 @@ function FieldLegend({ className, variant = 'legend', ...props }) {
       {...props}
     />
   );
-}
+});
+FieldLegend.displayName = 'FieldLegend';
 
-function FieldGroup({ className, ...props }) {
+const FieldGroup = React.forwardRef(({ className, ...props }, ref) => {
   return (
     <div
+      ref={ref}
       data-slot="field-group"
       className={cn(
         'group/field-group @container/field-group flex w-full flex-col gap-5 data-[slot=checkbox-group]:gap-3 *:data-[slot=field-group]:gap-4',
@@ -44,11 +67,13 @@ function FieldGroup({ className, ...props }) {
       {...props}
     />
   );
-}
+});
+FieldGroup.displayName = 'FieldGroup';
 
-function Field({ className, orientation = 'vertical', ...props }) {
+const Field = React.forwardRef(({ className, orientation = 'vertical', ...props }, ref) => {
   return (
     <div
+      ref={ref}
       role="group"
       data-slot="field"
       data-orientation={orientation}
@@ -56,21 +81,25 @@ function Field({ className, orientation = 'vertical', ...props }) {
       {...props}
     />
   );
-}
+});
+Field.displayName = 'Field';
 
-function FieldContent({ className, ...props }) {
+const FieldContent = React.forwardRef(({ className, ...props }, ref) => {
   return (
     <div
+      ref={ref}
       data-slot="field-content"
       className={cn('group/field-content flex flex-1 flex-col gap-0.5 leading-snug', className)}
       {...props}
     />
   );
-}
+});
+FieldContent.displayName = 'FieldContent';
 
-function FieldLabel({ className, ...props }) {
+const FieldLabel = React.forwardRef(({ className, ...props }, ref) => {
   return (
     <Label
+      ref={ref}
       data-slot="field-label"
       className={cn(
         'group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-lg has-[>[data-slot=field]]:border *:data-[slot=field]:p-2.5 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10',
@@ -80,11 +109,13 @@ function FieldLabel({ className, ...props }) {
       {...props}
     />
   );
-}
+});
+FieldLabel.displayName = 'FieldLabel';
 
-function FieldTitle({ className, ...props }) {
+const FieldTitle = React.forwardRef(({ className, ...props }, ref) => {
   return (
     <div
+      ref={ref}
       data-slot="field-label"
       className={cn(
         'flex w-fit items-center gap-2 text-sm font-medium group-data-[disabled=true]/field:opacity-50',
@@ -93,11 +124,13 @@ function FieldTitle({ className, ...props }) {
       {...props}
     />
   );
-}
+});
+FieldTitle.displayName = 'FieldTitle';
 
-function FieldDescription({ className, ...props }) {
+const FieldDescription = React.forwardRef(({ className, ...props }, ref) => {
   return (
     <p
+      ref={ref}
       data-slot="field-description"
       className={cn(
         'text-left text-sm leading-normal font-normal text-muted-foreground group-has-data-horizontal/field:text-balance [[data-variant=legend]+&]:-mt-1.5',
@@ -108,11 +141,13 @@ function FieldDescription({ className, ...props }) {
       {...props}
     />
   );
-}
+});
+FieldDescription.displayName = 'FieldDescription';
 
-function FieldSeparator({ children, className, ...props }) {
+const FieldSeparator = React.forwardRef(({ children, className, ...props }, ref) => {
   return (
     <div
+      ref={ref}
       data-slot="field-separator"
       data-content={Boolean(children)}
       className={cn('relative -my-2 h-5 text-sm group-data-[variant=outline]/field-group:-mb-2', className)}
@@ -129,10 +164,11 @@ function FieldSeparator({ children, className, ...props }) {
       )}
     </div>
   );
-}
+});
+FieldSeparator.displayName = 'FieldSeparator';
 
-function FieldError({ className, children, errors, ...props }) {
-  const content = useMemo(() => {
+const FieldError = React.forwardRef(({ className, children, errors, ...props }, ref) => {
+  const content = React.useMemo(() => {
     if (children) {
       return children;
     }
@@ -168,6 +204,7 @@ function FieldError({ className, children, errors, ...props }) {
 
   return (
     <div
+      ref={ref}
       role="alert"
       data-slot="field-error"
       className={cn('text-sm font-normal text-destructive', className)}
@@ -176,7 +213,8 @@ function FieldError({ className, children, errors, ...props }) {
       {content}
     </div>
   );
-}
+});
+FieldError.displayName = 'FieldError';
 
 export {
   Field,
@@ -189,4 +227,5 @@ export {
   FieldSeparator,
   FieldSet,
   FieldTitle,
+  fieldVariants,
 };

@@ -1,10 +1,13 @@
-import {
-  buttonVariants,
-  buttonVariantsConfig,
-} from "@repo/components/ui/button/button.styles.js";
-import { fieldVariants, fieldVariantsConfig } from '@repo/components/ui/field/field.styles.js';
-import { badgeVariantsConfig, badgeVariants } from '@repo/components/ui/badge/badge.styles.js';
-import { alertVariants, alertVariantsConfig } from '@repo/components/ui/alert/alert.style.js';
+import { buttonVariants } from "@repo/components/ui/button.jsx";
+import { fieldVariants } from '@repo/components/ui/field.jsx';
+import { badgeVariants } from '@repo/components/ui/badge.jsx';
+import { alertVariants } from '@repo/components/ui/alert.jsx';
+
+// Extract variant configs from CVA
+const buttonVariantsConfig = buttonVariants.config;
+const fieldVariantsConfig = fieldVariants.config;
+const badgeVariantsConfig = badgeVariants.config;
+const alertVariantsConfig = alertVariants.config;
 /**
  * Component registry with auto-extracted props from CVA configs
  *

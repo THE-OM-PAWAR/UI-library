@@ -10,15 +10,15 @@ import {
   useReactTable,
 } from '@tanstack/react-table';
 import { cn } from '@repo/utils';
-import { Button } from '../button/index.js';
+import { Button } from './button.jsx';
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuTrigger,
-} from '../dropdown-menu/index.js';
-import { Input } from '../input/index.js';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../table/index.js';
+} from './dropdown-menu.jsx';
+import { Input } from './input.jsx';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './table.jsx';
 
 export function DataTable({
   columns = [],

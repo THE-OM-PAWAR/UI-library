@@ -3,7 +3,6 @@ import * as Separator from '@radix-ui/react-separator';
 import * as Collapsible from '@radix-ui/react-collapsible';
 import { Settings, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
-import { CodePanel } from './CodePanel.jsx';
 import { PropertyControl } from './preview/PropertyControl.jsx';
 
 export function PropertiesPanel({ props, values, onChange, jsxCode, cssClasses, componentName, customClassName, onCustomClassChange }) {
@@ -79,17 +78,6 @@ export function PropertiesPanel({ props, values, onChange, jsxCode, cssClasses, 
           <ScrollArea.Thumb className="flex-1 bg-border rounded-full relative before:content-[''] before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:w-full before:h-full before:min-w-[44px] before:min-h-[44px]" />
         </ScrollArea.Scrollbar>
       </ScrollArea.Root>
-
-      <Separator.Root className="h-px bg-border" />
-
-      {/* Code Panel */}
-      {jsxCode && (
-        <CodePanel
-          jsxCode={jsxCode}
-          cssClasses={cssClasses}
-          componentName={componentName}
-        />
-      )}
     </aside>
   );
 }

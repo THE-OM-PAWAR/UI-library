@@ -1,8 +1,0 @@
-// Tooltip doesn't need CVA variants currently
-// This file is a placeholder for future variant additions
-// Example: different sizes or color schemes
-
-export const tooltipVariants = {
-  // Add variants here if needed in the future
-  // e.g., size: 'sm' | 'md' | 'lg'
-};

@@ -4,7 +4,7 @@ import { Grid3x3 } from 'lucide-react';
 import { cn } from '@repo/utils';
 
 export function PreviewCanvas({ children, componentName }) {
-  const [background, setBackground] = useState('default');
+  const [background, setBackground] = useState('grid');
 
   const backgrounds = {
     default: 'bg-background',

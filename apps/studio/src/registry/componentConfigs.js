@@ -1,565 +1,64 @@
-import { buttonVariants } from "@repo/components/ui/button.jsx";
-import { fieldVariants } from '@repo/components/ui/field.jsx';
-import { badgeVariants } from '@repo/components/ui/badge.jsx';
-import { alertVariants } from '@repo/components/ui/alert.jsx';
-
-// Extract variant configs from CVA
-const buttonVariantsConfig = buttonVariants.config;
-const fieldVariantsConfig = fieldVariants.config;
-const badgeVariantsConfig = badgeVariants.config;
-const alertVariantsConfig = alertVariants.config;
 /**
- * Component registry with auto-extracted props from CVA configs
- *
- * For compound components (Dialog, Dropdown, Tooltip), we define:
- * - type: 'compound' to indicate it needs special rendering
- * - demoProps: configurable properties for the demo
- * - The actual demo rendering is handled in ComponentRenderer
+ * Simplified Component Registry
+ * Just stores component metadata for navigation and display
  */
 export const componentConfigs = {
   button: {
     id: "button",
     name: "Button",
-    type: "simple",
-    path: "@repo/components",
-    importName: "Button",
-    variantsConfig: buttonVariants,
-    variantsConfigRaw: buttonVariantsConfig,
-    additionalProps: [
-      {
-        name: "children",
-        type: "text",
-        defaultValue: "Button",
-        placeholder: "Button text",
-        description: "The content of the button",
-      },
-      {
-        name: "disabled",
-        type: "boolean",
-        defaultValue: false,
-        description: "Disables the button",
-      },
-      {
-        name: "type",
-        type: "select",
-        options: ["button", "submit", "reset"],
-        defaultValue: "button",
-        description: "HTML button type",
-      },
-      {
-        name: "asChild",
-        type: "boolean",
-        defaultValue: false,
-        description: "Render as child element (Slot)",
-      },
-      {
-        name: "isLoading",
-        type: "boolean",
-        defaultValue: false,
-      },
-     {
-  name: "leftIcon",
-  type: "text",
-  placeholder: "e.g. 🔥",
-},
-{
-  name: "rightIcon",
-  type: "text",
-  placeholder: "e.g. →",
-},
-    ],
   },
   dialog: {
-  id: "dialog",
-  name: "Dialog",
-  type: "compound",
-  path: "@repo/components",
-  importName: "Dialog",
-  description:
-    "A modal dialog that interrupts the user with important content",
-
-  demoProps: [
-    {
-      name: "triggerText",
-      type: "text",
-      defaultValue: "Open Dialog",
-    },
-    {
-      name: "title",
-      type: "text",
-      defaultValue: "Are you absolutely sure?",
-    },
-    {
-      name: "description",
-      type: "text",
-      defaultValue: "This action cannot be undone.",
-    },
-    {
-      name: "bodyText",
-      type: "text",
-      defaultValue:
-        "This will permanently delete your account and remove your data.",
-    },
-    {
-      name: "cancelText",
-      type: "text",
-      defaultValue: "Cancel",
-    },
-    {
-      name: "confirmText",
-      type: "text",
-      defaultValue: "Continue",
-    },
-
-    // 🔥 NEW (IMPORTANT)
-    {
-      name: "size",
-      type: "select",
-      options: ["sm", "md", "lg", "xl", "full"],
-      defaultValue: "md",
-      description: "Controls dialog width/size",
-    },
-
-    {
-      name: "showFooter",
-      type: "boolean",
-      defaultValue: true,
-      description: "Show footer actions",
-    },
-  ],
-},
+    id: "dialog",
+    name: "Dialog",
+  },
   "dropdown-menu": {
     id: "dropdown-menu",
     name: "Dropdown Menu",
-    type: "compound",
-    path: "@repo/components",
-    importName: "DropdownMenu",
-    description:
-      "A menu that appears when triggered, containing a list of actions",
-    demoProps: [
-      {
-        name: "triggerText",
-        type: "text",
-        defaultValue: "Open Menu",
-        placeholder: "Trigger button text",
-        description: "Text for the trigger button",
-      },
-    ],
   },
   tooltip: {
     id: "tooltip",
     name: "Tooltip",
-    type: "compound",
-    path: "@repo/components",
-    importName: "Tooltip",
-    description: "A popup that displays information related to an element",
-    demoProps: [
-      {
-        name: "content",
-        type: "text",
-        defaultValue: "Helpful information",
-        placeholder: "Tooltip content",
-        description: "The content shown in the tooltip",
-      },
-      {
-        name: "triggerText",
-        type: "text",
-        defaultValue: "Hover me",
-        placeholder: "Trigger text",
-        description: "Text for the trigger element",
-      },
-      {
-        name: 'side',
-        type: 'select',
-        options: ['top', 'right', 'bottom', 'left'],
-        defaultValue: 'top',
-        description: 'The side of the trigger to show the tooltip',
-      },
-    ],
   },
-
   input: {
     id: 'input',
     name: 'Input',
-    type: 'simple',
-    path: '@repo/components',
-    importName: 'Input',
-    additionalProps: [
-      {
-        name: 'type',
-        type: 'select',
-        options: ['text', 'email', 'password', 'number', 'tel', 'url', 'search'],
-        defaultValue: 'text',
-        description: 'HTML input type',
-      },
-      {
-        name: 'placeholder',
-        type: 'text',
-        defaultValue: 'Enter text ...',
-        placeholder: 'Placeholder text',
-        description: 'Placeholder text shown when empty',
-      },
-      {
-        name: 'disabled',
-        type: 'boolean',
-        defaultValue: false,
-        description: 'Disables the input',
-      }
-    ],
   },
   alert: {
     id: 'alert',
     name: 'Alert',
-    type: 'simple',
-    path: '@repo/components',
-    importName: 'Alert',
-    variantsConfig: alertVariants,
-    variantsConfigRaw: alertVariantsConfig,
-    additionalProps: [
-      {
-        name: 'title',
-        type: 'text',
-        defaultValue: 'Alert Title',
-        placeholder: 'Title text',
-        description: 'The title of the alert',
-      },
-      {
-        name: 'description',
-        type: 'text',
-        defaultValue: 'Alert description goes here.',
-        placeholder: 'Description text',
-        description: 'The description of the alert',
-      },
-    ],
   },
   tabs: {
     id: 'tabs',
     name: 'Tabs',
-    type: 'compound',
-    path: '@repo/components',
-    importName: 'Tabs',
-    description: 'Switch between different views using tabs',
-    demoProps: [
-      {
-        name: 'tab1',
-        type: 'text',
-        defaultValue: 'Account',
-        description: 'First tab label',
-      },
-      {
-        name: 'tab2',
-        type: 'text',
-        defaultValue: 'Password',
-        description: 'Second tab label',
-      },
-      {
-        name: 'content1',
-        type: 'text',
-        defaultValue: 'Account settings content',
-        description: 'First tab content',
-      },
-      {
-        name: 'content2',
-        type: 'text',
-        defaultValue: 'Password settings content',
-        description: 'Second tab content',
-      },
-    ],
   },
   radio: {
     id: 'radio',
     name: 'Radio Group',
-    type: 'compound',
-    path: '@repo/components',
-    importName: 'RadioGroup',
-    description: 'A set of mutually exclusive options where only one can be selected',
-
-    demoProps: [
-      {
-        name: 'defaultValue',
-        type: 'text',
-        defaultValue: 'option1',
-        description: 'Default selected value',
-      },
-      {
-        name: 'options',
-        type: 'array',
-        defaultValue: [
-          { label: 'Option 1', value: 'option1' },
-          { label: 'Option 2', value: 'option2' },
-          { label: 'Option 3', value: 'option3' },
-        ],
-        description: 'Radio options',
-      },
-      {
-        name: 'disabled',
-        type: 'boolean',
-        defaultValue: false,
-        description: 'Disable all options',
-      },
-    ],
   },
   table: {
     id: 'table',
     name: 'Table',
-    type: 'compound',
-    path: '@repo/components',
-    importName: 'Table',
-    description: 'Semantic table primitives for rendering structured data',
-    demoProps: [
-      {
-        name: 'caption',
-        type: 'text',
-        defaultValue: 'A list of recent invoices.',
-        description: 'Caption text displayed below the table',
-      },
-      {
-        name: 'header1',
-        type: 'text',
-        defaultValue: 'Invoice',
-        description: 'First column header',
-      },
-      {
-        name: 'header2',
-        type: 'text',
-        defaultValue: 'Status',
-        description: 'Second column header',
-      },
-      {
-        name: 'header3',
-        type: 'text',
-        defaultValue: 'Method',
-        description: 'Third column header',
-      },
-      {
-        name: 'header4',
-        type: 'text',
-        defaultValue: 'Amount',
-        description: 'Fourth column header',
-      },
-      {
-        name: 'showFooter',
-        type: 'boolean',
-        defaultValue: true,
-        description: 'Toggle footer row visibility',
-      },
-    ],
   },
   'data-table': {
     id: 'data-table',
     name: 'Data Table',
-    type: 'compound',
-    path: '@repo/components',
-    importName: 'DataTable',
-    description: 'Advanced table with sorting, filtering, pagination, row selection, and column visibility',
-    demoProps: [
-      {
-        name: 'showFilter',
-        type: 'boolean',
-        defaultValue: true,
-        description: 'Show column filter input',
-      },
-      {
-        name: 'showPagination',
-        type: 'boolean',
-        defaultValue: true,
-        description: 'Show previous/next pagination controls',
-      },
-      {
-        name: 'showColumnVisibility',
-        type: 'boolean',
-        defaultValue: true,
-        description: 'Show column visibility dropdown',
-      },
-      {
-        name: 'showRowSelectionCount',
-        type: 'boolean',
-        defaultValue: true,
-        description: 'Show selected rows counter',
-      },
-      {
-        name: 'filterPlaceholder',
-        type: 'text',
-        defaultValue: 'Filter emails...',
-        description: 'Placeholder text for the filter input',
-      },
-      {
-        name: 'noResultsText',
-        type: 'text',
-        defaultValue: 'No results.',
-        description: 'Empty state text when no rows match filters',
-      },
-    ],
   },
   field: {
     id: 'field',
     name: 'Field',
-    type: 'compound',
-    path: '@repo/components',
-    importName: 'Field',
-    description: 'Composable form field primitives with labels, descriptions, separators, and validation errors',
-    variantsConfig: fieldVariants,
-    variantsConfigRaw: fieldVariantsConfig,
-    additionalProps: [
-      {
-        name: 'legendText',
-        type: 'text',
-        defaultValue: 'Profile Details',
-        description: 'Legend title displayed at the top',
-      },
-      {
-        name: 'legendVariant',
-        type: 'select',
-        options: ['legend', 'label'],
-        defaultValue: 'legend',
-        description: 'Legend visual style',
-      },
-      {
-        name: 'labelText',
-        type: 'text',
-        defaultValue: 'Email Address',
-        description: 'Field label/title text',
-      },
-      {
-        name: 'controlText',
-        type: 'text',
-        defaultValue: 'Attach your form control here',
-        description: 'Placeholder text for your own control',
-      },
-      {
-        name: 'descriptionText',
-        type: 'text',
-        defaultValue: 'We will only use this for product updates.',
-        description: 'Support text under the field',
-      },
-      {
-        name: 'separatorText',
-        type: 'text',
-        defaultValue: 'Optional',
-        description: 'Inline content shown in the separator',
-      },
-      {
-        name: 'showDescription',
-        type: 'boolean',
-        defaultValue: true,
-        description: 'Toggle field description visibility',
-      },
-      {
-        name: 'showError',
-        type: 'boolean',
-        defaultValue: false,
-        description: 'Toggle error state preview',
-      },
-      {
-        name: 'errorMessage',
-        type: 'text',
-        defaultValue: 'Please enter a valid email address.',
-        description: 'Validation message shown in error state',
-      },
-    ],
   },
   sonner: {
     id: 'sonner',
     name: 'Sonner',
-    type: 'compound',
-    path: '@repo/components',
-    importName: 'Toaster',
-    description: 'Toast notifications powered by Sonner',
-    demoProps: [
-      {
-        name: 'type',
-        type: 'select',
-        options: ['default', 'success', 'error', 'warning', 'info', 'loading', 'promise'],
-        defaultValue: 'default',
-        description: 'Type of toast notification',
-      },
-      {
-        name: 'title',
-        type: 'text',
-        defaultValue: 'Event has been created',
-        placeholder: 'Toast title',
-        description: 'The title of the toast',
-      },
-      {
-        name: 'description',
-        type: 'text',
-        defaultValue: 'Monday, January 3rd at 6:00pm',
-        placeholder: 'Toast description',
-        description: 'The description text',
-      },
-      {
-        name: 'action',
-        type: 'boolean',
-        defaultValue: false,
-        description: 'Show action button',
-      },
-      {
-        name: 'cancel',
-        type: 'boolean',
-        defaultValue: false,
-        description: 'Show cancel button',
-      },
-    ],
   },
-
   badge: {
     id: 'badge',
     name: 'Badge',
-    type: 'simple',
-    path: '@repo/components',
-    importName: 'Badge',
-    variantsConfig: badgeVariants,
-    variantsConfigRaw: badgeVariantsConfig,
-    additionalProps: [
-      {
-        name: 'children',
-        type: 'text',
-        defaultValue: 'Badge',
-        placeholder: 'Badge text',
-        description: 'Content inside the badge',
-      },
-    ],
   },
-
   card: {
     id: 'card',
     name: 'Card',
-    type: 'compound',
-    path: '@repo/components',
-    importName: 'Card',
-    description: 'A flexible container for grouping content and actions',
-    demoProps: [
-      {
-        name: 'title',
-        type: 'text',
-        defaultValue: 'Card Title',
-        placeholder: 'Card title',
-        description: 'Title of the card',
-      },
-      {
-        name: 'description',
-        type: 'text',
-        defaultValue: 'Card description goes here.',
-        placeholder: 'Card description',
-        description: 'Description text',
-      },
-      {
-        name: 'content',
-        type: 'text',
-        defaultValue: 'This is the main content area.',
-        placeholder: 'Card content',
-        description: 'Main content',
-      },
-      {
-        name: 'footerText',
-        type: 'text',
-        defaultValue: 'Action',
-        placeholder: 'Footer button text',
-        description: 'Footer action text',
-      },
-    ],
   },
-
 };
 
 export const componentList = Object.values(componentConfigs);

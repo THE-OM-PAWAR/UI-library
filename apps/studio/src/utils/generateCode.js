@@ -135,6 +135,77 @@ ${fieldShowError ? `        <FieldError errors={[{ message: "${propValues.errorM
   </FieldGroup>
 </FieldSet>`;
 
+    case 'table':
+      return `<Table${customClassName ? ` className="${customClassName}"` : ''}>
+  <TableCaption>${propValues.caption || 'A list of recent invoices.'}</TableCaption>
+  <TableHeader>
+    <TableRow>
+      <TableHead>${propValues.header1 || 'Invoice'}</TableHead>
+      <TableHead>${propValues.header2 || 'Status'}</TableHead>
+      <TableHead>${propValues.header3 || 'Method'}</TableHead>
+      <TableHead className="text-right">${propValues.header4 || 'Amount'}</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell className="font-medium">INV001</TableCell>
+      <TableCell>Paid</TableCell>
+      <TableCell>Credit Card</TableCell>
+      <TableCell className="text-right">$250.00</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell className="font-medium">INV002</TableCell>
+      <TableCell>Pending</TableCell>
+      <TableCell>PayPal</TableCell>
+      <TableCell className="text-right">$150.00</TableCell>
+    </TableRow>
+  </TableBody>
+${propValues.showFooter !== false ? `  <TableFooter>
+    <TableRow>
+      <TableCell colSpan={3}>Total</TableCell>
+      <TableCell className="text-right">$400.00</TableCell>
+    </TableRow>
+  </TableFooter>` : ''}
+</Table>`;
+
+    case 'data-table':
+      return `const columns = [
+  {
+    accessorKey: "email",
+    header: ({ column }) => (
+      <Button variant="ghost" onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
+        Email
+      </Button>
+    ),
+  },
+  {
+    accessorKey: "amount",
+    header: () => <div className="text-right">Amount</div>,
+    cell: ({ row }) => {
+      const amount = Number(row.getValue("amount"));
+      return <div className="text-right font-medium">{new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(amount)}</div>;
+    },
+  },
+];
+
+const data = [
+  { id: "pay_001", email: "olivia@example.com", amount: 250 },
+  { id: "pay_002", email: "jack@example.com", amount: 150 },
+];
+
+<DataTable
+  columns={columns}
+  data={data}
+  filterColumn="email"
+  filterPlaceholder="${propValues.filterPlaceholder || 'Filter emails...'}"
+  noResultsText="${propValues.noResultsText || 'No results.'}"
+  showFilter={${propValues.showFilter !== false}}
+  showPagination={${propValues.showPagination !== false}}
+  showColumnVisibility={${propValues.showColumnVisibility !== false}}
+  showRowSelectionCount={${propValues.showRowSelectionCount !== false}}
+${customClassName ? `  className="${customClassName}"` : ''}
+/>`;
+
     case 'button':
     default:
       // Simple component with props
@@ -162,7 +233,7 @@ ${fieldShowError ? `        <FieldError errors={[{ message: "${propValues.errorM
 
 export function generateCSSClasses(componentId, variantsConfig, propValues, customClassName = '') {
   // Compound components don't have direct CSS classes
-  if (['dialog', 'dropdown-menu', 'tooltip', 'radio'].includes(componentId)) {
+  if (['dialog', 'dropdown-menu', 'tooltip', 'radio', 'table', 'data-table'].includes(componentId)) {
     return customClassName 
       ? `Custom classes:\n  ${customClassName.split(' ').join('\n  ')}\n\nCompound component - styles applied to sub-components`
       : 'Compound component - styles applied to sub-components';

@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from 'react';
+import { ArrowUpDown, MoreHorizontal } from 'lucide-react';
 import {
   Button,
   Dialog,
@@ -37,12 +38,21 @@ import {
   FieldSeparator,
   FieldSet,
   FieldTitle,
-} from "@repo/components";
-import { extractPropsFromVariants, getDefaultProps } from "../utils/extractComponentProps.js";
-import { generateComponentCode } from "../utils/generateCode.js";
-import { componentConfigs } from "../registry/componentConfigs.js";
-import { PreviewCanvas } from "./PreviewCanvas.jsx";
-import { PropertiesPanel } from "./PropertiesPanel.jsx";
+  Table,
+  TableHeader,
+  TableBody,
+  TableFooter,
+  TableHead,
+  TableRow,
+  TableCell,
+  TableCaption,
+  DataTable,
+} from '@repo/components';
+import { extractPropsFromVariants, getDefaultProps } from '../utils/extractComponentProps.js';
+import { generateComponentCode } from '../utils/generateCode.js';
+import { componentConfigs } from '../registry/componentConfigs.js';
+import { PreviewCanvas } from './PreviewCanvas.jsx';
+import { PropertiesPanel } from './PropertiesPanel.jsx';
 
 export function ComponentRenderer({ componentId }) {
   const config = componentConfigs[componentId];
@@ -248,6 +258,11 @@ export function ComponentRenderer({ componentId }) {
       case 'field':
         return <FieldDemoPreview propValues={propValues} customClassName={customClassName} />;
 
+      case 'table':
+        return <TableDemoPreview propValues={propValues} customClassName={customClassName} />;
+      case 'data-table':
+        return <DataTableDemoPreview propValues={propValues} customClassName={customClassName} />;
+
       default:
         return <div className="text-sm text-muted-foreground">Component preview not implemented</div>;
     }
@@ -315,6 +330,177 @@ function FieldDemoPreview({ propValues, customClassName }) {
           <li>Tailwind utility selectors for slot/state styling</li>
         </ul>
       </div>
+    </div>
+  );
+}
+
+function TableDemoPreview({ propValues, customClassName }) {
+  const rows = [
+    {
+      invoice: 'INV001',
+      paymentStatus: 'Paid',
+      paymentMethod: 'Credit Card',
+      totalAmount: '$250.00',
+    },
+    {
+      invoice: 'INV002',
+      paymentStatus: 'Pending',
+      paymentMethod: 'PayPal',
+      totalAmount: '$150.00',
+    },
+    {
+      invoice: 'INV003',
+      paymentStatus: 'Unpaid',
+      paymentMethod: 'Bank Transfer',
+      totalAmount: '$350.00',
+    },
+  ];
+
+  return (
+    <div className="w-full max-w-3xl">
+      <Table className={customClassName || ''}>
+        <TableCaption>{propValues.caption || 'A list of recent invoices.'}</TableCaption>
+        <TableHeader>
+          <TableRow>
+            <TableHead>{propValues.header1 || 'Invoice'}</TableHead>
+            <TableHead>{propValues.header2 || 'Status'}</TableHead>
+            <TableHead>{propValues.header3 || 'Method'}</TableHead>
+            <TableHead className="text-right">{propValues.header4 || 'Amount'}</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {rows.map((row) => (
+            <TableRow key={row.invoice}>
+              <TableCell className="font-medium">{row.invoice}</TableCell>
+              <TableCell>{row.paymentStatus}</TableCell>
+              <TableCell>{row.paymentMethod}</TableCell>
+              <TableCell className="text-right">{row.totalAmount}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+        {propValues.showFooter !== false && (
+          <TableFooter>
+            <TableRow>
+              <TableCell colSpan={3}>Total</TableCell>
+              <TableCell className="text-right">$750.00</TableCell>
+            </TableRow>
+          </TableFooter>
+        )}
+      </Table>
+    </div>
+  );
+}
+
+function DataTableDemoPreview({ propValues, customClassName }) {
+  const data = useMemo(
+    () => [
+      { id: 'pay_001', email: 'olivia@example.com', status: 'paid', amount: 250 },
+      { id: 'pay_002', email: 'jack@example.com', status: 'pending', amount: 150 },
+      { id: 'pay_003', email: 'isabella@example.com', status: 'failed', amount: 350 },
+      { id: 'pay_004', email: 'ethan@example.com', status: 'paid', amount: 420 },
+      { id: 'pay_005', email: 'mia@example.com', status: 'pending', amount: 210 },
+    ],
+    []
+  );
+
+  const columns = useMemo(
+    () => [
+      {
+        id: 'select',
+        header: ({ table }) => (
+          <input
+            type="checkbox"
+            aria-label="Select all"
+            checked={table.getIsAllPageRowsSelected()}
+            ref={(el) => {
+              if (el) {
+                el.indeterminate = table.getIsSomePageRowsSelected() && !table.getIsAllPageRowsSelected();
+              }
+            }}
+            onChange={(event) => table.toggleAllPageRowsSelected(event.target.checked)}
+          />
+        ),
+        cell: ({ row }) => (
+          <input
+            type="checkbox"
+            aria-label="Select row"
+            checked={row.getIsSelected()}
+            onChange={(event) => row.toggleSelected(event.target.checked)}
+          />
+        ),
+        enableSorting: false,
+        enableHiding: false,
+      },
+      {
+        accessorKey: 'email',
+        header: ({ column }) => (
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+          >
+            Email
+            <ArrowUpDown className="ml-2 h-4 w-4" />
+          </Button>
+        ),
+      },
+      {
+        accessorKey: 'status',
+        header: 'Status',
+      },
+      {
+        accessorKey: 'amount',
+        header: () => <div className="text-right">Amount</div>,
+        cell: ({ row }) => {
+          const amount = Number(row.getValue('amount'));
+          const formatted = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+          }).format(amount);
+          return <div className="text-right font-medium">{formatted}</div>;
+        },
+      },
+      {
+        id: 'actions',
+        enableHiding: false,
+        cell: ({ row }) => (
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
+                <span className="sr-only">Open menu</span>
+                <MoreHorizontal className="h-4 w-4" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuLabel>Actions</DropdownMenuLabel>
+              <DropdownMenuItem onClick={() => navigator.clipboard.writeText(row.original.id)}>
+                Copy payment ID
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>View customer</DropdownMenuItem>
+              <DropdownMenuItem>View payment details</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        ),
+      },
+    ],
+    []
+  );
+
+  return (
+    <div className="w-full max-w-5xl">
+      <DataTable
+        className={customClassName || ''}
+        columns={columns}
+        data={data}
+        filterColumn="email"
+        filterPlaceholder={propValues.filterPlaceholder || 'Filter emails...'}
+        noResultsText={propValues.noResultsText || 'No results.'}
+        showFilter={propValues.showFilter !== false}
+        showPagination={propValues.showPagination !== false}
+        showColumnVisibility={propValues.showColumnVisibility !== false}
+        showRowSelectionCount={propValues.showRowSelectionCount !== false}
+      />
     </div>
   );
 }

@@ -5,6 +5,7 @@ export {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
+  DropdownMenuCheckboxItem,
   DropdownMenuGroup,
   DropdownMenuPortal,
   DropdownMenuSub,

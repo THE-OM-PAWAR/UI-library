@@ -154,28 +154,28 @@ export const componentConfigs = {
     type: 'simple',
     path: '@repo/components',
     importName: 'Input',
-    // additionalProps: [
-    //   {
-    //     name: 'type',
-    //     type: 'select',
-    //     options: ['text', 'email', 'password', 'number', 'tel', 'url', 'search'],
-    //     defaultValue: 'text',
-    //     description: 'HTML input type',
-    //   },
-    //   {
-    //     name: 'placeholder',
-    //     type: 'text',
-    //     defaultValue: 'bhai Enter text ...',
-    //     placeholder: 'Placeholder text',
-    //     description: 'Placeholder text shown when empty',
-    //   },
-    //   {
-    //     name: 'disabled',
-    //     type: 'boolean',
-    //     defaultValue: false,
-    //     description: 'Disables the input',
-    //   }
-    // ],
+    additionalProps: [
+      {
+        name: 'type',
+        type: 'select',
+        options: ['text', 'email', 'password', 'number', 'tel', 'url', 'search'],
+        defaultValue: 'text',
+        description: 'HTML input type',
+      },
+      {
+        name: 'placeholder',
+        type: 'text',
+        defaultValue: 'Enter text ...',
+        placeholder: 'Placeholder text',
+        description: 'Placeholder text shown when empty',
+      },
+      {
+        name: 'disabled',
+        type: 'boolean',
+        defaultValue: false,
+        description: 'Disables the input',
+      }
+    ],
   },
   alert: {
     id: 'alert',
@@ -199,6 +199,40 @@ export const componentConfigs = {
         defaultValue: 'Alert description goes here.',
         placeholder: 'Description text',
         description: 'The description of the alert',
+      },
+    ],
+  },
+  tabs: {
+    id: 'tabs',
+    name: 'Tabs',
+    type: 'compound',
+    path: '@repo/components',
+    importName: 'Tabs',
+    description: 'Switch between different views using tabs',
+    demoProps: [
+      {
+        name: 'tab1',
+        type: 'text',
+        defaultValue: 'Account',
+        description: 'First tab label',
+      },
+      {
+        name: 'tab2',
+        type: 'text',
+        defaultValue: 'Password',
+        description: 'Second tab label',
+      },
+      {
+        name: 'content1',
+        type: 'text',
+        defaultValue: 'Account settings content',
+        description: 'First tab content',
+      },
+      {
+        name: 'content2',
+        type: 'text',
+        defaultValue: 'Password settings content',
+        description: 'Second tab content',
       },
     ],
   },

@@ -34,3 +34,4 @@ export {
 } from './ui/tooltip/index.js';
 export { Input } from "./ui/input/index.js"
 export { Alert, AlertTitle, AlertDescription, AlertAction } from './ui/alert/index.js';
+export { Tabs, TabsList, TabsTrigger, TabsContent, TabsDemo } from './ui/tabs/index.js';

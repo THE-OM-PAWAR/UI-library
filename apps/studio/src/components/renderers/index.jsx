@@ -1,5 +1,6 @@
 export { renderButton } from './button.jsx';
 export { renderDialog } from './dialog.jsx';
+export { renderDrawer } from './drawer.jsx';
 export { renderDropdownMenu } from './dropdown.jsx';
 export { renderTooltip } from './tooltip.jsx';
 export { renderInput } from './input.jsx';
@@ -12,3 +13,4 @@ export { renderCard } from './card.jsx';
 export { renderField } from './field.jsx';
 export { renderTable } from './table.jsx';
 export { renderDataTable } from './data-table.jsx';
+export { renderSwitch } from './switch.jsx';

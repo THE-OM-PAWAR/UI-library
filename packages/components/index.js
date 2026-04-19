@@ -19,6 +19,9 @@ export { Label } from './ui/label.jsx';
 // Separator
 export { Separator } from './ui/separator.jsx';
 
+// Switch
+export { Switch } from './ui/switch.jsx';
+
 // Table
 export { Table, TableHeader, TableBody, TableFooter, TableHead, TableRow, TableCell, TableCaption } from './ui/table.jsx';
 
@@ -53,6 +56,20 @@ export {
   DialogTitle,
   DialogDescription,
 } from './ui/dialog.jsx';
+
+// Drawer
+export {
+  Drawer,
+  DrawerPortal,
+  DrawerOverlay,
+  DrawerTrigger,
+  DrawerClose,
+  DrawerContent,
+  DrawerHeader,
+  DrawerFooter,
+  DrawerTitle,
+  DrawerDescription,
+} from './ui/drawer.jsx';
 
 // Dropdown Menu
 export {

@@ -3,7 +3,8 @@ import { PreviewCanvas } from "./PreviewCanvas.jsx";
 import { componentConfigs } from "../registry/componentConfigs.js";
 import { 
   renderButton, 
-  renderDialog, 
+  renderDialog,
+  renderDrawer,
   renderDropdownMenu, 
   renderTooltip,
   renderInput,
@@ -15,7 +16,8 @@ import {
   renderCard,
   renderField,
   renderTable,
-  renderDataTable
+  renderDataTable,
+  renderSwitch
 } from "./renderers/index.jsx";
 
 export function ComponentRenderer({ componentId }) {
@@ -33,6 +35,7 @@ export function ComponentRenderer({ componentId }) {
     const renderers = {
       button: renderButton,
       dialog: renderDialog,
+      drawer: renderDrawer,
       "dropdown-menu": renderDropdownMenu,
       tooltip: renderTooltip,
       input: renderInput,
@@ -45,6 +48,7 @@ export function ComponentRenderer({ componentId }) {
       field: renderField,
       table: renderTable,
       "data-table": renderDataTable,
+      switch: renderSwitch,
     };
 
     const renderer = renderers[componentId];

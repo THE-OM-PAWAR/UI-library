@@ -11,6 +11,10 @@ export const componentConfigs = {
     id: "dialog",
     name: "Dialog",
   },
+  drawer: {
+    id: "drawer",
+    name: "Drawer",
+  },
   "dropdown-menu": {
     id: "dropdown-menu",
     name: "Dropdown Menu",
@@ -58,6 +62,10 @@ export const componentConfigs = {
   card: {
     id: 'card',
     name: 'Card',
+  },
+  switch: {
+    id: 'switch',
+    name: 'Switch',
   },
 };
 

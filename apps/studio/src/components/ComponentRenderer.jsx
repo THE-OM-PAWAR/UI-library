@@ -1,7 +1,14 @@
 import { useState, useEffect, useMemo } from 'react';
 import { ArrowUpDown, MoreHorizontal } from 'lucide-react';
 import {
+  Badge,
   Button,
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
   Dialog,
   DialogTrigger,
   DialogContent,
@@ -135,7 +142,6 @@ export function ComponentRenderer({ componentId }) {
   const renderComponent = () => {
     const { children, className: _, ...restProps } = propValues;
 
-
     switch (componentId) {
       case "button":
         return (
@@ -144,12 +150,8 @@ export function ComponentRenderer({ componentId }) {
           </Button>
         );
 
-      case "dialog":
-
       case 'dialog':
         return <DialogDemo propValues={propValues} customClassName={customClassName} />;
-
-      case "dropdown-menu":
 
       case 'dropdown-menu':
         return (
@@ -171,8 +173,6 @@ export function ComponentRenderer({ componentId }) {
           </DropdownMenu>
         );
 
-      case "tooltip":
-
       case 'tooltip':
         return (
           <Tooltip>
@@ -186,10 +186,8 @@ export function ComponentRenderer({ componentId }) {
             </TooltipContent>
           </Tooltip>
         );
-
-  
-      case 'input': 
-      return (
+      case 'input':
+        return (
           <Input
             {...restProps}
             className={customClassName || ''}
@@ -237,6 +235,42 @@ export function ComponentRenderer({ componentId }) {
           })),
         });
 
+
+      case 'badge':
+        return (
+          <Badge {...restProps} className={customClassName || ''}>
+            {children || 'Badge'}
+          </Badge>
+        );
+
+      case 'card':
+        return (
+          <div className="max-w-sm">
+            <Card className={customClassName || ''}>
+              <CardHeader>
+                <CardTitle>
+                  {propValues.title || 'Card Title'}
+                </CardTitle>
+                <CardDescription>
+                  {propValues.description || 'Card description goes here.'}
+                </CardDescription>
+              </CardHeader>
+
+              <CardContent>
+                {propValues.content || 'This is the main content area.'}
+              </CardContent>
+
+              <CardFooter>
+                <Button>
+                  {propValues.footerText || 'Action'}
+                </Button>
+              </CardFooter>
+            </Card>
+          </div>
+        );
+
+
+      case "radio-group" :
         return (
           <RadioGroup
             key={radioGroupKey}

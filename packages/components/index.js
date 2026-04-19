@@ -67,3 +67,21 @@ export {
 } from './ui/field/index.js';
 export { Toaster } from './ui/sonner/index.js';
  
+// Badge
+export {
+  Badge,
+  BadgeDemo,
+  badgeVariants,
+} from './ui/badge/index.js';
+
+// Card
+export {
+  Card,
+  CardHeader,
+  CardFooter,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardDemo,
+} from './ui/card/index.js';
+

@@ -1,7 +1,7 @@
 import { buttonVariants, buttonVariantsConfig } from '@repo/components/ui/button/button.styles.js';
 import { alertVariants, alertVariantsConfig } from '@repo/components/ui/alert/alert.style.js';
 import { fieldVariants, fieldVariantsConfig } from '@repo/components/ui/field/field.styles.js';
-
+import { badgeVariantsConfig, badgeVariants } from '@repo/components/ui/badge/badge.styles.js';
 /**
  * Component registry with auto-extracted props from CVA configs
  * 
@@ -473,6 +473,63 @@ export const componentConfigs = {
     ],
   },
 
+  badge: {
+    id: 'badge',
+    name: 'Badge',
+    type: 'simple',
+    path: '@repo/components',
+    importName: 'Badge',
+    variantsConfig: badgeVariants,
+    variantsConfigRaw: badgeVariantsConfig,
+    additionalProps: [
+      {
+        name: 'children',
+        type: 'text',
+        defaultValue: 'Badge',
+        placeholder: 'Badge text',
+        description: 'Content inside the badge',
+      },
+    ],
+  },
+
+  card: {
+    id: 'card',
+    name: 'Card',
+    type: 'compound',
+    path: '@repo/components',
+    importName: 'Card',
+    description: 'A flexible container for grouping content and actions',
+    demoProps: [
+      {
+        name: 'title',
+        type: 'text',
+        defaultValue: 'Card Title',
+        placeholder: 'Card title',
+        description: 'Title of the card',
+      },
+      {
+        name: 'description',
+        type: 'text',
+        defaultValue: 'Card description goes here.',
+        placeholder: 'Card description',
+        description: 'Description text',
+      },
+      {
+        name: 'content',
+        type: 'text',
+        defaultValue: 'This is the main content area.',
+        placeholder: 'Card content',
+        description: 'Main content',
+      },
+      {
+        name: 'footerText',
+        type: 'text',
+        defaultValue: 'Action',
+        placeholder: 'Footer button text',
+        description: 'Footer action text',
+      },
+    ],
+  },
 
 };
 

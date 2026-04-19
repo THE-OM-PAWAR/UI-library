@@ -1,9 +1,9 @@
-import * as Select from "@radix-ui/react-select";
-import * as Switch from "@radix-ui/react-switch";
-import * as Label from "@radix-ui/react-label";
-import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from "@repo/components";
-import { Info, Check, ChevronDown } from "lucide-react";
-import { cn } from "@repo/utils";
+import * as Select from '@radix-ui/react-select';
+import * as Switch from '@radix-ui/react-switch';
+import * as Label from '@radix-ui/react-label';
+import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '@repo/components';
+import { Info, Check, ChevronDown, Plus, Trash2 } from 'lucide-react';
+import { cn } from '@repo/utils';
 
 export function PropertyControl({ prop, value, onChange }) {
   debugger;
@@ -42,6 +42,13 @@ export function PropertyControl({ prop, value, onChange }) {
           onChange={(e) => onChange(e.target.value)}
           placeholder={prop.placeholder}
           className="w-full h-9 rounded-md border border-input bg-background px-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors"
+        />
+      )}
+
+      {prop.type === 'array' && (
+        <ArrayControl
+          value={value ?? prop.defaultValue ?? []}
+          onChange={onChange}
         />
       )}
     </div>
@@ -121,6 +128,79 @@ function SwitchControl({ checked, onChange, label }) {
         />
       </Switch.Root>
       <span className="text-sm text-muted-foreground">{label}</span>
+    </div>
+  );
+}
+
+function ArrayControl({ value, onChange }) {
+  const options = Array.isArray(value) ? value : [];
+
+  const updateOption = (index, key, nextValue) => {
+    const next = options.map((option, optionIndex) =>
+      optionIndex === index
+        ? { ...option, [key]: nextValue }
+        : option
+    );
+    onChange(next);
+  };
+
+  const addOption = () => {
+    const nextIndex = options.length + 1;
+    onChange([
+      ...options,
+      {
+        label: `Option ${nextIndex}`,
+        value: `option${nextIndex}`,
+      },
+    ]);
+  };
+
+  const removeOption = (index) => {
+    const next = options.filter((_, optionIndex) => optionIndex !== index);
+    onChange(next);
+  };
+
+  return (
+    <div className="space-y-2">
+      {options.map((option, index) => (
+        <div key={index} className="rounded-md border border-border p-2 space-y-2">
+          <div className="grid grid-cols-2 gap-2 items-center">
+            <input
+              type="text"
+              value={option.label || ''}
+              onChange={(e) => updateOption(index, 'label', e.target.value)}
+              placeholder="Label"
+              className="h-8 rounded-md border border-input bg-background px-2 text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors"
+            />
+            <input
+              type="text"
+              value={option.value || ''}
+              onChange={(e) => updateOption(index, 'value', e.target.value)}
+              placeholder="Value"
+              className="h-8 rounded-md border border-input bg-background px-2 text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors"
+            />
+          </div>
+          <div className="flex justify-end">
+            <button
+              type="button"
+              onClick={() => removeOption(index)}
+              className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-input text-muted-foreground hover:text-destructive hover:border-destructive/40 hover:bg-destructive/10 transition-colors"
+              aria-label={`Remove option ${index + 1}`}
+            >
+              <Trash2 className="h-3.5 w-3.5" />
+            </button>
+          </div>
+        </div>
+      ))}
+
+      <button
+        type="button"
+        onClick={addOption}
+        className="inline-flex w-full items-center justify-center gap-1.5 rounded-md border border-input px-3 py-2 text-xs font-medium text-foreground hover:bg-accent/50 transition-colors"
+      >
+        <Plus className="h-3.5 w-3.5" />
+        Add option
+      </button>
     </div>
   );
 }

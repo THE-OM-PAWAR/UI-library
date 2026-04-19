@@ -1,5 +1,6 @@
 import { buttonVariants, buttonVariantsConfig } from '@repo/components/ui/button/button.styles.js';
 import { alertVariants, alertVariantsConfig } from '@repo/components/ui/alert/alert.style.js';
+import { fieldVariants, fieldVariantsConfig } from '@repo/components/ui/field/field.styles.js';
 
 /**
  * Component registry with auto-extracted props from CVA configs
@@ -233,6 +234,106 @@ export const componentConfigs = {
         type: 'text',
         defaultValue: 'Password settings content',
         description: 'Second tab content',
+      },
+    ],
+  },
+  radio: {
+    id: 'radio',
+    name: 'Radio Group',
+    type: 'compound',
+    path: '@repo/components',
+    importName: 'RadioGroup',
+    description: 'A set of mutually exclusive options where only one can be selected',
+
+    demoProps: [
+      {
+        name: 'defaultValue',
+        type: 'text',
+        defaultValue: 'option1',
+        description: 'Default selected value',
+      },
+      {
+        name: 'options',
+        type: 'array',
+        defaultValue: [
+          { label: 'Option 1', value: 'option1' },
+          { label: 'Option 2', value: 'option2' },
+          { label: 'Option 3', value: 'option3' },
+        ],
+        description: 'Radio options',
+      },
+      {
+        name: 'disabled',
+        type: 'boolean',
+        defaultValue: false,
+        description: 'Disable all options',
+      },
+    ],
+  },
+  field: {
+    id: 'field',
+    name: 'Field',
+    type: 'compound',
+    path: '@repo/components',
+    importName: 'Field',
+    description: 'Composable form field primitives with labels, descriptions, separators, and validation errors',
+    variantsConfig: fieldVariants,
+    variantsConfigRaw: fieldVariantsConfig,
+    additionalProps: [
+      {
+        name: 'legendText',
+        type: 'text',
+        defaultValue: 'Profile Details',
+        description: 'Legend title displayed at the top',
+      },
+      {
+        name: 'legendVariant',
+        type: 'select',
+        options: ['legend', 'label'],
+        defaultValue: 'legend',
+        description: 'Legend visual style',
+      },
+      {
+        name: 'labelText',
+        type: 'text',
+        defaultValue: 'Email Address',
+        description: 'Field label/title text',
+      },
+      {
+        name: 'controlText',
+        type: 'text',
+        defaultValue: 'Attach your form control here',
+        description: 'Placeholder text for your own control',
+      },
+      {
+        name: 'descriptionText',
+        type: 'text',
+        defaultValue: 'We will only use this for product updates.',
+        description: 'Support text under the field',
+      },
+      {
+        name: 'separatorText',
+        type: 'text',
+        defaultValue: 'Optional',
+        description: 'Inline content shown in the separator',
+      },
+      {
+        name: 'showDescription',
+        type: 'boolean',
+        defaultValue: true,
+        description: 'Toggle field description visibility',
+      },
+      {
+        name: 'showError',
+        type: 'boolean',
+        defaultValue: false,
+        description: 'Toggle error state preview',
+      },
+      {
+        name: 'errorMessage',
+        type: 'text',
+        defaultValue: 'Please enter a valid email address.',
+        description: 'Validation message shown in error state',
       },
     ],
   },

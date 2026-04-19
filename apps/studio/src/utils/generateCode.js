@@ -79,6 +79,62 @@ export function generateJSXCode(componentId, componentName, propValues, customCl
       const inputPropsString = inputPropsArray.length > 0 ? ' ' + inputPropsArray.join(' ') : '';
       return `<Input${inputPropsString} />`;
 
+    case 'radio':
+      const options = Array.isArray(propValues.options)
+        ? propValues.options
+        : [
+            { label: 'Option 1', value: 'option1' },
+            { label: 'Option 2', value: 'option2' },
+            { label: 'Option 3', value: 'option3' },
+          ];
+      const radioDefaultValue = propValues.defaultValue;
+      const escapeAttribute = (input) => String(input).replace(/"/g, '\\"');
+      const optionsMarkup = options
+        .map((option) => {
+          const optionValue = String(option.value);
+          const optionId = `option-${optionValue}`;
+          const safeValue = escapeAttribute(optionValue);
+          const safeId = escapeAttribute(optionId);
+          const safeLabel = escapeAttribute(option.label);
+          return `  <label className="flex items-center gap-2">
+    <RadioGroupItem value="${safeValue}" id="${safeId}" />
+    <span>${safeLabel}</span>
+  </label>`;
+        })
+        .join('\n');
+
+      const defaultValueProp = radioDefaultValue !== undefined && radioDefaultValue !== null
+        ? ` defaultValue="${escapeAttribute(radioDefaultValue)}"`
+        : '';
+      return `<RadioGroup${defaultValueProp}${propValues.disabled ? ' disabled' : ''}${customClassName ? ` className="${customClassName}"` : ''}>
+${optionsMarkup}
+</RadioGroup>`;
+
+    case 'field':
+      const fieldOrientation = propValues.orientation || 'vertical';
+      const fieldLegendVariant = propValues.legendVariant || 'legend';
+      const fieldShowDescription = propValues.showDescription !== false;
+      const fieldShowError = Boolean(propValues.showError);
+      const fieldClassProp = customClassName ? ` className="${customClassName}"` : '';
+      return `<FieldSet>
+  <FieldLegend variant="${fieldLegendVariant}">${propValues.legendText || 'Profile Details'}</FieldLegend>
+  <FieldGroup>
+    <Field orientation="${fieldOrientation}"${fieldShowError ? ' data-invalid' : ''}${fieldClassProp}>
+      <FieldLabel>
+        <FieldTitle>${propValues.labelText || 'Email Address'}</FieldTitle>
+      </FieldLabel>
+      <FieldContent>
+        <div data-slot="field-control" className="rounded-md border border-dashed border-input bg-muted/30 px-3 py-2 text-sm text-muted-foreground">
+          ${propValues.controlText || 'Attach your form control here'}
+        </div>
+${fieldShowDescription ? `        <FieldDescription>${propValues.descriptionText || 'We will only use this for product updates.'}</FieldDescription>` : ''}
+${fieldShowError ? `        <FieldError errors={[{ message: "${propValues.errorMessage || 'Please enter a valid email address.'}" }]} />` : ''}
+      </FieldContent>
+    </Field>
+    <FieldSeparator>${propValues.separatorText || 'Optional'}</FieldSeparator>
+  </FieldGroup>
+</FieldSet>`;
+
     case 'button':
     default:
       // Simple component with props
@@ -106,7 +162,7 @@ export function generateJSXCode(componentId, componentName, propValues, customCl
 
 export function generateCSSClasses(componentId, variantsConfig, propValues, customClassName = '') {
   // Compound components don't have direct CSS classes
-  if (['dialog', 'dropdown-menu', 'tooltip'].includes(componentId)) {
+  if (['dialog', 'dropdown-menu', 'tooltip', 'radio'].includes(componentId)) {
     return customClassName 
       ? `Custom classes:\n  ${customClassName.split(' ').join('\n  ')}\n\nCompound component - styles applied to sub-components`
       : 'Compound component - styles applied to sub-components';

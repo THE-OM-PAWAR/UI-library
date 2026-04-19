@@ -23,6 +23,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@rollup/rollup-win32-arm64-msvc": "^4.60.1",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.17",
     "postcss": "^8.4.35",

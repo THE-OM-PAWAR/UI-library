@@ -35,3 +35,21 @@ export {
 export { Input } from "./ui/input/index.js"
 export { Alert, AlertTitle, AlertDescription, AlertAction } from './ui/alert/index.js';
 export { Tabs, TabsList, TabsTrigger, TabsContent, TabsDemo } from './ui/tabs/index.js';
+export { RadioGroup, RadioGroupItem, RadioItem, RadioDemo } from "./ui/radio-group/index.js"
+export { Label } from './ui/label/index.js';
+export { Separator } from './ui/separator/index.js';
+export {
+  Field,
+  FieldContent,
+  FieldDescription,
+  FieldError,
+  FieldGroup,
+  FieldLabel,
+  FieldLegend,
+  FieldSeparator,
+  FieldSet,
+  FieldTitle,
+  FieldDemo,
+  fieldVariants,
+  fieldVariantsConfig,
+} from './ui/field/index.js';

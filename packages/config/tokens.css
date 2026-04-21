@@ -44,7 +44,7 @@
 @import "@radix-ui/colors/green-dark-alpha.css";
 @import "@radix-ui/colors/amber-dark-alpha.css";
 
-@layer base {
+
   :root {
     /* ============================================
        SCALING
@@ -389,4 +389,4 @@
     /* Overlay (Alpha) */
     --overlay: var(--gray-a8);
   }
-}
+

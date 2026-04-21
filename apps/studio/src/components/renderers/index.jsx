@@ -2,6 +2,7 @@ export { renderButton } from './button.jsx';
 export { renderDialog } from './dialog.jsx';
 export { renderDrawer } from './drawer.jsx';
 export { renderDropdownMenu } from './dropdown.jsx';
+export { renderContextMenu } from './context-menu.jsx';
 export { renderTooltip } from './tooltip.jsx';
 export { renderInput } from './input.jsx';
 export { renderAlert } from './alert.jsx';

@@ -86,6 +86,25 @@ export {
   DropdownMenuRadioGroup,
 } from './ui/dropdown-menu.jsx';
 
+// Context Menu
+export {
+  ContextMenu,
+  ContextMenuTrigger,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuCheckboxItem,
+  ContextMenuRadioItem,
+  ContextMenuLabel,
+  ContextMenuSeparator,
+  ContextMenuShortcut,
+  ContextMenuGroup,
+  ContextMenuPortal,
+  ContextMenuSub,
+  ContextMenuSubContent,
+  ContextMenuSubTrigger,
+  ContextMenuRadioGroup,
+} from './ui/context-menu.jsx';
+
 // Tooltip
 export {
   Tooltip,

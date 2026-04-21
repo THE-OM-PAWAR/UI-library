@@ -19,6 +19,10 @@ export const componentConfigs = {
     id: "dropdown-menu",
     name: "Dropdown Menu",
   },
+  "context-menu": {
+    id: "context-menu",
+    name: "Context Menu",
+  },
   tooltip: {
     id: "tooltip",
     name: "Tooltip",

@@ -71,6 +71,10 @@ export const componentConfigs = {
     id: 'separator',
     name: 'Separator',
   },
+  aspectRatio: {
+    id: 'aspectRatio',
+    name: 'Aspect Ratio'
+  }
 };
 
 export const componentList = Object.values(componentConfigs);

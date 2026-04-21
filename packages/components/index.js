@@ -102,3 +102,6 @@ export { Toaster } from './ui/sonner.jsx';
 
 // Data Table
 export { DataTable } from './ui/data-table.jsx';
+
+//Aspect ratio
+export {AspectRatio, AspectRatioVarients} from './ui/aspectRatio.jsx'

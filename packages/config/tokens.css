@@ -44,8 +44,7 @@
 @import "@radix-ui/colors/green-dark-alpha.css";
 @import "@radix-ui/colors/amber-dark-alpha.css";
 
-@layer base {
-  :root {
+:root {
     /* ============================================
        SCALING
        Global size multiplier
@@ -331,7 +330,7 @@
     --overlay: var(--gray-a8);
   }
   
-  .dark {
+.dark {
     /* ============================================
        SEMANTIC TOKENS - Dark Mode
        Radix automatically switches to dark variants
@@ -388,5 +387,4 @@
     
     /* Overlay (Alpha) */
     --overlay: var(--gray-a8);
-  }
 }

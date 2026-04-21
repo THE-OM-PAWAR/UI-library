@@ -102,3 +102,8 @@ export { Toaster } from './ui/sonner.jsx';
 
 // Data Table
 export { DataTable } from './ui/data-table.jsx';
+
+//scroll-area 
+
+export { ScrollArea, ScrollBar } from './ui/scroll-area.jsx'
+

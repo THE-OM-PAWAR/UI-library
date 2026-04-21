@@ -1,3 +1,5 @@
+import { ScrollArea } from "@radix-ui/react-scroll-area";
+
 /**
  * Simplified Component Registry
  * Just stores component metadata for navigation and display
@@ -70,6 +72,10 @@ export const componentConfigs = {
   separator: {
     id: 'separator',
     name: 'Separator',
+  },
+  'scroll-area': {
+    id: 'scroll-area',
+    name: 'Scroll Area',
   },
 };
 

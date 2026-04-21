@@ -15,3 +15,4 @@ export { renderTable } from './table.jsx';
 export { renderDataTable } from './data-table.jsx';
 export { renderSwitch } from './switch.jsx';
 export { renderSeparator } from './separator.jsx';
+export { renderScrollArea } from './scroll-area.jsx'

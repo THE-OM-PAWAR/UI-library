@@ -71,6 +71,10 @@ export const componentConfigs = {
     id: 'separator',
     name: 'Separator',
   },
+  skeleton: {
+  id: "skeleton",
+  name: "Skeleton",
+},
 };
 
 export const componentList = Object.values(componentConfigs);

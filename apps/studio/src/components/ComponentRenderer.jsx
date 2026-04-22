@@ -18,8 +18,12 @@ import {
   renderTable,
   renderDataTable,
   renderSwitch,
-  renderSeparator
+  renderSeparator,
+ renderButtonGroup,
+ renderEmpty,
+ renderCollapsible
 } from "./renderers/index.jsx";
+
 
 export function ComponentRenderer({ componentId }) {
   const config = componentConfigs[componentId];
@@ -51,6 +55,9 @@ export function ComponentRenderer({ componentId }) {
       "data-table": renderDataTable,
       switch: renderSwitch,
       separator: renderSeparator,
+      buttongroup:renderButtonGroup,
+      empty:renderEmpty,
+      collapsible:renderCollapsible,
     };
 
     const renderer = renderers[componentId];

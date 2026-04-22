@@ -86,7 +86,11 @@ export const componentConfigs = {
   menubar: {
     id: 'menubar',
     name: 'Menubar',
-  }
+  },
+  skeleton: {
+  id: "skeleton",
+  name: "Skeleton",
+},
 };
 
 export const componentList = Object.values(componentConfigs);

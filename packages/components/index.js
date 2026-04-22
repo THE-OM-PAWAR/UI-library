@@ -1,3 +1,5 @@
+
+
 // Button
 export { Button, buttonVariants } from './ui/button.jsx';
 
@@ -117,3 +119,6 @@ export {
   MenubarContent,
   MenubarItem,
 } from './ui/menubar.jsx';
+
+// Skeleton
+export * from './ui/skeleton.jsx';

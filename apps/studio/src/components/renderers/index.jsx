@@ -19,3 +19,4 @@ export {renderKbd} from './kbd.jsx';
 export {renderLabel} from './label.jsx';
 export {renderItem} from './item.jsx';
 export {renderMenubar} from './menubar.jsx';
+export { renderSkeleton } from './skeleton.jsx';

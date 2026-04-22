@@ -193,6 +193,11 @@ export default {
         '2xl': 'var(--radius-2xl)',
         full: 'var(--radius-full)',
       },
+      keyframes: {
+        shimmer: {
+          '100%': { transform: 'translateX(100%)' },
+        },
+      },
     },
   },
   plugins: [],

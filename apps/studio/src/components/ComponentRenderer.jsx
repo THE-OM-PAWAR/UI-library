@@ -23,6 +23,7 @@ import {
   renderLabel,
   renderItem,
   renderMenubar,
+  renderSkeleton,
 } from "./renderers/index.jsx";
 
 export function ComponentRenderer({ componentId }) {
@@ -59,6 +60,7 @@ export function ComponentRenderer({ componentId }) {
       label: renderLabel,
       item: renderItem,
       menubar: renderMenubar,
+      skeleton: renderSkeleton,
     };
 
     const renderer = renderers[componentId];

@@ -24,7 +24,8 @@ import {
   renderItem,
   renderMenubar,
   renderSkeleton,
-  renderScrollArea
+  renderScrollArea,
+  renderHoverCard
 } from "./renderers/index.jsx";
 
 
@@ -64,6 +65,7 @@ export function ComponentRenderer({ componentId }) {
       menubar: renderMenubar,
       skeleton: renderSkeleton,
       "scroll-area":renderScrollArea,
+      "hover-card": renderHoverCard,
     };
 
     const renderer = renderers[componentId];

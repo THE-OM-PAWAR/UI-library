@@ -97,6 +97,10 @@ export const componentConfigs = {
     id: 'scroll-area',
     name: 'Scroll Area',
   },
+  'hover-card': {
+    id: 'hover-card',
+    name: 'Hover Card',
+  },
 };
 
 export const componentList = Object.values(componentConfigs);

@@ -122,6 +122,10 @@ export {
 
 // Skeleton
 export * from './ui/skeleton.jsx';
+
+// Hover Card
+export { HoverCard, HoverCardTrigger, HoverCardContent } from './ui/hover-card.jsx';
+
 //scroll-area 
 
 export { ScrollArea, ScrollBar } from './ui/scroll-area.jsx'

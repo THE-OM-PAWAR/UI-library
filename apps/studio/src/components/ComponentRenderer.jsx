@@ -29,8 +29,17 @@ import {
   renderHoverCard,
  renderButtonGroup,
  renderEmpty,
- renderCollapsible,
+  renderCollapsible,
   renderCombobox,
+  renderAccordion,
+  renderAvatar,
+  renderCalendar,
+  renderBreadcrumb,
+  renderCarousel,
+  renderNavigationMenu,
+  renderPagination,
+  renderSheet,
+  renderResizable,
 } from "./renderers/index.jsx";
 
 
@@ -76,6 +85,15 @@ export function ComponentRenderer({ componentId }) {
       empty:renderEmpty,
       collapsible:renderCollapsible,
       combobox: renderCombobox,
+      accordion: renderAccordion,
+      avatar: renderAvatar,
+      calendar: renderCalendar,
+      breadcrumb: renderBreadcrumb,
+      carousel: renderCarousel,
+      "navigation-menu": renderNavigationMenu,
+      pagination: renderPagination,
+      sheet: renderSheet,
+      resizable: renderResizable,
     };
 
     const renderer = renderers[componentId];

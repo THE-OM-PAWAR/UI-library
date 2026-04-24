@@ -181,3 +181,82 @@ export {
   ComboboxLabel,
   ComboboxSeparator,
 } from './ui/combobox.jsx';
+
+// Accordion
+export { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from './ui/accordion.jsx';
+
+// Avatar
+export {
+  Avatar,
+  AvatarImage,
+  AvatarFallback,
+  AvatarBadge,
+  AvatarGroup,
+  AvatarGroupCount,
+} from './ui/avatar.jsx';
+
+// Calendar
+export { Calendar, CalendarDayButton } from './ui/calendar.jsx';
+
+// Breadcrumb
+export {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+  BreadcrumbEllipsis,
+} from './ui/breadcrumb.jsx';
+
+// Carousel
+export {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+  useCarousel,
+} from './ui/carousel.jsx';
+
+// Navigation Menu
+export {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuContent,
+  NavigationMenuTrigger,
+  NavigationMenuLink,
+  NavigationMenuIndicator,
+  NavigationMenuViewport,
+  navigationMenuTriggerStyle,
+} from './ui/navigation-menu.jsx';
+
+// Pagination
+export {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from './ui/pagination.jsx';
+
+// Sheet
+export {
+  Sheet,
+  SheetTrigger,
+  SheetClose,
+  SheetPortal,
+  SheetOverlay,
+  SheetContent,
+  SheetHeader,
+  SheetFooter,
+  SheetTitle,
+  SheetDescription,
+} from './ui/sheet.jsx';
+
+// Resizable
+export { ResizableHandle, ResizablePanel, ResizablePanelGroup } from './ui/resizable.jsx';
+

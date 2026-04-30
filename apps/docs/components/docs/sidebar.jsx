@@ -16,15 +16,15 @@ export function DocsSidebar() {
             <h4 className="mb-2 px-2 py-1 text-sm font-semibold text-foreground">
               {section.title}
             </h4>
-            <div className="grid grid-flow-row auto-rows-max text-sm">
+            <div className="grid grid-flow-row gap-1 auto-rows-max text-sm">
               {section.items.map((item, index) => (
                 <Link
                   key={index}
                   href={item.href}
                   className={cn(
-                    "group flex w-full items-center rounded-md px-2 py-1.5 text-sm transition-colors hover:text-foreground hover:bg-muted/50",
+                    "group flex w-auto items-center rounded-md px-2 py-1.5 text-sm transition-colors hover:text-foreground hover:bg-muted/50",
                     pathname === item.href
-                      ? "font-medium text-foreground bg-muted"
+                      ? "font-medium text-foreground bg-muted/30"
                       : "text-muted-foreground"
                   )}
                 >

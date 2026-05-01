@@ -41,6 +41,10 @@ export const componentConfigs = {
         id: "calendar",
         name: "Calendar",
     },
+    checkbox: {
+        id: "checkbox",
+        name: "Checkbox",
+    },
     card: {
         id: "card",
         name: "Card",

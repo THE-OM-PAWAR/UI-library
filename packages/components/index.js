@@ -198,7 +198,6 @@ export {
 
 // Calendar
 export { Calendar, CalendarDayButton } from "./ui/calendar.jsx";
-
 // Carousel
 export {
     Carousel,
@@ -208,6 +207,8 @@ export {
     CarouselPrevious,
     useCarousel,
 } from "./ui/carousel.jsx";
+// Checkbox
+export { Checkbox, checkboxVariants } from "./ui/checkbox.jsx";
 
 export {
     Collapsible,

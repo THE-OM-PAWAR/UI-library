@@ -9,6 +9,7 @@ export { renderButtonGroup } from "./buttongroup.jsx";
 export { renderCalendar } from "./calendar.jsx";
 export { renderCard } from "./card.jsx";
 export { renderCarousel } from "./carousel.jsx";
+export { renderCheckbox } from "./checkbox.jsx";
 export { renderCollapsible } from "./collapsible.jsx";
 export { renderCombobox } from "./combobox.jsx";
 export { renderContextMenu } from "./context-menu.jsx";

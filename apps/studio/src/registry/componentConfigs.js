@@ -193,6 +193,10 @@ export const componentConfigs = {
         id: "toggle",
         name: "Toggle",
     },
+    chart: {
+        id:"chart",
+        name:"Chart"
+    }
 };
 
 export const componentList = Object.values(componentConfigs);

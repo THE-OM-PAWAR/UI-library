@@ -45,3 +45,4 @@ export { renderTabs } from "./tabs.jsx";
 export { renderTextarea } from "./textarea.jsx";
 export { renderToggle } from "./toggle.jsx";
 export { renderTooltip } from "./tooltip.jsx";
+export {renderChart} from "./chart.jsx"

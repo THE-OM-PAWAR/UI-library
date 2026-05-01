@@ -49,6 +49,7 @@ import {
     renderTextarea,
     renderToggle,
     renderTooltip,
+    renderChart,
 } from "./renderers/index.jsx";
 
 export function ComponentRenderer({ componentId }) {
@@ -111,6 +112,7 @@ export function ComponentRenderer({ componentId }) {
             toggle: renderToggle,
             spinner: renderSpinner,
             textarea: renderTextarea,
+            chart:renderChart,
         };
 
         const renderer = renderers[componentId];

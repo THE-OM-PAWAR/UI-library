@@ -249,8 +249,11 @@ export {
     EmptyMedia,
     EmptyTitle,
 } from "./ui/empty.jsx";
+// Headings
+export { Heading } from "./ui/headings.jsx";
 // Image
 export { Image } from "./ui/image.jsx";
+
 // Navigation Menu
 export {
     NavigationMenu,
@@ -263,6 +266,7 @@ export {
     NavigationMenuViewport,
     navigationMenuTriggerStyle,
 } from "./ui/navigation-menu.jsx";
+
 // Pagination
 export {
     Pagination,
@@ -273,15 +277,19 @@ export {
     PaginationNext,
     PaginationPrevious,
 } from "./ui/pagination.jsx";
+
 // Progress
 export { Progress } from "./ui/progress.jsx";
+
 // Resizable
 export {
     ResizableHandle,
     ResizablePanel,
     ResizablePanelGroup,
 } from "./ui/resizable.jsx";
+
 export { ScrollArea, ScrollBar } from "./ui/scroll-area.jsx";
+
 // Sheet
 export {
     Sheet,

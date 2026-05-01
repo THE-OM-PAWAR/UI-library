@@ -5,13 +5,61 @@ import { ScrollArea } from "@radix-ui/react-scroll-area";
  * Just stores component metadata for navigation and display
  */
 export const componentConfigs = {
+    accordion: {
+        id: "accordion",
+        name: "Accordion",
+    },
+    alert: {
+        id: "alert",
+        name: "Alert",
+    },
+    avatar: {
+        id: "avatar",
+        name: "Avatar",
+    },
+    badge: {
+        id: "badge",
+        name: "Badge",
+    },
+    breadcrumb: {
+        id: "breadcrumb",
+        name: "Breadcrumb",
+    },
     button: {
         id: "button",
         name: "Button",
     },
-    image: {
-        id: "image",
-        name: "Image",
+    buttongroup: {
+        id: "buttongroup",
+        name: "ButtonGroup",
+    },
+    calendar: {
+        id: "calendar",
+        name: "Calendar",
+    },
+    card: {
+        id: "card",
+        name: "Card",
+    },
+    carousel: {
+        id: "carousel",
+        name: "Carousel",
+    },
+    collapsible: {
+        id: "collapsible",
+        name: "Collapsible",
+    },
+    combobox: {
+        id: "combobox",
+        name: "Combobox",
+    },
+    "context-menu": {
+        id: "context-menu",
+        name: "Context Menu",
+    },
+    "data-table": {
+        id: "data-table",
+        name: "Data Table",
     },
     dialog: {
         id: "dialog",
@@ -25,65 +73,33 @@ export const componentConfigs = {
         id: "dropdown-menu",
         name: "Dropdown Menu",
     },
-    "context-menu": {
-        id: "context-menu",
-        name: "Context Menu",
-    },
-    tooltip: {
-        id: "tooltip",
-        name: "Tooltip",
-    },
-    input: {
-        id: "input",
-        name: "Input",
-    },
-    alert: {
-        id: "alert",
-        name: "Alert",
-    },
-    tabs: {
-        id: "tabs",
-        name: "Tabs",
-    },
-    radio: {
-        id: "radio",
-        name: "Radio Group",
-    },
-    table: {
-        id: "table",
-        name: "Table",
-    },
-    "data-table": {
-        id: "data-table",
-        name: "Data Table",
+    empty: {
+        id: "empty",
+        name: "Empty",
     },
     field: {
         id: "field",
         name: "Field",
     },
-    sonner: {
-        id: "sonner",
-        name: "Sonner",
+    headings: {
+        id: "headings",
+        name: "Headings",
     },
-    badge: {
-        id: "badge",
-        name: "Badge",
+    "hover-card": {
+        id: "hover-card",
+        name: "Hover Card",
     },
-    card: {
-        id: "card",
-        name: "Card",
+    image: {
+        id: "image",
+        name: "Image",
     },
-    switch: {
-        id: "switch",
-        name: "Switch",
+    input: {
+        id: "input",
+        name: "Input",
     },
-    separator: {
-        id: "separator",
-        name: "Separator",
-    },
-    combobox: {
-        id: "combobox",
-        name: "Combobox",
+    item: {
+        id: "item",
+        name: "Item",
     },
     kbd: {
         id: "kbd",
@@ -93,57 +109,9 @@ export const componentConfigs = {
         id: "label",
         name: "Label",
     },
-    item: {
-        id: "item",
-        name: "Item",
-    },
     menubar: {
         id: "menubar",
         name: "Menubar",
-    },
-    skeleton: {
-        id: "skeleton",
-        name: "Skeleton",
-    },
-    "scroll-area": {
-        id: "scroll-area",
-        name: "Scroll Area",
-    },
-    "hover-card": {
-        id: "hover-card",
-        name: "Hover Card",
-    },
-    buttongroup: {
-        id: "buttongroup",
-        name: "ButtonGroup",
-    },
-    empty: {
-        id: "empty",
-        name: "Empty",
-    },
-    collapsible: {
-        id: "collapsible",
-        name: "Collapsible",
-    },
-    accordion: {
-        id: "accordion",
-        name: "Accordion",
-    },
-    avatar: {
-        id: "avatar",
-        name: "Avatar",
-    },
-    calendar: {
-        id: "calendar",
-        name: "Calendar",
-    },
-    breadcrumb: {
-        id: "breadcrumb",
-        name: "Breadcrumb",
-    },
-    carousel: {
-        id: "carousel",
-        name: "Carousel",
     },
     "navigation-menu": {
         id: "navigation-menu",
@@ -153,17 +121,53 @@ export const componentConfigs = {
         id: "pagination",
         name: "Pagination",
     },
-    sheet: {
-        id: "sheet",
-        name: "Sheet",
+    progress: {
+        id: "progress",
+        name: "Progress",
+    },
+    radio: {
+        id: "radio",
+        name: "Radio Group",
     },
     resizable: {
         id: "resizable",
         name: "Resizable",
     },
-    progress: {
-        id: "progress",
-        name: "Progress",
+    "scroll-area": {
+        id: "scroll-area",
+        name: "Scroll Area",
+    },
+    separator: {
+        id: "separator",
+        name: "Separator",
+    },
+    sheet: {
+        id: "sheet",
+        name: "Sheet",
+    },
+    skeleton: {
+        id: "skeleton",
+        name: "Skeleton",
+    },
+    sonner: {
+        id: "sonner",
+        name: "Sonner",
+    },
+    switch: {
+        id: "switch",
+        name: "Switch",
+    },
+    table: {
+        id: "table",
+        name: "Table",
+    },
+    tabs: {
+        id: "tabs",
+        name: "Tabs",
+    },
+    tooltip: {
+        id: "tooltip",
+        name: "Tooltip",
     },
 };
 

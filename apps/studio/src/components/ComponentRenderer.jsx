@@ -21,6 +21,7 @@ import {
     renderDropdownMenu,
     renderEmpty,
     renderField,
+    renderHeadings,
     renderHoverCard,
     renderImage,
     renderInput,
@@ -97,6 +98,7 @@ export function ComponentRenderer({ componentId }) {
             resizable: renderResizable,
             progress: renderProgress,
             image: renderImage,
+            headings: renderHeadings,
         };
 
         const renderer = renderers[componentId];

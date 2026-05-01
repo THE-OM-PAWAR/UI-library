@@ -18,6 +18,7 @@ export { renderDropdownMenu } from "./dropdown.jsx";
 export { renderEmpty } from "./empty.jsx";
 export { renderField } from "./field.jsx";
 export { renderHoverCard } from "./hoverCard.jsx";
+export { renderImage } from "./image.jsx";
 export { renderInput } from "./input.jsx";
 export { renderItem } from "./item.jsx";
 export { renderKbd } from "./kbd.jsx";

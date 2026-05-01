@@ -9,6 +9,10 @@ export const componentConfigs = {
         id: "button",
         name: "Button",
     },
+    image: {
+        id: "image",
+        name: "Image",
+    },
     dialog: {
         id: "dialog",
         name: "Dialog",

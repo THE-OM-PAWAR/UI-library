@@ -22,6 +22,7 @@ import {
     renderEmpty,
     renderField,
     renderHoverCard,
+    renderImage,
     renderInput,
     renderItem,
     renderKbd,
@@ -95,6 +96,7 @@ export function ComponentRenderer({ componentId }) {
             sheet: renderSheet,
             resizable: renderResizable,
             progress: renderProgress,
+            image: renderImage,
         };
 
         const renderer = renderers[componentId];

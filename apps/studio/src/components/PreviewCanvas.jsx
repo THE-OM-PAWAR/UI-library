@@ -12,9 +12,9 @@ export function PreviewCanvas({ children, componentName }) {
     };
 
     return (
-        <div className="flex-1 flex flex-col">
+        <div className="flex flex-col flex-1">
             {/* Toolbar */}
-            <div className="h-12 border-b border-border flex items-center justify-between px-4 shrink-0">
+            <div className="flex items-center justify-between h-12 px-4 border-b border-border shrink-0">
                 <div className="flex items-center gap-2">
                     <h1 className="text-sm font-semibold">{componentName}</h1>
                 </div>
@@ -34,7 +34,7 @@ export function PreviewCanvas({ children, componentName }) {
                         )}
                         title="Toggle grid background"
                     >
-                        <Grid3x3 className="h-4 w-4" />
+                        <Grid3x3 className="w-4 h-4" />
                     </button>
                 </div>
             </div>
@@ -42,11 +42,11 @@ export function PreviewCanvas({ children, componentName }) {
             {/* Canvas */}
             <div
                 className={cn(
-                    "flex-1 flex items-center justify-center p-8 overflow-auto",
+                    "flex-1 overflow-auto p-8",
                     backgrounds[background]
                 )}
             >
-                <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center min-h-full">
                     {children}
                 </div>
             </div>

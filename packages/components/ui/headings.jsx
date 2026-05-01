@@ -12,6 +12,8 @@ const headingVariants = cva("text-pretty", {
             h6: "text-sm lg:text-base xl:text-lg max-w-2xl",
             p: "text-sm md:text-base text-muted-foreground max-w-2xl",
             xs: "text-xs md:text-sm uppercase text-muted-foreground",
+            code: "text-xs font-mono bg-muted px-2 py-1 rounded",
+            span: "text-sm text-muted-foreground",
         },
     },
     defaultVariants: {

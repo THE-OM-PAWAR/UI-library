@@ -5,6 +5,10 @@ import { ScrollArea } from "@radix-ui/react-scroll-area";
  * Just stores component metadata for navigation and display
  */
 export const componentConfigs = {
+    "aspect-ratio": {
+        id: "aspect-ratio",
+        name: "Aspect Ratio",
+    },
     accordion: {
         id: "accordion",
         name: "Accordion",
@@ -36,6 +40,10 @@ export const componentConfigs = {
     calendar: {
         id: "calendar",
         name: "Calendar",
+    },
+    checkbox: {
+        id: "checkbox",
+        name: "Checkbox",
     },
     card: {
         id: "card",
@@ -121,6 +129,10 @@ export const componentConfigs = {
         id: "pagination",
         name: "Pagination",
     },
+    popover: {
+        id: "popover",
+        name: "Popover",
+    },
     progress: {
         id: "progress",
         name: "Progress",
@@ -157,6 +169,10 @@ export const componentConfigs = {
         id: "switch",
         name: "Switch",
     },
+    spinner: {
+        id: "spinner",
+        name: "Spinner",
+    },
     table: {
         id: "table",
         name: "Table",
@@ -165,9 +181,17 @@ export const componentConfigs = {
         id: "tabs",
         name: "Tabs",
     },
+    textarea: {
+        id: "textarea",
+        name: "Textarea",
+    },
     tooltip: {
         id: "tooltip",
         name: "Tooltip",
+    },
+    toggle: {
+        id: "toggle",
+        name: "Toggle",
     },
 };
 

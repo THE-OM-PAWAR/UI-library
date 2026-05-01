@@ -1,3 +1,5 @@
+// Toggle
+
 // Alert
 export {
     Alert,
@@ -7,12 +9,12 @@ export {
     alertVariants,
 } from "./ui/alert.jsx";
 
+// Aspect Ratio
+export { AspectRatio } from "./ui/aspect-ratio.jsx";
 // Badge
 export { Badge, badgeVariants } from "./ui/badge.jsx";
-
 // Button
 export { Button, buttonVariants } from "./ui/button.jsx";
-
 // Card
 export {
     Card,
@@ -22,7 +24,6 @@ export {
     CardHeader,
     CardTitle,
 } from "./ui/card.jsx";
-
 // Context Menu
 export {
     ContextMenu,
@@ -41,10 +42,8 @@ export {
     ContextMenuSubTrigger,
     ContextMenuTrigger,
 } from "./ui/context-menu.jsx";
-
 // Data Table
 export { DataTable } from "./ui/data-table.jsx";
-
 // Dialog
 export {
     Dialog,
@@ -58,7 +57,6 @@ export {
     DialogTitle,
     DialogTrigger,
 } from "./ui/dialog.jsx";
-
 // Drawer
 export {
     Drawer,
@@ -72,7 +70,6 @@ export {
     DrawerTitle,
     DrawerTrigger,
 } from "./ui/drawer.jsx";
-
 // Dropdown Menu
 export {
     DropdownMenu,
@@ -87,7 +84,6 @@ export {
     DropdownMenuSub,
     DropdownMenuTrigger,
 } from "./ui/dropdown-menu.jsx";
-
 // Field
 export {
     Field,
@@ -102,26 +98,20 @@ export {
     FieldTitle,
     fieldVariants,
 } from "./ui/field.jsx";
-
 // Hover Card
 export {
     HoverCard,
     HoverCardContent,
     HoverCardTrigger,
 } from "./ui/hover-card.jsx";
-
 // Input
 export { Input } from "./ui/input.jsx";
-
 // Item
 export { Item } from "./ui/item.jsx";
-
 // Kbd
 export { Kbd } from "./ui/kbd.jsx";
-
 // Label
 export { Label } from "./ui/label.jsx";
-
 // Menubar
 export {
     Menubar,
@@ -132,19 +122,16 @@ export {
 } from "./ui/menubar.jsx";
 // Radio Group
 export { RadioGroup, RadioGroupItem } from "./ui/radio-group.jsx";
-
 // Separator
 export { Separator } from "./ui/separator.jsx";
-
 // Skeleton
 export * from "./ui/skeleton.jsx";
-
 // Sonner
 export { Toaster } from "./ui/sonner.jsx";
-
+// Spinner
+export { Spinner } from "./ui/spinner.jsx";
 // Switch
 export { Switch } from "./ui/switch.jsx";
-
 // Table
 export {
     Table,
@@ -156,9 +143,11 @@ export {
     TableHeader,
     TableRow,
 } from "./ui/table.jsx";
-
 // Tabs
 export { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs.jsx";
+// Textarea
+export { Textarea } from "./ui/text-area.jsx";
+export { Toggle, toggleVariants } from "./ui/toggle.jsx";
 
 // Tooltip
 export {
@@ -209,7 +198,6 @@ export {
 
 // Calendar
 export { Calendar, CalendarDayButton } from "./ui/calendar.jsx";
-
 // Carousel
 export {
     Carousel,
@@ -219,6 +207,8 @@ export {
     CarouselPrevious,
     useCarousel,
 } from "./ui/carousel.jsx";
+// Checkbox
+export { Checkbox, checkboxVariants } from "./ui/checkbox.jsx";
 
 export {
     Collapsible,
@@ -277,6 +267,17 @@ export {
     PaginationNext,
     PaginationPrevious,
 } from "./ui/pagination.jsx";
+
+// Popover
+export {
+    Popover,
+    PopoverAnchor,
+    PopoverContent,
+    PopoverDescription,
+    PopoverHeader,
+    PopoverTitle,
+    PopoverTrigger,
+} from "./ui/popover.jsx";
 
 // Progress
 export { Progress } from "./ui/progress.jsx";

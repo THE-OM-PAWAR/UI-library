@@ -46,7 +46,7 @@ export function PreviewCanvas({ children, componentName }) {
                     backgrounds[background]
                 )}
             >
-                <div className="flex items-center justify-center min-h-full">
+                <div className="flex items-center justify-center min-h-full mx-auto max-w-7xl">
                     {children}
                 </div>
             </div>

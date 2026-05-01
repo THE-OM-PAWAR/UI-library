@@ -1,22 +1,22 @@
 {
-  "name": "@repo/config",
-  "version": "1.0.0",
-  "type": "module",
-  "main": "tailwind.config.js",
-  "scripts": {
-    "generate:theme": "node generate-theme.js"
-  },
-  "files": [
-    "tailwind.config.js",
-    "tokens.css",
-    "theme.config.js",
-    "generate-theme.js",
-    "COLOR_SYSTEM.md",
-    "EXAMPLES.md",
-    "QUICK_REFERENCE.md",
-    "README.md"
-  ],
-  "dependencies": {
-    "@radix-ui/colors": "^3.0.0"
-  }
+    "name": "@repo/config",
+    "version": "1.0.0",
+    "type": "module",
+    "main": "tailwind.config.js",
+    "scripts": {
+        "generate:theme": "node generate-theme.js"
+    },
+    "files": [
+        "tailwind.config.js",
+        "tokens.css",
+        "theme.config.js",
+        "generate-theme.js",
+        "COLOR_SYSTEM.md",
+        "EXAMPLES.md",
+        "QUICK_REFERENCE.md",
+        "README.md"
+    ],
+    "dependencies": {
+        "@radix-ui/colors": "^3.0.0"
+    }
 }

@@ -1,13 +1,13 @@
 {
-  "name": "@repo/utils",
-  "version": "1.0.0",
-  "main": "src/index.js",
-  "exports": {
-    ".": "./src/index.js",
-    "./cn": "./src/cn.js"
-  },
-  "dependencies": {
-    "clsx": "^2.1.0",
-    "tailwind-merge": "^2.2.1"
-  }
+    "name": "@repo/utils",
+    "version": "1.0.0",
+    "main": "src/index.js",
+    "exports": {
+        ".": "./src/index.js",
+        "./cn": "./src/cn.js"
+    },
+    "dependencies": {
+        "clsx": "^2.1.0",
+        "tailwind-merge": "^2.2.1"
+    }
 }

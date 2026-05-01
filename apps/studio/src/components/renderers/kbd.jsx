@@ -1,5 +1,4 @@
 export function renderKbd({ Kbd }, customClassName) {
-
     return (
         <div className={`flex gap-2 ${customClassName || ""}`}>
             <Kbd>⌘</Kbd>

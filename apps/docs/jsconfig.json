@@ -1,14 +1,14 @@
 {
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./*"],
-      "@repo/components": ["../../packages/components"],
-      "@repo/components/*": ["../../packages/components/*"],
-      "@repo/utils": ["../../packages/utils/src"],
-      "@repo/utils/*": ["../../packages/utils/src/*"],
-      "@repo/config": ["../../packages/config"],
-      "@repo/config/*": ["../../packages/config/*"]
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./*"],
+            "@repo/components": ["../../packages/components"],
+            "@repo/components/*": ["../../packages/components/*"],
+            "@repo/utils": ["../../packages/utils/src"],
+            "@repo/utils/*": ["../../packages/utils/src/*"],
+            "@repo/config": ["../../packages/config"],
+            "@repo/config/*": ["../../packages/config/*"]
+        }
     }
-  }
 }

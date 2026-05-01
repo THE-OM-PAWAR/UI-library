@@ -1,60 +1,60 @@
 {
-  "title": "Button",
-  "description": "Displays a button or a component that looks like a button.",
-  "component": "Button",
-  "installation": {
-    "cli": "npx shadcn@latest add button",
-    "manual": [
-      {
-        "title": "Install dependencies",
-        "description": "Install the required dependencies for the button component.",
-        "command": "npm install @radix-ui/react-slot class-variance-authority"
-      },
-      {
-        "title": "Add utility function",
-        "description": "Create a cn utility function if you don't have one already.",
-        "filePath": "lib/utils.js",
-        "code": "import { clsx } from 'clsx';\nimport { twMerge } from 'tailwind-merge';\n\nexport function cn(...inputs) {\n  return twMerge(clsx(inputs));\n}",
-        "language": "javascript"
-      },
-      {
-        "title": "Copy the component code",
-        "description": "Create a new file and paste the button component code.",
-        "filePath": "components/ui/button.jsx",
-        "code": "import * as React from 'react';\nimport { Slot } from '@radix-ui/react-slot';\nimport { cva } from 'class-variance-authority';\nimport { cn } from '@/lib/utils';\n\nconst buttonVariants = cva(\n  \"inline-flex items-center justify-center rounded-lg text-sm font-medium transition-all\",\n  {\n    variants: {\n      variant: {\n        default: \"bg-primary text-primary-foreground hover:bg-primary/90\",\n        outline: \"border border-border bg-background hover:bg-accent\",\n        secondary: \"bg-secondary text-secondary-foreground hover:bg-secondary/80\",\n        ghost: \"hover:bg-accent hover:text-accent-foreground\",\n        destructive: \"bg-destructive text-destructive-foreground hover:bg-destructive/90\",\n        link: \"text-primary underline-offset-4 hover:underline\",\n      },\n      size: {\n        default: \"h-9 px-4\",\n        xs: \"h-6 px-2 text-xs\",\n        sm: \"h-8 px-3 text-sm\",\n        lg: \"h-10 px-5\",\n        icon: \"h-9 w-9\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n      size: \"default\",\n    },\n  }\n);\n\nconst Button = React.forwardRef(\n  ({ className, variant, size, asChild = false, ...props }, ref) => {\n    const Comp = asChild ? Slot : 'button';\n    return (\n      <Comp\n        ref={ref}\n        className={cn(buttonVariants({ variant, size }), className)}\n        {...props}\n      />\n    );\n  }\n);\n\nButton.displayName = 'Button';\n\nexport { Button, buttonVariants };",
-        "language": "jsx",
-        "collapsible": true
-      }
+    "title": "Button",
+    "description": "Displays a button or a component that looks like a button.",
+    "component": "Button",
+    "installation": {
+        "cli": "npx shadcn@latest add button",
+        "manual": [
+            {
+                "title": "Install dependencies",
+                "description": "Install the required dependencies for the button component.",
+                "command": "npm install @radix-ui/react-slot class-variance-authority"
+            },
+            {
+                "title": "Add utility function",
+                "description": "Create a cn utility function if you don't have one already.",
+                "filePath": "lib/utils.js",
+                "code": "import { clsx } from 'clsx';\nimport { twMerge } from 'tailwind-merge';\n\nexport function cn(...inputs) {\n  return twMerge(clsx(inputs));\n}",
+                "language": "javascript"
+            },
+            {
+                "title": "Copy the component code",
+                "description": "Create a new file and paste the button component code.",
+                "filePath": "components/ui/button.jsx",
+                "code": "import * as React from 'react';\nimport { Slot } from '@radix-ui/react-slot';\nimport { cva } from 'class-variance-authority';\nimport { cn } from '@/lib/utils';\n\nconst buttonVariants = cva(\n  \"inline-flex items-center justify-center rounded-lg text-sm font-medium transition-all\",\n  {\n    variants: {\n      variant: {\n        default: \"bg-primary text-primary-foreground hover:bg-primary/90\",\n        outline: \"border border-border bg-background hover:bg-accent\",\n        secondary: \"bg-secondary text-secondary-foreground hover:bg-secondary/80\",\n        ghost: \"hover:bg-accent hover:text-accent-foreground\",\n        destructive: \"bg-destructive text-destructive-foreground hover:bg-destructive/90\",\n        link: \"text-primary underline-offset-4 hover:underline\",\n      },\n      size: {\n        default: \"h-9 px-4\",\n        xs: \"h-6 px-2 text-xs\",\n        sm: \"h-8 px-3 text-sm\",\n        lg: \"h-10 px-5\",\n        icon: \"h-9 w-9\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n      size: \"default\",\n    },\n  }\n);\n\nconst Button = React.forwardRef(\n  ({ className, variant, size, asChild = false, ...props }, ref) => {\n    const Comp = asChild ? Slot : 'button';\n    return (\n      <Comp\n        ref={ref}\n        className={cn(buttonVariants({ variant, size }), className)}\n        {...props}\n      />\n    );\n  }\n);\n\nButton.displayName = 'Button';\n\nexport { Button, buttonVariants };",
+                "language": "jsx",
+                "collapsible": true
+            }
+        ]
+    },
+    "usage": {
+        "import": "import { Button } from '@repo/components';",
+        "basic": "button-demo"
+    },
+    "examples": [
+        {
+            "title": "Default",
+            "description": "The default button style.",
+            "demo": "button-demo",
+            "code": "import { Button } from \"@repo/components\";\n\nexport default function ButtonDemo() {\n  return <Button>Button</Button>;\n}"
+        },
+        {
+            "title": "Variants",
+            "description": "Different button variants for various use cases.",
+            "demo": "button-variants",
+            "code": "import { Button } from \"@repo/components\";\n\nexport default function ButtonVariants() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Button variant=\"default\">Default</Button>\n      <Button variant=\"secondary\">Secondary</Button>\n      <Button variant=\"outline\">Outline</Button>\n      <Button variant=\"ghost\">Ghost</Button>\n      <Button variant=\"destructive\">Destructive</Button>\n      <Button variant=\"link\">Link</Button>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Sizes",
+            "description": "Button sizes from extra small to large.",
+            "demo": "button-sizes",
+            "code": "import { Button } from \"@repo/components\";\n\nexport default function ButtonSizes() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Button size=\"xs\">Extra Small</Button>\n      <Button size=\"sm\">Small</Button>\n      <Button size=\"default\">Default</Button>\n      <Button size=\"lg\">Large</Button>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "With Icon",
+            "description": "Buttons with icons for enhanced visual communication.",
+            "demo": "button-with-icon",
+            "code": "import { Button } from \"@repo/components\";\nimport { Mail, ArrowRight } from \"lucide-react\";\n\nexport default function ButtonWithIcon() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Button>\n        <Mail className=\"mr-2 h-4 w-4\" />\n        Login with Email\n      </Button>\n      <Button variant=\"outline\">\n        Continue\n        <ArrowRight className=\"ml-2 h-4 w-4\" />\n      </Button>\n    </div>\n  );\n}"
+        }
     ]
-  },
-  "usage": {
-    "import": "import { Button } from '@repo/components';",
-    "basic": "button-demo"
-  },
-  "examples": [
-    {
-      "title": "Default",
-      "description": "The default button style.",
-      "demo": "button-demo",
-      "code": "import { Button } from \"@repo/components\";\n\nexport default function ButtonDemo() {\n  return <Button>Button</Button>;\n}"
-    },
-    {
-      "title": "Variants",
-      "description": "Different button variants for various use cases.",
-      "demo": "button-variants",
-      "code": "import { Button } from \"@repo/components\";\n\nexport default function ButtonVariants() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Button variant=\"default\">Default</Button>\n      <Button variant=\"secondary\">Secondary</Button>\n      <Button variant=\"outline\">Outline</Button>\n      <Button variant=\"ghost\">Ghost</Button>\n      <Button variant=\"destructive\">Destructive</Button>\n      <Button variant=\"link\">Link</Button>\n    </div>\n  );\n}"
-    },
-    {
-      "title": "Sizes",
-      "description": "Button sizes from extra small to large.",
-      "demo": "button-sizes",
-      "code": "import { Button } from \"@repo/components\";\n\nexport default function ButtonSizes() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Button size=\"xs\">Extra Small</Button>\n      <Button size=\"sm\">Small</Button>\n      <Button size=\"default\">Default</Button>\n      <Button size=\"lg\">Large</Button>\n    </div>\n  );\n}"
-    },
-    {
-      "title": "With Icon",
-      "description": "Buttons with icons for enhanced visual communication.",
-      "demo": "button-with-icon",
-      "code": "import { Button } from \"@repo/components\";\nimport { Mail, ArrowRight } from \"lucide-react\";\n\nexport default function ButtonWithIcon() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Button>\n        <Mail className=\"mr-2 h-4 w-4\" />\n        Login with Email\n      </Button>\n      <Button variant=\"outline\">\n        Continue\n        <ArrowRight className=\"ml-2 h-4 w-4\" />\n      </Button>\n    </div>\n  );\n}"
-    }
-  ]
 }

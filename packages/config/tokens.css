@@ -44,14 +44,13 @@
 @import "@radix-ui/colors/green-dark-alpha.css";
 @import "@radix-ui/colors/amber-dark-alpha.css";
 
-
-  :root {
+:root {
     /* ============================================
        SCALING
        Global size multiplier
        ============================================ */
     --scaling: 100%;
-    
+
     /* ============================================
        RADIUS SCALE - medium
        6-step border radius scale
@@ -62,7 +61,7 @@
     --radius-4: 1rem;
     --radius-5: 1.5rem;
     --radius-6: 2rem;
-    
+
     /* Semantic radius tokens */
     --radius-sm: var(--radius-1);
     --radius-md: var(--radius-2);
@@ -70,7 +69,7 @@
     --radius-xl: var(--radius-4);
     --radius-2xl: var(--radius-5);
     --radius-full: var(--radius-6);
-    
+
     /* Legacy radius token (for backward compatibility) */
     --radius: var(--radius-2);
 
@@ -228,33 +227,38 @@
        TYPOGRAPHY SYSTEM
        Production-grade type scale
        ============================================ */
-    
+
     /* Font Families */
-    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
-    
+    --font-sans:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+        Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol";
+    --font-mono:
+        ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+        "Liberation Mono", monospace;
+
     /* Font Sizes - 9-step scale (Radix Themes compatible) */
-    --font-size-1: calc(0.75rem * var(--scaling));    /* 12px */
-    --font-size-2: calc(0.875rem * var(--scaling));   /* 14px */
-    --font-size-3: calc(1rem * var(--scaling));       /* 16px - base */
-    --font-size-4: calc(1.125rem * var(--scaling));   /* 18px */
-    --font-size-5: calc(1.25rem * var(--scaling));    /* 20px */
-    --font-size-6: calc(1.5rem * var(--scaling));     /* 24px */
-    --font-size-7: calc(1.875rem * var(--scaling));   /* 30px */
-    --font-size-8: calc(2.25rem * var(--scaling));    /* 36px */
-    --font-size-9: calc(3rem * var(--scaling));       /* 48px */
-    
+    --font-size-1: calc(0.75rem * var(--scaling)); /* 12px */
+    --font-size-2: calc(0.875rem * var(--scaling)); /* 14px */
+    --font-size-3: calc(1rem * var(--scaling)); /* 16px - base */
+    --font-size-4: calc(1.125rem * var(--scaling)); /* 18px */
+    --font-size-5: calc(1.25rem * var(--scaling)); /* 20px */
+    --font-size-6: calc(1.5rem * var(--scaling)); /* 24px */
+    --font-size-7: calc(1.875rem * var(--scaling)); /* 30px */
+    --font-size-8: calc(2.25rem * var(--scaling)); /* 36px */
+    --font-size-9: calc(3rem * var(--scaling)); /* 48px */
+
     /* Line Heights */
-    --line-height-1: calc(1rem * var(--scaling));     /* 16px */
-    --line-height-2: calc(1.25rem * var(--scaling));  /* 20px */
-    --line-height-3: calc(1.5rem * var(--scaling));   /* 24px */
+    --line-height-1: calc(1rem * var(--scaling)); /* 16px */
+    --line-height-2: calc(1.25rem * var(--scaling)); /* 20px */
+    --line-height-3: calc(1.5rem * var(--scaling)); /* 24px */
     --line-height-4: calc(1.625rem * var(--scaling)); /* 26px */
-    --line-height-5: calc(1.75rem * var(--scaling));  /* 28px */
-    --line-height-6: calc(2rem * var(--scaling));     /* 32px */
-    --line-height-7: calc(2.25rem * var(--scaling));  /* 36px */
-    --line-height-8: calc(2.75rem * var(--scaling));  /* 44px */
-    --line-height-9: calc(3.75rem * var(--scaling));  /* 60px */
-    
+    --line-height-5: calc(1.75rem * var(--scaling)); /* 28px */
+    --line-height-6: calc(2rem * var(--scaling)); /* 32px */
+    --line-height-7: calc(2.25rem * var(--scaling)); /* 36px */
+    --line-height-8: calc(2.75rem * var(--scaling)); /* 44px */
+    --line-height-9: calc(3.75rem * var(--scaling)); /* 60px */
+
     /* Letter Spacing */
     --letter-spacing-1: 0.0025em;
     --letter-spacing-2: 0em;
@@ -265,7 +269,7 @@
     --letter-spacing-7: -0.0075em;
     --letter-spacing-8: -0.01em;
     --letter-spacing-9: -0.025em;
-    
+
     /* Font Weights */
     --font-weight-light: 300;
     --font-weight-regular: 400;
@@ -277,116 +281,115 @@
        SEMANTIC TOKENS - Light Mode
        Mapped from Radix Color Scales
        ============================================ */
-    
+
     /* Base Colors */
     --background: var(--gray-2);
     --foreground: var(--gray-12);
-    
+
     /* Card/Surface */
     --card: var(--gray-2);
     --card-foreground: var(--gray-12);
-    
+
     /* Popover/Dropdown */
     --popover: var(--gray-2);
     --popover-foreground: var(--gray-12);
-    
+
     /* Primary (Accent) */
     --primary: var(--accent-9);
     --primary-hover: var(--accent-10);
     --primary-active: var(--accent-11);
     --primary-foreground: white;
-    
+
     /* Secondary */
     --secondary: var(--gray-4);
     --secondary-hover: var(--gray-5);
     --secondary-foreground: var(--gray-12);
-    
+
     /* Muted */
     --muted: var(--gray-4);
     --muted-hover: var(--gray-5);
     --muted-foreground: var(--gray-11);
-    
+
     /* Accent (for hover states) */
     --accent: var(--accent-4);
     --accent-hover: var(--accent-5);
     --accent-foreground: var(--accent-11);
-    
+
     /* Destructive */
     --destructive: var(--error-9);
     --destructive-hover: var(--error-10);
     --destructive-foreground: white;
-    
+
     /* Borders */
     --border: var(--gray-7);
     --border-hover: var(--gray-8);
-    
+
     /* Input */
     --input: var(--gray-8);
     --input-hover: var(--gray-9);
-    
+
     /* Focus Ring */
     --ring: var(--accent-8);
-    
+
     /* Overlay (Alpha) */
     --overlay: var(--gray-a8);
-  }
-  
-  .dark {
+}
+
+.dark {
     /* ============================================
        SEMANTIC TOKENS - Dark Mode
        Radix automatically switches to dark variants
        ============================================ */
-    
+
     /* Base Colors */
     --background: var(--gray-1);
     --foreground: var(--gray-12);
-    
+
     /* Card/Surface */
     --card: var(--gray-2);
     --card-foreground: var(--gray-12);
-    
+
     /* Popover/Dropdown */
     --popover: var(--gray-2);
     --popover-foreground: var(--gray-12);
-    
+
     /* Primary (Accent) */
     --primary: var(--accent-9);
     --primary-hover: var(--accent-10);
     --primary-active: var(--accent-11);
     --primary-foreground: white;
-    
+
     /* Secondary */
     --secondary: var(--gray-3);
     --secondary-hover: var(--gray-4);
     --secondary-foreground: var(--gray-12);
-    
+
     /* Muted */
     --muted: var(--gray-3);
     --muted-hover: var(--gray-4);
     --muted-foreground: var(--gray-11);
-    
+
     /* Accent (for hover states) */
     --accent: var(--accent-3);
     --accent-hover: var(--accent-4);
     --accent-foreground: var(--accent-11);
-    
+
     /* Destructive */
     --destructive: var(--error-9);
     --destructive-hover: var(--error-10);
     --destructive-foreground: white;
-    
+
     /* Borders */
     --border: var(--gray-6);
     --border-hover: var(--gray-7);
-    
+
     /* Input */
     --input: var(--gray-7);
     --input-hover: var(--gray-8);
-    
+
     /* Focus Ring */
     --ring: var(--accent-8);
-    
+
     /* Overlay (Alpha) */
     --overlay: var(--gray-a8);
-  }
-
+}

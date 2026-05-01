@@ -1,15 +1,19 @@
 {
-  "name": "ui-component-library",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "pnpm --filter studio dev",
-    "dev:docs": "pnpm --filter docs dev",
-    "build": "pnpm -r build",
-    "clean": "pnpm -r clean",
-    "generate:theme": "pnpm --filter @repo/config generate:theme"
-  },
-  "devDependencies": {
-    "pnpm": "^8.15.0"
-  }
+    "name": "ui-component-library",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "pnpm --filter studio dev",
+        "dev:docs": "pnpm --filter docs dev",
+        "build": "pnpm -r build",
+        "clean": "pnpm -r clean",
+        "generate:theme": "pnpm --filter @repo/config generate:theme",
+        "lint": "biome lint --write .",
+        "format": "biome format --write .",
+        "check": "biome check --write ."
+    },
+    "devDependencies": {
+        "@biomejs/biome": "^2.4.13",
+        "pnpm": "^8.15.0"
+    }
 }

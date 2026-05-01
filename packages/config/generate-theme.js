@@ -2,92 +2,99 @@
 
 /**
  * Theme Generator Script
- * 
+ *
  * Automatically generates tokens.css based on theme.config.js
  * Run: node packages/config/generate-theme.js
  * Or: pnpm generate:theme
  */
 
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import { themeConfig } from './theme.config.js';
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+import { themeConfig } from "./theme.config.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const { accent, gray, error, success, warning, radius, scaling, fontFamily } = themeConfig;
+const { accent, gray, error, success, warning, radius, scaling, fontFamily } =
+    themeConfig;
 
 // Radius scale mapping
 const radiusScales = {
-  none: {
-    1: '0px',
-    2: '0px',
-    3: '0px',
-    4: '0px',
-    5: '0px',
-    6: '0px',
-  },
-  small: {
-    1: '0.125rem',  // 2px
-    2: '0.25rem',   // 4px
-    3: '0.375rem',  // 6px
-    4: '0.5rem',    // 8px
-    5: '0.75rem',   // 12px
-    6: '1rem',      // 16px
-  },
-  medium: {
-    1: '0.25rem',   // 4px
-    2: '0.5rem',    // 8px
-    3: '0.75rem',   // 12px
-    4: '1rem',      // 16px
-    5: '1.5rem',    // 24px
-    6: '2rem',      // 32px
-  },
-  large: {
-    1: '0.375rem',  // 6px
-    2: '0.75rem',   // 12px
-    3: '1rem',      // 16px
-    4: '1.5rem',    // 24px
-    5: '2rem',      // 32px
-    6: '3rem',      // 48px
-  },
-  full: {
-    1: '0.5rem',    // 8px
-    2: '1rem',      // 16px
-    3: '1.5rem',    // 24px
-    4: '2rem',      // 32px
-    5: '3rem',      // 48px
-    6: '9999px',    // Full rounded
-  },
+    none: {
+        1: "0px",
+        2: "0px",
+        3: "0px",
+        4: "0px",
+        5: "0px",
+        6: "0px",
+    },
+    small: {
+        1: "0.125rem", // 2px
+        2: "0.25rem", // 4px
+        3: "0.375rem", // 6px
+        4: "0.5rem", // 8px
+        5: "0.75rem", // 12px
+        6: "1rem", // 16px
+    },
+    medium: {
+        1: "0.25rem", // 4px
+        2: "0.5rem", // 8px
+        3: "0.75rem", // 12px
+        4: "1rem", // 16px
+        5: "1.5rem", // 24px
+        6: "2rem", // 32px
+    },
+    large: {
+        1: "0.375rem", // 6px
+        2: "0.75rem", // 12px
+        3: "1rem", // 16px
+        4: "1.5rem", // 24px
+        5: "2rem", // 32px
+        6: "3rem", // 48px
+    },
+    full: {
+        1: "0.5rem", // 8px
+        2: "1rem", // 16px
+        3: "1.5rem", // 24px
+        4: "2rem", // 32px
+        5: "3rem", // 48px
+        6: "9999px", // Full rounded
+    },
 };
 
 const currentRadiusScale = radiusScales[radius] || radiusScales.medium;
 
 // Generate color scale mappings (1-12)
 function generateScaleMappings(targetVar, sourceColor) {
-  const steps = Array.from({ length: 12 }, (_, i) => i + 1);
-  
-  const solidMappings = steps.map(step => 
-    `    --${targetVar}-${step}: var(--${sourceColor}-${step});`
-  ).join('\n');
-  
-  const alphaMappings = steps.map(step => 
-    `    --${targetVar}-a${step}: var(--${sourceColor}-a${step});`
-  ).join('\n');
-  
-  return { solidMappings, alphaMappings };
+    const steps = Array.from({ length: 12 }, (_, i) => i + 1);
+
+    const solidMappings = steps
+        .map(
+            (step) =>
+                `    --${targetVar}-${step}: var(--${sourceColor}-${step});`
+        )
+        .join("\n");
+
+    const alphaMappings = steps
+        .map(
+            (step) =>
+                `    --${targetVar}-a${step}: var(--${sourceColor}-a${step});`
+        )
+        .join("\n");
+
+    return { solidMappings, alphaMappings };
 }
 
 // Generate the complete tokens.css content
 function generateTokensCSS() {
-  const grayMappings = generateScaleMappings('gray', gray);
-  const accentMappings = generateScaleMappings('accent', accent);
-  const errorMappings = generateScaleMappings('error', error);
-  const successMappings = generateScaleMappings('success', success);
-  const warningMappings = generateScaleMappings('warning', warning);
+    const grayMappings = generateScaleMappings("gray", gray);
+    const accentMappings = generateScaleMappings("accent", accent);
+    const errorMappings = generateScaleMappings("error", error);
+    const successMappings = generateScaleMappings("success", success);
+    const warningMappings = generateScaleMappings("warning", warning);
 
-  return `/* ============================================
+    return `/* ============================================
    RADIX UI COLORS - PRODUCTION COLOR SYSTEM
    ============================================
    
@@ -374,26 +381,10 @@ ${warningMappings.alphaMappings}
 
 // Main execution
 try {
-  console.log('🎨 Generating theme from config...\n');
-  console.log(`Theme Configuration:`);
-  console.log(`  Accent: ${accent}`);
-  console.log(`  Gray: ${gray}`);
-  console.log(`  Error: ${error}`);
-  console.log(`  Success: ${success}`);
-  console.log(`  Warning: ${warning}`);
-  console.log(`  Radius: ${radius}`);
-  console.log(`  Scaling: ${scaling}\n`);
+    const tokensContent = generateTokensCSS();
+    const tokensPath = path.join(__dirname, "tokens.css");
 
-  const tokensContent = generateTokensCSS();
-  const tokensPath = path.join(__dirname, 'tokens.css');
-  
-  fs.writeFileSync(tokensPath, tokensContent, 'utf-8');
-  
-  console.log('✅ Successfully generated tokens.css');
-  console.log(`📁 Location: ${tokensPath}\n`);
-  console.log('🎉 Theme updated! Your components will now use the new settings.');
-  console.log('💡 Tip: Restart your dev server to see the changes.\n');
-} catch (error) {
-  console.error('❌ Error generating theme:', error.message);
-  process.exit(1);
+    fs.writeFileSync(tokensPath, tokensContent, "utf-8");
+} catch (_error) {
+    process.exit(1);
 }

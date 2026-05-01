@@ -310,3 +310,9 @@ export { ChartConfig, ChartContainer,
   ChartTooltipContent,
   ChartLegend,
   ChartLegendContent } from "./ui/chart.jsx"
+
+  export {InputGroup,
+    InputGroupAddon,
+    InputGroupInput,InputGroupButton,
+InputGroupText,
+InputGroupTextarea} from "./ui/inputgroup.jsx"

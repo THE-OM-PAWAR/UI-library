@@ -196,6 +196,10 @@ export const componentConfigs = {
     chart: {
         id:"chart",
         name:"Chart"
+    },
+    inputgroup:{
+        id:"inputgroup",
+        name:"InputGroup"
     }
 };
 

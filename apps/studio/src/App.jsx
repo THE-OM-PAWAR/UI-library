@@ -5,7 +5,7 @@ import { Navigation } from "./components/Navigation.jsx";
 import { componentList } from "./registry/componentConfigs.js";
 
 function App() {
-    const [activeComponent, setActiveComponent] = useState("button");
+    const [activeComponent, setActiveComponent] = useState("accordion");
 
     return (
         <TooltipProvider>

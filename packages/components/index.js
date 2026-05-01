@@ -304,3 +304,9 @@ export {
     SheetTitle,
     SheetTrigger,
 } from "./ui/sheet.jsx";
+
+export { ChartConfig, ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+  ChartLegend,
+  ChartLegendContent } from "./ui/chart.jsx"

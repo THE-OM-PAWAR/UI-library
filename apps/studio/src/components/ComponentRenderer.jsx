@@ -50,6 +50,7 @@ import {
   renderToggle,
   renderTooltip,
   renderInputOTP,
+  renderInputGroup,
 } from "./renderers/index.jsx";
 
 export function ComponentRenderer({ componentId }) {
@@ -113,6 +114,7 @@ export function ComponentRenderer({ componentId }) {
       spinner: renderSpinner,
       textarea: renderTextarea,
       inputotp: renderInputOTP,
+      inputgroup: renderInputGroup,
     };
 
     const renderer = renderers[componentId];

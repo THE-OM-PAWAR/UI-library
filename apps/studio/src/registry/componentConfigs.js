@@ -193,6 +193,10 @@ export const componentConfigs = {
         id: "toggle",
         name: "Toggle",
     },
+    inputotp: {
+        id: "inputotp",
+        name: "InputOTP",
+    },
 };
 
 export const componentList = Object.values(componentConfigs);

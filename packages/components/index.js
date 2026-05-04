@@ -304,3 +304,6 @@ export {
     SheetTitle,
     SheetTrigger,
 } from "./ui/sheet.jsx";
+
+//Input Otp
+export { InputOTP } from "./ui/inputotp.jsx";

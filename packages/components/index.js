@@ -307,3 +307,4 @@ export {
 
 //Input Otp
 export { InputOTP } from "./ui/inputotp.jsx";
+export { InputGroup, InputGroupAddon, InputGroupInput } from "./ui/inputgroup.jsx"

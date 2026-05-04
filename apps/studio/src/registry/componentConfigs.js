@@ -197,6 +197,10 @@ export const componentConfigs = {
         id: "inputotp",
         name: "InputOTP",
     },
+    inputgroup: {
+        id: "inputgroup",
+        name: "InputGroup",
+    },
 };
 
 export const componentList = Object.values(componentConfigs);

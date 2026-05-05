@@ -304,3 +304,5 @@ export {
     SheetTitle,
     SheetTrigger,
 } from "./ui/sheet.jsx";
+
+export { DirectionProvider } from "./ui/direction.jsx";

@@ -22,6 +22,10 @@ export const docsConfig = {
                     title: "Button",
                     href: "/docs/button",
                 },
+                {
+                    title: "Sidebar",
+                    href: "/docs/sidebar",
+                },
             ],
         },
     ],

@@ -1,0 +1,36 @@
+{
+  "title": "Sidebar",
+  "description": "A sidebar component for building navigation layouts with header, content, menu items, groups, and footer.",
+  "component": "Sidebar",
+  "installation": {
+    "cli": "npx shadcn@latest add sidebar",
+    "manual": [
+      {
+        "title": "Copy the component code",
+        "description": "Create a new file and paste the sidebar component code.",
+        "filePath": "components/ui/sidebar.jsx",
+        "code": "\"use client\";\n\nimport { cn } from \"@repo/utils\";\nimport * as React from \"react\";\n\nconst Sidebar = React.forwardRef(({ className, side = \"left\", ...props }, ref) => (\n    <aside\n        ref={ref}\n        data-slot=\"sidebar\"\n        data-side={side}\n        className={cn(\n            \"flex h-full w-64 flex-col bg-popover text-popover-foreground\",\n            \"border-border text-sm shadow-sm\",\n            \"data-[side=left]:border-r data-[side=right]:border-l\",\n            className\n        )}\n        {...props}\n    />\n));\nSidebar.displayName = \"Sidebar\";\n\nexport { Sidebar };",
+        "language": "jsx",
+        "collapsible": true
+      }
+    ]
+  },
+  "usage": {
+    "import": "import { Sidebar, SidebarContent, SidebarHeader } from '@repo/components';",
+    "basic": "sidebar-demo"
+  },
+  "examples": [
+    {
+      "title": "Default",
+      "description": "A basic sidebar with header, content, menu items, and footer.",
+      "demo": "sidebar-demo",
+      "code": "import {\n  Sidebar,\n  SidebarContent,\n  SidebarFooter,\n  SidebarGroup,\n  SidebarGroupContent,\n  SidebarGroupLabel,\n  SidebarHeader,\n  SidebarMenu,\n  SidebarMenuButton,\n  SidebarMenuItem,\n} from \"@repo/components\";\n\nexport default function SidebarDemo() {\n  return (\n    <div className=\"h-[500px] rounded-lg border\">\n      <Sidebar className=\"h-full\">\n        <SidebarHeader>\n          <h2 className=\"text-base font-semibold\">Dashboard</h2>\n          <p className=\"text-sm text-muted-foreground\">Navigation menu</p>\n        </SidebarHeader>\n\n        <SidebarContent>\n          <SidebarGroup>\n            <SidebarGroupLabel>Main</SidebarGroupLabel>\n            <SidebarGroupContent>\n              <SidebarMenu>\n                <SidebarMenuItem>\n                  <SidebarMenuButton isActive>Dashboard</SidebarMenuButton>\n                </SidebarMenuItem>\n                <SidebarMenuItem>\n                  <SidebarMenuButton>Components</SidebarMenuButton>\n                </SidebarMenuItem>\n                <SidebarMenuItem>\n                  <SidebarMenuButton>Settings</SidebarMenuButton>\n                </SidebarMenuItem>\n              </SidebarMenu>\n            </SidebarGroupContent>\n          </SidebarGroup>\n        </SidebarContent>\n\n        <SidebarFooter>\n          <p className=\"text-xs text-muted-foreground\">Footer section</p>\n        </SidebarFooter>\n      </Sidebar>\n    </div>\n  );\n}"
+    },
+    {
+      "title": "With Groups",
+      "description": "A sidebar with multiple navigation groups.",
+      "demo": "sidebar-groups",
+      "code": "import {\n  Sidebar,\n  SidebarContent,\n  SidebarGroup,\n  SidebarGroupContent,\n  SidebarGroupLabel,\n  SidebarHeader,\n  SidebarMenu,\n  SidebarMenuButton,\n  SidebarMenuItem,\n} from \"@repo/components\";\n\nexport default function SidebarGroups() {\n  return (\n    <div className=\"h-[500px] rounded-lg border\">\n      <Sidebar className=\"h-full\">\n        <SidebarHeader>\n          <h2 className=\"text-base font-semibold\">Workspace</h2>\n        </SidebarHeader>\n\n        <SidebarContent>\n          <SidebarGroup>\n            <SidebarGroupLabel>Platform</SidebarGroupLabel>\n            <SidebarGroupContent>\n              <SidebarMenu>\n                <SidebarMenuItem>\n                  <SidebarMenuButton isActive>Dashboard</SidebarMenuButton>\n                </SidebarMenuItem>\n                <SidebarMenuItem>\n                  <SidebarMenuButton>Projects</SidebarMenuButton>\n                </SidebarMenuItem>\n              </SidebarMenu>\n            </SidebarGroupContent>\n          </SidebarGroup>\n\n          <SidebarGroup>\n            <SidebarGroupLabel>Settings</SidebarGroupLabel>\n            <SidebarGroupContent>\n              <SidebarMenu>\n                <SidebarMenuItem>\n                  <SidebarMenuButton>Profile</SidebarMenuButton>\n                </SidebarMenuItem>\n                <SidebarMenuItem>\n                  <SidebarMenuButton>Billing</SidebarMenuButton>\n                </SidebarMenuItem>\n              </SidebarMenu>\n            </SidebarGroupContent>\n          </SidebarGroup>\n        </SidebarContent>\n      </Sidebar>\n    </div>\n  );\n}"
+    }
+  ]
+}

@@ -116,3 +116,12 @@ export {
   ComboboxLabel,
   ComboboxSeparator,
 } from './ui/combobox.jsx';
+
+// Input-Otp
+export {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSlot,
+  InputOTPSeparator,
+} from "./ui/input-otp.jsx";
+

@@ -75,6 +75,10 @@ export const componentConfigs = {
     id: "combobox",
     name: "Combobox",
   },
+  "input-otp": {
+    id: "input-otp",
+    name: "Input OTP"
+  },
 };
 
 export const componentList = Object.values(componentConfigs);

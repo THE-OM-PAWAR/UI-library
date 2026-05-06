@@ -213,6 +213,10 @@ export const componentConfigs = {
         id: "direction",
         name: "Direction",
     },
+  aspectRatio: {
+    id: 'aspectRatio',
+    name: 'Aspect Ratio'
+  }
 };
 
 export const componentList = Object.values(componentConfigs);

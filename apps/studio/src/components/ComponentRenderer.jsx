@@ -121,6 +121,7 @@ export function ComponentRenderer({ componentId }) {
             inputgroup:renderInputGroup
           "input-otp": renderInputOtp,
             direction : renderDirection,
+      aspectRatio: renderAspectRatio,
     };
 
         const renderer = renderers[componentId];

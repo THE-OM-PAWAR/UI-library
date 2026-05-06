@@ -340,3 +340,5 @@ export {
     SidebarSeparator,
 } from "./ui/sidebar.jsx";
 export { DirectionProvider } from "./ui/direction.jsx";
+//Aspect ratio
+export {AspectRatio, AspectRatioVarients} from './ui/aspectRatio.jsx'

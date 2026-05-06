@@ -10,6 +10,7 @@ export const docsConfig = {
     {
       title: "Getting Started",
       items: [
+
         {
           title: "Introduction",
           href: "/docs",

@@ -16,3 +16,4 @@ export { renderDataTable } from './data-table.jsx';
 export { renderSwitch } from './switch.jsx';
 export { renderSeparator } from './separator.jsx';
 export { renderCombobox } from "./combobox.jsx";
+export { renderInputOtp } from "./input-otp.jsx";

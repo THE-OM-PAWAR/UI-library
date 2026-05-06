@@ -20,6 +20,7 @@ import {
   renderSwitch,
   renderSeparator,
   renderCombobox,
+  renderInputOtp,
 } from "./renderers/index.jsx";
 
 export function ComponentRenderer({ componentId }) {
@@ -53,6 +54,7 @@ export function ComponentRenderer({ componentId }) {
       switch: renderSwitch,
       separator: renderSeparator,
       combobox: renderCombobox,
+      "input-otp": renderInputOtp,
     };
 
     const renderer = renderers[componentId];

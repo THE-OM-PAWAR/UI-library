@@ -51,6 +51,7 @@ import {
     renderTooltip,
     renderChart,
     renderInputGroup,
+  renderInputOtp,
 } from "./renderers/index.jsx";
 
 export function ComponentRenderer({ componentId }) {
@@ -115,7 +116,8 @@ export function ComponentRenderer({ componentId }) {
             textarea: renderTextarea,
             chart:renderChart,
             inputgroup:renderInputGroup
-        };
+          "input-otp": renderInputOtp,
+    };
 
         const renderer = renderers[componentId];
 

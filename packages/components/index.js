@@ -316,3 +316,11 @@ export { ChartConfig, ChartContainer,
     InputGroupInput,InputGroupButton,
 InputGroupText,
 InputGroupTextarea} from "./ui/inputgroup.jsx"
+// Input-Otp
+export {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSlot,
+  InputOTPSeparator,
+} from "./ui/input-otp.jsx";
+

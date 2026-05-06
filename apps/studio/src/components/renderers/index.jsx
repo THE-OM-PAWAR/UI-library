@@ -48,3 +48,4 @@ export { renderTooltip } from "./tooltip.jsx";
 export {renderChart} from "./chart.jsx"
 export {renderInputGroup} from "./inputgroup.jsx"
 export { renderInputOtp } from "./input-otp.jsx";
+export { renderSidebar } from "./sidebar.jsx";

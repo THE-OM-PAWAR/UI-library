@@ -2,7 +2,7 @@ import { demoRegistry } from "../registry";
 
 // Get all available docs
 export function getAllDocs() {
-    return ["button"];
+    return ["button","sidebar"];
 }
 
 // Get documentation data by slug

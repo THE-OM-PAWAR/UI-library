@@ -5,4 +5,7 @@ export const demoRegistry = {
     "button-variants": () => import("./demos/button-variants"),
     "button-sizes": () => import("./demos/button-sizes"),
     "button-with-icon": () => import("./demos/button-with-icon"),
+
+    "sidebar-demo": () => import("./demos/sidebar-demo"),
+    "sidebar-groups": () => import("./demos/sidebar-groups"),
 };

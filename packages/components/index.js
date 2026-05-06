@@ -324,3 +324,18 @@ export {
   InputOTPSeparator,
 } from "./ui/input-otp.jsx";
 
+// Sidebar
+export {
+    Sidebar,
+    SidebarContent,
+    SidebarFooter,
+    SidebarGroup,
+    SidebarGroupContent,
+    SidebarGroupLabel,
+    SidebarHeader,
+    SidebarMenu,
+    SidebarMenuBadge,
+    SidebarMenuButton,
+    SidebarMenuItem,
+    SidebarSeparator,
+} from "./ui/sidebar.jsx";

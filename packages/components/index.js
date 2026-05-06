@@ -339,3 +339,4 @@ export {
     SidebarMenuItem,
     SidebarSeparator,
 } from "./ui/sidebar.jsx";
+export { DirectionProvider } from "./ui/direction.jsx";

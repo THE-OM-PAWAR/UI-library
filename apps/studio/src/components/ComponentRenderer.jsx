@@ -53,6 +53,7 @@ import {
     renderChart,
     renderInputGroup,
   renderInputOtp,
+    renderDirection,
 } from "./renderers/index.jsx";
 
 export function ComponentRenderer({ componentId }) {
@@ -119,6 +120,7 @@ export function ComponentRenderer({ componentId }) {
             chart:renderChart,
             inputgroup:renderInputGroup
           "input-otp": renderInputOtp,
+            direction : renderDirection,
     };
 
         const renderer = renderers[componentId];

@@ -209,6 +209,10 @@ export const componentConfigs = {
     id: "input-otp",
     name: "Input OTP"
   },
+    direction: {
+        id: "direction",
+        name: "Direction",
+    },
 };
 
 export const componentList = Object.values(componentConfigs);

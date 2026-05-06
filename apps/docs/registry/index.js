@@ -9,9 +9,5 @@ export const demoRegistry = {
   "card-demo": () => import("./demos/card-demo"),
   "card-custom": () => import("./demos/card-custom"),
 
-    "button-demo": () => import("./demos/button-demo"),
-    "button-variants": () => import("./demos/button-variants"),
-    "button-sizes": () => import("./demos/button-sizes"),
-    "button-with-icon": () => import("./demos/button-with-icon"),
 
 };

@@ -2,27 +2,16 @@ import {
   Card,
   CardHeader,
   CardTitle,
-  CardDescription,
   CardContent,
-  CardFooter,
-  Button,
 } from "@repo/components";
 
-export default function CardDemo() {
+export default function CardCustom() {
   return (
-    <div className="max-w-sm">
-      <Card>
-        <CardHeader>
-          <CardTitle>Card Title</CardTitle>
-          <CardDescription>
-            Card description goes here.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>This is the main content area.</CardContent>
-        <CardFooter>
-          <Button>Action</Button>
-        </CardFooter>
-      </Card>
-    </div>
+    <Card className="hover:scale-[1.02] transition">
+      <CardHeader>
+        <CardTitle>Interactive Card</CardTitle>
+      </CardHeader>
+      <CardContent>Hover me to see effect.</CardContent>
+    </Card>
   );
 }

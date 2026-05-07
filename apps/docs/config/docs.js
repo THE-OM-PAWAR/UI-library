@@ -26,6 +26,18 @@ export const docsConfig = {
                     title: "Sidebar",
                     href: "/docs/sidebar",
                 },
+                {
+                    title: "Accordion",
+                    href: "/docs/accordion",
+                },
+                {
+                    title: "Alert",
+                    href: "/docs/alert",
+                },
+                {
+                    title: "Avatar",
+                    href: "/docs/avatar",
+                },
             ],
         },
     ],

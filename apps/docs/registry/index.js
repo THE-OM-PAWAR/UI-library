@@ -8,4 +8,13 @@ export const demoRegistry = {
 
     "sidebar-demo": () => import("./demos/sidebar-demo"),
     "sidebar-groups": () => import("./demos/sidebar-groups"),
+
+    "accordion-demo": () => import("./demos/accordion-demo"),
+    "accordion-multiple": () => import("./demos/accordion-multiple"),
+
+    "alert-demo": () => import("./demos/alert-demo"),
+    "alert-destructive": () => import("./demos/alert-destructive"),
+
+    "avatar-demo": () => import("./demos/avatar-demo"),
+    "avatar-group": () => import("./demos/avatar-group"),
 };

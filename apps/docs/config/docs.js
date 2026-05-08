@@ -22,6 +22,14 @@ export const docsConfig = {
                     title: "Button",
                     href: "/docs/button",
                 },
+                {
+                    title: "Badge",
+                    href: "/docs/badge",
+                },
+                {
+                    title: "Breadcrumb",
+                    href: "/docs/breadcrumb",
+                },
             ],
         },
     ],

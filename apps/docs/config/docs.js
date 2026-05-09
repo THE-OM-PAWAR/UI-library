@@ -28,6 +28,10 @@ export const docsConfig = {
           title: "Card",
           href: "/docs/card",
         },
+        {
+          title : "Carousel",
+          href : "/docs/carousel"
+        }
       ],
     },
   ],

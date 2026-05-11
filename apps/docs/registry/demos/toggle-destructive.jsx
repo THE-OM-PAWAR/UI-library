@@ -7,7 +7,11 @@ export default function ToggleDestructive() {
             <Toggle variant="destructive" aria-label="Destructive off">
                 <Mic />
             </Toggle>
-            <Toggle variant="destructive" defaultPressed aria-label="Destructive on">
+            <Toggle
+                variant="destructive"
+                defaultPressed
+                aria-label="Destructive on"
+            >
                 <Mic />
             </Toggle>
         </div>

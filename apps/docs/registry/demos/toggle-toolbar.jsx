@@ -1,5 +1,5 @@
 import { Toggle } from "@repo/components";
-import { AlignLeft, AlignCenter, AlignRight } from "lucide-react";
+import { AlignCenter, AlignLeft, AlignRight } from "lucide-react";
 
 export default function ToggleToolbar() {
     return (

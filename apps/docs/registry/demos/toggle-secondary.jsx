@@ -7,7 +7,11 @@ export default function ToggleSecondary() {
             <Toggle variant="secondary" aria-label="Secondary off">
                 <AlignCenter />
             </Toggle>
-            <Toggle variant="secondary" defaultPressed aria-label="Secondary on">
+            <Toggle
+                variant="secondary"
+                defaultPressed
+                aria-label="Secondary on"
+            >
                 <AlignCenter />
             </Toggle>
         </div>

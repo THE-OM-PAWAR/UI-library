@@ -13,7 +13,9 @@ export default function ToggleSizes() {
                     <Toggle size={size} aria-label={`Size ${label}`}>
                         <Bold />
                     </Toggle>
-                    <span className="text-xs text-muted-foreground">{label}</span>
+                    <span className="text-xs text-muted-foreground">
+                        {label}
+                    </span>
                 </div>
             ))}
         </div>

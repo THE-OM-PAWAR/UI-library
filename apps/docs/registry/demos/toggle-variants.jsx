@@ -1,12 +1,27 @@
 import { Toggle } from "@repo/components";
-import { Bold, Italic, Underline, AlignCenter, Mic } from "lucide-react";
+import { AlignCenter, Bold, Italic, Mic, Underline } from "lucide-react";
 
 const variants = [
     { variant: "default", label: "Default", icon: <Bold />, text: "Bold" },
     { variant: "outline", label: "Outline", icon: <Italic />, text: "Italic" },
-    { variant: "ghost", label: "Ghost", icon: <Underline />, text: "Underline" },
-    { variant: "secondary", label: "Secondary", icon: <AlignCenter />, text: "Center" },
-    { variant: "destructive", label: "Destructive", icon: <Mic />, text: "Mute" },
+    {
+        variant: "ghost",
+        label: "Ghost",
+        icon: <Underline />,
+        text: "Underline",
+    },
+    {
+        variant: "secondary",
+        label: "Secondary",
+        icon: <AlignCenter />,
+        text: "Center",
+    },
+    {
+        variant: "destructive",
+        label: "Destructive",
+        icon: <Mic />,
+        text: "Mute",
+    },
 ];
 
 export default function ToggleVariants() {
@@ -17,19 +32,33 @@ export default function ToggleVariants() {
                     <p className="text-sm font-medium">{label}</p>
                     <div className="flex flex-col gap-2">
                         <div className="flex items-center gap-2">
-                            <Toggle variant={variant} aria-label={`${label} off`}>
+                            <Toggle
+                                variant={variant}
+                                aria-label={`${label} off`}
+                            >
                                 {icon}
                             </Toggle>
-                            <span className="text-sm text-muted-foreground">Off</span>
+                            <span className="text-sm text-muted-foreground">
+                                Off
+                            </span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <Toggle variant={variant} defaultPressed aria-label={`${label} on`}>
+                            <Toggle
+                                variant={variant}
+                                defaultPressed
+                                aria-label={`${label} on`}
+                            >
                                 {icon}
                             </Toggle>
-                            <span className="text-sm text-muted-foreground">On</span>
+                            <span className="text-sm text-muted-foreground">
+                                On
+                            </span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <Toggle variant={variant} aria-label={`${label} with text`}>
+                            <Toggle
+                                variant={variant}
+                                aria-label={`${label} with text`}
+                            >
                                 {icon} {text}
                             </Toggle>
                         </div>

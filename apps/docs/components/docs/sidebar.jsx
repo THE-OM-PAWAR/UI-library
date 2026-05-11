@@ -36,7 +36,7 @@ export function DocsSidebar() {
                       variant="outline"
                       className={cn(
                         item.label === "New"
-                          ? "text-blue-400 border-blue-400"
+                          ? "text-green-400 border-green-400 dark:text-green-500 dark:border-green-500"
                           : "text-muted-foreground border-border",
                       )}
                     >

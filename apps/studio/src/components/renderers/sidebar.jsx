@@ -64,9 +64,7 @@ export function renderSidebar({
                                 </SidebarMenuItem>
 
                                 <SidebarMenuItem>
-                                    <SidebarMenuButton>
-                                        Team
-                                    </SidebarMenuButton>
+                                    <SidebarMenuButton>Team</SidebarMenuButton>
                                 </SidebarMenuItem>
                             </SidebarMenu>
                         </SidebarGroupContent>

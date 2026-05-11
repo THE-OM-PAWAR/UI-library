@@ -25,7 +25,10 @@ function SidebarHeader({ className, ...props }) {
     return (
         <div
             data-slot="sidebar-header"
-            className={cn("flex flex-col gap-2 border-b border-border p-4", className)}
+            className={cn(
+                "flex flex-col gap-2 border-b border-border p-4",
+                className
+            )}
             {...props}
         />
     );

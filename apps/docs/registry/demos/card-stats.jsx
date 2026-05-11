@@ -1,7 +1,4 @@
-import {
-    Card,
-    CardContent,
-} from "@repo/components";
+import { Card, CardContent } from "@repo/components";
 
 const stats = [
     { label: "Total Revenue", value: "$45,231", change: "+20.1%" },
@@ -16,9 +13,13 @@ export default function CardStats() {
             {stats.map((stat) => (
                 <Card key={stat.label}>
                     <CardContent className="pt-6">
-                        <p className="text-sm text-muted-foreground">{stat.label}</p>
+                        <p className="text-sm text-muted-foreground">
+                            {stat.label}
+                        </p>
                         <p className="text-2xl font-bold mt-1">{stat.value}</p>
-                        <p className="text-xs text-green-600 mt-1">{stat.change} from last month</p>
+                        <p className="text-xs text-green-600 mt-1">
+                            {stat.change} from last month
+                        </p>
                     </CardContent>
                 </Card>
             ))}

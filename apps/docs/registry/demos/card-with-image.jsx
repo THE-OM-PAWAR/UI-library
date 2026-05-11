@@ -1,11 +1,11 @@
 import {
+    Button,
     Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
     CardHeader,
     CardTitle,
-    CardDescription,
-    CardContent,
-    CardFooter,
-    Button,
 } from "@repo/components";
 
 export default function CardWithImage() {
@@ -19,16 +19,21 @@ export default function CardWithImage() {
                 />
                 <CardHeader>
                     <CardTitle>Mountain Trail</CardTitle>
-                    <CardDescription>A scenic hike through alpine meadows.</CardDescription>
+                    <CardDescription>
+                        A scenic hike through alpine meadows.
+                    </CardDescription>
                 </CardHeader>
                 <CardContent>
                     <p className="text-sm text-muted-foreground">
-                        Explore breathtaking views at 3,200m elevation. Suitable for intermediate hikers.
+                        Explore breathtaking views at 3,200m elevation. Suitable
+                        for intermediate hikers.
                     </p>
                 </CardContent>
                 <CardFooter className="gap-2">
                     <Button size="sm">Book Now</Button>
-                    <Button size="sm" variant="outline">Learn More</Button>
+                    <Button size="sm" variant="outline">
+                        Learn More
+                    </Button>
                 </CardFooter>
             </Card>
         </div>

@@ -1,32 +1,34 @@
 export const docsConfig = {
-    mainNav: [
+
+  mainNav: [
+    {
+      title: "Docs",
+      href: "/docs",
+    },
+  ],
+  sidebarNav: [
+    {
+      title: "Getting Started",
+      items: [
+
         {
-            title: "Docs",
-            href: "/docs",
+          title: "Introduction",
+          href: "/docs",
         },
-    ],
-    sidebarNav: [
+      ],
+    },
+    {
+      title: "Components",
+      items: [
         {
-            title: "Getting Started",
-            items: [
-                {
-                    title: "Introduction",
-                    href: "/docs",
-                },
-            ],
+          title: "Button",
+          href: "/docs/button",
         },
         {
-            title: "Components",
-            items: [
-                {
-                    title: "Button",
-                    href: "/docs/button",
-                },
-                {
-                    title: "Sidebar",
-                    href: "/docs/sidebar",
-                },
-            ],
+          title: "Card",
+          href: "/docs/card",
         },
-    ],
-};
+      ],
+    },
+  ],
+}

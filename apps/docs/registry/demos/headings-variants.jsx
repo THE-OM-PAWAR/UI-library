@@ -6,8 +6,9 @@ export default function HeadingsVariants() {
             <div className="flex flex-col gap-3">
                 <Heading size="h4">Paragraph</Heading>
                 <Heading size="p">
-                    This is a paragraph variant. It uses muted foreground color and is
-                    capped at max-w-2xl for comfortable reading line length.
+                    This is a paragraph variant. It uses muted foreground color
+                    and is capped at max-w-2xl for comfortable reading line
+                    length.
                 </Heading>
             </div>
 
@@ -23,7 +24,8 @@ export default function HeadingsVariants() {
             <div className="flex flex-col gap-3">
                 <Heading size="h4">Inline Code</Heading>
                 <p className="text-sm text-muted-foreground">
-                    Use the <Heading size="code">code</Heading> size for inline code snippets.
+                    Use the <Heading size="code">code</Heading> size for inline
+                    code snippets.
                 </p>
             </div>
 

@@ -157,6 +157,10 @@ export const componentConfigs = {
         id: "sheet",
         name: "Sheet",
     },
+    sidebar: {
+        id: "sidebar",
+        name: "Sidebar",
+    },
     skeleton: {
         id: "skeleton",
         name: "Skeleton",
@@ -192,6 +196,26 @@ export const componentConfigs = {
     toggle: {
         id: "toggle",
         name: "Toggle",
+    },
+    chart: {
+        id: "chart",
+        name: "Chart",
+    },
+    inputgroup: {
+        id: "inputgroup",
+        name: "InputGroup",
+    },
+    "input-otp": {
+        id: "input-otp",
+        name: "Input OTP",
+    },
+    direction: {
+        id: "direction",
+        name: "Direction",
+    },
+    aspectRatio: {
+        id: "aspectRatio",
+        name: "Aspect Ratio",
     },
 };
 

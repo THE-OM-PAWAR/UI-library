@@ -1,0 +1,90 @@
+{
+    "title": "Checkbox",
+    "description": "An accessible checkbox component with multiple variants, sizes, and label support.",
+    "component": "Checkbox",
+    "installation": {
+        "cli": "npx shadcn@latest add checkbox",
+        "manual": [
+            {
+                "title": "Install dependencies",
+                "description": "Install the Radix UI checkbox primitive and class-variance-authority.",
+                "command": "npm install @radix-ui/react-checkbox class-variance-authority"
+            },
+            {
+                "title": "Add utility function",
+                "description": "Create a cn utility function if you don't have one already.",
+                "filePath": "lib/utils.js",
+                "code": "import { clsx } from 'clsx';\nimport { twMerge } from 'tailwind-merge';\n\nexport function cn(...inputs) {\n  return twMerge(clsx(inputs));\n}",
+                "language": "javascript"
+            },
+            {
+                "title": "Copy the component code",
+                "description": "Create a new file and paste the checkbox component code.",
+                "filePath": "components/ui/checkbox.jsx",
+                "code": "\"use client\";\nimport * as CheckboxPrimitive from \"@radix-ui/react-checkbox\";\nimport { cn } from \"@/lib/utils\";\nimport { cva } from \"class-variance-authority\";\nimport { Check } from \"lucide-react\";\n\nconst checkboxVariants = cva(\n  \"peer shrink-0 flex items-center justify-center rounded-md border shadow-xs transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 disabled:cursor-not-allowed disabled:opacity-50\",\n  {\n    variants: {\n      variant: {\n        default: \"border-primary data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground\",\n        secondary: \"border-secondary data-[state=checked]:bg-secondary data-[state=checked]:text-secondary-foreground\",\n        destructive: \"border-destructive/60 data-[state=checked]:bg-destructive data-[state=checked]:text-white\",\n        outline: \"border-border bg-transparent data-[state=checked]:bg-transparent data-[state=checked]:text-foreground\",\n        ghost: \"border-transparent bg-muted data-[state=checked]:bg-muted data-[state=checked]:text-foreground\",\n      },\n      size: {\n        xs: \"size-3\",\n        sm: \"size-3.5\",\n        default: \"size-4\",\n        lg: \"size-5\",\n      },\n    },\n    defaultVariants: { variant: \"default\", size: \"default\" },\n  }\n);\n\nfunction Checkbox({ className, variant = \"default\", size = \"default\", ...props }) {\n  return (\n    <CheckboxPrimitive.Root\n      data-slot=\"checkbox\"\n      className={cn(checkboxVariants({ variant, size, className }))}\n      {...props}\n    >\n      <CheckboxPrimitive.Indicator className=\"flex items-center justify-center text-current transition-none\">\n        <Check className=\"size-3.5 font-extrabold stroke-3\" />\n      </CheckboxPrimitive.Indicator>\n    </CheckboxPrimitive.Root>\n  );\n}\n\nexport { Checkbox, checkboxVariants };",
+                "language": "jsx",
+                "collapsible": true
+            }
+        ]
+    },
+    "usage": {
+        "import": "import { Checkbox } from '@repo/components';",
+        "basic": "checkbox-demo"
+    },
+    "examples": [
+        {
+            "title": "Default",
+            "description": "A basic checkbox in all three states: unchecked, checked, and disabled.",
+            "demo": "checkbox-demo",
+            "code": "import { Checkbox } from \"@repo/components\";\n\nexport default function CheckboxDemo() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <Checkbox />\n      <Checkbox defaultChecked />\n      <Checkbox disabled />\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Secondary",
+            "description": "variant=\"secondary\" — uses the secondary color token for checked state.",
+            "demo": "checkbox-secondary",
+            "code": "import { Checkbox, Label } from \"@repo/components\";\n\nexport default function CheckboxSecondary() {\n  return (\n    <div className=\"flex items-center gap-6\">\n      <div className=\"flex items-center gap-2\">\n        <Checkbox variant=\"secondary\" id=\"sec-un\" />\n        <Label htmlFor=\"sec-un\">Unchecked</Label>\n      </div>\n      <div className=\"flex items-center gap-2\">\n        <Checkbox variant=\"secondary\" id=\"sec-ch\" defaultChecked />\n        <Label htmlFor=\"sec-ch\">Checked</Label>\n      </div>\n      <div className=\"flex items-center gap-2\">\n        <Checkbox variant=\"secondary\" id=\"sec-dis\" disabled />\n        <Label htmlFor=\"sec-dis\">Disabled</Label>\n      </div>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Destructive",
+            "description": "variant=\"destructive\" — red-toned border and fill for danger confirmation checkboxes.",
+            "demo": "checkbox-destructive",
+            "code": "import { Checkbox, Label } from \"@repo/components\";\n\nexport default function CheckboxDestructive() {\n  return (\n    <div className=\"flex items-center gap-6\">\n      <div className=\"flex items-center gap-2\">\n        <Checkbox variant=\"destructive\" id=\"des-un\" />\n        <Label htmlFor=\"des-un\">Unchecked</Label>\n      </div>\n      <div className=\"flex items-center gap-2\">\n        <Checkbox variant=\"destructive\" id=\"des-ch\" defaultChecked />\n        <Label htmlFor=\"des-ch\">Checked</Label>\n      </div>\n      <div className=\"flex items-center gap-2\">\n        <Checkbox variant=\"destructive\" id=\"des-dis\" disabled />\n        <Label htmlFor=\"des-dis\">Disabled</Label>\n      </div>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Outline",
+            "description": "variant=\"outline\" — transparent background, check mark matches foreground color.",
+            "demo": "checkbox-outline",
+            "code": "import { Checkbox, Label } from \"@repo/components\";\n\nexport default function CheckboxOutline() {\n  return (\n    <div className=\"flex items-center gap-6\">\n      <div className=\"flex items-center gap-2\">\n        <Checkbox variant=\"outline\" id=\"out-un\" />\n        <Label htmlFor=\"out-un\">Unchecked</Label>\n      </div>\n      <div className=\"flex items-center gap-2\">\n        <Checkbox variant=\"outline\" id=\"out-ch\" defaultChecked />\n        <Label htmlFor=\"out-ch\">Checked</Label>\n      </div>\n      <div className=\"flex items-center gap-2\">\n        <Checkbox variant=\"outline\" id=\"out-dis\" disabled />\n        <Label htmlFor=\"out-dis\">Disabled</Label>\n      </div>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Ghost",
+            "description": "variant=\"ghost\" — muted background without a visible border.",
+            "demo": "checkbox-ghost",
+            "code": "import { Checkbox, Label } from \"@repo/components\";\n\nexport default function CheckboxGhost() {\n  return (\n    <div className=\"flex items-center gap-6\">\n      <div className=\"flex items-center gap-2\">\n        <Checkbox variant=\"ghost\" id=\"gh-un\" />\n        <Label htmlFor=\"gh-un\">Unchecked</Label>\n      </div>\n      <div className=\"flex items-center gap-2\">\n        <Checkbox variant=\"ghost\" id=\"gh-ch\" defaultChecked />\n        <Label htmlFor=\"gh-ch\">Checked</Label>\n      </div>\n      <div className=\"flex items-center gap-2\">\n        <Checkbox variant=\"ghost\" id=\"gh-dis\" disabled />\n        <Label htmlFor=\"gh-dis\">Disabled</Label>\n      </div>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Extra Small",
+            "description": "size=\"xs\" — 12px checkbox for dense table rows or compact lists.",
+            "demo": "checkbox-xs",
+            "code": "import { Checkbox, Label } from \"@repo/components\";\n\nexport default function CheckboxXS() {\n  return (\n    <div className=\"flex items-center gap-2\">\n      <Checkbox size=\"xs\" id=\"xs-check\" defaultChecked />\n      <Label htmlFor=\"xs-check\" className=\"text-xs\">Extra Small (xs)</Label>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Small",
+            "description": "size=\"sm\" — 14px checkbox for standard form use.",
+            "demo": "checkbox-sm",
+            "code": "import { Checkbox, Label } from \"@repo/components\";\n\nexport default function CheckboxSm() {\n  return (\n    <div className=\"flex items-center gap-2\">\n      <Checkbox size=\"sm\" id=\"sm-check\" defaultChecked />\n      <Label htmlFor=\"sm-check\" className=\"text-sm\">Small (sm)</Label>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Large",
+            "description": "size=\"lg\" — 20px checkbox for touch-friendly or prominent selections.",
+            "demo": "checkbox-lg",
+            "code": "import { Checkbox, Label } from \"@repo/components\";\n\nexport default function CheckboxLg() {\n  return (\n    <div className=\"flex items-center gap-2\">\n      <Checkbox size=\"lg\" id=\"lg-check\" defaultChecked />\n      <Label htmlFor=\"lg-check\">Large (lg)</Label>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "With Label",
+            "description": "A checkbox paired with a label and description for forms.",
+            "demo": "checkbox-with-label",
+            "code": "import { Checkbox, Label } from \"@repo/components\";\n\nexport default function CheckboxWithLabel() {\n  return (\n    <div className=\"flex items-start gap-3\">\n      <Checkbox id=\"terms\" defaultChecked />\n      <div className=\"flex flex-col gap-1\">\n        <Label htmlFor=\"terms\">Accept terms and conditions</Label>\n        <p className=\"text-sm text-muted-foreground\">\n          By checking this box you agree to our terms of service and privacy policy.\n        </p>\n      </div>\n    </div>\n  );\n}"
+        }
+    ]
+}

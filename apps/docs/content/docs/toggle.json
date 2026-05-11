@@ -1,0 +1,102 @@
+{
+    "title": "Toggle",
+    "description": "A two-state button that can be toggled on or off. Supports multiple variants, sizes, and can be used as toolbar controls.",
+    "component": "Toggle",
+    "installation": {
+        "cli": "npx shadcn@latest add toggle",
+        "manual": [
+            {
+                "title": "Install dependencies",
+                "description": "Install the Radix UI toggle primitive and class-variance-authority.",
+                "command": "npm install @radix-ui/react-toggle class-variance-authority"
+            },
+            {
+                "title": "Add utility function",
+                "description": "Create a cn utility function if you don't have one already.",
+                "filePath": "lib/utils.js",
+                "code": "import { clsx } from 'clsx';\nimport { twMerge } from 'tailwind-merge';\n\nexport function cn(...inputs) {\n  return twMerge(clsx(inputs));\n}",
+                "language": "javascript"
+            },
+            {
+                "title": "Copy the component code",
+                "description": "Create a new file and paste the toggle component code.",
+                "filePath": "components/ui/toggle.jsx",
+                "code": "\"use client\";\nimport * as TogglePrimitive from \"@radix-ui/react-toggle\";\nimport { cn } from \"@/lib/utils\";\nimport { cva } from \"class-variance-authority\";\n\nconst toggleVariants = cva(\n  \"group/toggle inline-flex items-center justify-center gap-1 rounded-lg text-sm font-medium whitespace-nowrap transition-all outline-none hover:bg-muted hover:text-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-pressed:bg-muted data-[state=on]:bg-muted\",\n  {\n    variants: {\n      variant: {\n        default: \"bg-transparent\",\n        outline: \"border border-input bg-transparent hover:bg-muted\",\n        destructive: \"border border-destructive bg-transparent text-destructive hover:bg-destructive/10\",\n        ghost: \"bg-transparent text-muted-foreground hover:bg-muted hover:text-foreground data-[state=on]:bg-muted data-[state=on]:text-foreground\",\n        secondary: \"bg-secondary text-secondary-foreground hover:bg-secondary/80 data-[state=on]:bg-secondary/60\",\n        link: \"bg-transparent text-primary underline-offset-4 hover:bg-transparent hover:underline data-[state=on]:underline data-[state=on]:bg-transparent\",\n      },\n      size: {\n        default: \"h-9 min-w-9 p-2\",\n        sm: \"h-8 min-w-8\",\n        lg: \"h-10 min-w-10 p-2\",\n      },\n    },\n    defaultVariants: { variant: \"default\", size: \"default\" },\n  }\n);\n\nfunction Toggle({ className, variant = \"default\", size = \"default\", ...props }) {\n  return (\n    <TogglePrimitive.Root\n      data-slot=\"toggle\"\n      className={cn(toggleVariants({ variant, size, className }))}\n      {...props}\n    />\n  );\n}\n\nexport { Toggle, toggleVariants };",
+                "language": "jsx",
+                "collapsible": true
+            }
+        ]
+    },
+    "usage": {
+        "import": "import { Toggle } from '@repo/components';",
+        "basic": "toggle-demo"
+    },
+    "examples": [
+        {
+            "title": "Default",
+            "description": "Basic toggle buttons for text formatting.",
+            "demo": "toggle-demo",
+            "code": "import { Toggle } from \"@repo/components\";\nimport { Bold, Italic, Underline } from \"lucide-react\";\n\nexport default function ToggleDemo() {\n  return (\n    <div className=\"flex gap-2\">\n      <Toggle aria-label=\"Toggle bold\"><Bold /></Toggle>\n      <Toggle aria-label=\"Toggle italic\"><Italic /></Toggle>\n      <Toggle aria-label=\"Toggle underline\"><Underline /></Toggle>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Outline",
+            "description": "variant=\"outline\" — bordered toggle with transparent background.",
+            "demo": "toggle-outline",
+            "code": "import { Toggle } from \"@repo/components\";\nimport { Italic } from \"lucide-react\";\n\nexport default function ToggleOutline() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <Toggle variant=\"outline\" aria-label=\"Outline off\"><Italic /></Toggle>\n      <Toggle variant=\"outline\" defaultPressed aria-label=\"Outline on\"><Italic /></Toggle>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Ghost",
+            "description": "variant=\"ghost\" — muted text, subtle background on hover and press.",
+            "demo": "toggle-ghost",
+            "code": "import { Toggle } from \"@repo/components\";\nimport { Underline } from \"lucide-react\";\n\nexport default function ToggleGhost() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <Toggle variant=\"ghost\" aria-label=\"Ghost off\"><Underline /></Toggle>\n      <Toggle variant=\"ghost\" defaultPressed aria-label=\"Ghost on\"><Underline /></Toggle>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Secondary",
+            "description": "variant=\"secondary\" — uses the secondary color token for pressed state.",
+            "demo": "toggle-secondary",
+            "code": "import { Toggle } from \"@repo/components\";\nimport { AlignCenter } from \"lucide-react\";\n\nexport default function ToggleSecondary() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <Toggle variant=\"secondary\" aria-label=\"Secondary off\"><AlignCenter /></Toggle>\n      <Toggle variant=\"secondary\" defaultPressed aria-label=\"Secondary on\"><AlignCenter /></Toggle>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Destructive",
+            "description": "variant=\"destructive\" — red-toned toggle for mute or delete-style actions.",
+            "demo": "toggle-destructive",
+            "code": "import { Toggle } from \"@repo/components\";\nimport { Mic } from \"lucide-react\";\n\nexport default function ToggleDestructive() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <Toggle variant=\"destructive\" aria-label=\"Destructive off\"><Mic /></Toggle>\n      <Toggle variant=\"destructive\" defaultPressed aria-label=\"Destructive on\"><Mic /></Toggle>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Link",
+            "description": "variant=\"link\" — appears as an underlined text toggle.",
+            "demo": "toggle-link",
+            "code": "import { Toggle } from \"@repo/components\";\nimport { Bold } from \"lucide-react\";\n\nexport default function ToggleLink() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <Toggle variant=\"link\" aria-label=\"Link off\"><Bold /> Bold</Toggle>\n      <Toggle variant=\"link\" defaultPressed aria-label=\"Link on\"><Bold /> Bold</Toggle>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Small",
+            "description": "size=\"sm\" — compact toggle for toolbar use.",
+            "demo": "toggle-sm",
+            "code": "import { Toggle } from \"@repo/components\";\nimport { Bold } from \"lucide-react\";\n\nexport default function ToggleSm() {\n  return <Toggle size=\"sm\" aria-label=\"Small toggle\"><Bold /></Toggle>;\n}"
+        },
+        {
+            "title": "Large",
+            "description": "size=\"lg\" — larger toggle for prominent controls.",
+            "demo": "toggle-lg",
+            "code": "import { Toggle } from \"@repo/components\";\nimport { Bold } from \"lucide-react\";\n\nexport default function ToggleLg() {\n  return <Toggle size=\"lg\" aria-label=\"Large toggle\"><Bold /></Toggle>;\n}"
+        },
+        {
+            "title": "With Text",
+            "description": "A toggle that includes both an icon and a text label.",
+            "demo": "toggle-with-text",
+            "code": "import { Toggle } from \"@repo/components\";\nimport { Mic } from \"lucide-react\";\n\nexport default function ToggleWithText() {\n  return (\n    <Toggle variant=\"outline\" aria-label=\"Toggle microphone\">\n      <Mic />\n      Microphone\n    </Toggle>\n  );\n}"
+        },
+        {
+            "title": "Toolbar",
+            "description": "Toggles grouped as an alignment toolbar.",
+            "demo": "toggle-toolbar",
+            "code": "import { Toggle } from \"@repo/components\";\nimport { AlignLeft, AlignCenter, AlignRight } from \"lucide-react\";\n\nexport default function ToggleToolbar() {\n  return (\n    <div className=\"flex gap-1 p-1 border rounded-lg w-fit\">\n      <Toggle size=\"sm\" aria-label=\"Align left\"><AlignLeft /></Toggle>\n      <Toggle size=\"sm\" aria-label=\"Align center\"><AlignCenter /></Toggle>\n      <Toggle size=\"sm\" aria-label=\"Align right\"><AlignRight /></Toggle>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Disabled",
+            "description": "Toggles in a disabled state, both off and on.",
+            "demo": "toggle-disabled",
+            "code": "import { Toggle } from \"@repo/components\";\nimport { Bold, Italic } from \"lucide-react\";\n\nexport default function ToggleDisabled() {\n  return (\n    <div className=\"flex gap-2\">\n      <Toggle disabled aria-label=\"Toggle bold disabled\"><Bold /></Toggle>\n      <Toggle disabled defaultPressed aria-label=\"Toggle italic disabled\"><Italic /></Toggle>\n    </div>\n  );\n}"
+        }
+    ]
+}

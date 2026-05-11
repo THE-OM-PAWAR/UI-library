@@ -1,0 +1,78 @@
+{
+    "title": "Spinner",
+    "description": "An animated loading indicator built on Lucide icons. Accepts any Lucide icon via the icon prop.",
+    "component": "Spinner",
+    "installation": {
+        "cli": "npx shadcn@latest add spinner",
+        "manual": [
+            {
+                "title": "Install dependencies",
+                "description": "Install Lucide React for the spinner icon.",
+                "command": "npm install lucide-react"
+            },
+            {
+                "title": "Add utility function",
+                "description": "Create a cn utility function if you don't have one already.",
+                "filePath": "lib/utils.js",
+                "code": "import { clsx } from 'clsx';\nimport { twMerge } from 'tailwind-merge';\n\nexport function cn(...inputs) {\n  return twMerge(clsx(inputs));\n}",
+                "language": "javascript"
+            },
+            {
+                "title": "Copy the component code",
+                "description": "Create a new file and paste the spinner component code.",
+                "filePath": "components/ui/spinner.jsx",
+                "code": "import { cn } from \"@/lib/utils\";\nimport { Loader } from \"lucide-react\";\n\nfunction Spinner({ icon: Icon = Loader, className, ...props }) {\n  return (\n    <Icon\n      role=\"status\"\n      aria-label=\"Loading\"\n      className={cn(\"size-4 animate-spin\", className)}\n      {...props}\n    />\n  );\n}\n\nexport { Spinner };",
+                "language": "jsx",
+                "collapsible": true
+            }
+        ]
+    },
+    "usage": {
+        "import": "import { Spinner } from '@repo/components';",
+        "basic": "spinner-demo"
+    },
+    "examples": [
+        {
+            "title": "Default",
+            "description": "A basic spinner using the default Loader icon.",
+            "demo": "spinner-demo",
+            "code": "import { Spinner } from \"@repo/components\";\n\nexport default function SpinnerDemo() {\n  return <Spinner className=\"size-6\" />;\n}"
+        },
+        {
+            "title": "Icons",
+            "description": "Spinner using different Lucide icons via the icon prop.",
+            "demo": "spinner-icons",
+            "code": "import { Spinner } from \"@repo/components\";\nimport { Loader, Loader2 } from \"lucide-react\";\n\nconst icons = [\n  { icon: Loader, label: \"Loader\" },\n  { icon: Loader2, label: \"Loader2\" },\n];\n\nexport default function SpinnerIcons() {\n  return (\n    <div className=\"flex items-end gap-8\">\n      {icons.map(({ icon, label }) => (\n        <div key={label} className=\"flex flex-col items-center gap-2\">\n          <Spinner icon={icon} className=\"size-6\" />\n          <span className=\"text-xs text-muted-foreground\">{label}</span>\n        </div>\n      ))}\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Sizes",
+            "description": "Spinner in xs, sm, md, lg, and xl sizes using Tailwind size utilities.",
+            "demo": "spinner-sizes",
+            "code": "import { Spinner } from \"@repo/components\";\n\nconst sizes = [\n  { className: \"size-3\", label: \"xs\" },\n  { className: \"size-4\", label: \"sm\" },\n  { className: \"size-6\", label: \"md\" },\n  { className: \"size-8\", label: \"lg\" },\n  { className: \"size-10\", label: \"xl\" },\n];\n\nexport default function SpinnerSizes() {\n  return (\n    <div className=\"flex items-end gap-8\">\n      {sizes.map(({ className, label }) => (\n        <div key={label} className=\"flex flex-col items-center gap-2\">\n          <Spinner className={className} />\n          <span className=\"text-xs text-muted-foreground\">{label}</span>\n        </div>\n      ))}\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Colors",
+            "description": "Spinner with different text color utilities.",
+            "demo": "spinner-colors",
+            "code": "import { Spinner } from \"@repo/components\";\n\nconst colors = [\n  { cls: \"text-foreground\", label: \"Foreground\" },\n  { cls: \"text-primary\", label: \"Primary\" },\n  { cls: \"text-destructive\", label: \"Destructive\" },\n  { cls: \"text-muted-foreground\", label: \"Muted\" },\n];\n\nexport default function SpinnerColors() {\n  return (\n    <div className=\"flex items-center gap-8\">\n      {colors.map(({ cls, label }) => (\n        <div key={cls} className=\"flex flex-col items-center gap-2\">\n          <Spinner className={`size-6 ${cls}`} />\n          <span className=\"text-xs text-muted-foreground\">{label}</span>\n        </div>\n      ))}\n    </div>\n  );\n}"
+        },
+        {
+            "title": "In Button",
+            "description": "Spinner placed inside a disabled button to indicate a loading state.",
+            "demo": "spinner-in-button",
+            "code": "import { Spinner, Button } from \"@repo/components\";\n\nexport default function SpinnerInButton() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-3\">\n      <Button disabled>\n        <Spinner className=\"size-4\" />\n        Loading…\n      </Button>\n      <Button variant=\"outline\" disabled>\n        <Spinner className=\"size-4\" />\n        Saving…\n      </Button>\n      <Button variant=\"secondary\" disabled>\n        <Spinner className=\"size-4\" />\n        Please wait\n      </Button>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "In Badge",
+            "description": "Spinner inside a badge to show an ongoing process.",
+            "demo": "spinner-in-badge",
+            "code": "import { Spinner, Badge } from \"@repo/components\";\n\nexport default function SpinnerInBadge() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-3\">\n      <Badge variant=\"outline\" className=\"gap-2\">\n        <Spinner className=\"size-3\" />\n        Processing\n      </Badge>\n      <Badge className=\"gap-2\">\n        <Spinner className=\"size-3\" />\n        Syncing\n      </Badge>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "In Card",
+            "description": "Spinner centered inside a card as a full-section loading state.",
+            "demo": "spinner-in-card",
+            "code": "import { Spinner, Card, CardContent } from \"@repo/components\";\n\nexport default function SpinnerInCard() {\n  return (\n    <Card className=\"w-full max-w-sm\">\n      <CardContent className=\"flex flex-col items-center justify-center gap-3 py-10\">\n        <Spinner className=\"size-8 text-primary\" />\n        <p className=\"text-sm text-muted-foreground\">Fetching data…</p>\n      </CardContent>\n    </Card>\n  );\n}"
+        }
+    ]
+}

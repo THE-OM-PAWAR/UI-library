@@ -1,48 +1,66 @@
 {
-  "title": "Card",
-  "description": "Displays content in a structured container with header, body, and footer sections.",
-  "component": "Card",
-  "installation": {
-    "cli": "npx shadcn@latest add card",
-    "manual": [
-      {
-        "title": "Install dependencies",
-        "description": "Install required utilities for styling and class merging.",
-        "command": "npm install clsx tailwind-merge"
-      },
-      {
-        "title": "Add utility function",
-        "description": "Create a cn utility function if you don't have one already.",
-        "filePath": "lib/utils.js",
-        "code": "import { clsx } from 'clsx';\nimport { twMerge } from 'tailwind-merge';\n\nexport function cn(...inputs) {\n  return twMerge(clsx(inputs));\n}",
-        "language": "javascript"
-      },
-      {
-        "title": "Copy the component code",
-        "description": "Create a new file and paste the card component code.",
-        "filePath": "components/ui/card.jsx",
-        "code": "\"use client\";\nimport * as React from \"react\";\nimport { cn } from \"@repo/utils\";\n\nconst Card = React.forwardRef(({ className, ...props }, ref) => (\n  <div\n    ref={ref}\n    className={cn(\n      \"rounded-2xl border bg-card text-card-foreground shadow-sm hover:shadow-md transition-all duration-200\",\n      className\n    )}\n    {...props}\n  />\n));\nCard.displayName = \"Card\";\n\nconst CardHeader = React.forwardRef(({ className, ...props }, ref) => (\n  <div\n    ref={ref}\n    className={cn(\"flex flex-col space-y-1.5 p-6\", className)}\n    {...props}\n  />\n));\nCardHeader.displayName = \"CardHeader\";\n\nconst CardTitle = React.forwardRef(({ className, ...props }, ref) => (\n  <h3\n    ref={ref}\n    className={cn(\"text-2xl font-semibold leading-none tracking-tight\", className)}\n    {...props}\n  />\n));\nCardTitle.displayName = \"CardTitle\";\n\nconst CardDescription = React.forwardRef(({ className, ...props }, ref) => (\n  <p\n    ref={ref}\n    className={cn(\"text-muted-foreground\", className)}\n    {...props}\n  />\n));\nCardDescription.displayName = \"CardDescription\";\n\nconst CardContent = React.forwardRef(({ className, ...props }, ref) => (\n  <div ref={ref} className={cn(\"p-6 pt-0 text-sm\", className)} {...props} />\n));\nCardContent.displayName = \"CardContent\";\n\nconst CardFooter = React.forwardRef(({ className, ...props }, ref) => (\n  <div\n    ref={ref}\n    className={cn(\"flex items-center p-6 pt-0\", className)}\n    {...props}\n  />\n));\nCardFooter.displayName = \"CardFooter\";\n\nexport {\n  Card,\n  CardHeader,\n  CardTitle,\n  CardDescription,\n  CardContent,\n  CardFooter,\n};",
-        "language": "jsx",
-        "collapsible": true
-      }
-    ]
-  },
-  "usage": {
-    "import": "import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@repo/components';",
-    "basic": "card-demo"
-  },
-  "examples": [
-    {
-      "title": "Default",
-      "description": "A basic card with header, content, and footer.",
-      "demo": "card-demo",
-      "code": "import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from \"@repo/components\";\nimport { Button } from \"@repo/components\";\n\nexport default function CardDemo() {\n  return (\n    <div className=\"max-w-sm\">\n      <Card>\n        <CardHeader>\n          <CardTitle>Card Title</CardTitle>\n          <CardDescription>Card description goes here.</CardDescription>\n        </CardHeader>\n        <CardContent>This is the main content area.</CardContent>\n        <CardFooter>\n          <Button>Action</Button>\n        </CardFooter>\n      </Card>\n    </div>\n  );\n}"
+    "title": "Card",
+    "description": "Displays content in a structured container with header, body, and footer sections.",
+    "component": "Card",
+    "installation": {
+        "cli": "npx shadcn@latest add card",
+        "manual": [
+            {
+                "title": "Install dependencies",
+                "description": "Install required utilities for styling and class merging.",
+                "command": "npm install clsx tailwind-merge"
+            },
+            {
+                "title": "Add utility function",
+                "description": "Create a cn utility function if you don't have one already.",
+                "filePath": "lib/utils.js",
+                "code": "import { clsx } from 'clsx';\nimport { twMerge } from 'tailwind-merge';\n\nexport function cn(...inputs) {\n  return twMerge(clsx(inputs));\n}",
+                "language": "javascript"
+            },
+            {
+                "title": "Copy the component code",
+                "description": "Create a new file and paste the card component code.",
+                "filePath": "components/ui/card.jsx",
+                "code": "\"use client\";\nimport * as React from \"react\";\nimport { cn } from \"@repo/utils\";\n\nconst Card = React.forwardRef(({ className, ...props }, ref) => (\n  <div\n    ref={ref}\n    className={cn(\n      \"rounded-2xl border bg-card text-card-foreground shadow-sm hover:shadow-md transition-all duration-200\",\n      className\n    )}\n    {...props}\n  />\n));\nCard.displayName = \"Card\";\n\nconst CardHeader = React.forwardRef(({ className, ...props }, ref) => (\n  <div\n    ref={ref}\n    className={cn(\"flex flex-col space-y-1.5 p-6\", className)}\n    {...props}\n  />\n));\nCardHeader.displayName = \"CardHeader\";\n\nconst CardTitle = React.forwardRef(({ className, ...props }, ref) => (\n  <h3\n    ref={ref}\n    className={cn(\"text-2xl font-semibold leading-none tracking-tight\", className)}\n    {...props}\n  />\n));\nCardTitle.displayName = \"CardTitle\";\n\nconst CardDescription = React.forwardRef(({ className, ...props }, ref) => (\n  <p\n    ref={ref}\n    className={cn(\"text-muted-foreground\", className)}\n    {...props}\n  />\n));\nCardDescription.displayName = \"CardDescription\";\n\nconst CardContent = React.forwardRef(({ className, ...props }, ref) => (\n  <div ref={ref} className={cn(\"p-6 pt-0 text-sm\", className)} {...props} />\n));\nCardContent.displayName = \"CardContent\";\n\nconst CardFooter = React.forwardRef(({ className, ...props }, ref) => (\n  <div\n    ref={ref}\n    className={cn(\"flex items-center p-6 pt-0\", className)}\n    {...props}\n  />\n));\nCardFooter.displayName = \"CardFooter\";\n\nexport {\n  Card,\n  CardHeader,\n  CardTitle,\n  CardDescription,\n  CardContent,\n  CardFooter,\n};",
+                "language": "jsx",
+                "collapsible": true
+            }
+        ]
     },
-    {
-      "title": "With Custom Styling",
-      "description": "Card with custom shadow and hover effects.",
-      "demo": "card-custom",
-      "code": "export default function CustomCard() {\n  return (\n    <Card className=\"hover:scale-[1.02]\">\n      <CardHeader>\n        <CardTitle>Interactive Card</CardTitle>\n      </CardHeader>\n      <CardContent>Hover me to see effect.</CardContent>\n    </Card>\n  );\n}"
-    }
-  ]
+    "usage": {
+        "import": "import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@repo/components';",
+        "basic": "card-demo"
+    },
+    "examples": [
+        {
+            "title": "Default",
+            "description": "A basic card with header, content, and footer.",
+            "demo": "card-demo",
+            "code": "import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from \"@repo/components\";\nimport { Button } from \"@repo/components\";\n\nexport default function CardDemo() {\n  return (\n    <div className=\"max-w-sm\">\n      <Card>\n        <CardHeader>\n          <CardTitle>Card Title</CardTitle>\n          <CardDescription>Card description goes here.</CardDescription>\n        </CardHeader>\n        <CardContent>This is the main content area.</CardContent>\n        <CardFooter>\n          <Button>Action</Button>\n        </CardFooter>\n      </Card>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "With Image",
+            "description": "A card with a full-width image at the top, useful for blog posts or media content.",
+            "demo": "card-with-image",
+            "code": "import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter, Button } from \"@repo/components\";\n\nexport default function CardWithImage() {\n  return (\n    <div className=\"max-w-sm w-full\">\n      <Card className=\"overflow-hidden\">\n        <img\n          src=\"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=800\"\n          alt=\"Mountain landscape\"\n          className=\"w-full h-48 object-cover\"\n        />\n        <CardHeader>\n          <CardTitle>Mountain Trail</CardTitle>\n          <CardDescription>A scenic hike through alpine meadows.</CardDescription>\n        </CardHeader>\n        <CardContent>\n          <p className=\"text-sm text-muted-foreground\">\n            Explore breathtaking views at 3,200m elevation. Suitable for intermediate hikers.\n          </p>\n        </CardContent>\n        <CardFooter className=\"gap-2\">\n          <Button size=\"sm\">Book Now</Button>\n          <Button size=\"sm\" variant=\"outline\">Learn More</Button>\n        </CardFooter>\n      </Card>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Profile Card",
+            "description": "A centered profile card with avatar initials, name, and action buttons.",
+            "demo": "card-profile",
+            "code": "import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter, Button } from \"@repo/components\";\n\nexport default function CardProfile() {\n  return (\n    <div className=\"max-w-xs w-full\">\n      <Card>\n        <CardHeader className=\"items-center text-center\">\n          <div className=\"w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-2xl font-semibold text-primary mb-2\">\n            JD\n          </div>\n          <CardTitle>Jane Doe</CardTitle>\n          <CardDescription>Product Designer · San Francisco</CardDescription>\n        </CardHeader>\n        <CardContent className=\"text-center\">\n          <p className=\"text-sm text-muted-foreground\">\n            Crafting beautiful digital experiences with a focus on accessibility and usability.\n          </p>\n        </CardContent>\n        <CardFooter className=\"justify-center gap-2\">\n          <Button size=\"sm\">Follow</Button>\n          <Button size=\"sm\" variant=\"outline\">Message</Button>\n        </CardFooter>\n      </Card>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Stats Card",
+            "description": "Multiple compact metric cards displaying key numbers and trends.",
+            "demo": "card-stats",
+            "code": "import { Card, CardContent } from \"@repo/components\";\n\nconst stats = [\n  { label: \"Total Revenue\", value: \"$45,231\", change: \"+20.1%\" },\n  { label: \"Active Users\", value: \"2,350\", change: \"+15.3%\" },\n  { label: \"New Orders\", value: \"1,247\", change: \"+8.7%\" },\n  { label: \"Conversion Rate\", value: \"3.24%\", change: \"+1.2%\" },\n];\n\nexport default function CardStats() {\n  return (\n    <div className=\"grid grid-cols-2 gap-4 w-full max-w-lg\">\n      {stats.map((stat) => (\n        <Card key={stat.label}>\n          <CardContent className=\"pt-6\">\n            <p className=\"text-sm text-muted-foreground\">{stat.label}</p>\n            <p className=\"text-2xl font-bold mt-1\">{stat.value}</p>\n            <p className=\"text-xs text-green-600 mt-1\">{stat.change} from last month</p>\n          </CardContent>\n        </Card>\n      ))}\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Custom Styling",
+            "description": "Card with a scale-up hover effect via a Tailwind className.",
+            "demo": "card-custom",
+            "code": "import { Card, CardHeader, CardTitle, CardContent } from \"@repo/components\";\n\nexport default function CardCustom() {\n  return (\n    <Card className=\"hover:scale-[1.02] transition\">\n      <CardHeader>\n        <CardTitle>Interactive Card</CardTitle>\n      </CardHeader>\n      <CardContent>Hover me to see effect.</CardContent>\n    </Card>\n  );\n}"
+        }
+    ]
 }

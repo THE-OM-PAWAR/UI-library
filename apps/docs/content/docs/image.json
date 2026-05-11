@@ -1,0 +1,67 @@
+{
+    "title": "Image",
+    "description": "A flexible image component with support for object-fit, object-position, loading priority, and lazy loading.",
+    "component": "Image",
+    "installation": {
+        "cli": "npx shadcn@latest add image",
+        "manual": [
+            {
+                "title": "Add utility function",
+                "description": "Create a cn utility function if you don't have one already.",
+                "filePath": "lib/utils.js",
+                "code": "import { clsx } from 'clsx';\nimport { twMerge } from 'tailwind-merge';\n\nexport function cn(...inputs) {\n  return twMerge(clsx(inputs));\n}",
+                "language": "javascript"
+            },
+            {
+                "title": "Copy the component code",
+                "description": "Create a new file and paste the image component code.",
+                "filePath": "components/ui/image.jsx",
+                "code": "import { cn } from \"@/lib/utils\";\n\nfunction Image({\n  src,\n  alt,\n  className,\n  priority = \"low\",\n  width = 500,\n  height = 500,\n  loading = \"lazy\",\n  fit = \"cover\",\n  position = \"center\",\n  ...props\n}) {\n  return (\n    <img\n      data-slot=\"image\"\n      src={src}\n      alt={alt ?? \"Image\"}\n      fetchPriority={priority}\n      loading={loading}\n      className={cn(\"block\", className)}\n      style={{ width, height, objectFit: fit, objectPosition: position }}\n      {...props}\n    />\n  );\n}\n\nexport { Image };",
+                "language": "jsx",
+                "collapsible": true
+            }
+        ]
+    },
+    "usage": {
+        "import": "import { Image } from '@repo/components';",
+        "basic": "image-demo"
+    },
+    "examples": [
+        {
+            "title": "Default",
+            "description": "A basic image with the default cover fit and rounded corners.",
+            "demo": "image-demo",
+            "code": "import { Image } from \"@repo/components\";\n\nconst src = \"https://images.unsplash.com/photo-1774711268987-a56e0de1d79d?q=80&w=800\";\n\nexport default function ImageDemo() {\n  return (\n    <Image\n      src={src}\n      alt=\"Demo image\"\n      width={500}\n      height={300}\n      fit=\"cover\"\n      className=\"rounded-lg\"\n    />\n  );\n}"
+        },
+        {
+            "title": "Cover",
+            "description": "fit=\"cover\" — fills the container, cropping if needed. This is the default.",
+            "demo": "image-cover",
+            "code": "import { Image } from \"@repo/components\";\n\nconst src = \"https://images.unsplash.com/photo-1774711268987-a56e0de1d79d?q=80&w=800\";\n\nexport default function ImageCover() {\n  return (\n    <Image src={src} alt=\"Cover fit\" width={480} height={200} fit=\"cover\" className=\"rounded-md bg-muted\" />\n  );\n}"
+        },
+        {
+            "title": "Contain",
+            "description": "fit=\"contain\" — scales the image to fit entirely within the container, preserving aspect ratio.",
+            "demo": "image-contain",
+            "code": "import { Image } from \"@repo/components\";\n\nconst src = \"https://images.unsplash.com/photo-1774711268987-a56e0de1d79d?q=80&w=800\";\n\nexport default function ImageContain() {\n  return (\n    <Image src={src} alt=\"Contain fit\" width={480} height={200} fit=\"contain\" className=\"rounded-md bg-muted\" />\n  );\n}"
+        },
+        {
+            "title": "Fill",
+            "description": "fit=\"fill\" — stretches the image to fill the container, ignoring aspect ratio.",
+            "demo": "image-fill",
+            "code": "import { Image } from \"@repo/components\";\n\nconst src = \"https://images.unsplash.com/photo-1774711268987-a56e0de1d79d?q=80&w=800\";\n\nexport default function ImageFill() {\n  return (\n    <Image src={src} alt=\"Fill fit\" width={480} height={200} fit=\"fill\" className=\"rounded-md bg-muted\" />\n  );\n}"
+        },
+        {
+            "title": "Scale Down",
+            "description": "fit=\"scale-down\" — scales the image down to fit, but never up beyond its natural size.",
+            "demo": "image-scale-down",
+            "code": "import { Image } from \"@repo/components\";\n\nconst src = \"https://images.unsplash.com/photo-1774711268987-a56e0de1d79d?q=80&w=800\";\n\nexport default function ImageScaleDown() {\n  return (\n    <Image src={src} alt=\"Scale-down fit\" width={480} height={200} fit=\"scale-down\" className=\"rounded-md bg-muted\" />\n  );\n}"
+        },
+        {
+            "title": "None",
+            "description": "fit=\"none\" — renders the image at its natural size, overflowing if larger than the container.",
+            "demo": "image-none",
+            "code": "import { Image } from \"@repo/components\";\n\nconst src = \"https://images.unsplash.com/photo-1774711268987-a56e0de1d79d?q=80&w=800\";\n\nexport default function ImageNone() {\n  return (\n    <Image src={src} alt=\"None fit\" width={480} height={200} fit=\"none\" className=\"rounded-md bg-muted\" />\n  );\n}"
+        }
+    ]
+}

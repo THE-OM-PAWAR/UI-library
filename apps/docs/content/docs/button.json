@@ -39,16 +39,52 @@
             "code": "import { Button } from \"@repo/components\";\n\nexport default function ButtonDemo() {\n  return <Button>Button</Button>;\n}"
         },
         {
-            "title": "Variants",
-            "description": "Different button variants for various use cases.",
-            "demo": "button-variants",
-            "code": "import { Button } from \"@repo/components\";\n\nexport default function ButtonVariants() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Button variant=\"default\">Default</Button>\n      <Button variant=\"secondary\">Secondary</Button>\n      <Button variant=\"outline\">Outline</Button>\n      <Button variant=\"ghost\">Ghost</Button>\n      <Button variant=\"destructive\">Destructive</Button>\n      <Button variant=\"link\">Link</Button>\n    </div>\n  );\n}"
+            "title": "Secondary",
+            "description": "Secondary variant — subdued background for lower-emphasis actions.",
+            "demo": "button-secondary",
+            "code": "import { Button } from \"@repo/components\";\n\nexport default function ButtonSecondary() {\n  return <Button variant=\"secondary\">Secondary</Button>;\n}"
         },
         {
-            "title": "Sizes",
-            "description": "Button sizes from extra small to large.",
-            "demo": "button-sizes",
-            "code": "import { Button } from \"@repo/components\";\n\nexport default function ButtonSizes() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Button size=\"xs\">Extra Small</Button>\n      <Button size=\"sm\">Small</Button>\n      <Button size=\"default\">Default</Button>\n      <Button size=\"lg\">Large</Button>\n    </div>\n  );\n}"
+            "title": "Outline",
+            "description": "Outline variant — bordered button with transparent background.",
+            "demo": "button-outline",
+            "code": "import { Button } from \"@repo/components\";\n\nexport default function ButtonOutline() {\n  return <Button variant=\"outline\">Outline</Button>;\n}"
+        },
+        {
+            "title": "Ghost",
+            "description": "Ghost variant — no background until hovered.",
+            "demo": "button-ghost",
+            "code": "import { Button } from \"@repo/components\";\n\nexport default function ButtonGhost() {\n  return <Button variant=\"ghost\">Ghost</Button>;\n}"
+        },
+        {
+            "title": "Destructive",
+            "description": "Destructive variant — red-toned button for dangerous or irreversible actions.",
+            "demo": "button-destructive",
+            "code": "import { Button } from \"@repo/components\";\n\nexport default function ButtonDestructive() {\n  return <Button variant=\"destructive\">Destructive</Button>;\n}"
+        },
+        {
+            "title": "Link",
+            "description": "Link variant — appears as an inline text link with underline on hover.",
+            "demo": "button-link",
+            "code": "import { Button } from \"@repo/components\";\n\nexport default function ButtonLink() {\n  return <Button variant=\"link\">Link</Button>;\n}"
+        },
+        {
+            "title": "Extra Small",
+            "description": "size=\"xs\" — compact extra-small button.",
+            "demo": "button-xs",
+            "code": "import { Button } from \"@repo/components\";\n\nexport default function ButtonXS() {\n  return <Button size=\"xs\">Extra Small</Button>;\n}"
+        },
+        {
+            "title": "Small",
+            "description": "size=\"sm\" — small button for tight layouts.",
+            "demo": "button-sm",
+            "code": "import { Button } from \"@repo/components\";\n\nexport default function ButtonSm() {\n  return <Button size=\"sm\">Small</Button>;\n}"
+        },
+        {
+            "title": "Large",
+            "description": "size=\"lg\" — large button for prominent calls to action.",
+            "demo": "button-lg",
+            "code": "import { Button } from \"@repo/components\";\n\nexport default function ButtonLg() {\n  return <Button size=\"lg\">Large</Button>;\n}"
         },
         {
             "title": "With Icon",

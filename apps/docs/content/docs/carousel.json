@@ -1,0 +1,53 @@
+{
+  "title": "Carousel",
+  "description": "A flexible and accessible carousel component built with Embla Carousel for displaying slides with horizontal, vertical, looping, and drag-free support.",
+  "component": "Carousel",
+  "installation": {
+    "cli": "npm install embla-carousel-react",
+    "manual": [
+      {
+        "title": "Install dependencies",
+        "description": "Install Embla Carousel for slider functionality.",
+        "command": "npm install embla-carousel-react"
+      },
+      {
+        "title": "Copy the component code",
+        "description": "Create a carousel component file and paste the carousel implementation.",
+        "filePath": "components/ui/carousel.jsx",
+        "code": "\"use client\";\nimport useEmblaCarousel from \"embla-carousel-react\";",
+        "language": "jsx",
+        "collapsible": true
+      }
+    ]
+  },
+  "usage": {
+    "import": "import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@repo/components'",
+    "basic": "carousel-demo"
+  },
+  "examples": [
+    {
+      "title": "Default Carousel",
+      "description": "A responsive horizontal carousel with navigation controls.",
+      "demo": "carousel-demo",
+      "code": "import {\n  Carousel,\n  CarouselContent,\n  CarouselItem,\n  CarouselPrevious,\n  CarouselNext,\n} from '@repo/components';\n\nexport default function CarouselDemo() {\n  const slides = [1, 2, 3, 4];\n\n  return (\n    <Carousel opts={{ align: 'start' }} className='w-full max-w-md'>\n      <CarouselContent>\n        {slides.map((item) => (\n          <CarouselItem\n            key={item}\n            className='basis-1/2'\n          >\n            <div className='rounded-md border p-6 text-center'>\n              Slide {item}\n            </div>\n          </CarouselItem>\n        ))}\n      </CarouselContent>\n\n      <CarouselPrevious />\n      <CarouselNext />\n    </Carousel>\n  );\n}"
+    },
+    {
+      "title": "Loop Carousel",
+      "description": "Centered carousel with infinite looping support.",
+      "demo": "carousel-loop",
+      "code": "import {\n  Carousel,\n  CarouselContent,\n  CarouselItem,\n  CarouselPrevious,\n  CarouselNext,\n} from '@repo/components';\n\nexport default function CarouselLoop() {\n  const slides = [1, 2, 3, 4];\n\n  return (\n    <Carousel\n      opts={{ align: 'center', loop: true }}\n      className='w-full max-w-lg'\n    >\n      <CarouselContent>\n        {slides.map((item) => (\n          <CarouselItem key={item}>\n            <div className='rounded-md bg-primary/10 p-8 text-center'>\n              Loop Slide {item}\n            </div>\n          </CarouselItem>\n        ))}\n      </CarouselContent>\n\n      <CarouselPrevious />\n      <CarouselNext />\n    </Carousel>\n  );\n}"
+    },
+    {
+      "title": "Drag Free Carousel",
+      "description": "Carousel with drag-free scrolling behavior for smoother interaction.",
+      "demo": "carousel-drag-free",
+      "code": "import {\n  Carousel,\n  CarouselContent,\n  CarouselItem,\n  CarouselPrevious,\n  CarouselNext,\n} from '@repo/components';\n\nexport default function CarouselDragFree() {\n  const slides = [1, 2, 3, 4, 5, 6];\n\n  return (\n    <Carousel\n      opts={{ dragFree: true }}\n      className='w-full max-w-2xl'\n    >\n      <CarouselContent>\n        {slides.map((item) => (\n          <CarouselItem\n            key={item}\n            className='basis-1/3'\n          >\n            <div className='rounded-md border p-4 text-center'>\n              Tag {item}\n            </div>\n          </CarouselItem>\n        ))}\n      </CarouselContent>\n\n      <CarouselPrevious />\n      <CarouselNext />\n    </Carousel>\n  );\n}"
+    },
+    {
+      "title": "Vertical Carousel",
+      "description": "A vertically scrolling carousel layout.",
+      "demo": "carousel-vertical",
+      "code": "import {\n  Carousel,\n  CarouselContent,\n  CarouselItem,\n  CarouselPrevious,\n  CarouselNext,\n} from '@repo/components';\n\nexport default function CarouselVertical() {\n  const slides = [1, 2, 3, 4];\n\n  return (\n    <Carousel\n      orientation='vertical'\n      className='h-48 max-w-xs'\n    >\n      <CarouselContent className='h-full'>\n        {slides.map((item) => (\n          <CarouselItem key={item}>\n            <div className='flex h-full items-center justify-center rounded-md border'>\n              Vertical {item}\n            </div>\n          </CarouselItem>\n        ))}\n      </CarouselContent>\n\n      <CarouselPrevious />\n      <CarouselNext />\n    </Carousel>\n  );\n}"
+    }
+  ]
+}

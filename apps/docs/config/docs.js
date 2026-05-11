@@ -70,6 +70,7 @@ export const docsConfig = {
                     label: "New",
                 },
                 { title: "Card", href: "/docs/card" },
+                { title: "Carousel", href: "/docs/carousel" },
                 { title: "Checkbox", href: "/docs/checkbox", label: "New" },
                 { title: "Dialog", href: "/docs/dialog", label: "New" },
                 { title: "Drawer", href: "/docs/drawer", label: "New" },

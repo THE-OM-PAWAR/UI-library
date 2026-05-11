@@ -1,8 +1,8 @@
 "use client";
 
+import * as DirectionPrimitive from "@radix-ui/react-direction";
 import { cn } from "@repo/utils";
 import * as React from "react";
-import * as DirectionPrimitive from "@radix-ui/react-direction";
 
 const DirectionProvider = ({ className, dir = "ltr", ...props }) => {
     return (

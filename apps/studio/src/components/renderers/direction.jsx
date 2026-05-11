@@ -1,8 +1,8 @@
 "use client";
 
-import * as React from "react";
 // Yahan apne asli component ko import karo
-import { DirectionProvider } from "@repo/components"; 
+import { DirectionProvider } from "@repo/components";
+import * as React from "react";
 
 export const renderDirection = () => {
     return (
@@ -19,7 +19,10 @@ export const renderDirection = () => {
             <DirectionProvider dir="rtl">
                 <div className="p-4 border rounded-md bg-muted/20">
                     <p className="text-sm font-bold">Right-to-Left (RTL):</p>
-                    <p>یہ تحریر دائیں سے شروع ہوتی ہے۔ (This text starts from right)</p>
+                    <p>
+                        یہ تحریر دائیں سے شروع ہوتی ہے۔ (This text starts from
+                        right)
+                    </p>
                 </div>
             </DirectionProvider>
         </div>

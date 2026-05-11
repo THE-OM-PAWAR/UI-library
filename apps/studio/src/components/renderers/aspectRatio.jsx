@@ -1,5 +1,3 @@
-export function renderAspectRatio ({AspectRatio}) {
-    return (
-        <AspectRatio varient={'square'}  />
-    )
+export function renderAspectRatio({ AspectRatio }) {
+    return <AspectRatio varient={"square"} />;
 }

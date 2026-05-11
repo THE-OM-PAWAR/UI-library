@@ -2,9 +2,9 @@ import {
     Button,
     Popover,
     PopoverContent,
+    PopoverDescription,
     PopoverHeader,
     PopoverTitle,
-    PopoverDescription,
     PopoverTrigger,
 } from "@repo/components";
 
@@ -14,7 +14,11 @@ export default function PopoverAlignments() {
             {["start", "center", "end"].map((align) => (
                 <Popover key={align}>
                     <PopoverTrigger asChild>
-                        <Button variant="outline" size="sm" className="capitalize">
+                        <Button
+                            variant="outline"
+                            size="sm"
+                            className="capitalize"
+                        >
                             {align}
                         </Button>
                     </PopoverTrigger>

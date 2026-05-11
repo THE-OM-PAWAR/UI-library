@@ -1,11 +1,11 @@
 import {
     Button,
     Popover,
-    PopoverTrigger,
     PopoverContent,
+    PopoverDescription,
     PopoverHeader,
     PopoverTitle,
-    PopoverDescription,
+    PopoverTrigger,
 } from "@repo/components";
 
 export default function PopoverWithHeader() {
@@ -18,7 +18,8 @@ export default function PopoverWithHeader() {
                 <PopoverHeader>
                     <PopoverTitle>What is a Popover?</PopoverTitle>
                     <PopoverDescription>
-                        A popover displays rich content in a portal, triggered by a button.
+                        A popover displays rich content in a portal, triggered
+                        by a button.
                     </PopoverDescription>
                 </PopoverHeader>
                 <p className="text-sm text-muted-foreground">

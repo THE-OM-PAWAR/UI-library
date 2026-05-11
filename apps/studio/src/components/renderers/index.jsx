@@ -51,4 +51,3 @@ export { renderTextarea } from "./textarea.jsx";
 export { renderToggle } from "./toggle.jsx";
 export { renderTooltip } from "./tooltip.jsx";
 export { renderInputOTP } from "./inputotp.jsx";
-export { renderInputGroup } from "./inputgroup.jsx";

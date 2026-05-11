@@ -263,10 +263,7 @@ export {
 export {
     InputGroup,
     InputGroupAddon,
-    InputGroupButton,
     InputGroupInput,
-    InputGroupText,
-    InputGroupTextarea,
 } from "./ui/inputgroup.jsx";
 // Navigation Menu
 export {
@@ -322,7 +319,18 @@ export {
     SheetTitle,
     SheetTrigger,
 } from "./ui/sheet.jsx";
+export {
+    Sidebar,
+    SidebarContent,
+    SidebarFooter,
+    SidebarGroup,
+    SidebarGroupContent,
+    SidebarGroupLabel,
+    SidebarHeader,
+    SidebarMenu,
+    SidebarMenuBadge,
+    SidebarMenuButton,
+    SidebarMenuItem,
+    SidebarSeparator,
+} from "./ui/sidebar.jsx";
 
-//Input Otp
-export { InputOTP } from "./ui/inputotp.jsx";
-export { InputGroup, InputGroupAddon, InputGroupInput } from "./ui/inputgroup.jsx"

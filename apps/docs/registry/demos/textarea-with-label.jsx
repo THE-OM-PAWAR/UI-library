@@ -1,4 +1,4 @@
-import { Textarea, Label } from "@repo/components";
+import { Label, Textarea } from "@repo/components";
 
 export default function TextareaWithLabel() {
     return (

@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import {
     Button,
     Drawer,
@@ -12,6 +11,7 @@ import {
     DrawerTitle,
     DrawerTrigger,
 } from "@repo/components";
+import { useState } from "react";
 
 const directions = ["bottom", "top", "left", "right"];
 
@@ -34,7 +34,9 @@ export default function DrawerDirections() {
                     </DrawerTrigger>
                     <DrawerContent>
                         <DrawerHeader>
-                            <DrawerTitle className="capitalize">{dir} Drawer</DrawerTitle>
+                            <DrawerTitle className="capitalize">
+                                {dir} Drawer
+                            </DrawerTitle>
                             <DrawerDescription>
                                 This drawer slides in from the {dir}.
                             </DrawerDescription>

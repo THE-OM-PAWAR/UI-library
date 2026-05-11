@@ -20,12 +20,14 @@ export default function DrawerDemo() {
                 <DrawerHeader>
                     <DrawerTitle>Drawer Title</DrawerTitle>
                     <DrawerDescription>
-                        This is a drawer component that slides in from the bottom.
+                        This is a drawer component that slides in from the
+                        bottom.
                     </DrawerDescription>
                 </DrawerHeader>
                 <div className="p-4">
                     <p className="text-sm text-muted-foreground">
-                        Drawer content goes here. You can add any content you want.
+                        Drawer content goes here. You can add any content you
+                        want.
                     </p>
                 </div>
                 <DrawerFooter>

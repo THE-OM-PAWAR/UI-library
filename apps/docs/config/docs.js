@@ -26,6 +26,18 @@ export const docsConfig = {
                     title: "Sidebar",
                     href: "/docs/sidebar",
                 },
+                {
+                    title: "Combobox",
+                    href: "/docs/combobox",
+                },
+                {
+                    title: "Context Menu",
+                    href: "/docs/context-menu",
+                },
+                {
+                    title: "Data Table",
+                    href: "/docs/data-table",
+                },
             ],
         },
     ],

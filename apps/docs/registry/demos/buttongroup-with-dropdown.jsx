@@ -1,10 +1,10 @@
 import {
-    ButtonGroup,
     Button,
+    ButtonGroup,
     Dropdown,
-    DropdownTrigger,
     DropdownContent,
     DropdownItem,
+    DropdownTrigger,
 } from "@repo/components";
 
 export default function ButtonGroupWithDropdown() {

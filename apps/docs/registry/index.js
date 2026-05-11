@@ -20,6 +20,11 @@ export const demoRegistry = {
     "button-sm": () => import("./demos/button-sm"),
     "button-lg": () => import("./demos/button-lg"),
 
+    "carousel-demo": () => import("./demos/carousel-demo"),
+    "carousel-loop": () => import("./demos/carousel-loop"),
+    "carousel-drag-free": () => import("./demos/carousel-drag-free"),
+    "carousel-vertical": () => import("./demos/carousel-vertical"),
+
     "buttongroup-demo": () => import("./demos/buttongroup-demo"),
     "buttongroup-variants": () => import("./demos/buttongroup-variants"),
     "buttongroup-sizes": () => import("./demos/buttongroup-sizes"),

@@ -80,8 +80,12 @@ export {
     DropdownMenuLabel,
     DropdownMenuPortal,
     DropdownMenuRadioGroup,
+    DropdownMenuRadioItem,
     DropdownMenuSeparator,
+    DropdownMenuShortcut,
     DropdownMenuSub,
+    DropdownMenuSubContent,
+    DropdownMenuSubTrigger,
     DropdownMenuTrigger,
 } from "./ui/dropdown-menu.jsx";
 // Field
@@ -187,6 +191,22 @@ export {
     BreadcrumbPage,
     BreadcrumbSeparator,
 } from "./ui/breadcrumb.jsx";
+
+// Sidebar
+export {
+    Sidebar,
+    SidebarContent,
+    SidebarFooter,
+    SidebarGroup,
+    SidebarGroupContent,
+    SidebarGroupLabel,
+    SidebarHeader,
+    SidebarMenu,
+    SidebarMenuBadge,
+    SidebarMenuButton,
+    SidebarMenuItem,
+    SidebarSeparator,
+} from "./ui/sidebar.jsx";
 
 export {
     ButtonGroup,
@@ -324,19 +344,4 @@ export {
   InputOTPSeparator,
 } from "./ui/input-otp.jsx";
 
-// Sidebar
-export {
-    Sidebar,
-    SidebarContent,
-    SidebarFooter,
-    SidebarGroup,
-    SidebarGroupContent,
-    SidebarGroupLabel,
-    SidebarHeader,
-    SidebarMenu,
-    SidebarMenuBadge,
-    SidebarMenuButton,
-    SidebarMenuItem,
-    SidebarSeparator,
-} from "./ui/sidebar.jsx";
 export { DirectionProvider } from "./ui/direction.jsx";

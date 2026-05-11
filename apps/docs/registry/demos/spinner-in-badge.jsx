@@ -1,4 +1,4 @@
-import { Spinner, Badge } from "@repo/components";
+import { Badge, Spinner } from "@repo/components";
 
 export default function SpinnerInBadge() {
     return (

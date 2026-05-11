@@ -14,7 +14,9 @@ export default function SpinnerSizes() {
             {sizes.map(({ className, label }) => (
                 <div key={label} className="flex flex-col items-center gap-2">
                     <Spinner className={className} />
-                    <span className="text-xs text-muted-foreground">{label}</span>
+                    <span className="text-xs text-muted-foreground">
+                        {label}
+                    </span>
                 </div>
             ))}
         </div>

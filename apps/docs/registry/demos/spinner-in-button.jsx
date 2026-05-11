@@ -1,4 +1,4 @@
-import { Spinner, Button } from "@repo/components";
+import { Button, Spinner } from "@repo/components";
 
 export default function SpinnerInButton() {
     return (

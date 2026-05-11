@@ -1,4 +1,4 @@
-import { Spinner, Card, CardContent } from "@repo/components";
+import { Card, CardContent, Spinner } from "@repo/components";
 
 export default function SpinnerInCard() {
     return (

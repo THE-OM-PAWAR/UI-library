@@ -1,4 +1,11 @@
-import { Spinner, Button, Badge, Card, CardContent, Separator } from "@repo/components";
+import {
+    Badge,
+    Button,
+    Card,
+    CardContent,
+    Separator,
+    Spinner,
+} from "@repo/components";
 import { Loader, Loader2 } from "lucide-react";
 
 export default function SpinnerVariants() {
@@ -7,14 +14,20 @@ export default function SpinnerVariants() {
             <div className="flex flex-col gap-3">
                 <p className="text-sm font-medium">Icons</p>
                 <div className="flex items-end gap-8">
-                    {[{ icon: Loader, label: "Loader" }, { icon: Loader2, label: "Loader2" }].map(
-                        ({ icon, label }) => (
-                            <div key={label} className="flex flex-col items-center gap-2">
-                                <Spinner icon={icon} className="size-6" />
-                                <span className="text-xs text-muted-foreground">{label}</span>
-                            </div>
-                        )
-                    )}
+                    {[
+                        { icon: Loader, label: "Loader" },
+                        { icon: Loader2, label: "Loader2" },
+                    ].map(({ icon, label }) => (
+                        <div
+                            key={label}
+                            className="flex flex-col items-center gap-2"
+                        >
+                            <Spinner icon={icon} className="size-6" />
+                            <span className="text-xs text-muted-foreground">
+                                {label}
+                            </span>
+                        </div>
+                    ))}
                 </div>
             </div>
 
@@ -30,9 +43,14 @@ export default function SpinnerVariants() {
                         { className: "size-8", label: "lg" },
                         { className: "size-10", label: "xl" },
                     ].map(({ className, label }) => (
-                        <div key={label} className="flex flex-col items-center gap-2">
+                        <div
+                            key={label}
+                            className="flex flex-col items-center gap-2"
+                        >
                             <Spinner className={className} />
-                            <span className="text-xs text-muted-foreground">{label}</span>
+                            <span className="text-xs text-muted-foreground">
+                                {label}
+                            </span>
                         </div>
                     ))}
                 </div>
@@ -49,9 +67,14 @@ export default function SpinnerVariants() {
                         { cls: "text-destructive", label: "Destructive" },
                         { cls: "text-muted-foreground", label: "Muted" },
                     ].map(({ cls, label }) => (
-                        <div key={cls} className="flex flex-col items-center gap-2">
+                        <div
+                            key={cls}
+                            className="flex flex-col items-center gap-2"
+                        >
                             <Spinner className={`size-6 ${cls}`} />
-                            <span className="text-xs text-muted-foreground">{label}</span>
+                            <span className="text-xs text-muted-foreground">
+                                {label}
+                            </span>
                         </div>
                     ))}
                 </div>
@@ -100,7 +123,9 @@ export default function SpinnerVariants() {
                 <Card>
                     <CardContent className="flex flex-col items-center justify-center gap-3 py-10">
                         <Spinner className="size-8 text-primary" />
-                        <p className="text-sm text-muted-foreground">Fetching data…</p>
+                        <p className="text-sm text-muted-foreground">
+                            Fetching data…
+                        </p>
                     </CardContent>
                 </Card>
             </div>

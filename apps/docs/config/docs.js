@@ -67,24 +67,160 @@ export const docsConfig = {
                 {
                     title: "Button Group",
                     href: "/docs/button-group",
-                    
+                    label: "New",
                 },
-                { title: "Card", href: "/docs/card" },
-                { title: "Carousel", href: "/docs/carousel" },
-                { title: "Checkbox", href: "/docs/checkbox"},
-                { title: "Dialog", href: "/docs/dialog" },
-                { title: "Drawer", href: "/docs/drawer" },
                 {
-                    title: "Dropdown Menu",
-                    href: "/docs/dropdown-menu",
+                    title: "Aspect Ratio",
+                    href: "/docs/aspect-ratio",
                 },
-                { title: "Headings", href: "/docs/headings" },
-                { title: "Image", href: "/docs/image" },
-                { title: "Popover", href: "/docs/popover" },
-                { title: "Progress", href: "/docs/progress" },
-                { title: "Spinner", href: "/docs/spinner" },
-                { title: "Textarea", href: "/docs/textarea" },
-                { title: "Toggle", href: "/docs/toggle" },
+                {
+                    title: "Badge",
+                    href: "/docs/badge",
+                },
+                {
+                    title: "Breadcrumb",
+                    href: "/docs/breadcrumb",
+                },
+                {
+                    title: "Calendar",
+                    href: "/docs/calendar",
+                },
+                {
+                    title: "Chart",
+                    href: "/docs/chart",
+                },
+                {
+                    title: "Collapsible",
+                    href: "/docs/collapsible",
+                },
+                {
+                    title: "Combobox",
+                    href: "/docs/combobox",
+                },
+                {
+                    title: "Context Menu",
+                    href: "/docs/context-menu",
+                },
+                {
+                    title: "Data Table",
+                    href: "/docs/data-table",
+                },
+                {
+                    title: "Empty",
+                    href: "/docs/empty",
+                },
+                {
+                    title: "Field",
+                    href: "/docs/field",
+                },
+                {
+                    title: "Hover Card",
+                    href: "/docs/hover-card",
+                },
+                {
+                    title: "Input",
+                    href: "/docs/input",
+                },
+                {
+                    title: "Input Group",
+                    href: "/docs/inputgroup",
+                },
+                {
+                    title: "Input OTP",
+                    href: "/docs/inputotp",
+                },
+                {
+                    title: "Item",
+                    href: "/docs/item",
+                },
+                {
+                    title: "Kbd",
+                    href: "/docs/kbd",
+                },
+                {
+                    title: "Label",
+                    href: "/docs/label",
+                },
+                {
+                    title: "Menubar",
+                    href: "/docs/menubar",
+                },
+                {
+                    title: "Navigation Menu",
+                    href: "/docs/navigation-menu",
+                },
+                {
+                    title: "Pagination",
+                    href: "/docs/pagination",
+                },
+                {
+                    title: "Radio",
+                    href: "/docs/radio",
+                },
+                {
+                    title: "Resizable",
+                    href: "/docs/resizable",
+                },
+                {
+                    title: "Scroll Area",
+                    href: "/docs/scroll-area",
+                },
+                {
+                    title: "Separator",
+                    href: "/docs/separator",
+                },
+                {
+                    title: "Sheet",
+                    href: "/docs/sheet",
+                },
+                {
+                    title: "Skeleton",
+                    href: "/docs/skeleton",
+                },
+                {
+                    title: "Sonner",
+                    href: "/docs/sonner",
+                },
+                {
+                    title: "Spinner",
+                    href: "/docs/spinner",
+                },
+                {
+                    title: "Switch",
+                    href: "/docs/switch",
+                },
+                {
+                    title: "Table",
+                    href: "/docs/table",
+                },
+                {
+                    title: "Tabs",
+                    href: "/docs/tabs",
+                },
+                {
+                    title: "Textarea",
+                    href: "/docs/textarea",
+                },
+                {
+                    title: "Toggle",
+                    href: "/docs/toggle",
+                },
+                {
+                    title: "Tooltip",
+                    href: "/docs/tooltip",
+                },
+                {
+                    title: "Accordion",
+                    href: "/docs/accordion",
+                },
+                {
+                    title: "Alert",
+                    href: "/docs/alert",
+                },
+                {
+                    title: "Avatar",
+                    href: "/docs/avatar",
+                },
             ],
         },
     ],

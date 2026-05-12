@@ -1,0 +1,29 @@
+{
+    "title": "Input",
+    "description": "Displays a form input field.",
+    "component": "Input",
+    "installation": {
+        "cli": "npx shadcn@latest add input",
+        "manual": [
+            {
+                "title": "Add utility function",
+                "description": "Create a cn utility function if you don't have one already.",
+                "filePath": "lib/utils.js",
+                "code": "import { clsx } from 'clsx';\nimport { twMerge } from 'tailwind-merge';\n\nexport function cn(...inputs) {\n  return twMerge(clsx(inputs));\n}",
+                "language": "javascript"
+            }
+        ]
+    },
+    "usage": {
+        "import": "import { Input } from '@repo/components';",
+        "basic": "input-demo"
+    },
+    "examples": [
+        {
+            "title": "Default",
+            "description": "A basic input example.",
+            "demo": "input-demo",
+            "code": "import { Input } from \"@repo/components\";\n\nexport default function InputDemo() {\n  return <Input className=\"w-full max-w-sm\" placeholder=\"Email\" type=\"email\" />;\n}"
+        }
+    ]
+}

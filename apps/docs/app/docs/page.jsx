@@ -18,6 +18,39 @@ export const metadata = {
 };
 
 export default function DocsPage() {
+    const components = [
+        {
+            title: "Button",
+            href: "/docs/button",
+            description:
+                "Displays a button or a component that looks like a button.",
+        },
+        {
+            title: "Sidebar",
+            href: "/docs/sidebar",
+            description:
+                "A sidebar component for building navigation layouts.",
+        },
+        {
+            title: "Accordion",
+            href: "/docs/accordion",
+            description:
+                "A vertically stacked set of interactive headings.",
+        },
+        {
+            title: "Alert",
+            href: "/docs/alert",
+            description:
+                "Displays a callout for important user-facing messages.",
+        },
+        {
+            title: "Avatar",
+            href: "/docs/avatar",
+            description:
+                "An image element with fallback and group support.",
+        },
+    ];
+
     return (
         <div className="container max-w-4xl mx-auto py-10 px-4">
             <div className="mb-12">
@@ -56,49 +89,27 @@ export default function DocsPage() {
                 </p>
             </section>
 
-            <section className="mb-12">
-                <DocsHeading level={2}>Key Features</DocsHeading>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                    <div className="rounded-lg border border-border bg-card p-5">
-                        <div className="flex items-center gap-3 mb-2">
-                            <Copy className="h-5 w-5 text-muted-foreground" />
-                            <span className="font-medium">Copy & Paste</span>
-                        </div>
-                        <p className="text-sm text-muted-foreground">
-                            No package to install. Just copy the component
-                            source into your project and own it fully.
-                        </p>
-                    </div>
-                    <div className="rounded-lg border border-border bg-card p-5">
-                        <div className="flex items-center gap-3 mb-2">
-                            <Accessibility className="h-5 w-5 text-muted-foreground" />
-                            <span className="font-medium">Accessible</span>
-                        </div>
-                        <p className="text-sm text-muted-foreground">
-                            Built on Radix UI primitives, every component meets
-                            WAI-ARIA standards out of the box.
-                        </p>
-                    </div>
-                    <div className="rounded-lg border border-border bg-card p-5">
-                        <div className="flex items-center gap-3 mb-2">
-                            <Paintbrush className="h-5 w-5 text-muted-foreground" />
-                            <span className="font-medium">Themeable</span>
-                        </div>
-                        <p className="text-sm text-muted-foreground">
-                            Styled with Tailwind CSS and CSS variables so you
-                            can adapt every component to your design system.
-                        </p>
-                    </div>
-                    <div className="rounded-lg border border-border bg-card p-5">
-                        <div className="flex items-center gap-3 mb-2">
-                            <Puzzle className="h-5 w-5 text-muted-foreground" />
-                            <span className="font-medium">Composable</span>
-                        </div>
-                        <p className="text-sm text-muted-foreground">
-                            Small, focused primitives that compose together. Use
-                            only what you need and leave the rest.
-                        </p>
-                    </div>
+            <section className="mb-16">
+                <DocsHeading level={2}>Components</DocsHeading>
+                <div className="grid gap-4 sm:grid-cols-2 mt-6">
+                    {components.map((component) => (
+                        <Link
+                            key={component.href}
+                            href={component.href}
+                            className="group relative rounded-lg border border-border bg-card p-6 hover:bg-accent/50 transition-colors"
+                        >
+                            <h3 className="font-semibold text-lg mb-2 group-hover:text-foreground">
+                                {component.title}
+                            </h3>
+                            <p className="text-sm text-muted-foreground mb-4">
+                                {component.description}
+                            </p>
+                            <div className="flex items-center text-sm font-medium text-primary">
+                                View component
+                                <ArrowRight className="ml-2 h-4 w-4" />
+                            </div>
+                        </Link>
+                    ))}
                 </div>
             </section>
 

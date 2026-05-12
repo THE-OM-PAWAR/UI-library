@@ -1,0 +1,29 @@
+{
+    "title": "Skeleton",
+    "description": "A loading placeholder that previews the shape of content.",
+    "component": "Skeleton",
+    "installation": {
+        "cli": "npx shadcn@latest add skeleton",
+        "manual": [
+            {
+                "title": "Add utility function",
+                "description": "Create a cn utility function if you don't have one already.",
+                "filePath": "lib/utils.js",
+                "code": "import { clsx } from 'clsx';\nimport { twMerge } from 'tailwind-merge';\n\nexport function cn(...inputs) {\n  return twMerge(clsx(inputs));\n}",
+                "language": "javascript"
+            }
+        ]
+    },
+    "usage": {
+        "import": "import { Skeleton } from '@repo/components';",
+        "basic": "skeleton-demo"
+    },
+    "examples": [
+        {
+            "title": "Default",
+            "description": "A basic skeleton example.",
+            "demo": "skeleton-demo",
+            "code": "import { Skeleton } from \"@repo/components\";\n\nexport default function SkeletonDemo() {\n  return (\n    <div className=\"flex w-full max-w-sm items-center gap-4\">\n      <Skeleton className=\"h-12 w-12 rounded-full bg-muted\" />\n      <div className=\"space-y-2\">\n        <Skeleton className=\"h-4 w-48 bg-muted\" />\n        <Skeleton className=\"h-4 w-32 bg-muted\" />\n      </div>\n    </div>\n  );\n}"
+        }
+    ]
+}

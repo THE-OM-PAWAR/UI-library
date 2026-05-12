@@ -1,0 +1,34 @@
+{
+    "title": "Calendar",
+    "description": "A date picker calendar built on React DayPicker.",
+    "component": "Calendar",
+    "installation": {
+        "cli": "npx shadcn@latest add calendar",
+        "manual": [
+            {
+                "title": "Install dependencies",
+                "description": "Install the required dependencies for the calendar component.",
+                "command": "npm install react-day-picker lucide-react"
+            },
+            {
+                "title": "Add utility function",
+                "description": "Create a cn utility function if you don't have one already.",
+                "filePath": "lib/utils.js",
+                "code": "import { clsx } from 'clsx';\nimport { twMerge } from 'tailwind-merge';\n\nexport function cn(...inputs) {\n  return twMerge(clsx(inputs));\n}",
+                "language": "javascript"
+            }
+        ]
+    },
+    "usage": {
+        "import": "import { Calendar } from '@repo/components';",
+        "basic": "calendar-demo"
+    },
+    "examples": [
+        {
+            "title": "Default",
+            "description": "A basic calendar example.",
+            "demo": "calendar-demo",
+            "code": "\"use client\";\n\nimport { Calendar } from \"@repo/components\";\nimport { useState } from \"react\";\n\nexport default function CalendarDemo() {\n  const [date, setDate] = useState(new Date(2026, 4, 12));\n\n  return (\n    <Calendar\n      mode=\"single\"\n      selected={date}\n      onSelect={setDate}\n      className=\"rounded-lg border\"\n    />\n  );\n}"
+        }
+    ]
+}

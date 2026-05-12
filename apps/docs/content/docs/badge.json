@@ -1,0 +1,71 @@
+{
+    "title": "Badge",
+    "description": "Displays a badge or a component that looks like a badge.",
+    "component": "Badge",
+    "installation": {
+        "cli": "pnpm dlx shadcn@latest add badge",
+        "manual": [
+            {
+                "title": "Install dependencies",
+                "description": "Install the required dependencies for the badge component.",
+                "command": "npm install @radix-ui/react-slot class-variance-authority"
+            },
+            {
+                "title": "Add utility function",
+                "description": "Create a cn utility function if you don't have one already.",
+                "filePath": "lib/utils.js",
+                "code": "import { clsx } from 'clsx';\nimport { twMerge } from 'tailwind-merge';\n\nexport function cn(...inputs) {\n  return twMerge(clsx(inputs));\n}",
+                "language": "javascript"
+            },
+            {
+                "title": "Copy the component code",
+                "description": "Create a new file and paste the badge component code.",
+                "filePath": "components/ui/badge.jsx",
+                "code": "import { cn } from \"@repo/utils\";\nimport { cva } from \"class-variance-authority\";\nimport * as React from \"react\";\n\nconst badgeVariants = cva(\n  \"inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors\",\n  {\n    variants: {\n      variant: {\n        default: \"bg-primary text-primary-foreground\",\n        secondary: \"bg-secondary text-secondary-foreground\",\n        destructive: \"bg-destructive text-destructive-foreground\",\n        outline: \"border border-input text-foreground\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n    },\n  }\n);\n\nconst Badge = React.forwardRef(\n  ({ className, variant, children, ...props }, ref) => {\n    return (\n      <span\n        ref={ref}\n        className={cn(badgeVariants({ variant }), className)}\n        {...props}\n      >\n        {children}\n      </span>\n    );\n  }\n);\n\nBadge.displayName = \"Badge\";\n\nexport { Badge, badgeVariants };",
+                "language": "jsx",
+                "collapsible": true
+            }
+        ]
+    },
+    "usage": {
+        "import": "import { Badge } from '@repo/components';",
+    
+        "basic": "badge-demo"
+    },
+    "examples": [
+        {
+            "title": "Variant",
+            "description": "Use the variant prop to change the variant of the badge.",
+            "demo": "badge-demo",
+            "code": "import { Badge } from \"@repo/components\";\n\nexport default function BadgeDemo() {\n  return (\n    <div className=\"flex flex-wrap gap-4\">\n      <Badge variant=\"default\">Default</Badge>\n      <Badge variant=\"secondary\">Secondary</Badge>\n      <Badge variant=\"destructive\">Destructive</Badge>\n      <Badge variant=\"outline\">Outline</Badge>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "With Icon",
+            "description": "You can render an icon inside the badge. Use data-icon=\"inline-start\" to render the icon on the left and data-icon=\"inline-end\" to render the icon on the right.",
+            "demo": "badge-with-icon",
+            "code": "import { BadgeCheck, BookmarkIcon } from \"lucide-react\";\nimport { Badge } from \"@repo/components\";\n\nexport default function BadgeWithIcon() {\n  return (\n    <div className=\"flex flex-wrap gap-2\">\n      <Badge variant=\"secondary\">\n        <BadgeCheck data-icon=\"inline-start\" />\n        Verified\n      </Badge>\n      <Badge variant=\"outline\">\n        Bookmark\n        <BookmarkIcon data-icon=\"inline-end\" />\n      </Badge>\n    </div>\n  );\n}"
+        },
+      
+        {
+            "title": "Spinner",
+            "description": "You can render a spinner inside the badge. Remember to add the data-icon=\"inline-start\" or data-icon=\"inline-end\" prop to the spinner.",
+            "demo": "badge-with-spinner",
+            "code": "import { Badge, Spinner } from \"@repo/components\";\n\nexport default function BadgeWithSpinner() {\n  return (\n    <div className=\"flex flex-wrap gap-2\">\n      <Badge variant=\"destructive\">\n        <Spinner data-icon=\"inline-start\" />\n        Deleting\n      </Badge>\n      <Badge variant=\"secondary\">\n        Generating\n        <Spinner data-icon=\"inline-end\" />\n      </Badge>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Link",
+            "description": "Use the asChild prop to render a link as a badge.",
+            "demo": "badge-link",
+            "code": "import { ArrowUpRightIcon } from \"lucide-react\";\n\nimport { Badge } from \"@repo/components\";\n\nexport default function BadgeAsLink() {\n  return (\n    <Badge asChild>\n      <a href=\"#link\" className=\"flex items-center\">\n        Open Link <ArrowUpRightIcon data-icon=\"inline-end\" />\n      </a>\n    </Badge>\n  );\n}"
+
+        },
+        {
+            "title": "Customs Colors",
+            "description": "You can customize the colors of a badge by adding custom classes such as bg-green-50 dark:bg-green-800 to the Badge component.",
+            "demo": "badge-color",
+            "code": "import { Badge } from \"@/components/ui/badge\";\n\nexport function BadgeCustomColors() {\n  return (\n    <div className=\"flex flex-wrap gap-2\">\n      <Badge className=\"bg-blue-50 text-blue-700 dark:bg-blue-950 dark:text-blue-300\">\n        Blue\n      </Badge>\n      <Badge className=\"bg-green-50 text-green-700 dark:bg-green-950 dark:text-green-300\">\n        Green\n      </Badge>\n      <Badge className=\"bg-sky-50 text-sky-700 dark:bg-sky-950 dark:text-sky-300\">\n        Sky\n      </Badge>\n      <Badge className=\"bg-purple-50 text-purple-700 dark:bg-purple-950 dark:text-purple-300\">\n        Purple\n      </Badge>\n      <Badge className=\"bg-red-50 text-red-700 dark:bg-red-950 dark:text-red-300\">\n        Red\n      </Badge>\n    </div>\n  );\n}"
+
+        }
+        
+    ]
+}

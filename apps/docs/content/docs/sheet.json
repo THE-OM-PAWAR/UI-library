@@ -1,0 +1,34 @@
+{
+    "title": "Sheet",
+    "description": "A panel that slides in from the edge of the screen.",
+    "component": "Sheet",
+    "installation": {
+        "cli": "npx shadcn@latest add sheet",
+        "manual": [
+            {
+                "title": "Install dependencies",
+                "description": "Install the required dependencies for the sheet component.",
+                "command": "npm install @radix-ui/react-dialog lucide-react"
+            },
+            {
+                "title": "Add utility function",
+                "description": "Create a cn utility function if you don't have one already.",
+                "filePath": "lib/utils.js",
+                "code": "import { clsx } from 'clsx';\nimport { twMerge } from 'tailwind-merge';\n\nexport function cn(...inputs) {\n  return twMerge(clsx(inputs));\n}",
+                "language": "javascript"
+            }
+        ]
+    },
+    "usage": {
+        "import": "import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@repo/components';",
+        "basic": "sheet-demo"
+    },
+    "examples": [
+        {
+            "title": "Default",
+            "description": "A basic sheet example.",
+            "demo": "sheet-demo",
+            "code": "import { Button, Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from \"@repo/components\";\n\nexport default function SheetDemo() {\n  return (\n    <Sheet>\n      <SheetTrigger asChild>\n        <Button variant=\"outline\">Open sheet</Button>\n      </SheetTrigger>\n      <SheetContent>\n        <SheetHeader>\n          <SheetTitle>Edit profile</SheetTitle>\n          <SheetDescription>Make quick updates without leaving the page.</SheetDescription>\n        </SheetHeader>\n      </SheetContent>\n    </Sheet>\n  );\n}"
+        }
+    ]
+}

@@ -1,7 +1,7 @@
 "use client";
 
 // Yahan apne asli component ko import karo
-import { DirectionProvider } from "@repo/components";
+import { DirectionProvider } from "@shery-ui/components";
 import * as React from "react";
 
 export const renderDirection = () => {

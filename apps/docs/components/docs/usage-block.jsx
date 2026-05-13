@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@repo/utils";
+import { cn } from "@shery-ui/utils";
 import { Check, Copy } from "lucide-react";
 import { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";

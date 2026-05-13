@@ -1,5 +1,5 @@
 "use client";
-import { cn } from "@repo/utils";
+import { cn } from "@shery-ui/utils";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import * as React from "react";

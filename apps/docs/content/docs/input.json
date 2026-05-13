@@ -3,7 +3,7 @@
     "description": "Displays a form input field.",
     "component": "Input",
     "installation": {
-        "cli": "npx shadcn@latest add input",
+        "cli": "npx shery-ui add input",
         "manual": [
             {
                 "title": "Add utility function",
@@ -15,7 +15,7 @@
         ]
     },
     "usage": {
-        "import": "import { Input } from '@repo/components';",
+        "import": "import { Input } from '@shery-ui/components';",
         "basic": "input-demo"
     },
     "examples": [
@@ -23,7 +23,7 @@
             "title": "Default",
             "description": "A basic input example.",
             "demo": "input-demo",
-            "code": "import { Input } from \"@repo/components\";\n\nexport default function InputDemo() {\n  return <Input className=\"w-full max-w-sm\" placeholder=\"Email\" type=\"email\" />;\n}"
+            "code": "import { Input } from \"@shery-ui/components\";\n\nexport default function InputDemo() {\n  return <Input className=\"w-full max-w-sm\" placeholder=\"Email\" type=\"email\" />;\n}"
         }
     ]
 }

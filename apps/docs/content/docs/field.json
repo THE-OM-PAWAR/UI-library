@@ -3,7 +3,7 @@
     "description": "Field primitives for labels, descriptions, validation, and grouped form layout.",
     "component": "Field",
     "installation": {
-        "cli": "npx shadcn@latest add field",
+        "cli": "npx shery-ui add field",
         "manual": [
             {
                 "title": "Install dependencies",
@@ -20,7 +20,7 @@
         ]
     },
     "usage": {
-        "import": "import { Field, FieldDescription, FieldGroup, FieldLabel } from '@repo/components';",
+        "import": "import { Field, FieldDescription, FieldGroup, FieldLabel } from '@shery-ui/components';",
         "basic": "field-demo"
     },
     "examples": [
@@ -28,7 +28,7 @@
             "title": "Default",
             "description": "A basic field example.",
             "demo": "field-demo",
-            "code": "import { Field, FieldDescription, FieldGroup, FieldLabel, Input } from \"@repo/components\";\n\nexport default function FieldDemo() {\n  return (\n    <FieldGroup className=\"w-full max-w-sm\">\n      <Field>\n        <FieldLabel htmlFor=\"email\">Email</FieldLabel>\n        <Input id=\"email\" type=\"email\" placeholder=\"olivia@example.com\" />\n        <FieldDescription>Used for product and billing updates.</FieldDescription>\n      </Field>\n    </FieldGroup>\n  );\n}"
+            "code": "import { Field, FieldDescription, FieldGroup, FieldLabel, Input } from \"@shery-ui/components\";\n\nexport default function FieldDemo() {\n  return (\n    <FieldGroup className=\"w-full max-w-sm\">\n      <Field>\n        <FieldLabel htmlFor=\"email\">Email</FieldLabel>\n        <Input id=\"email\" type=\"email\" placeholder=\"olivia@example.com\" />\n        <FieldDescription>Used for product and billing updates.</FieldDescription>\n      </Field>\n    </FieldGroup>\n  );\n}"
         }
     ]
 }

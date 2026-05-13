@@ -3,7 +3,7 @@
     "description": "A placeholder state for empty screens and missing content.",
     "component": "Empty",
     "installation": {
-        "cli": "npx shadcn@latest add empty",
+        "cli": "npx shery-ui add empty",
         "manual": [
             {
                 "title": "Add utility function",
@@ -15,7 +15,7 @@
         ]
     },
     "usage": {
-        "import": "import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@repo/components';",
+        "import": "import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@shery-ui/components';",
         "basic": "empty-demo"
     },
     "examples": [
@@ -23,7 +23,7 @@
             "title": "Default",
             "description": "A basic empty example.",
             "demo": "empty-demo",
-            "code": "import { Button, Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from \"@repo/components\";\nimport { Inbox } from \"lucide-react\";\n\nexport default function EmptyDemo() {\n  return (\n    <Empty className=\"w-full max-w-sm\">\n      <EmptyHeader>\n        <EmptyMedia><Inbox className=\"h-6 w-6\" /></EmptyMedia>\n        <EmptyTitle>No messages</EmptyTitle>\n        <EmptyDescription>You are all caught up for now.</EmptyDescription>\n      </EmptyHeader>\n      <EmptyContent>\n        <Button size=\"sm\">Create message</Button>\n      </EmptyContent>\n    </Empty>\n  );\n}"
+            "code": "import { Button, Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from \"@shery-ui/components\";\nimport { Inbox } from \"lucide-react\";\n\nexport default function EmptyDemo() {\n  return (\n    <Empty className=\"w-full max-w-sm\">\n      <EmptyHeader>\n        <EmptyMedia><Inbox className=\"h-6 w-6\" /></EmptyMedia>\n        <EmptyTitle>No messages</EmptyTitle>\n        <EmptyDescription>You are all caught up for now.</EmptyDescription>\n      </EmptyHeader>\n      <EmptyContent>\n        <Button size=\"sm\">Create message</Button>\n      </EmptyContent>\n    </Empty>\n  );\n}"
         }
     ]
 }

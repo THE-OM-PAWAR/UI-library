@@ -3,7 +3,7 @@
     "description": "A segmented one-time password input.",
     "component": "InputOTP",
     "installation": {
-        "cli": "npx shadcn@latest add input-otp",
+        "cli": "npx shery-ui add input-otp",
         "manual": [
             {
                 "title": "Add utility function",
@@ -15,7 +15,7 @@
         ]
     },
     "usage": {
-        "import": "import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from '@repo/components';",
+        "import": "import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from '@shery-ui/components';",
         "basic": "inputotp-demo"
     },
     "examples": [
@@ -23,7 +23,7 @@
             "title": "Default",
             "description": "A basic input otp example.",
             "demo": "inputotp-demo",
-            "code": "import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from \"@repo/components\";\n\nexport default function InputOTPDemo() {\n  return (\n    <InputOTP maxLength={6}>\n      <InputOTPGroup>\n        <InputOTPSlot index={0} />\n        <InputOTPSlot index={1} />\n        <InputOTPSlot index={2} />\n      </InputOTPGroup>\n      <InputOTPSeparator />\n      <InputOTPGroup>\n        <InputOTPSlot index={3} />\n        <InputOTPSlot index={4} />\n        <InputOTPSlot index={5} />\n      </InputOTPGroup>\n    </InputOTP>\n  );\n}"
+            "code": "import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from \"@shery-ui/components\";\n\nexport default function InputOTPDemo() {\n  return (\n    <InputOTP maxLength={6}>\n      <InputOTPGroup>\n        <InputOTPSlot index={0} />\n        <InputOTPSlot index={1} />\n        <InputOTPSlot index={2} />\n      </InputOTPGroup>\n      <InputOTPSeparator />\n      <InputOTPGroup>\n        <InputOTPSlot index={3} />\n        <InputOTPSlot index={4} />\n        <InputOTPSlot index={5} />\n      </InputOTPGroup>\n    </InputOTP>\n  );\n}"
         }
     ]
 }

@@ -3,7 +3,7 @@
     "description": "Groups inputs with leading or trailing add-ons.",
     "component": "InputGroup",
     "installation": {
-        "cli": "npx shadcn@latest add input-group",
+        "cli": "npx shery-ui add input-group",
         "manual": [
             {
                 "title": "Add utility function",
@@ -15,7 +15,7 @@
         ]
     },
     "usage": {
-        "import": "import { InputGroup, InputGroupAddon, InputGroupInput } from '@repo/components';",
+        "import": "import { InputGroup, InputGroupAddon, InputGroupInput } from '@shery-ui/components';",
         "basic": "inputgroup-demo"
     },
     "examples": [
@@ -23,7 +23,7 @@
             "title": "Default",
             "description": "A basic input group example.",
             "demo": "inputgroup-demo",
-            "code": "import { InputGroup, InputGroupAddon, InputGroupInput } from \"@repo/components\";\nimport { Search } from \"lucide-react\";\n\nexport default function InputGroupDemo() {\n  return (\n    <InputGroup className=\"w-full max-w-sm\">\n      <InputGroupAddon><Search className=\"h-4 w-4\" /></InputGroupAddon>\n      <InputGroupInput placeholder=\"Search components\" />\n      <InputGroupAddon position=\"right\">Ctrl K</InputGroupAddon>\n    </InputGroup>\n  );\n}"
+            "code": "import { InputGroup, InputGroupAddon, InputGroupInput } from \"@shery-ui/components\";\nimport { Search } from \"lucide-react\";\n\nexport default function InputGroupDemo() {\n  return (\n    <InputGroup className=\"w-full max-w-sm\">\n      <InputGroupAddon><Search className=\"h-4 w-4\" /></InputGroupAddon>\n      <InputGroupInput placeholder=\"Search components\" />\n      <InputGroupAddon position=\"right\">Ctrl K</InputGroupAddon>\n    </InputGroup>\n  );\n}"
         }
     ]
 }

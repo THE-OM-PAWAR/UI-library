@@ -10,7 +10,7 @@ import {
     DropdownMenuGroup,
     DropdownMenuItem,
     DropdownMenuTrigger,
-} from "@repo/components";
+} from "@shery-ui/components";
 import { ChevronDownIcon, DotIcon } from "lucide-react";
 import Link from "next/link";
 

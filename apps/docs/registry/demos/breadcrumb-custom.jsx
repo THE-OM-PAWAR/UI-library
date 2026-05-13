@@ -5,7 +5,7 @@ import {
     BreadcrumbList,
     BreadcrumbPage,
     BreadcrumbSeparator,
-} from "@repo/components";
+} from "@shery-ui/components";
 import { DotIcon } from "lucide-react";
 import Link from "next/link";
 

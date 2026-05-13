@@ -1,6 +1,6 @@
 "use client";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
-import { cn } from "@repo/utils";
+import { cn } from "@shery-ui/utils";
 import * as React from "react";
 
 // ─── Inline SVG icons

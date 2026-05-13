@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@repo/utils";
+import { cn } from "@shery-ui/utils";
 import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import * as React from "react";
 import { DayPicker, getDefaultClassNames } from "react-day-picker";

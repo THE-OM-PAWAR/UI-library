@@ -1,6 +1,6 @@
 "use client";
 
-import { Progress, Separator } from "@repo/components";
+import { Progress, Separator } from "@shery-ui/components";
 import { useEffect, useState } from "react";
 
 export default function ProgressVariants() {

@@ -1,4 +1,4 @@
-import { Label, RadioGroup, RadioGroupItem } from "@repo/components";
+import { Label, RadioGroup, RadioGroupItem } from "@shery-ui/components";
 
 export default function RadioDemo() {
     return (

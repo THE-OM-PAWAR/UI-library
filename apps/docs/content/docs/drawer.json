@@ -3,7 +3,7 @@
     "description": "A panel that slides in from the edge of the screen, built on top of Vaul.",
     "component": "Drawer",
     "installation": {
-        "cli": "npx shadcn@latest add drawer",
+        "cli": "npx shery-ui add drawer",
         "manual": [
             {
                 "title": "Install dependencies",
@@ -28,7 +28,7 @@
         ]
     },
     "usage": {
-        "import": "import { Drawer, DrawerTrigger, DrawerContent, DrawerHeader, DrawerTitle, DrawerDescription, DrawerFooter, DrawerClose } from '@repo/components';",
+        "import": "import { Drawer, DrawerTrigger, DrawerContent, DrawerHeader, DrawerTitle, DrawerDescription, DrawerFooter, DrawerClose } from '@shery-ui/components';",
         "basic": "drawer-demo"
     },
     "examples": [
@@ -36,13 +36,13 @@
             "title": "Default",
             "description": "A basic drawer that slides in from the bottom.",
             "demo": "drawer-demo",
-            "code": "import {\n  Button,\n  Drawer,\n  DrawerClose,\n  DrawerContent,\n  DrawerDescription,\n  DrawerFooter,\n  DrawerHeader,\n  DrawerTitle,\n  DrawerTrigger,\n} from \"@repo/components\";\n\nexport default function DrawerDemo() {\n  return (\n    <Drawer>\n      <DrawerTrigger asChild>\n        <Button variant=\"outline\">Open Drawer</Button>\n      </DrawerTrigger>\n      <DrawerContent>\n        <DrawerHeader>\n          <DrawerTitle>Drawer Title</DrawerTitle>\n          <DrawerDescription>\n            This is a drawer component that slides in from the bottom.\n          </DrawerDescription>\n        </DrawerHeader>\n        <div className=\"p-4\">\n          <p className=\"text-sm text-muted-foreground\">\n            Drawer content goes here. You can add any content you want.\n          </p>\n        </div>\n        <DrawerFooter>\n          <DrawerClose asChild>\n            <Button variant=\"outline\">Close</Button>\n          </DrawerClose>\n          <Button>Submit</Button>\n        </DrawerFooter>\n      </DrawerContent>\n    </Drawer>\n  );\n}"
+            "code": "import {\n  Button,\n  Drawer,\n  DrawerClose,\n  DrawerContent,\n  DrawerDescription,\n  DrawerFooter,\n  DrawerHeader,\n  DrawerTitle,\n  DrawerTrigger,\n} from \"@shery-ui/components\";\n\nexport default function DrawerDemo() {\n  return (\n    <Drawer>\n      <DrawerTrigger asChild>\n        <Button variant=\"outline\">Open Drawer</Button>\n      </DrawerTrigger>\n      <DrawerContent>\n        <DrawerHeader>\n          <DrawerTitle>Drawer Title</DrawerTitle>\n          <DrawerDescription>\n            This is a drawer component that slides in from the bottom.\n          </DrawerDescription>\n        </DrawerHeader>\n        <div className=\"p-4\">\n          <p className=\"text-sm text-muted-foreground\">\n            Drawer content goes here. You can add any content you want.\n          </p>\n        </div>\n        <DrawerFooter>\n          <DrawerClose asChild>\n            <Button variant=\"outline\">Close</Button>\n          </DrawerClose>\n          <Button>Submit</Button>\n        </DrawerFooter>\n      </DrawerContent>\n    </Drawer>\n  );\n}"
         },
         {
             "title": "Directions",
             "description": "Drawer can slide in from bottom, top, left, or right.",
             "demo": "drawer-directions",
-            "code": "\"use client\";\n\nimport { useState } from \"react\";\nimport {\n  Button,\n  Drawer,\n  DrawerClose,\n  DrawerContent,\n  DrawerDescription,\n  DrawerFooter,\n  DrawerHeader,\n  DrawerTitle,\n  DrawerTrigger,\n} from \"@repo/components\";\n\nconst directions = [\"bottom\", \"top\", \"left\", \"right\"];\n\nexport default function DrawerDirections() {\n  const [openDir, setOpenDir] = useState(null);\n\n  return (\n    <div className=\"flex flex-wrap items-center gap-3\">\n      {directions.map((dir) => (\n        <Drawer\n          key={dir}\n          direction={dir}\n          open={openDir === dir}\n          onOpenChange={(v) => setOpenDir(v ? dir : null)}\n        >\n          <DrawerTrigger asChild>\n            <Button variant=\"outline\" className=\"capitalize\">\n              {dir}\n            </Button>\n          </DrawerTrigger>\n          <DrawerContent>\n            <DrawerHeader>\n              <DrawerTitle className=\"capitalize\">{dir} Drawer</DrawerTitle>\n              <DrawerDescription>\n                This drawer slides in from the {dir}.\n              </DrawerDescription>\n            </DrawerHeader>\n            <div className=\"p-4\">\n              <p className=\"text-sm text-muted-foreground\">\n                Content for the {dir} direction drawer.\n              </p>\n            </div>\n            <DrawerFooter>\n              <DrawerClose asChild>\n                <Button variant=\"outline\">Close</Button>\n              </DrawerClose>\n            </DrawerFooter>\n          </DrawerContent>\n        </Drawer>\n      ))}\n    </div>\n  );\n}"
+            "code": "\"use client\";\n\nimport { useState } from \"react\";\nimport {\n  Button,\n  Drawer,\n  DrawerClose,\n  DrawerContent,\n  DrawerDescription,\n  DrawerFooter,\n  DrawerHeader,\n  DrawerTitle,\n  DrawerTrigger,\n} from \"@shery-ui/components\";\n\nconst directions = [\"bottom\", \"top\", \"left\", \"right\"];\n\nexport default function DrawerDirections() {\n  const [openDir, setOpenDir] = useState(null);\n\n  return (\n    <div className=\"flex flex-wrap items-center gap-3\">\n      {directions.map((dir) => (\n        <Drawer\n          key={dir}\n          direction={dir}\n          open={openDir === dir}\n          onOpenChange={(v) => setOpenDir(v ? dir : null)}\n        >\n          <DrawerTrigger asChild>\n            <Button variant=\"outline\" className=\"capitalize\">\n              {dir}\n            </Button>\n          </DrawerTrigger>\n          <DrawerContent>\n            <DrawerHeader>\n              <DrawerTitle className=\"capitalize\">{dir} Drawer</DrawerTitle>\n              <DrawerDescription>\n                This drawer slides in from the {dir}.\n              </DrawerDescription>\n            </DrawerHeader>\n            <div className=\"p-4\">\n              <p className=\"text-sm text-muted-foreground\">\n                Content for the {dir} direction drawer.\n              </p>\n            </div>\n            <DrawerFooter>\n              <DrawerClose asChild>\n                <Button variant=\"outline\">Close</Button>\n              </DrawerClose>\n            </DrawerFooter>\n          </DrawerContent>\n        </Drawer>\n      ))}\n    </div>\n  );\n}"
         }
     ]
 }

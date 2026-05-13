@@ -4,7 +4,7 @@
     "component": "ContextMenu",
 
     "installation": {
-        "cli": "npx shadcn@latest add context-menu",
+        "cli": "npx shery-ui add context-menu",
 
         "manual": [
             {
@@ -16,7 +16,7 @@
     },
 
     "usage": {
-        "import": "import {\n  ContextMenu,\n  ContextMenuTrigger,\n  ContextMenuContent,\n  ContextMenuItem,\n  ContextMenuLabel,\n  ContextMenuSeparator\n} from '@repo/components';",
+        "import": "import {\n  ContextMenu,\n  ContextMenuTrigger,\n  ContextMenuContent,\n  ContextMenuItem,\n  ContextMenuLabel,\n  ContextMenuSeparator\n} from '@shery-ui/components';",
 
         "basic": "context-menu-demo"
     },
@@ -27,7 +27,7 @@
             "description": "Basic context menu with actions.",
             "demo": "context-menu-demo",
 
-            "code": "import {\n  ContextMenu,\n  ContextMenuTrigger,\n  ContextMenuContent,\n  ContextMenuItem,\n  ContextMenuLabel,\n  ContextMenuSeparator,\n} from '@repo/components';\n\nexport default function ContextMenuDemo() {\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className='p-10 items-center justify-center rounded-lg border border-dashed text-sm text-muted-foreground'>\n        Right click here\n      </ContextMenuTrigger>\n\n      <ContextMenuContent>\n        <ContextMenuLabel>Actions</ContextMenuLabel>\n\n        <ContextMenuSeparator />\n\n        <ContextMenuItem>New File</ContextMenuItem>\n        <ContextMenuItem>Duplicate</ContextMenuItem>\n        <ContextMenuItem variant='destructive'>\n          Delete\n        </ContextMenuItem>\n      </ContextMenuContent>\n    </ContextMenu>\n  );\n}"
+            "code": "import {\n  ContextMenu,\n  ContextMenuTrigger,\n  ContextMenuContent,\n  ContextMenuItem,\n  ContextMenuLabel,\n  ContextMenuSeparator,\n} from '@shery-ui/components';\n\nexport default function ContextMenuDemo() {\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className='p-10 items-center justify-center rounded-lg border border-dashed text-sm text-muted-foreground'>\n        Right click here\n      </ContextMenuTrigger>\n\n      <ContextMenuContent>\n        <ContextMenuLabel>Actions</ContextMenuLabel>\n\n        <ContextMenuSeparator />\n\n        <ContextMenuItem>New File</ContextMenuItem>\n        <ContextMenuItem>Duplicate</ContextMenuItem>\n        <ContextMenuItem variant='destructive'>\n          Delete\n        </ContextMenuItem>\n      </ContextMenuContent>\n    </ContextMenu>\n  );\n}"
         },
 
         {
@@ -35,7 +35,7 @@
             "description": "Nested context menu items using sub menus.",
             "demo": "context-menu-sub",
 
-            "code": "import {\n  ContextMenu,\n  ContextMenuTrigger,\n  ContextMenuContent,\n  ContextMenuItem,\n  ContextMenuSub,\n  ContextMenuSubTrigger,\n  ContextMenuSubContent,\n} from '@repo/components';\n\nexport default function ContextMenuSubDemo() {\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className='p-10 items-center justify-center rounded-lg border border-dashed text-sm text-muted-foreground'>\n        Right click here\n      </ContextMenuTrigger>\n\n      <ContextMenuContent>\n        <ContextMenuItem>Dashboard</ContextMenuItem>\n\n        <ContextMenuSub>\n          <ContextMenuSubTrigger>\n            Share\n          </ContextMenuSubTrigger>\n\n          <ContextMenuSubContent>\n            <ContextMenuItem>Email</ContextMenuItem>\n            <ContextMenuItem>Copy Link</ContextMenuItem>\n            <ContextMenuItem>Export PDF</ContextMenuItem>\n          </ContextMenuSubContent>\n        </ContextMenuSub>\n      </ContextMenuContent>\n    </ContextMenu>\n  );\n}"
+            "code": "import {\n  ContextMenu,\n  ContextMenuTrigger,\n  ContextMenuContent,\n  ContextMenuItem,\n  ContextMenuSub,\n  ContextMenuSubTrigger,\n  ContextMenuSubContent,\n} from '@shery-ui/components';\n\nexport default function ContextMenuSubDemo() {\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className='p-10 items-center justify-center rounded-lg border border-dashed text-sm text-muted-foreground'>\n        Right click here\n      </ContextMenuTrigger>\n\n      <ContextMenuContent>\n        <ContextMenuItem>Dashboard</ContextMenuItem>\n\n        <ContextMenuSub>\n          <ContextMenuSubTrigger>\n            Share\n          </ContextMenuSubTrigger>\n\n          <ContextMenuSubContent>\n            <ContextMenuItem>Email</ContextMenuItem>\n            <ContextMenuItem>Copy Link</ContextMenuItem>\n            <ContextMenuItem>Export PDF</ContextMenuItem>\n          </ContextMenuSubContent>\n        </ContextMenuSub>\n      </ContextMenuContent>\n    </ContextMenu>\n  );\n}"
         },
 
         {
@@ -43,7 +43,7 @@
             "description": "Checkbox items allow toggling settings.",
             "demo": "context-menu-checkbox",
 
-            "code": "import {\n  ContextMenu,\n  ContextMenuTrigger,\n  ContextMenuContent,\n  ContextMenuCheckboxItem,\n  ContextMenuLabel,\n  ContextMenuSeparator,\n} from '@repo/components';\nimport { useState } from 'react';\n\nexport default function ContextMenuCheckboxDemo() {\n  const [bookmarks, setBookmarks] = useState(true);\n  const [urls, setUrls] = useState(false);\n\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className='p-10 items-center justify-center rounded-lg border border-dashed text-sm text-muted-foreground'>\n        Right click here\n      </ContextMenuTrigger>\n\n      <ContextMenuContent>\n        <ContextMenuLabel>Preferences</ContextMenuLabel>\n\n        <ContextMenuSeparator />\n\n        <ContextMenuCheckboxItem\n          checked={bookmarks}\n          onCheckedChange={setBookmarks}\n        >\n          Show Bookmarks Bar\n        </ContextMenuCheckboxItem>\n\n        <ContextMenuCheckboxItem\n          checked={urls}\n          onCheckedChange={setUrls}\n        >\n          Show Full URLs\n        </ContextMenuCheckboxItem>\n      </ContextMenuContent>\n    </ContextMenu>\n  );\n}"
+            "code": "import {\n  ContextMenu,\n  ContextMenuTrigger,\n  ContextMenuContent,\n  ContextMenuCheckboxItem,\n  ContextMenuLabel,\n  ContextMenuSeparator,\n} from '@shery-ui/components';\nimport { useState } from 'react';\n\nexport default function ContextMenuCheckboxDemo() {\n  const [bookmarks, setBookmarks] = useState(true);\n  const [urls, setUrls] = useState(false);\n\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className='p-10 items-center justify-center rounded-lg border border-dashed text-sm text-muted-foreground'>\n        Right click here\n      </ContextMenuTrigger>\n\n      <ContextMenuContent>\n        <ContextMenuLabel>Preferences</ContextMenuLabel>\n\n        <ContextMenuSeparator />\n\n        <ContextMenuCheckboxItem\n          checked={bookmarks}\n          onCheckedChange={setBookmarks}\n        >\n          Show Bookmarks Bar\n        </ContextMenuCheckboxItem>\n\n        <ContextMenuCheckboxItem\n          checked={urls}\n          onCheckedChange={setUrls}\n        >\n          Show Full URLs\n        </ContextMenuCheckboxItem>\n      </ContextMenuContent>\n    </ContextMenu>\n  );\n}"
         },
 
         {
@@ -51,7 +51,7 @@
             "description": "Radio items allow selecting a single option.",
             "demo": "context-menu-radio",
 
-            "code": "import {\n  ContextMenu,\n  ContextMenuTrigger,\n  ContextMenuContent,\n  ContextMenuRadioGroup,\n  ContextMenuRadioItem,\n  ContextMenuLabel,\n  ContextMenuSeparator,\n} from '@repo/components';\nimport { useState } from 'react';\n\nexport default function ContextMenuRadioDemo() {\n  const [position, setPosition] = useState('right');\n\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className='p-10 items-center justify-center rounded-lg border border-dashed text-sm text-muted-foreground'>\n        Right click here\n      </ContextMenuTrigger>\n\n      <ContextMenuContent>\n        <ContextMenuLabel>Panel Position</ContextMenuLabel>\n\n        <ContextMenuSeparator />\n\n        <ContextMenuRadioGroup\n          value={position}\n          onValueChange={setPosition}\n        >\n          <ContextMenuRadioItem value='left'>\n            Left\n          </ContextMenuRadioItem>\n\n          <ContextMenuRadioItem value='right'>\n            Right\n          </ContextMenuRadioItem>\n\n          <ContextMenuRadioItem value='bottom'>\n            Bottom\n          </ContextMenuRadioItem>\n        </ContextMenuRadioGroup>\n      </ContextMenuContent>\n    </ContextMenu>\n  );\n}"
+            "code": "import {\n  ContextMenu,\n  ContextMenuTrigger,\n  ContextMenuContent,\n  ContextMenuRadioGroup,\n  ContextMenuRadioItem,\n  ContextMenuLabel,\n  ContextMenuSeparator,\n} from '@shery-ui/components';\nimport { useState } from 'react';\n\nexport default function ContextMenuRadioDemo() {\n  const [position, setPosition] = useState('right');\n\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className='p-10 items-center justify-center rounded-lg border border-dashed text-sm text-muted-foreground'>\n        Right click here\n      </ContextMenuTrigger>\n\n      <ContextMenuContent>\n        <ContextMenuLabel>Panel Position</ContextMenuLabel>\n\n        <ContextMenuSeparator />\n\n        <ContextMenuRadioGroup\n          value={position}\n          onValueChange={setPosition}\n        >\n          <ContextMenuRadioItem value='left'>\n            Left\n          </ContextMenuRadioItem>\n\n          <ContextMenuRadioItem value='right'>\n            Right\n          </ContextMenuRadioItem>\n\n          <ContextMenuRadioItem value='bottom'>\n            Bottom\n          </ContextMenuRadioItem>\n        </ContextMenuRadioGroup>\n      </ContextMenuContent>\n    </ContextMenu>\n  );\n}"
         }
     ]
 }

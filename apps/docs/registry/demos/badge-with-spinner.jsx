@@ -1,4 +1,4 @@
-import { Badge, Spinner } from "@repo/components";
+import { Badge, Spinner } from "@shery-ui/components";
 
 export default function BadgeWithSpinner() {
     return (

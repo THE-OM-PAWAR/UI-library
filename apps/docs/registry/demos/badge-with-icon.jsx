@@ -1,4 +1,4 @@
-import { Badge } from "@repo/components";
+import { Badge } from "@shery-ui/components";
 import { BadgeCheck, BookmarkIcon } from "lucide-react";
 
 export default function BadgeWithIcon() {

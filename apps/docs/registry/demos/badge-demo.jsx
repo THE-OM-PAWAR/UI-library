@@ -1,4 +1,4 @@
-import { Badge } from "@repo/components";
+import { Badge } from "@shery-ui/components";
 
 export default function BadgeDemo() {
     return (

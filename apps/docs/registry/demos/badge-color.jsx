@@ -1,4 +1,4 @@
-import { Badge, cn } from "@repo/components";
+import { Badge, cn } from "@shery-ui/components";
 
 export default function BadgeCustomColors() {
     return (

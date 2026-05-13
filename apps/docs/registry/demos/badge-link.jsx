@@ -1,4 +1,4 @@
-import { Badge } from "@repo/components";
+import { Badge } from "@shery-ui/components";
 import { ArrowUpRightIcon } from "lucide-react";
 
 export default function BadgeAsLink() {

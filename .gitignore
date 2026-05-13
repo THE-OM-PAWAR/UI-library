@@ -17,10 +17,7 @@ out
 *.local
 
 # Environment
-.env
-.env.local
 .env.*.local
-.env.production
 
 # IDE
 .vscode
@@ -48,3 +45,4 @@ bun-error.log*
 
 # Type declarations (auto-generated)
 next-env.d.ts
+config.bat

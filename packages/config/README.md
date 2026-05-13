@@ -1,4 +1,4 @@
-# @repo/config
+# @shery-ui/config
 
 Production-grade design system configuration powered by Radix UI Colors.
 
@@ -17,7 +17,7 @@ This package is already installed as part of the monorepo. To use it in your app
 ```json
 {
   "dependencies": {
-    "@repo/config": "workspace:*"
+    "@shery-ui/config": "workspace:*"
   }
 }
 ```
@@ -28,7 +28,7 @@ This package is already installed as part of the monorepo. To use it in your app
 
 ```css
 /* In your main CSS file */
-@import '@repo/config/tokens.css';
+@import '@shery-ui/config/tokens.css';
 
 @tailwind base;
 @tailwind components;
@@ -39,7 +39,7 @@ This package is already installed as part of the monorepo. To use it in your app
 
 ```js
 // tailwind.config.js
-import baseConfig from '@repo/config/tailwind.config.js';
+import baseConfig from '@shery-ui/config/tailwind.config.js';
 
 export default {
   ...baseConfig,
@@ -135,7 +135,7 @@ To change to a different color (e.g., Blue):
 Or use the theme generator utility:
 
 ```js
-import { generateColorImports, generateColorMappings } from '@repo/config/theme-generator.js';
+import { generateColorImports, generateColorMappings } from '@shery-uiconfig/theme-generator.js';
 
 console.log(generateColorImports('blue', 'slate'));
 console.log(generateColorMappings('blue', 'slate'));

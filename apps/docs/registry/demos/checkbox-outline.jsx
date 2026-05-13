@@ -1,4 +1,4 @@
-import { Checkbox, Label } from "@repo/components";
+import { Checkbox, Label } from "@shery-ui/components";
 
 export default function CheckboxOutline() {
     return (

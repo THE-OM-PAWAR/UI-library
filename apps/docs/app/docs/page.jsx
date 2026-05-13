@@ -184,20 +184,33 @@ export default function DocsPage() {
                     <code className="font-mono text-sm bg-muted px-1.5 py-0.5 rounded">
                         shery-ui
                     </code>{" "}
-                    CLI to initialize your project and add components with a single command — no manual file setup required.
+                    CLI to initialize your project and add components with a
+                    single command — no manual file setup required.
                 </p>
                 <div className="space-y-3 font-mono text-sm mb-6">
                     <div className="px-4 py-3 border rounded-lg border-border bg-muted/30 dark:bg-muted/10">
-                        <p className="mb-1 text-xs text-muted-foreground font-sans">Initialize your project</p>
-                        <code className="text-foreground">npx shery-ui@latest init</code>
+                        <p className="mb-1 text-xs text-muted-foreground font-sans">
+                            Initialize your project
+                        </p>
+                        <code className="text-foreground">
+                            npx shery-ui@latest init
+                        </code>
                     </div>
                     <div className="px-4 py-3 border rounded-lg border-border bg-muted/30 dark:bg-muted/10">
-                        <p className="mb-1 text-xs text-muted-foreground font-sans">Add a component</p>
-                        <code className="text-foreground">npx shery-ui@latest add button</code>
+                        <p className="mb-1 text-xs text-muted-foreground font-sans">
+                            Add a component
+                        </p>
+                        <code className="text-foreground">
+                            npx shery-ui@latest add button
+                        </code>
                     </div>
                     <div className="px-4 py-3 border rounded-lg border-border bg-muted/30 dark:bg-muted/10">
-                        <p className="mb-1 text-xs text-muted-foreground font-sans">Interactive picker</p>
-                        <code className="text-foreground">npx shery-ui@latest add</code>
+                        <p className="mb-1 text-xs text-muted-foreground font-sans">
+                            Interactive picker
+                        </p>
+                        <code className="text-foreground">
+                            npx shery-ui@latest add
+                        </code>
                     </div>
                 </div>
                 <Link

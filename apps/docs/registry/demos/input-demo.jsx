@@ -1,4 +1,4 @@
-import { Input } from "@repo/components";
+import { Input } from "@shery-ui/components";
 
 export default function InputDemo() {
     return (

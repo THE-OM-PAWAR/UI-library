@@ -3,7 +3,7 @@ import {
     InputOTPGroup,
     InputOTPSeparator,
     InputOTPSlot,
-} from "@repo/components";
+} from "@shery-ui/components";
 
 export default function InputOTPDemo() {
     return (

@@ -1,4 +1,8 @@
-import { InputGroup, InputGroupAddon, InputGroupInput } from "@repo/components";
+import {
+    InputGroup,
+    InputGroupAddon,
+    InputGroupInput,
+} from "@shery-ui/components";
 import { Search } from "lucide-react";
 
 export default function InputGroupDemo() {

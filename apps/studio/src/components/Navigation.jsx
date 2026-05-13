@@ -1,6 +1,6 @@
 import * as ScrollArea from "@radix-ui/react-scroll-area";
 import * as Separator from "@radix-ui/react-separator";
-import { cn } from "@repo/utils";
+import { cn } from "@shery-ui/utils";
 import { Sparkles } from "lucide-react";
 
 export function Navigation({ components, activeComponent, onSelect }) {

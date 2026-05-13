@@ -4,6 +4,7 @@ import {
     Copy,
     Paintbrush,
     Puzzle,
+    Terminal,
 } from "lucide-react";
 import Link from "next/link";
 import {
@@ -56,6 +57,18 @@ export default function DocsPage() {
                     Beautiful and accessible React components built with Radix
                     UI and Tailwind CSS.
                 </DocsDescription>
+                <Link
+                    href="/docs/cli"
+                    className="inline-flex items-center gap-2 rounded-full border border-border bg-muted/50 px-4 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground mt-4"
+                >
+                    <Terminal className="w-3.5 h-3.5" />
+                    New —{" "}
+                    <code className="font-mono font-semibold text-foreground">
+                        shery-ui
+                    </code>{" "}
+                    CLI is here
+                    <ArrowRight className="w-3 h-3" />
+                </Link>
             </div>
 
             <section className="mb-12">
@@ -157,6 +170,41 @@ export default function DocsPage() {
                     className="group inline-flex items-center gap-2 rounded-lg border border-border bg-card px-6 py-4 text-sm font-medium transition-colors hover:bg-accent/50"
                 >
                     View all components
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                </Link>
+            </section>
+
+            <section className="mb-12">
+                <DocsHeading level={2}>
+                    <Terminal className="inline-block w-5 h-5 mr-2 align-text-bottom" />
+                    CLI
+                </DocsHeading>
+                <p className="text-muted-foreground mb-6">
+                    Use the{" "}
+                    <code className="font-mono text-sm bg-muted px-1.5 py-0.5 rounded">
+                        shery-ui
+                    </code>{" "}
+                    CLI to initialize your project and add components with a single command — no manual file setup required.
+                </p>
+                <div className="space-y-3 font-mono text-sm mb-6">
+                    <div className="px-4 py-3 border rounded-lg border-border bg-muted/30 dark:bg-muted/10">
+                        <p className="mb-1 text-xs text-muted-foreground font-sans">Initialize your project</p>
+                        <code className="text-foreground">npx shery-ui@latest init</code>
+                    </div>
+                    <div className="px-4 py-3 border rounded-lg border-border bg-muted/30 dark:bg-muted/10">
+                        <p className="mb-1 text-xs text-muted-foreground font-sans">Add a component</p>
+                        <code className="text-foreground">npx shery-ui@latest add button</code>
+                    </div>
+                    <div className="px-4 py-3 border rounded-lg border-border bg-muted/30 dark:bg-muted/10">
+                        <p className="mb-1 text-xs text-muted-foreground font-sans">Interactive picker</p>
+                        <code className="text-foreground">npx shery-ui@latest add</code>
+                    </div>
+                </div>
+                <Link
+                    href="/docs/cli"
+                    className="group inline-flex items-center gap-2 rounded-lg border border-border bg-card px-6 py-4 text-sm font-medium transition-colors hover:bg-accent/50"
+                >
+                    View CLI documentation
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </Link>
             </section>

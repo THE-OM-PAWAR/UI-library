@@ -83,7 +83,7 @@ Description here.
 ## Usage
 
 \`\`\`jsx
-import { Component } from "@repo/components";
+import { Component } from "@shery-ui/components";
 \`\`\`
 
 ## Props

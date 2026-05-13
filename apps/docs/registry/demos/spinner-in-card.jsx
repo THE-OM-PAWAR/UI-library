@@ -1,4 +1,4 @@
-import { Card, CardContent, Spinner } from "@repo/components";
+import { Card, CardContent, Spinner } from "@shery-ui/components";
 
 export default function SpinnerInCard() {
     return (

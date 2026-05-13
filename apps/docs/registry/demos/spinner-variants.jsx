@@ -5,7 +5,7 @@ import {
     CardContent,
     Separator,
     Spinner,
-} from "@repo/components";
+} from "@shery-ui/components";
 import { Loader, Loader2 } from "lucide-react";
 
 export default function SpinnerVariants() {

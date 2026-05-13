@@ -1,4 +1,4 @@
-import { cn } from "@repo/utils";
+import { cn } from "@shery-ui/utils";
 import * as React from "react";
 
 const InputGroup = React.forwardRef(({ className, ...props }, ref) => {

@@ -11,10 +11,19 @@ import {
     CardContent,
     CardHeader,
     CardTitle,
+    Checkbox,
     Input,
+    Label,
     Progress,
+    Separator,
+    Skeleton,
+    Spinner,
     Switch,
-} from "@repo/components";
+    Tabs,
+    TabsContent,
+    TabsList,
+    TabsTrigger,
+} from "@shery-ui/components";
 import {
     Bell,
     Heart,
@@ -203,6 +212,107 @@ export function ComponentShowcase() {
                             <span>78%</span>
                         </div>
                         <Progress value={78} height={6} />
+                    </div>
+                </CardContent>
+            </Card>
+
+            {/* Tabs */}
+            <Card>
+                <CardHeader className="pb-2">
+                    <CardTitle className="text-xs font-semibold tracking-wider uppercase text-muted-foreground">
+                        Tabs
+                    </CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <Tabs defaultValue="overview">
+                        <TabsList className="w-full">
+                            <TabsTrigger value="overview">Overview</TabsTrigger>
+                            <TabsTrigger value="analytics">
+                                Analytics
+                            </TabsTrigger>
+                            <TabsTrigger value="settings">Settings</TabsTrigger>
+                        </TabsList>
+                        <TabsContent value="overview" className="pt-3">
+                            <p className="text-xs text-muted-foreground">
+                                View a summary of your project stats and recent
+                                activity.
+                            </p>
+                        </TabsContent>
+                        <TabsContent value="analytics" className="pt-3">
+                            <p className="text-xs text-muted-foreground">
+                                Track usage metrics and performance trends over
+                                time.
+                            </p>
+                        </TabsContent>
+                        <TabsContent value="settings" className="pt-3">
+                            <p className="text-xs text-muted-foreground">
+                                Manage preferences, integrations and team
+                                access.
+                            </p>
+                        </TabsContent>
+                    </Tabs>
+                </CardContent>
+            </Card>
+
+            {/* Checkbox */}
+            <Card>
+                <CardHeader className="pb-2">
+                    <CardTitle className="text-xs font-semibold tracking-wider uppercase text-muted-foreground">
+                        Checkbox
+                    </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                    {[
+                        {
+                            id: "terms",
+                            label: "Accept terms and conditions",
+                            checked: true,
+                        },
+                        {
+                            id: "newsletter",
+                            label: "Subscribe to newsletter",
+                            checked: false,
+                        },
+                        {
+                            id: "updates",
+                            label: "Receive product updates",
+                            checked: true,
+                        },
+                    ].map((item) => (
+                        <div key={item.id} className="flex items-center gap-2">
+                            <Checkbox
+                                id={item.id}
+                                defaultChecked={item.checked}
+                            />
+                            <Label
+                                htmlFor={item.id}
+                                className="text-sm cursor-pointer"
+                            >
+                                {item.label}
+                            </Label>
+                        </div>
+                    ))}
+                </CardContent>
+            </Card>
+
+            {/* Spinner / Skeleton */}
+            <Card>
+                <CardHeader className="pb-2">
+                    <CardTitle className="text-xs font-semibold tracking-wider uppercase text-muted-foreground">
+                        Loading States
+                    </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                    <div className="flex items-center gap-3">
+                        <Spinner size="sm" />
+                        <Spinner />
+                        <Spinner size="lg" />
+                    </div>
+                    <Separator />
+                    <div className="space-y-2">
+                        <Skeleton className="w-full h-3 rounded" />
+                        <Skeleton className="w-4/5 h-3 rounded" />
+                        <Skeleton className="w-3/5 h-3 rounded" />
                     </div>
                 </CardContent>
             </Card>

@@ -1,4 +1,4 @@
-import { cn } from "@repo/utils";
+import { cn } from "@shery-ui/utils";
 import { Loader } from "lucide-react";
 
 function Spinner({ icon: Icon = Loader, className, ...props }) {

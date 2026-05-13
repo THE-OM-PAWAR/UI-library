@@ -1,0 +1,29 @@
+{
+    "title": "Input OTP",
+    "description": "A segmented one-time password input.",
+    "component": "InputOTP",
+    "installation": {
+        "cli": "npx shadcn@latest add input-otp",
+        "manual": [
+            {
+                "title": "Add utility function",
+                "description": "Create a cn utility function if you don't have one already.",
+                "filePath": "lib/utils.js",
+                "code": "import { clsx } from 'clsx';\nimport { twMerge } from 'tailwind-merge';\n\nexport function cn(...inputs) {\n  return twMerge(clsx(inputs));\n}",
+                "language": "javascript"
+            }
+        ]
+    },
+    "usage": {
+        "import": "import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from '@repo/components';",
+        "basic": "inputotp-demo"
+    },
+    "examples": [
+        {
+            "title": "Default",
+            "description": "A basic input otp example.",
+            "demo": "inputotp-demo",
+            "code": "import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from \"@repo/components\";\n\nexport default function InputOTPDemo() {\n  return (\n    <InputOTP maxLength={6}>\n      <InputOTPGroup>\n        <InputOTPSlot index={0} />\n        <InputOTPSlot index={1} />\n        <InputOTPSlot index={2} />\n      </InputOTPGroup>\n      <InputOTPSeparator />\n      <InputOTPGroup>\n        <InputOTPSlot index={3} />\n        <InputOTPSlot index={4} />\n        <InputOTPSlot index={5} />\n      </InputOTPGroup>\n    </InputOTP>\n  );\n}"
+        }
+    ]
+}

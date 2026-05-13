@@ -27,6 +27,7 @@ export { renderImage } from "./image.jsx";
 export { renderInput } from "./input.jsx";
 export { renderInputOtp } from "./input-otp.jsx";
 export { renderInputGroup } from "./inputgroup.jsx";
+export { renderInputOTP } from "./inputotp.jsx";
 export { renderItem } from "./item.jsx";
 export { renderKbd } from "./kbd.jsx";
 export { renderLabel } from "./label.jsx";

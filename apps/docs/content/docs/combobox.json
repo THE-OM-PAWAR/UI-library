@@ -1,0 +1,49 @@
+{
+    "title": "Combobox",
+    "description": "Searchable select input built with popover and command style interactions.",
+    "component": "Combobox",
+
+    "installation": {
+        "cli": "npx shadcn@latest add combobox",
+
+        "manual": [
+            {
+                "title": "Install dependencies",
+                "description": "Install the required Radix Popover dependency.",
+                "command": "npm install @radix-ui/react-popover"
+            }
+        ]
+    },
+
+    "usage": {
+        "import": "import {\n  Combobox,\n  ComboboxTrigger,\n  ComboboxContent,\n  ComboboxSearch,\n  ComboboxList,\n  ComboboxItem,\n  ComboboxEmpty\n} from '@repo/components';",
+
+        "basic": "combobox-demo"
+    },
+
+    "examples": [
+        {
+            "title": "Default",
+            "description": "Basic combobox with searchable options.",
+            "demo": "combobox-demo",
+
+            "code": "import {\n  Combobox,\n  ComboboxTrigger,\n  ComboboxContent,\n  ComboboxSearch,\n  ComboboxList,\n  ComboboxItem,\n  ComboboxEmpty,\n} from '@repo/components';\n\nexport default function ComboboxDemo() {\n  const frameworks = [\n    { value: 'react', label: 'React' },\n    { value: 'vue', label: 'Vue' },\n    { value: 'angular', label: 'Angular' },\n    { value: 'svelte', label: 'Svelte' },\n  ];\n\n  return (\n    <div className='w-64'>\n      <Combobox>\n        <ComboboxTrigger placeholder='Select framework...' />\n\n        <ComboboxContent>\n          <ComboboxSearch placeholder='Search framework...' />\n\n          <ComboboxList>\n            <ComboboxEmpty />\n\n            {frameworks.map((framework) => (\n              <ComboboxItem\n                key={framework.value}\n                value={framework.value}\n              >\n                {framework.label}\n              </ComboboxItem>\n            ))}\n          </ComboboxList>\n        </ComboboxContent>\n      </Combobox>\n    </div>\n  );\n}"
+        },
+
+        {
+            "title": "Controlled",
+            "description": "Control the selected value using React state.",
+            "demo": "combobox-controlled",
+
+            "code": "import {\n  Combobox,\n  ComboboxTrigger,\n  ComboboxContent,\n  ComboboxSearch,\n  ComboboxList,\n  ComboboxItem,\n  ComboboxEmpty,\n} from '@repo/components';\nimport { useState } from 'react';\n\nexport default function ComboboxControlled() {\n  const [value, setValue] = useState('react');\n\n  const frameworks = [\n    { value: 'react', label: 'React' },\n    { value: 'vue', label: 'Vue' },\n    { value: 'angular', label: 'Angular' },\n    { value: 'svelte', label: 'Svelte' },\n  ];\n\n  return (\n    <div className='w-64'>\n      <Combobox\n        value={value}\n        onValueChange={setValue}\n      >\n        <ComboboxTrigger placeholder='Select framework...' />\n\n        <ComboboxContent>\n          <ComboboxSearch placeholder='Search framework...' />\n\n          <ComboboxList>\n            <ComboboxEmpty />\n\n            {frameworks.map((framework) => (\n              <ComboboxItem\n                key={framework.value}\n                value={framework.value}\n              >\n                {framework.label}\n              </ComboboxItem>\n            ))}\n          </ComboboxList>\n        </ComboboxContent>\n      </Combobox>\n    </div>\n  );\n}"
+        },
+
+        {
+            "title": "Groups",
+            "description": "Group combobox items with labels and separators.",
+            "demo": "combobox-groups",
+
+            "code": "import {\n  Combobox,\n  ComboboxTrigger,\n  ComboboxContent,\n  ComboboxSearch,\n  ComboboxList,\n  ComboboxItem,\n  ComboboxEmpty,\n  ComboboxGroup,\n  ComboboxLabel,\n  ComboboxSeparator,\n} from '@repo/components';\n\nexport default function ComboboxGroups() {\n  return (\n    <div className='w-72'>\n      <Combobox>\n        <ComboboxTrigger placeholder='Select technology...' />\n\n        <ComboboxContent>\n          <ComboboxSearch placeholder='Search...' />\n\n          <ComboboxList>\n            <ComboboxEmpty />\n\n            <ComboboxGroup>\n              <ComboboxLabel>Frontend</ComboboxLabel>\n\n              <ComboboxItem value='react'>\n                React\n              </ComboboxItem>\n\n              <ComboboxItem value='vue'>\n                Vue\n              </ComboboxItem>\n\n              <ComboboxItem value='svelte'>\n                Svelte\n              </ComboboxItem>\n            </ComboboxGroup>\n\n            <ComboboxSeparator />\n\n            <ComboboxGroup>\n              <ComboboxLabel>Backend</ComboboxLabel>\n\n              <ComboboxItem value='node'>\n                Node.js\n              </ComboboxItem>\n\n              <ComboboxItem value='express'>\n                Express\n              </ComboboxItem>\n\n              <ComboboxItem value='go'>\n                Go\n              </ComboboxItem>\n            </ComboboxGroup>\n          </ComboboxList>\n        </ComboboxContent>\n      </Combobox>\n    </div>\n  );\n}"
+        }
+    ]
+}

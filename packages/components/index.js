@@ -263,10 +263,7 @@ export {
 export {
     InputGroup,
     InputGroupAddon,
-    InputGroupButton,
     InputGroupInput,
-    InputGroupText,
-    InputGroupTextarea,
 } from "./ui/inputgroup.jsx";
 // Navigation Menu
 export {
@@ -322,7 +319,6 @@ export {
     SheetTitle,
     SheetTrigger,
 } from "./ui/sheet.jsx";
-// Sidebar
 export {
     Sidebar,
     SidebarContent,

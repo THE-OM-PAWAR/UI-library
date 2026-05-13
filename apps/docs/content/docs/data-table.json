@@ -1,0 +1,57 @@
+{
+    "title": "Data Table",
+    "description": "Powerful table component with sorting, filtering, pagination, row selection, and column visibility built with TanStack Table.",
+    "component": "DataTable",
+
+    "installation": {
+        "cli": "npx shadcn@latest add table",
+
+        "manual": [
+            {
+                "title": "Install dependencies",
+                "description": "Install TanStack Table dependency.",
+                "command": "npm install @tanstack/react-table"
+            }
+        ]
+    },
+
+    "usage": {
+        "import": "import { DataTable } from '@repo/components';",
+
+        "basic": "data-table-demo"
+    },
+
+    "examples": [
+        {
+            "title": "Default",
+            "description": "Basic data table with sorting, filtering, pagination, and actions.",
+            "demo": "data-table-demo",
+
+            "code": "use client\";\nimport {\n  DataTable,\n  Button,\n  DropdownMenu,\n  DropdownMenuTrigger,\n  DropdownMenuContent,\n  DropdownMenuItem,\n  DropdownMenuLabel,\n  DropdownMenuSeparator,\n} from \"@repo/components\";\n\nimport { ArrowUpDown, MoreHorizontal } from \"lucide-react\";\nimport { useMemo } from \"react\";\n\nexport default function DataTableDemo() {\n  const data = useMemo(\n    () => [\n      {\n        id: \"pay_001\",\n        email: \"olivia@example.com\",\n        status: \"paid\",\n        amount: 250,\n      },\n      {\n        id: \"pay_002\",\n        email: \"jack@example.com\",\n        status: \"pending\",\n        amount: 150,\n      },\n      {\n        id: \"pay_003\",\n        email: \"isabella@example.com\",\n        status: \"failed\",\n        amount: 350,\n      },\n    ],\n    []\n  );\n\n  const columns = useMemo(\n    () => [\n      {\n        accessorKey: \"email\",\n        header: ({ column }) => (\n          <Button\n            variant=\"ghost\"\n            size=\"sm\"\n            onClick={() => column.toggleSorting()}\n          >\n            Email\n            <ArrowUpDown className=\"ml-2 h-4 w-4\" />\n          </Button>\n        ),\n      },\n      {\n        accessorKey: \"status\",\n        header: \"Status\",\n      },\n      {\n        accessorKey: \"amount\",\n        header: () => <div className=\"text-right\">Amount</div>,\n        cell: ({ row }) => {\n          const amount = parseFloat(row.getValue(\"amount\"));\n          const formatted = new Intl.NumberFormat(\"en-US\", {\n            style: \"currency\",\n            currency: \"USD\",\n          }).format(amount);\n\n          return (\n            <div className=\"text-right font-medium\">\n              {formatted}\n            </div>\n          );\n        },\n      },\n      {\n        id: \"actions\",\n        cell: () => (\n          <DropdownMenu>\n            <DropdownMenuTrigger asChild>\n              <Button\n                variant=\"ghost\"\n                size=\"sm\"\n                className=\"h-8 w-8 p-0\"\n              >\n                <MoreHorizontal className=\"h-4 w-4\" />\n              </Button>\n            </DropdownMenuTrigger>\n\n            <DropdownMenuContent align=\"end\">\n              <DropdownMenuLabel>\n                Actions\n              </DropdownMenuLabel>\n\n              <DropdownMenuSeparator />\n\n              <DropdownMenuItem>\n                View details\n              </DropdownMenuItem>\n\n              <DropdownMenuItem>\n                Copy ID\n              </DropdownMenuItem>\n            </DropdownMenuContent>\n          </DropdownMenu>\n        ),\n      },\n    ],\n    []\n  );\n\n  return (\n    <div className=\"w-full max-w-5xl\">\n      <DataTable\n        columns={columns}\n        data={data}\n        filterColumn=\"email\"\n        filterPlaceholder=\"Filter emails...\"\n      />\n    </div>\n  );\n}"
+        },
+
+        {
+            "title": "Sorting",
+            "description": "Sortable columns using TanStack Table sorting state.",
+            "demo": "data-table-sorting",
+
+            "code": "\"use client\";\nimport {\n  DataTable,\n  Button,\n} from \"@repo/components\";\n\nimport { ArrowUpDown } from \"lucide-react\";\nimport { useMemo } from \"react\";\n\nexport default function DataTableSorting() {\n  const data = useMemo(\n    () => [\n      {\n        email: \"olivia@example.com\",\n        status: \"paid\",\n        amount: 250,\n      },\n      {\n        email: \"jack@example.com\",\n        status: \"pending\",\n        amount: 150,\n      },\n      {\n        email: \"isabella@example.com\",\n        status: \"failed\",\n        amount: 350,\n      },\n    ],\n    []\n  );\n\n  const columns = useMemo(\n    () => [\n      {\n        accessorKey: \"email\",\n        header: ({ column }) => (\n          <Button\n            variant=\"ghost\"\n            size=\"sm\"\n            onClick={() =>\n              column.toggleSorting(\n                column.getIsSorted() === \"asc\"\n              )\n            }\n          >\n            Email\n            <ArrowUpDown className=\"ml-2 h-4 w-4\" />\n          </Button>\n        ),\n      },\n      {\n        accessorKey: \"status\",\n        header: \"Status\",\n      },\n      {\n        accessorKey: \"amount\",\n        header: \"Amount\",\n      },\n    ],\n    []\n  );\n\n  return (\n    <div className=\"w-full max-w-4xl\">\n      <DataTable\n        columns={columns}\n        data={data}\n        showColumnVisibility={false}\n      />\n    </div>\n  );\n}"
+        },
+
+        {
+            "title": "Row Selection",
+            "description": "Select single or multiple rows using checkboxes.",
+            "demo": "data-table-selection",
+
+            "code": "\"use client\";\nimport { DataTable } from \"@repo/components\";\nimport { useMemo } from \"react\";\n\nexport default function DataTableSelection() {\n  const data = useMemo(\n    () => [\n      {\n        id: \"usr_001\",\n        name: \"Olivia Martin\",\n        role: \"Frontend Developer\",\n        email: \"olivia@example.com\",\n      },\n      {\n        id: \"usr_002\",\n        name: \"Jackson Lee\",\n        role: \"Backend Developer\",\n        email: \"jackson@example.com\",\n      },\n      {\n        id: \"usr_003\",\n        name: \"Sophia Kim\",\n        role: \"UI Designer\",\n        email: \"sophia@example.com\",\n      },\n    ],\n    []\n  );\n\n  const columns = useMemo(\n    () => [\n      {\n        id: \"select\",\n        header: ({ table }) => (\n          <input\n            type=\"checkbox\"\n            aria-label=\"Select all\"\n            checked={table.getIsAllPageRowsSelected()}\n            onChange={(e) =>\n              table.toggleAllPageRowsSelected(\n                e.target.checked\n              )\n            }\n          />\n        ),\n        cell: ({ row }) => (\n          <input\n            type=\"checkbox\"\n            aria-label=\"Select row\"\n            checked={row.getIsSelected()}\n            onChange={(e) =>\n              row.toggleSelected(\n                e.target.checked\n              )\n            }\n          />\n        ),\n      },\n      {\n        accessorKey: \"name\",\n        header: \"Name\",\n      },\n      {\n        accessorKey: \"role\",\n        header: \"Role\",\n      },\n      {\n        accessorKey: \"email\",\n        header: \"Email\",\n      },\n    ],\n    []\n  );\n\n  return (\n    <div className=\"w-full max-w-5xl\">\n      <DataTable\n        columns={columns}\n        data={data}\n        filterColumn=\"email\"\n        filterPlaceholder=\"Filter emails...\"\n      />\n    </div>\n  );\n}"
+        },
+
+        {
+            "title": "Pagination",
+            "description": "Paginate large datasets with previous and next controls.",
+            "demo": "data-table-pagination",
+
+            "code": "\"use client\";\nimport { DataTable } from \"@repo/components\";\nimport { useMemo } from \"react\";\n\nexport default function DataTablePagination() {\n  const data = useMemo(\n    () =>\n      Array.from({ length: 20 }, (_, index) => ({\n        id: `invoice_${index + 1}`,\n        customer: `Customer ${index + 1}`,\n        status:\n          index % 3 === 0\n            ? \"Paid\"\n            : index % 3 === 1\n            ? \"Pending\"\n            : \"Failed\",\n        amount: `$${(index + 1) * 25}`,\n      })),\n    []\n  );\n\n  const columns = useMemo(\n    () => [\n      {\n        accessorKey: \"customer\",\n        header: \"Customer\",\n      },\n      {\n        accessorKey: \"status\",\n        header: \"Status\",\n      },\n      {\n        accessorKey: \"amount\",\n        header: \"Amount\",\n      },\n    ],\n    []\n  );\n\n  return (\n    <div className=\"w-full max-w-5xl\">\n      <DataTable\n        columns={columns}\n        data={data}\n        showFilter={false}\n      />\n    </div>\n  );\n}"
+        }
+    ]
+}

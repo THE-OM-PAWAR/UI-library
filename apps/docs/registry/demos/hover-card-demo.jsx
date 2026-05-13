@@ -2,7 +2,7 @@ import {
     HoverCard,
     HoverCardContent,
     HoverCardTrigger,
-} from "@repo/components";
+} from "@shery-ui/components";
 
 export default function HoverCardDemo() {
     return (

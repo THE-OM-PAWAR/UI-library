@@ -3,7 +3,7 @@
 ###input.jsx 
 
 import React from 'react';
-import { cn } from '@repo/utils';
+import { cn } from '@shery-uiutils';
 
 export const Input = React.forwardRef(
   ({ className, type = 'text', ...props }, ref) => {
@@ -31,7 +31,7 @@ input: {
     id: 'input',
     name: 'Input',
     type: 'simple',
-    path: '@repo/components',
+    path: '@shery-uicomponents',
     importName: 'Input',
     description: 'A text input field for user input',
     additionalProps: [

@@ -105,7 +105,7 @@ The docs app will open at http://localhost:3001.
 ## Usage Example
 
 ```jsx
-import { Button, Dialog, DropdownMenu, Tooltip } from '@repo/components';
+import { Button, Dialog, DropdownMenu, Tooltip } from '@shery-uicomponents';
 
 function MyApp() {
   return (

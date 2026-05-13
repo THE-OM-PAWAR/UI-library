@@ -1,4 +1,4 @@
-# @repo/components
+# @shery-uicomponents
 
 Production-grade React UI component library built with Radix UI primitives and Tailwind CSS.
 
@@ -16,7 +16,7 @@ packages/components/
 │   ├── dropdown-menu/
 │   └── tooltip/
 ├── lib/                     # Internal utilities
-│   ├── utils.js            # Re-exports from @repo/utils
+│   ├── utils.js            # Re-exports from @shery-uiutils
 │   └── index.js
 └── index.js                # Main entry point
 ```
@@ -33,7 +33,7 @@ Each component follows this structure:
 ## Usage
 
 ```jsx
-import { Button, Dialog, DropdownMenu, Tooltip } from '@repo/components';
+import { Button, Dialog, DropdownMenu, Tooltip } from '@shery-uicomponents';
 
 function MyApp() {
   return (
@@ -50,7 +50,7 @@ function MyApp() {
 
 - **Radix UI Foundation**: All interactive components use Radix primitives
 - **No Direct Exposure**: Radix primitives are wrapped, never exposed directly
-- **Design Tokens**: All styling uses CSS variables from @repo/config
+- **Design Tokens**: All styling uses CSS variables from @shery-uiconfig
 - **No Hardcoded Values**: No hardcoded colors or spacing
 - **Class Merging**: All components use cn() utility
 - **Compound Components**: Complex components follow compound pattern

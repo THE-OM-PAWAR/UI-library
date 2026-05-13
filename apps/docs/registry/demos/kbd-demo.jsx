@@ -1,4 +1,4 @@
-import { Kbd } from "@repo/components";
+import { Kbd } from "@shery-ui/components";
 
 export default function KbdDemo() {
     return (

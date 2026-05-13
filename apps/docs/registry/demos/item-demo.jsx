@@ -1,4 +1,4 @@
-import { Item } from "@repo/components";
+import { Item } from "@shery-ui/components";
 import { Bell, ChevronRight } from "lucide-react";
 
 export default function ItemDemo() {

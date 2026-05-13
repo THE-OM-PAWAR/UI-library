@@ -4,7 +4,7 @@ import {
     TooltipContent,
     TooltipProvider,
     TooltipTrigger,
-} from "@repo/components";
+} from "@shery-ui/components";
 
 export default function TooltipDemo() {
     return (

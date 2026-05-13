@@ -1,4 +1,4 @@
-import { Toggle } from "@repo/components";
+import { Toggle } from "@shery-ui/components";
 import { AlignCenter, Bold, Italic, Mic, Underline } from "lucide-react";
 
 const variants = [

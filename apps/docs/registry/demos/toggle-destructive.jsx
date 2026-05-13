@@ -1,4 +1,4 @@
-import { Toggle } from "@repo/components";
+import { Toggle } from "@shery-ui/components";
 import { Mic } from "lucide-react";
 
 export default function ToggleDestructive() {

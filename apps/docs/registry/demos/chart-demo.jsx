@@ -1,4 +1,4 @@
-import { ChartContainer } from "@repo/components";
+import { ChartContainer } from "@shery-ui/components";
 
 const chartConfig = {
     desktop: { label: "Desktop", color: "#2563eb" },

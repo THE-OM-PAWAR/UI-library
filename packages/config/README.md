@@ -1,4 +1,4 @@
-# @shery-uiconfig
+# @shery-ui/config
 
 Production-grade design system configuration powered by Radix UI Colors.
 
@@ -17,7 +17,7 @@ This package is already installed as part of the monorepo. To use it in your app
 ```json
 {
   "dependencies": {
-    "@shery-uiconfig": "workspace:*"
+    "@shery-ui/config": "workspace:*"
   }
 }
 ```
@@ -28,7 +28,7 @@ This package is already installed as part of the monorepo. To use it in your app
 
 ```css
 /* In your main CSS file */
-@import '@shery-uiconfig/tokens.css';
+@import '@shery-ui/config/tokens.css';
 
 @tailwind base;
 @tailwind components;
@@ -39,7 +39,7 @@ This package is already installed as part of the monorepo. To use it in your app
 
 ```js
 // tailwind.config.js
-import baseConfig from '@shery-uiconfig/tailwind.config.js';
+import baseConfig from '@shery-ui/config/tailwind.config.js';
 
 export default {
   ...baseConfig,

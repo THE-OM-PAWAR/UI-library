@@ -1,4 +1,4 @@
-import { Badge, Heading } from "@shery-uicomponents";
+import { Badge, Heading } from "@shery-ui/components";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import {

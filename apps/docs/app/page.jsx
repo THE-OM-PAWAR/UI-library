@@ -7,6 +7,7 @@ import {
     Layers,
     Palette,
     Sparkles,
+    Terminal,
     Zap,
 } from "lucide-react";
 import Link from "next/link";
@@ -56,6 +57,18 @@ export default function HomePage() {
             {/* Hero Section */}
             <section className="flex flex-col items-center justify-center gap-10">
                 <div className="flex max-w-[980px] flex-col items-center gap-8 text-center">
+                    <Link
+                        href="/docs/cli"
+                        className="inline-flex items-center gap-2 rounded-full border border-border bg-muted/50 px-4 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                    >
+                        <Terminal className="w-3.5 h-3.5" />
+                        Introducing the{" "}
+                        <code className="font-mono font-semibold text-foreground">
+                            shery-ui
+                        </code>{" "}
+                        CLI
+                        <ArrowRight className="w-3 h-3" />
+                    </Link>
                     <h1 className="text-4xl font-bold leading-tight tracking-tighter md:text-6xl lg:leading-[1.1]">
                         Build beautiful apps with our component library
                     </h1>
@@ -71,9 +84,10 @@ export default function HomePage() {
                                 <ArrowRight className="w-4 h-4 ml-2" />
                             </Button>
                         </Link>
-                        <Link href="/docs/components">
+                        <Link href="/docs/cli">
                             <Button size="lg" variant="outline">
-                                Browse Components
+                                <Terminal className="w-4 h-4 mr-2" />
+                                Try the CLI
                             </Button>
                         </Link>
                     </div>
@@ -117,6 +131,81 @@ export default function HomePage() {
                                 </p>
                             </div>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* CLI Section */}
+            <section className="px-4 py-24 border-t lg:px-8">
+                <div className="max-w-6xl mx-auto">
+                    <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+                        <div>
+                            <div className="flex items-center gap-2 mb-4">
+                                <div className="p-2 rounded-lg bg-primary/10">
+                                    <Terminal className="w-5 h-5" />
+                                </div>
+                                <span className="text-sm font-medium tracking-wider uppercase text-muted-foreground">
+                                    CLI
+                                </span>
+                            </div>
+                            <h2 className="mb-4 text-3xl font-bold tracking-tight">
+                                Add components in seconds
+                            </h2>
+                            <p className="mb-6 text-lg text-muted-foreground">
+                                Use the{" "}
+                                <code className="font-mono text-sm bg-muted px-1.5 py-0.5 rounded">
+                                    shery-ui
+                                </code>{" "}
+                                CLI to scaffold your project and copy any component directly into your codebase — no lock-in.
+                            </p>
+                            <div className="flex gap-3">
+                                <Link href="/docs/cli">
+                                    <Button size="sm">
+                                        CLI Docs
+                                        <ArrowRight className="w-4 h-4 ml-2" />
+                                    </Button>
+                                </Link>
+                                <Link href="/docs/components">
+                                    <Button size="sm" variant="outline">
+                                        Browse Components
+                                    </Button>
+                                </Link>
+                            </div>
+                        </div>
+                        <div className="space-y-3 font-mono text-sm">
+                            <div className="px-4 py-3 border rounded-lg border-border bg-muted/30 dark:bg-muted/10">
+                                <p className="mb-1 text-xs text-muted-foreground">
+                                    # Initialize your project
+                                </p>
+                                <code className="text-foreground">
+                                    npx shery-ui@latest init
+                                </code>
+                            </div>
+                            <div className="px-4 py-3 border rounded-lg border-border bg-muted/30 dark:bg-muted/10">
+                                <p className="mb-1 text-xs text-muted-foreground">
+                                    # Add a component
+                                </p>
+                                <code className="text-foreground">
+                                    npx shery-ui@latest add button
+                                </code>
+                            </div>
+                            <div className="px-4 py-3 border rounded-lg border-border bg-muted/30 dark:bg-muted/10">
+                                <p className="mb-1 text-xs text-muted-foreground">
+                                    # Add multiple components
+                                </p>
+                                <code className="text-foreground">
+                                    npx shery-ui@latest add button card dialog
+                                </code>
+                            </div>
+                            <div className="px-4 py-3 border rounded-lg border-border bg-muted/30 dark:bg-muted/10">
+                                <p className="mb-1 text-xs text-muted-foreground">
+                                    # List all available components
+                                </p>
+                                <code className="text-foreground">
+                                    npx shery-ui@latest list
+                                </code>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

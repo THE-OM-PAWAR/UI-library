@@ -1,4 +1,4 @@
-import { Button, Toaster } from "@repo/components";
+import { Button, Toaster } from "@shery-ui/components";
 
 export default function SonnerDemo() {
     return (

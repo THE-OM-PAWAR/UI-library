@@ -1,4 +1,4 @@
-import { Skeleton } from "@repo/components";
+import { Skeleton } from "@shery-ui/components";
 
 export default function SkeletonDemo() {
     return (

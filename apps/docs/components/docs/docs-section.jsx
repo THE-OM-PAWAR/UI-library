@@ -1,4 +1,4 @@
-import { cn } from "@repo/utils";
+import { cn } from "@shery-ui/utils";
 
 export function DocsSection({ children, className, ...props }) {
     return (

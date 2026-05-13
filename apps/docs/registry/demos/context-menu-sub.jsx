@@ -1,12 +1,12 @@
 import {
     ContextMenu,
-    ContextMenuTrigger,
     ContextMenuContent,
     ContextMenuItem,
     ContextMenuSub,
-    ContextMenuSubTrigger,
     ContextMenuSubContent,
-} from "@repo/components";
+    ContextMenuSubTrigger,
+    ContextMenuTrigger,
+} from "@shery-ui/components";
 
 export default function ContextMenuSubDemo() {
     return (
@@ -19,9 +19,7 @@ export default function ContextMenuSubDemo() {
                 <ContextMenuItem>Dashboard</ContextMenuItem>
 
                 <ContextMenuSub>
-                    <ContextMenuSubTrigger>
-                        Share
-                    </ContextMenuSubTrigger>
+                    <ContextMenuSubTrigger>Share</ContextMenuSubTrigger>
 
                     <ContextMenuSubContent>
                         <ContextMenuItem>Email</ContextMenuItem>

@@ -1,4 +1,4 @@
-import { Button, Spinner } from "@repo/components";
+import { Button, Spinner } from "@shery-ui/components";
 
 export default function SpinnerInButton() {
     return (

@@ -3,7 +3,7 @@
     "description": "Displays rich preview content when users hover over a trigger.",
     "component": "HoverCard",
     "installation": {
-        "cli": "npx shadcn@latest add hover-card",
+        "cli": "npx shery-ui@latest latest add hover-card",
         "manual": [
             {
                 "title": "Install dependencies",
@@ -20,7 +20,7 @@
         ]
     },
     "usage": {
-        "import": "import { HoverCard, HoverCardContent, HoverCardTrigger } from '@repo/components';",
+        "import": "import { HoverCard, HoverCardContent, HoverCardTrigger } from '@shery-ui/components';",
         "basic": "hover-card-demo"
     },
     "examples": [
@@ -28,7 +28,7 @@
             "title": "Default",
             "description": "A basic hover card example.",
             "demo": "hover-card-demo",
-            "code": "import { HoverCard, HoverCardContent, HoverCardTrigger } from \"@repo/components\";\n\nexport default function HoverCardDemo() {\n  return (\n    <HoverCard>\n      <HoverCardTrigger asChild>\n        <button className=\"rounded-md border px-3 py-2 text-sm font-medium\">@uilib</button>\n      </HoverCardTrigger>\n      <HoverCardContent className=\"w-72\">\n        <div className=\"space-y-1\">\n          <h4 className=\"text-sm font-semibold\">UI Library</h4>\n          <p className=\"text-sm text-muted-foreground\">Composable components for polished application interfaces.</p>\n        </div>\n      </HoverCardContent>\n    </HoverCard>\n  );\n}"
+            "code": "import { HoverCard, HoverCardContent, HoverCardTrigger } from \"@shery-ui/components\";\n\nexport default function HoverCardDemo() {\n  return (\n    <HoverCard>\n      <HoverCardTrigger asChild>\n        <button className=\"rounded-md border px-3 py-2 text-sm font-medium\">@uilib</button>\n      </HoverCardTrigger>\n      <HoverCardContent className=\"w-72\">\n        <div className=\"space-y-1\">\n          <h4 className=\"text-sm font-semibold\">UI Library</h4>\n          <p className=\"text-sm text-muted-foreground\">Composable components for polished application interfaces.</p>\n        </div>\n      </HoverCardContent>\n    </HoverCard>\n  );\n}"
         }
     ]
 }

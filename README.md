@@ -1,6 +1,6 @@
 # UI Component Library
 
-A production-grade React component library inspired by shadcn/ui, built with Radix UI primitives, design tokens, and Tailwind CSS.
+A production-grade React component library inspired by shadcn/ui, built with Radix UI primitives, design tokens, and Tailwind CSS. Add components to your project with a single CLI command — no lock-in, you own the code.
 
 ## Project Structure
 
@@ -9,21 +9,18 @@ A production-grade React component library inspired by shadcn/ui, built with Rad
 │   ├── studio/               # Component development studio (port 3000)
 │   └── docs/                 # Next.js documentation app (port 3001)
 ├── packages/
+│   ├── cli/                  # shery-ui CLI (init, add, list)
 │   ├── components/           # UI component library
 │   │   ├── ui/              # Component implementations
-│   │   │   ├── button/
-│   │   │   │   ├── button.jsx         # Component logic
-│   │   │   │   ├── button.styles.js   # CVA variants
-│   │   │   │   ├── button.demo.jsx    # Preview demo
-│   │   │   │   └── index.js           # Exports
-│   │   │   ├── dialog/
-│   │   │   ├── dropdown-menu/
-│   │   │   └── tooltip/
+│   │   │   ├── button.jsx
+│   │   │   ├── dialog.jsx
+│   │   │   ├── dropdown-menu.jsx
+│   │   │   └── ...
 │   │   ├── lib/             # Internal utilities
 │   │   └── index.js         # Main entry point
 │   ├── config/              # Shared Tailwind config & design tokens
 │   └── utils/               # Helper utilities (cn)
-└── pnpm-workspace.yaml      # Monorepo configuration
+└── package.json                 # Monorepo configuration (bun workspaces)
 ```
 
 ## Component Standards
@@ -37,42 +34,66 @@ Every component follows this structure:
 
 ## Getting Started
 
+### Using the CLI (recommended)
+
+The fastest way to get components into your project:
+
+```bash
+# Initialize shery-ui in your project
+npx shery-ui@latest init
+
+# Add a component
+npx shery-ui@latest add button
+
+# Add multiple components at once
+npx shery-ui@latest add button card dialog
+
+# Interactive picker — choose from all 51+ components
+npx shery-ui@latest add
+
+# List all available components
+npx shery-ui@latest list
+```
+
+`init` auto-detects your framework (Next.js, Vite, Remix, Astro), sets up `lib/utils`, and creates a `shery-ui.json` config. See the [CLI docs](https://shery-ui.dev/docs/cli) for all options.
+
+### Manual setup
+
 1. Install dependencies:
 ```bash
-pnpm install
+bun install
 ```
 
 2. Start the studio:
 ```bash
-pnpm dev
+bun run dev
 ```
 
 The studio will open at http://localhost:3000 with hot reload enabled.
 
 3. Or start the documentation app:
 ```bash
-pnpm dev:docs
+bun run dev:docs
 ```
 
 The docs app will open at http://localhost:3001.
 
 ## Features
 
+- **CLI** — `npx shery-ui@latest init` + `add` to scaffold and copy components instantly
+- **Copy & Paste** — Own your components, no package lock-in
 - **Radix UI Foundation** - All interactive components built on Radix primitives
 - **Radix Colors System** - Production-grade 12-step color scales with alpha variants
 - **Complete Theming** - Radius, scaling, typography matching Radix Themes
   - **Colors**: 15 accent colors + 6 gray options
-  - **Radius**: 5 presets (none to full) + 6-step scale
-  - **Scaling**: Global size multiplier (90%-110%)
-  - **Typography**: 9-step type scale + custom fonts
-- **Dynamic Theme Switching** - Change entire UI with one command
+  - **Radius**: 5 presets (none → full) + 6-step CSS variable scale
+  - **Scaling**: Global size multiplier (90%–110%)
+  - **Typography**: Custom font family overrides
+- **Dark Mode** - First-class dark mode via CSS variables, works with `next-themes`
 - **Design Token System** - Semantic tokens mapped from Radix color scales
-- **Dark Mode Support** - Automatic dark mode via Radix Colors
 - **Variant Architecture** - CVA for flexible component variants
-- **Monorepo Structure** - pnpm workspaces for efficient management
-- **Path Aliases** - Clean imports with @repo/* namespace
-- **Hot Reload** - Instant feedback during development
-- **Full Accessibility** - WCAG AA/AAA compliant color combinations
+- **Full Accessibility** - WCAG AA/AAA compliant, keyboard & screen reader ready
+- **Monorepo Structure** - bun workspaces for efficient management
 
 ## Available Components
 
@@ -84,7 +105,7 @@ The docs app will open at http://localhost:3001.
 ## Usage Example
 
 ```jsx
-import { Button, Dialog, DropdownMenu, Tooltip } from '@repo/components';
+import { Button, Dialog, DropdownMenu, Tooltip } from '@shery-ui/components';
 
 function MyApp() {
   return (
@@ -106,6 +127,7 @@ function MyApp() {
     </div>
   );
 }
+
 ```
 
 ## Adding New Components
@@ -120,6 +142,26 @@ function MyApp() {
 4. Add page in `apps/studio/src/pages/[component-name]/index.jsx`
 5. Update component registry in `apps/studio/src/registry/components.js`
 6. Add lazy import in `apps/studio/src/App.jsx`
+
+## Theming
+
+All components are styled via CSS variables generated from `packages/config/theme.config.js`. Edit the config and regenerate:
+
+```js
+// packages/config/theme.config.js
+export const themeConfig = {
+  accent:  'indigo',  // 15 accent colors
+  gray:    'slate',   // 6 gray palettes
+  radius:  'medium',  // none | small | medium | large | full
+  scaling: '100%',    // 90% | 95% | 100% | 105% | 110%
+};
+```
+
+```bash
+bun run generate:theme
+```
+
+See the [Theming docs](https://shery-ui.dev/docs/theming) for the full guide including dark mode, CSS variable overrides, and Tailwind token usage.
 
 ## Design Tokens
 
@@ -140,7 +182,7 @@ export const themeConfig = {
 
 2. Run:
 ```bash
-pnpm generate:theme
+bun run generate:theme
 ```
 
 3. Restart dev server - Done! 🎉
@@ -166,11 +208,11 @@ See `packages/config/COLOR_SYSTEM.md` for complete documentation.
 
 ## Scripts
 
-- `pnpm dev` - Start studio (port 3000)
-- `pnpm dev:docs` - Start documentation app (port 3001)
-- `pnpm build` - Build all packages
-- `pnpm clean` - Clean all build outputs
-- `pnpm generate:theme` - Generate theme from config (change colors)
+- `bun run dev` - Start studio (port 3000)
+- `bun run dev:docs` - Start documentation app (port 3001)
+- `bun run build` - Build all packages
+- `bun run clean` - Clean all build outputs
+- `bun run generate:theme` - Regenerate CSS tokens from `theme.config.js`
 
 ## Architecture
 

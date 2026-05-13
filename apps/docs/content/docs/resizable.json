@@ -3,7 +3,7 @@
     "description": "Resizable panel groups for split views and adjustable layouts.",
     "component": "ResizablePanelGroup",
     "installation": {
-        "cli": "npx shadcn@latest add resizable",
+        "cli": "npx shery-ui@latest add resizable",
         "manual": [
             {
                 "title": "Install dependencies",
@@ -20,7 +20,7 @@
         ]
     },
     "usage": {
-        "import": "import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from '@repo/components';",
+        "import": "import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from '@shery-ui/components';",
         "basic": "resizable-demo"
     },
     "examples": [
@@ -28,7 +28,7 @@
             "title": "Default",
             "description": "A basic resizable example.",
             "demo": "resizable-demo",
-            "code": "import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from \"@repo/components\";\n\nexport default function ResizableDemo() {\n  return (\n    <ResizablePanelGroup direction=\"horizontal\" className=\"h-48 max-w-md rounded-lg border\">\n      <ResizablePanel defaultSize={50} className=\"flex items-center justify-center p-4 text-sm\">Sidebar</ResizablePanel>\n      <ResizableHandle withHandle />\n      <ResizablePanel defaultSize={50} className=\"flex items-center justify-center p-4 text-sm\">Content</ResizablePanel>\n    </ResizablePanelGroup>\n  );\n}"
+            "code": "import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from \"@shery-ui/components\";\n\nexport default function ResizableDemo() {\n  return (\n    <ResizablePanelGroup direction=\"horizontal\" className=\"h-48 max-w-md rounded-lg border\">\n      <ResizablePanel defaultSize={50} className=\"flex items-center justify-center p-4 text-sm\">Sidebar</ResizablePanel>\n      <ResizableHandle withHandle />\n      <ResizablePanel defaultSize={50} className=\"flex items-center justify-center p-4 text-sm\">Content</ResizablePanel>\n    </ResizablePanelGroup>\n  );\n}"
         }
     ]
 }

@@ -1,4 +1,4 @@
-import { Label, Textarea } from "@repo/components";
+import { Label, Textarea } from "@shery-ui/components";
 
 export default function TextareaWithLabel() {
     return (

@@ -41,7 +41,8 @@ export const demoRegistry = {
     "buttongroup-sizes": () => import("./demos/buttongroup-sizes"),
     "buttongroup-sm": () => import("./demos/buttongroup-sm"),
     "buttongroup-variants": () => import("./demos/buttongroup-variants"),
-    "buttongroup-with-dropdown": () => import("./demos/buttongroup-with-dropdown"),
+    "buttongroup-with-dropdown": () =>
+        import("./demos/buttongroup-with-dropdown"),
     "calendar-demo": () => import("./demos/calendar-demo"),
     "card-custom": () => import("./demos/card-custom"),
     "card-demo": () => import("./demos/card-demo"),
@@ -82,11 +83,13 @@ export const demoRegistry = {
     "dialog-with-form": () => import("./demos/dialog-with-form"),
     "drawer-demo": () => import("./demos/drawer-demo"),
     "drawer-directions": () => import("./demos/drawer-directions"),
-    "dropdown-menu-checkboxes": () => import("./demos/dropdown-menu-checkboxes"),
+    "dropdown-menu-checkboxes": () =>
+        import("./demos/dropdown-menu-checkboxes"),
     "dropdown-menu-demo": () => import("./demos/dropdown-menu-demo"),
     "dropdown-menu-radio": () => import("./demos/dropdown-menu-radio"),
     "dropdown-menu-submenu": () => import("./demos/dropdown-menu-submenu"),
-    "dropdown-menu-with-icons": () => import("./demos/dropdown-menu-with-icons"),
+    "dropdown-menu-with-icons": () =>
+        import("./demos/dropdown-menu-with-icons"),
     "empty-demo": () => import("./demos/empty-demo"),
     "field-demo": () => import("./demos/field-demo"),
     "headings-code": () => import("./demos/headings-code"),
@@ -133,6 +136,7 @@ export const demoRegistry = {
     "separator-demo": () => import("./demos/separator-demo"),
     "sheet-demo": () => import("./demos/sheet-demo"),
     "sidebar-demo": () => import("./demos/sidebar-demo"),
+    "sidebar-with-icons": () => import("./demos/sidebar-with-icons"),
     "sidebar-groups": () => import("./demos/sidebar-groups"),
     "sidebar-right": () => import("./demos/sidebar-right"),
     "sidebar-with-icons": () => import("./demos/sidebar-with-icons"),

@@ -3,7 +3,7 @@
     "description": "A date picker calendar built on React DayPicker.",
     "component": "Calendar",
     "installation": {
-        "cli": "npx shadcn@latest add calendar",
+        "cli": "npx shery-ui@latest add calendar",
         "manual": [
             {
                 "title": "Install dependencies",
@@ -20,7 +20,7 @@
         ]
     },
     "usage": {
-        "import": "import { Calendar } from '@repo/components';",
+        "import": "import { Calendar } from '@shery-ui/components';",
         "basic": "calendar-demo"
     },
     "examples": [
@@ -28,7 +28,7 @@
             "title": "Default",
             "description": "A basic calendar example.",
             "demo": "calendar-demo",
-            "code": "\"use client\";\n\nimport { Calendar } from \"@repo/components\";\nimport { useState } from \"react\";\n\nexport default function CalendarDemo() {\n  const [date, setDate] = useState(new Date(2026, 4, 12));\n\n  return (\n    <Calendar\n      mode=\"single\"\n      selected={date}\n      onSelect={setDate}\n      className=\"rounded-lg border\"\n    />\n  );\n}"
+            "code": "\"use client\";\n\nimport { Calendar } from \"@shery-ui/components\";\nimport { useState } from \"react\";\n\nexport default function CalendarDemo() {\n  const [date, setDate] = useState(new Date(2026, 4, 12));\n\n  return (\n    <Calendar\n      mode=\"single\"\n      selected={date}\n      onSelect={setDate}\n      className=\"rounded-lg border\"\n    />\n  );\n}"
         }
     ]
 }

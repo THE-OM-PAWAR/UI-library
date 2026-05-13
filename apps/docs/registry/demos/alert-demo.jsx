@@ -1,4 +1,4 @@
-import { Alert, AlertDescription, AlertTitle } from "@repo/components";
+import { Alert, AlertDescription, AlertTitle } from "@shery-ui/components";
 import { Info } from "lucide-react";
 
 export default function AlertDemo() {

@@ -1,6 +1,6 @@
 "use client";
 
-import { Progress } from "@repo/components";
+import { Progress } from "@shery-ui/components";
 import { useEffect, useState } from "react";
 
 export default function ProgressHeight() {

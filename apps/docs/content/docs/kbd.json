@@ -3,7 +3,7 @@
     "description": "Displays keyboard shortcuts and key combinations.",
     "component": "Kbd",
     "installation": {
-        "cli": "npx shadcn@latest add kbd",
+        "cli": "npx shery-ui@latest latest add kbd",
         "manual": [
             {
                 "title": "Add utility function",
@@ -15,7 +15,7 @@
         ]
     },
     "usage": {
-        "import": "import { Kbd } from '@repo/components';",
+        "import": "import { Kbd } from '@shery-ui/components';",
         "basic": "kbd-demo"
     },
     "examples": [
@@ -23,7 +23,7 @@
             "title": "Default",
             "description": "A basic kbd example.",
             "demo": "kbd-demo",
-            "code": "import { Kbd } from \"@repo/components\";\n\nexport default function KbdDemo() {\n  return (\n    <div className=\"flex items-center gap-2 text-sm\">\n      Press <Kbd>Ctrl</Kbd><Kbd>K</Kbd> to open command search.\n    </div>\n  );\n}"
+            "code": "import { Kbd } from \"@shery-ui/components\";\n\nexport default function KbdDemo() {\n  return (\n    <div className=\"flex items-center gap-2 text-sm\">\n      Press <Kbd>Ctrl</Kbd><Kbd>K</Kbd> to open command search.\n    </div>\n  );\n}"
         }
     ]
 }

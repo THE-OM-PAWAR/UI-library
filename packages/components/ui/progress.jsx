@@ -1,6 +1,6 @@
 "use client";
 import * as ProgressPrimitive from "@radix-ui/react-progress";
-import { cn } from "@repo/utils";
+import { cn } from "@shery-ui/utils";
 
 function Progress({
     className,
@@ -24,7 +24,7 @@ function Progress({
                 className={cn("flex-1 transition-all size-full bg-primary")}
                 style={{
                     transform: `translateX(-${100 - (value || 0)}%)`,
-                    backgroundColor: color,
+                    backgroundColor: `hsl(var(--${color}))`,
                     transitionDuration: `${speed}ms`,
                 }}
                 data-slot="progress-indicator"

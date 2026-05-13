@@ -4,12 +4,12 @@
         "baseUrl": ".",
         "paths": {
             "@/*": ["./*"],
-            "@repo/components": ["../../packages/components"],
-            "@repo/components/*": ["../../packages/components/*"],
-            "@repo/utils": ["../../packages/utils/src"],
-            "@repo/utils/*": ["../../packages/utils/src/*"],
-            "@repo/config": ["../../packages/config"],
-            "@repo/config/*": ["../../packages/config/*"]
+            "@shery-ui/components": ["../../packages/components"],
+            "@shery-ui/components/*": ["../../packages/components/*"],
+            "@shery-ui/utils": ["../../packages/utils/src"],
+            "@shery-ui/utils/*": ["../../packages/utils/src/*"],
+            "@shery-ui/config": ["../../packages/config"],
+            "@shery-ui/config/*": ["../../packages/config/*"]
         }
     }
 }

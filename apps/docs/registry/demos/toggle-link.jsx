@@ -1,4 +1,4 @@
-import { Toggle } from "@repo/components";
+import { Toggle } from "@shery-ui/components";
 import { Bold } from "lucide-react";
 
 export default function ToggleLink() {

@@ -6,7 +6,7 @@ import {
     DropdownMenuLabel,
     DropdownMenuSeparator,
     DropdownMenuTrigger,
-} from "@repo/components";
+} from "@shery-ui/components";
 
 export default function DropdownMenuDemo() {
     return (

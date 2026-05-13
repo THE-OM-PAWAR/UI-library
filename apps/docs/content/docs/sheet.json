@@ -3,7 +3,7 @@
     "description": "A panel that slides in from the edge of the screen.",
     "component": "Sheet",
     "installation": {
-        "cli": "npx shadcn@latest add sheet",
+        "cli": "npx shery-ui@latest add sheet",
         "manual": [
             {
                 "title": "Install dependencies",
@@ -20,7 +20,7 @@
         ]
     },
     "usage": {
-        "import": "import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@repo/components';",
+        "import": "import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@shery-ui/components';",
         "basic": "sheet-demo"
     },
     "examples": [
@@ -28,7 +28,7 @@
             "title": "Default",
             "description": "A basic sheet example.",
             "demo": "sheet-demo",
-            "code": "import { Button, Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from \"@repo/components\";\n\nexport default function SheetDemo() {\n  return (\n    <Sheet>\n      <SheetTrigger asChild>\n        <Button variant=\"outline\">Open sheet</Button>\n      </SheetTrigger>\n      <SheetContent>\n        <SheetHeader>\n          <SheetTitle>Edit profile</SheetTitle>\n          <SheetDescription>Make quick updates without leaving the page.</SheetDescription>\n        </SheetHeader>\n      </SheetContent>\n    </Sheet>\n  );\n}"
+            "code": "import { Button, Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from \"@shery-ui/components\";\n\nexport default function SheetDemo() {\n  return (\n    <Sheet>\n      <SheetTrigger asChild>\n        <Button variant=\"outline\">Open sheet</Button>\n      </SheetTrigger>\n      <SheetContent>\n        <SheetHeader>\n          <SheetTitle>Edit profile</SheetTitle>\n          <SheetDescription>Make quick updates without leaving the page.</SheetDescription>\n        </SheetHeader>\n      </SheetContent>\n    </Sheet>\n  );\n}"
         }
     ]
 }

@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@repo/components";
+import { Card, CardContent, CardHeader, CardTitle } from "@shery-ui/components";
 
 export default function CardCustom() {
     return (

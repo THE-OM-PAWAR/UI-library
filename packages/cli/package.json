@@ -1,0 +1,42 @@
+{
+    "name": "shery-ui",
+    "version": "1.2.5",
+    "description": "Add beautiful UI components to your project in one command",
+    "type": "module",
+    "bin": {
+        "shery-ui": "src/index.js"
+    },
+    "files": ["src"],
+    "scripts": {
+        "dev": "node src/index.js"
+    },
+    "keywords": [
+        "ui",
+        "components",
+        "react",
+        "tailwindcss",
+        "radix-ui",
+        "cli",
+        "shery-ui"
+    ],
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/THE-OM-PAWAR/UI-library.git",
+        "directory": "packages/cli"
+    },
+    "homepage": "https://github.com/THE-OM-PAWAR/UI-library#readme",
+    "publishConfig": {
+        "access": "public"
+    },
+    "dependencies": {
+        "chalk": "^5.3.0",
+        "commander": "^12.1.0",
+        "execa": "^9.3.0",
+        "ora": "^8.1.0",
+        "prompts": "^2.4.2"
+    },
+    "engines": {
+        "node": ">=18"
+    }
+}

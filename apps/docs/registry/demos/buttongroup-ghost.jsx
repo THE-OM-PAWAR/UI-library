@@ -1,4 +1,4 @@
-import { Button, ButtonGroup } from "@repo/components";
+import { Button, ButtonGroup } from "@shery-ui/components";
 import { Plus } from "lucide-react";
 
 export default function ButtonGroupGhost() {

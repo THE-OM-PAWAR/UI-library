@@ -3,7 +3,7 @@
     "description": "A horizontal menu for application commands.",
     "component": "Menubar",
     "installation": {
-        "cli": "npx shadcn@latest add menubar",
+        "cli": "npx shery-ui@latest add menubar",
         "manual": [
             {
                 "title": "Install dependencies",
@@ -20,7 +20,7 @@
         ]
     },
     "usage": {
-        "import": "import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarTrigger } from '@repo/components';",
+        "import": "import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarTrigger } from '@shery-ui/components';",
         "basic": "menubar-demo"
     },
     "examples": [
@@ -28,7 +28,7 @@
             "title": "Default",
             "description": "A basic menubar example.",
             "demo": "menubar-demo",
-            "code": "import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarTrigger } from \"@repo/components\";\n\nexport default function MenubarDemo() {\n  return (\n    <Menubar>\n      <MenubarMenu>\n        <MenubarTrigger>File</MenubarTrigger>\n        <MenubarContent>\n          <MenubarItem>New Tab</MenubarItem>\n          <MenubarItem>Open</MenubarItem>\n          <MenubarItem>Save</MenubarItem>\n        </MenubarContent>\n      </MenubarMenu>\n      <MenubarMenu>\n        <MenubarTrigger>Edit</MenubarTrigger>\n        <MenubarContent>\n          <MenubarItem>Undo</MenubarItem>\n          <MenubarItem>Redo</MenubarItem>\n        </MenubarContent>\n      </MenubarMenu>\n    </Menubar>\n  );\n}"
+            "code": "import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarTrigger } from \"@shery-ui/components\";\n\nexport default function MenubarDemo() {\n  return (\n    <Menubar>\n      <MenubarMenu>\n        <MenubarTrigger>File</MenubarTrigger>\n        <MenubarContent>\n          <MenubarItem>New Tab</MenubarItem>\n          <MenubarItem>Open</MenubarItem>\n          <MenubarItem>Save</MenubarItem>\n        </MenubarContent>\n      </MenubarMenu>\n      <MenubarMenu>\n        <MenubarTrigger>Edit</MenubarTrigger>\n        <MenubarContent>\n          <MenubarItem>Undo</MenubarItem>\n          <MenubarItem>Redo</MenubarItem>\n        </MenubarContent>\n      </MenubarMenu>\n    </Menubar>\n  );\n}"
         }
     ]
 }

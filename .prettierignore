@@ -1,0 +1,11 @@
+node_modules
+dist
+build
+out
+.next
+.vite
+bun.lockb
+pnpm-lock.yaml
+package-lock.json
+*.min.js
+next-env.d.ts

@@ -1,5 +1,5 @@
 "use client";
-import { cn } from "@repo/utils";
+import { cn } from "@shery-ui/utils";
 import * as React from "react";
 
 const Kbd = React.forwardRef(({ className, children, ...props }, ref) => {

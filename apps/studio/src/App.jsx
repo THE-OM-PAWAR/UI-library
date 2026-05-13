@@ -1,4 +1,4 @@
-import { Toaster, TooltipProvider } from "@repo/components";
+import { Toaster, TooltipProvider } from "@shery-ui/components";
 import { useState } from "react";
 import { ComponentRenderer } from "./components/ComponentRenderer.jsx";
 import { Navigation } from "./components/Navigation.jsx";

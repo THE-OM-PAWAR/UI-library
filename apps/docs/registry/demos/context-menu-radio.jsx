@@ -1,13 +1,13 @@
 "use client";
 import {
     ContextMenu,
-    ContextMenuTrigger,
     ContextMenuContent,
+    ContextMenuLabel,
     ContextMenuRadioGroup,
     ContextMenuRadioItem,
-    ContextMenuLabel,
     ContextMenuSeparator,
-} from "@repo/components";
+    ContextMenuTrigger,
+} from "@shery-ui/components";
 
 import { useState } from "react";
 
@@ -22,9 +22,7 @@ export default function ContextMenuRadio() {
                 </ContextMenuTrigger>
 
                 <ContextMenuContent>
-                    <ContextMenuLabel>
-                        Panel Position
-                    </ContextMenuLabel>
+                    <ContextMenuLabel>Panel Position</ContextMenuLabel>
 
                     <ContextMenuSeparator />
 

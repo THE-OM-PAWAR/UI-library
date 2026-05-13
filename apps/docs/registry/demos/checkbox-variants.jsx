@@ -1,4 +1,4 @@
-import { Checkbox, Label } from "@repo/components";
+import { Checkbox, Label } from "@shery-ui/components";
 
 const variants = [
     { variant: "default", label: "Default" },

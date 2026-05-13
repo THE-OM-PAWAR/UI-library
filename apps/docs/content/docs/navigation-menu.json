@@ -3,7 +3,7 @@
     "description": "A collection of links for site and app navigation.",
     "component": "NavigationMenu",
     "installation": {
-        "cli": "npx shadcn@latest add navigation-menu",
+        "cli": "npx shery-ui@latest add navigation-menu",
         "manual": [
             {
                 "title": "Install dependencies",
@@ -20,7 +20,7 @@
         ]
     },
     "usage": {
-        "import": "import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from '@repo/components';",
+        "import": "import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from '@shery-ui/components';",
         "basic": "navigation-menu-demo"
     },
     "examples": [
@@ -28,7 +28,7 @@
             "title": "Default",
             "description": "A basic navigation menu example.",
             "demo": "navigation-menu-demo",
-            "code": "import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from \"@repo/components\";\n\nexport default function NavigationMenuDemo() {\n  return (\n    <NavigationMenu>\n      <NavigationMenuList>\n        <NavigationMenuItem>\n          <NavigationMenuTrigger>Components</NavigationMenuTrigger>\n          <NavigationMenuContent>\n            <div className=\"grid w-72 gap-1 p-2\">\n              <NavigationMenuLink href=\"/docs/button\">Button</NavigationMenuLink>\n              <NavigationMenuLink href=\"/docs/input\">Input</NavigationMenuLink>\n              <NavigationMenuLink href=\"/docs/table\">Table</NavigationMenuLink>\n            </div>\n          </NavigationMenuContent>\n        </NavigationMenuItem>\n      </NavigationMenuList>\n    </NavigationMenu>\n  );\n}"
+            "code": "import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from \"@shery-ui/components\";\n\nexport default function NavigationMenuDemo() {\n  return (\n    <NavigationMenu>\n      <NavigationMenuList>\n        <NavigationMenuItem>\n          <NavigationMenuTrigger>Components</NavigationMenuTrigger>\n          <NavigationMenuContent>\n            <div className=\"grid w-72 gap-1 p-2\">\n              <NavigationMenuLink href=\"/docs/button\">Button</NavigationMenuLink>\n              <NavigationMenuLink href=\"/docs/input\">Input</NavigationMenuLink>\n              <NavigationMenuLink href=\"/docs/table\">Table</NavigationMenuLink>\n            </div>\n          </NavigationMenuContent>\n        </NavigationMenuItem>\n      </NavigationMenuList>\n    </NavigationMenu>\n  );\n}"
         }
     ]
 }

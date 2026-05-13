@@ -9,7 +9,7 @@ import {
     DropdownMenuSubContent,
     DropdownMenuSubTrigger,
     DropdownMenuTrigger,
-} from "@repo/components";
+} from "@shery-ui/components";
 
 export default function DropdownMenuWithSubmenu() {
     return (

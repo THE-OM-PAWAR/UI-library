@@ -1,5 +1,5 @@
 import * as Separator from "@radix-ui/react-separator";
-import { cn } from "@repo/utils";
+import { cn } from "@shery-ui/utils";
 import { Grid3x3 } from "lucide-react";
 import { useState } from "react";
 

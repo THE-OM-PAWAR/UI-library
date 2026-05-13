@@ -3,7 +3,7 @@
     "description": "A flexible heading component with size variants from h1 to h6, plus paragraph, label, code, and span styles.",
     "component": "Heading",
     "installation": {
-        "cli": "npx shadcn@latest add headings",
+        "cli": "npx shery-ui@latest add headings",
         "manual": [
             {
                 "title": "Install dependencies",
@@ -28,7 +28,7 @@
         ]
     },
     "usage": {
-        "import": "import { Heading } from '@repo/components';",
+        "import": "import { Heading } from '@shery-ui/components';",
         "basic": "headings-demo"
     },
     "examples": [
@@ -36,61 +36,61 @@
             "title": "H1",
             "description": "size=\"h1\" — the largest heading, typically used for page titles.",
             "demo": "headings-h1",
-            "code": "import { Heading } from \"@repo/components\";\n\nexport default function HeadingsH1() {\n  return <Heading size=\"h1\">The quick brown fox jumps over the lazy dog</Heading>;\n}"
+            "code": "import { Heading } from \"@shery-ui/components\";\n\nexport default function HeadingsH1() {\n  return <Heading size=\"h1\">The quick brown fox jumps over the lazy dog</Heading>;\n}"
         },
         {
             "title": "H2",
             "description": "size=\"h2\" — section-level heading.",
             "demo": "headings-h2",
-            "code": "import { Heading } from \"@repo/components\";\n\nexport default function HeadingsH2() {\n  return <Heading size=\"h2\">The quick brown fox jumps over the lazy dog</Heading>;\n}"
+            "code": "import { Heading } from \"@shery-ui/components\";\n\nexport default function HeadingsH2() {\n  return <Heading size=\"h2\">The quick brown fox jumps over the lazy dog</Heading>;\n}"
         },
         {
             "title": "H3",
             "description": "size=\"h3\" — sub-section heading.",
             "demo": "headings-h3",
-            "code": "import { Heading } from \"@repo/components\";\n\nexport default function HeadingsH3() {\n  return <Heading size=\"h3\">The quick brown fox jumps over the lazy dog</Heading>;\n}"
+            "code": "import { Heading } from \"@shery-ui/components\";\n\nexport default function HeadingsH3() {\n  return <Heading size=\"h3\">The quick brown fox jumps over the lazy dog</Heading>;\n}"
         },
         {
             "title": "H4",
             "description": "size=\"h4\" — card and panel titles.",
             "demo": "headings-h4",
-            "code": "import { Heading } from \"@repo/components\";\n\nexport default function HeadingsH4() {\n  return <Heading size=\"h4\">The quick brown fox jumps over the lazy dog</Heading>;\n}"
+            "code": "import { Heading } from \"@shery-ui/components\";\n\nexport default function HeadingsH4() {\n  return <Heading size=\"h4\">The quick brown fox jumps over the lazy dog</Heading>;\n}"
         },
         {
             "title": "H5",
             "description": "size=\"h5\" — smaller sub-headings and sidebar titles.",
             "demo": "headings-h5",
-            "code": "import { Heading } from \"@repo/components\";\n\nexport default function HeadingsH5() {\n  return <Heading size=\"h5\">The quick brown fox jumps over the lazy dog</Heading>;\n}"
+            "code": "import { Heading } from \"@shery-ui/components\";\n\nexport default function HeadingsH5() {\n  return <Heading size=\"h5\">The quick brown fox jumps over the lazy dog</Heading>;\n}"
         },
         {
             "title": "H6",
             "description": "size=\"h6\" — the smallest heading, for captions or labels.",
             "demo": "headings-h6",
-            "code": "import { Heading } from \"@repo/components\";\n\nexport default function HeadingsH6() {\n  return <Heading size=\"h6\">The quick brown fox jumps over the lazy dog</Heading>;\n}"
+            "code": "import { Heading } from \"@shery-ui/components\";\n\nexport default function HeadingsH6() {\n  return <Heading size=\"h6\">The quick brown fox jumps over the lazy dog</Heading>;\n}"
         },
         {
             "title": "Paragraph",
             "description": "Uses muted foreground color and is capped at max-w-2xl for comfortable reading line length.",
             "demo": "headings-paragraph",
-            "code": "import { Heading } from \"@repo/components\";\n\nexport default function HeadingsParagraph() {\n  return (\n    <Heading size=\"p\">\n      This is a paragraph variant. It uses muted foreground color and is\n      capped at max-w-2xl for comfortable reading line length.\n    </Heading>\n  );\n}"
+            "code": "import { Heading } from \"@shery-ui/components\";\n\nexport default function HeadingsParagraph() {\n  return (\n    <Heading size=\"p\">\n      This is a paragraph variant. It uses muted foreground color and is\n      capped at max-w-2xl for comfortable reading line length.\n    </Heading>\n  );\n}"
         },
         {
             "title": "Label",
             "description": "Extra small uppercase label style for section headings.",
             "demo": "headings-label",
-            "code": "import { Heading } from \"@repo/components\";\n\nexport default function HeadingsLabel() {\n  return (\n    <Heading size=\"xs\">Section Label — Uppercase Small</Heading>\n  );\n}"
+            "code": "import { Heading } from \"@shery-ui/components\";\n\nexport default function HeadingsLabel() {\n  return (\n    <Heading size=\"xs\">Section Label — Uppercase Small</Heading>\n  );\n}"
         },
         {
             "title": "Inline Code",
             "description": "Use the code size for inline code snippets inside text.",
             "demo": "headings-code",
-            "code": "import { Heading } from \"@repo/components\";\n\nexport default function HeadingsCode() {\n  return (\n    <p className=\"text-sm text-muted-foreground\">\n      Use the <Heading size=\"code\">code</Heading> size for inline code snippets.\n    </p>\n  );\n}"
+            "code": "import { Heading } from \"@shery-ui/components\";\n\nexport default function HeadingsCode() {\n  return (\n    <p className=\"text-sm text-muted-foreground\">\n      Use the <Heading size=\"code\">code</Heading> size for inline code snippets.\n    </p>\n  );\n}"
         },
         {
             "title": "Custom Color",
             "description": "Override the heading color using a Tailwind text utility class.",
             "demo": "headings-custom-color",
-            "code": "import { Heading } from \"@repo/components\";\n\nexport default function HeadingsCustomColor() {\n  return (\n    <Heading size=\"h2\" className=\"text-primary\">\n      Custom colored heading\n    </Heading>\n  );\n}"
+            "code": "import { Heading } from \"@shery-ui/components\";\n\nexport default function HeadingsCustomColor() {\n  return (\n    <Heading size=\"h2\" className=\"text-primary\">\n      Custom colored heading\n    </Heading>\n  );\n}"
         }
     ]
 }

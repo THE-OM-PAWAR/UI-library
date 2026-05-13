@@ -3,7 +3,7 @@
     "description": "Displays content within a desired ratio.",
     "component": "AspectRatio",
     "installation": {
-        "cli": "npx shadcn@latest add aspect-ratio",
+        "cli": "npx shery-ui@latest add aspect-ratio",
         "manual": [
             {
                 "title": "Install dependencies",
@@ -20,7 +20,7 @@
         ]
     },
     "usage": {
-        "import": "import { AspectRatio } from '@repo/components';",
+        "import": "import { AspectRatio } from '@shery-ui/components';",
         "basic": "aspect-ratio-demo"
     },
     "examples": [
@@ -28,7 +28,7 @@
             "title": "Default",
             "description": "A basic aspect ratio example.",
             "demo": "aspect-ratio-demo",
-            "code": "import { AspectRatio } from \"@repo/components\";\n\nexport default function AspectRatioDemo() {\n  return (\n    <div className=\"w-full max-w-sm overflow-hidden rounded-lg border bg-muted\">\n      <AspectRatio ratio={16 / 9}>\n        <img\n          src=\"https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop\"\n          alt=\"Workspace\"\n          className=\"h-full w-full object-cover\"\n        />\n      </AspectRatio>\n    </div>\n  );\n}"
+            "code": "import { AspectRatio } from \"@shery-ui/components\";\n\nexport default function AspectRatioDemo() {\n  return (\n    <div className=\"w-full max-w-sm overflow-hidden rounded-lg border bg-muted\">\n      <AspectRatio ratio={16 / 9}>\n        <img\n          src=\"https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop\"\n          alt=\"Workspace\"\n          className=\"h-full w-full object-cover\"\n        />\n      </AspectRatio>\n    </div>\n  );\n}"
         }
     ]
 }

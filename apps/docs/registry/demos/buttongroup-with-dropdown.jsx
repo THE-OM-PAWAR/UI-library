@@ -5,7 +5,7 @@ import {
     DropdownContent,
     DropdownItem,
     DropdownTrigger,
-} from "@repo/components";
+} from "@shery-ui/components";
 
 export default function ButtonGroupWithDropdown() {
     return (

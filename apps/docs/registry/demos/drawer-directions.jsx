@@ -10,7 +10,7 @@ import {
     DrawerHeader,
     DrawerTitle,
     DrawerTrigger,
-} from "@repo/components";
+} from "@shery-ui/components";
 import { useState } from "react";
 
 const directions = ["bottom", "top", "left", "right"];

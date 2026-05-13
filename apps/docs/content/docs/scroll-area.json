@@ -3,7 +3,7 @@
     "description": "A custom scrollable area with styled scrollbars.",
     "component": "ScrollArea",
     "installation": {
-        "cli": "npx shadcn@latest add scroll-area",
+        "cli": "npx shery-ui@latest add scroll-area",
         "manual": [
             {
                 "title": "Install dependencies",
@@ -20,7 +20,7 @@
         ]
     },
     "usage": {
-        "import": "import { ScrollArea } from '@repo/components';",
+        "import": "import { ScrollArea } from '@shery-ui/components';",
         "basic": "scroll-area-demo"
     },
     "examples": [
@@ -28,7 +28,7 @@
             "title": "Default",
             "description": "A basic scroll area example.",
             "demo": "scroll-area-demo",
-            "code": "import { ScrollArea } from \"@repo/components\";\n\nconst tags = Array.from({ length: 24 }, (_, index) => \"Tag \" + (index + 1));\n\nexport default function ScrollAreaDemo() {\n  return (\n    <ScrollArea className=\"h-48 w-72 rounded-lg border p-4\">\n      <div className=\"space-y-2\">\n        {tags.map((tag) => (\n          <div key={tag} className=\"rounded-md bg-muted px-3 py-2 text-sm\">{tag}</div>\n        ))}\n      </div>\n    </ScrollArea>\n  );\n}"
+            "code": "import { ScrollArea } from \"@shery-ui/components\";\n\nconst tags = Array.from({ length: 24 }, (_, index) => \"Tag \" + (index + 1));\n\nexport default function ScrollAreaDemo() {\n  return (\n    <ScrollArea className=\"h-48 w-72 rounded-lg border p-4\">\n      <div className=\"space-y-2\">\n        {tags.map((tag) => (\n          <div key={tag} className=\"rounded-md bg-muted px-3 py-2 text-sm\">{tag}</div>\n        ))}\n      </div>\n    </ScrollArea>\n  );\n}"
         }
     ]
 }

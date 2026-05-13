@@ -2,13 +2,13 @@
 
 import {
     Combobox,
-    ComboboxTrigger,
     ComboboxContent,
-    ComboboxSearch,
-    ComboboxList,
-    ComboboxItem,
     ComboboxEmpty,
-} from "@repo/components";
+    ComboboxItem,
+    ComboboxList,
+    ComboboxSearch,
+    ComboboxTrigger,
+} from "@shery-ui/components";
 import { useState } from "react";
 
 export default function ComboboxControlled() {

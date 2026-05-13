@@ -8,7 +8,7 @@ import {
     DrawerHeader,
     DrawerTitle,
     DrawerTrigger,
-} from "@repo/components";
+} from "@shery-ui/components";
 
 export default function DrawerDemo() {
     return (

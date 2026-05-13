@@ -3,7 +3,7 @@
     "description": "A small popup that appears when an element receives hover or focus.",
     "component": "Tooltip",
     "installation": {
-        "cli": "npx shadcn@latest add tooltip",
+        "cli": "npx shery-ui@latest add tooltip",
         "manual": [
             {
                 "title": "Install dependencies",
@@ -20,7 +20,7 @@
         ]
     },
     "usage": {
-        "import": "import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@repo/components';",
+        "import": "import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@shery-ui/components';",
         "basic": "tooltip-demo"
     },
     "examples": [
@@ -28,7 +28,7 @@
             "title": "Default",
             "description": "A basic tooltip example.",
             "demo": "tooltip-demo",
-            "code": "import { Button, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from \"@repo/components\";\n\nexport default function TooltipDemo() {\n  return (\n    <TooltipProvider>\n      <Tooltip>\n        <TooltipTrigger asChild>\n          <Button variant=\"outline\">Hover</Button>\n        </TooltipTrigger>\n        <TooltipContent>\n          <p>Add to library</p>\n        </TooltipContent>\n      </Tooltip>\n    </TooltipProvider>\n  );\n}"
+            "code": "import { Button, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from \"@shery-ui/components\";\n\nexport default function TooltipDemo() {\n  return (\n    <TooltipProvider>\n      <Tooltip>\n        <TooltipTrigger asChild>\n          <Button variant=\"outline\">Hover</Button>\n        </TooltipTrigger>\n        <TooltipContent>\n          <p>Add to library</p>\n        </TooltipContent>\n      </Tooltip>\n    </TooltipProvider>\n  );\n}"
         }
     ]
 }

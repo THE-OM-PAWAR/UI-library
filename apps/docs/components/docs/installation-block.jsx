@@ -1,44 +1,68 @@
 "use client";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@repo/components";
-import { cn } from "@repo/utils";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@shery-ui/components";
+import { cn } from "@shery-ui/utils";
 import { Check, ChevronDown, Copy } from "lucide-react";
 import { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-// Package Manager Selector Component
+// Resolve command for a given package manager
+function resolveCommand(command, manager) {
+    if (typeof command === "object" && command !== null && command[manager]) {
+        return command[manager];
+    }
+    const cmd =
+        typeof command === "object" && command !== null
+            ? command.npm || ""
+            : command;
+
+    // Handle npx commands (e.g. "npx shery-ui@latest add accordion")
+    if (cmd.startsWith("npx ")) {
+        const rest = cmd
+            .slice(4)
+            .replace(/^shery-ui(\s|$)/, "shery-ui@latest$1");
+        if (manager === "npm") return `npx ${rest}`;
+        if (manager === "pnpm") return `pnpm dlx ${rest}`;
+        if (manager === "yarn") return `yarn dlx ${rest}`;
+        if (manager === "bun") return `bunx ${rest}`;
+    }
+
+    // Handle npm install commands
+    if (manager === "yarn") return cmd.replace("npm install", "yarn add");
+    if (manager === "pnpm") return cmd.replace("npm install", "pnpm add");
+    if (manager === "bun") return cmd.replace("npm install", "bun add");
+
+    return cmd;
+}
+
+// Package Manager Commands — tab per manager
 function PackageManagerCommand({
     command,
-    managers = ["npm", "yarn", "pnpm", "bun"],
+    managers = ["npm", "pnpm", "yarn", "bun"],
 }) {
-    const [selectedManager, setSelectedManager] = useState(managers[0]);
     const [isCopied, setIsCopied] = useState(false);
+    const [activeManager, setActiveManager] = useState(managers[0]);
 
-    const commands = {
-        npm: command.npm || command,
-        yarn: command.yarn || command.replace("npm install", "yarn add"),
-        pnpm: command.pnpm || command.replace("npm install", "pnpm add"),
-        bun: command.bun || command.replace("npm install", "bun add"),
-    };
+    const activeCommand = resolveCommand(command, activeManager);
 
     const handleCopy = async () => {
-        await navigator.clipboard.writeText(commands[selectedManager]);
+        await navigator.clipboard.writeText(activeCommand);
         setIsCopied(true);
         setTimeout(() => setIsCopied(false), 2000);
     };
 
     return (
-        <div className="relative rounded-lg border border-border bg-muted/30 dark:bg-muted/10 overflow-hidden">
-            {/* Package Manager Pills */}
+        <div className="overflow-hidden border rounded-lg border-border">
+            {/* Tab bar */}
             <div className="flex items-center gap-1 px-3 py-2 border-b border-border bg-muted/50 dark:bg-muted/5">
                 {managers.map((manager) => (
                     <button
                         key={manager}
-                        onClick={() => setSelectedManager(manager)}
+                        onClick={() => setActiveManager(manager)}
                         className={cn(
                             "px-3 py-1 text-xs font-medium rounded-md transition-all",
-                            selectedManager === manager
+                            activeManager === manager
                                 ? "bg-background text-foreground shadow-sm"
                                 : "text-muted-foreground hover:text-foreground hover:bg-background/50"
                         )}
@@ -48,14 +72,17 @@ function PackageManagerCommand({
                 ))}
             </div>
 
-            {/* Command Display */}
-            <div className="relative">
+            {/* Command line */}
+            <div className="flex items-center gap-3 px-4 py-3 bg-muted/30 dark:bg-muted/10">
+                <code className="flex-1 font-mono text-sm truncate text-foreground">
+                    {activeCommand}
+                </code>
                 <button
                     onClick={handleCopy}
                     className={cn(
-                        "absolute top-3 right-3 z-10",
-                        "p-2 rounded-md",
-                        "bg-background/80 hover:bg-background border border-border",
+                        "shrink-0 p-1.5 rounded-md",
+                        "border border-transparent hover:border-border",
+                        "bg-transparent hover:bg-background/80",
                         "text-muted-foreground hover:text-foreground",
                         "transition-all duration-200"
                     )}
@@ -67,12 +94,6 @@ function PackageManagerCommand({
                         <Copy className="w-3.5 h-3.5" />
                     )}
                 </button>
-
-                <div className="px-4 py-3 font-mono text-sm">
-                    <code className="text-foreground">
-                        {commands[selectedManager]}
-                    </code>
-                </div>
             </div>
         </div>
     );
@@ -90,11 +111,11 @@ function CodeBlock({ filePath, code, language = "tsx", collapsible = false }) {
     };
 
     return (
-        <div className="relative rounded-lg border border-border overflow-hidden bg-card">
+        <div className="relative overflow-hidden border rounded-lg border-border bg-card">
             {/* File Path Header */}
             {filePath && (
                 <div className="flex items-center justify-between px-4 py-2 border-b border-border bg-muted/30 dark:bg-muted/10">
-                    <code className="text-xs font-mono text-muted-foreground">
+                    <code className="font-mono text-xs text-muted-foreground">
                         {filePath}
                     </code>
                     <div className="flex items-center gap-2">
@@ -182,7 +203,7 @@ function ManualSteps({ steps }) {
                     )}
 
                     {/* Step Number Circle */}
-                    <div className="absolute left-0 top-1 flex h-8 w-8 items-center justify-center rounded-full border-2 border-border bg-background">
+                    <div className="absolute left-0 flex items-center justify-center w-8 h-8 border-2 rounded-full top-1 border-border bg-background">
                         <span className="text-sm font-semibold text-foreground">
                             {index + 1}
                         </span>
@@ -193,11 +214,11 @@ function ManualSteps({ steps }) {
                         {/* Step Title/Description */}
                         {step.title && (
                             <div>
-                                <h3 className="text-base font-semibold text-foreground mb-2">
+                                <h3 className="mb-2 text-base font-semibold text-foreground">
                                     {step.title}
                                 </h3>
                                 {step.description && (
-                                    <p className="text-sm text-muted-foreground leading-relaxed">
+                                    <p className="text-sm leading-relaxed text-muted-foreground">
                                         {step.description}
                                     </p>
                                 )}
@@ -241,7 +262,7 @@ export function InstallationBlock({ title = "Installation", tabs }) {
         <div className="w-full my-8">
             {/* Title */}
             {title && (
-                <h2 className="text-2xl font-bold text-foreground mb-6">
+                <h2 className="mb-6 text-2xl font-bold text-foreground">
                     {title}
                 </h2>
             )}

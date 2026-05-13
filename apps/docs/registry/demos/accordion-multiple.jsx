@@ -3,7 +3,7 @@ import {
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
-} from "@repo/components";
+} from "@shery-ui/components";
 
 export default function AccordionMultiple() {
     return (
@@ -15,8 +15,8 @@ export default function AccordionMultiple() {
             <AccordionItem value="product">
                 <AccordionTrigger>Product updates</AccordionTrigger>
                 <AccordionContent>
-                    Stay updated with the latest features and improvements across
-                    the component library.
+                    Stay updated with the latest features and improvements
+                    across the component library.
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="support">

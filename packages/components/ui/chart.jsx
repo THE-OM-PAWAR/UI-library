@@ -43,7 +43,7 @@ const ChartTooltipContent = ({ active, payload }) => {
     if (!active || !payload?.length) return null;
 
     return (
-        <div className="rounded-md border bg-background p-2 shadow-sm">
+        <div className="p-2 border rounded-md shadow-sm bg-background">
             {payload.map((item, index) => {
                 const key = item.dataKey;
                 const conf = config[key];
@@ -54,7 +54,7 @@ const ChartTooltipContent = ({ active, payload }) => {
                         className="flex items-center gap-2 text-sm"
                     >
                         <div
-                            className="h-2 w-2 rounded-full"
+                            className="w-2 h-2 rounded-full"
                             style={{ backgroundColor: conf?.color }}
                         />
                         <span>{conf?.label}:</span>
@@ -84,7 +84,7 @@ const ChartLegendContent = ({ payload }) => {
                 return (
                     <div key={key} className="flex items-center gap-1">
                         <div
-                            className="h-2 w-2 rounded-full"
+                            className="w-2 h-2 rounded-full"
                             style={{ backgroundColor: conf?.color }}
                         />
                         <span>{conf?.label}</span>

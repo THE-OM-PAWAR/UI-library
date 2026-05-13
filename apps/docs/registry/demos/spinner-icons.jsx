@@ -1,4 +1,4 @@
-import { Spinner } from "@repo/components";
+import { Spinner } from "@shery-ui/components";
 import { Loader, Loader2 } from "lucide-react";
 
 const icons = [

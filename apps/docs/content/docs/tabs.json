@@ -3,7 +3,7 @@
     "description": "A set of layered sections of content, one visible at a time.",
     "component": "Tabs",
     "installation": {
-        "cli": "npx shadcn@latest add tabs",
+        "cli": "npx shery-ui@latest add tabs",
         "manual": [
             {
                 "title": "Install dependencies",
@@ -20,7 +20,7 @@
         ]
     },
     "usage": {
-        "import": "import { Tabs, TabsContent, TabsList, TabsTrigger } from '@repo/components';",
+        "import": "import { Tabs, TabsContent, TabsList, TabsTrigger } from '@shery-ui/components';",
         "basic": "tabs-demo"
     },
     "examples": [
@@ -28,7 +28,7 @@
             "title": "Default",
             "description": "A basic tabs example.",
             "demo": "tabs-demo",
-            "code": "import { Tabs, TabsContent, TabsList, TabsTrigger } from \"@repo/components\";\n\nexport default function TabsDemo() {\n  return (\n    <Tabs defaultValue=\"account\" className=\"w-full max-w-sm\">\n      <TabsList>\n        <TabsTrigger value=\"account\">Account</TabsTrigger>\n        <TabsTrigger value=\"password\">Password</TabsTrigger>\n      </TabsList>\n      <TabsContent value=\"account\" className=\"rounded-lg border p-4 text-sm\">Manage your account settings.</TabsContent>\n      <TabsContent value=\"password\" className=\"rounded-lg border p-4 text-sm\">Update your password here.</TabsContent>\n    </Tabs>\n  );\n}"
+            "code": "import { Tabs, TabsContent, TabsList, TabsTrigger } from \"@shery-ui/components\";\n\nexport default function TabsDemo() {\n  return (\n    <Tabs defaultValue=\"account\" className=\"w-full max-w-sm\">\n      <TabsList>\n        <TabsTrigger value=\"account\">Account</TabsTrigger>\n        <TabsTrigger value=\"password\">Password</TabsTrigger>\n      </TabsList>\n      <TabsContent value=\"account\" className=\"rounded-lg border p-4 text-sm\">Manage your account settings.</TabsContent>\n      <TabsContent value=\"password\" className=\"rounded-lg border p-4 text-sm\">Update your password here.</TabsContent>\n    </Tabs>\n  );\n}"
         }
     ]
 }

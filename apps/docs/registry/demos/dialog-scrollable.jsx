@@ -8,7 +8,7 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from "@repo/components";
+} from "@shery-ui/components";
 
 export default function DialogScrollable() {
     return (

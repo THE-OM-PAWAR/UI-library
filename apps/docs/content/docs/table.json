@@ -3,7 +3,7 @@
     "description": "A responsive table for displaying tabular data.",
     "component": "Table",
     "installation": {
-        "cli": "npx shadcn@latest add table",
+        "cli": "npx shery-ui@latest add table",
         "manual": [
             {
                 "title": "Add utility function",
@@ -15,7 +15,7 @@
         ]
     },
     "usage": {
-        "import": "import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@repo/components';",
+        "import": "import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@shery-ui/components';",
         "basic": "table-demo"
     },
     "examples": [
@@ -23,7 +23,7 @@
             "title": "Default",
             "description": "A basic table example.",
             "demo": "table-demo",
-            "code": "import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from \"@repo/components\";\n\nexport default function TableDemo() {\n  return (\n    <Table className=\"max-w-md\">\n      <TableCaption>Recent invoices.</TableCaption>\n      <TableHeader>\n        <TableRow>\n          <TableHead>Invoice</TableHead>\n          <TableHead>Status</TableHead>\n          <TableHead className=\"text-right\">Amount</TableHead>\n        </TableRow>\n      </TableHeader>\n      <TableBody>\n        <TableRow>\n          <TableCell>INV001</TableCell>\n          <TableCell>Paid</TableCell>\n          <TableCell className=\"text-right\">$250.00</TableCell>\n        </TableRow>\n        <TableRow>\n          <TableCell>INV002</TableCell>\n          <TableCell>Pending</TableCell>\n          <TableCell className=\"text-right\">$150.00</TableCell>\n        </TableRow>\n      </TableBody>\n    </Table>\n  );\n}"
+            "code": "import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from \"@shery-ui/components\";\n\nexport default function TableDemo() {\n  return (\n    <Table className=\"max-w-md\">\n      <TableCaption>Recent invoices.</TableCaption>\n      <TableHeader>\n        <TableRow>\n          <TableHead>Invoice</TableHead>\n          <TableHead>Status</TableHead>\n          <TableHead className=\"text-right\">Amount</TableHead>\n        </TableRow>\n      </TableHeader>\n      <TableBody>\n        <TableRow>\n          <TableCell>INV001</TableCell>\n          <TableCell>Paid</TableCell>\n          <TableCell className=\"text-right\">$250.00</TableCell>\n        </TableRow>\n        <TableRow>\n          <TableCell>INV002</TableCell>\n          <TableCell>Pending</TableCell>\n          <TableCell className=\"text-right\">$150.00</TableCell>\n        </TableRow>\n      </TableBody>\n    </Table>\n  );\n}"
         }
     ]
 }

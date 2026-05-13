@@ -1,15 +1,15 @@
 import {
     Combobox,
-    ComboboxTrigger,
     ComboboxContent,
-    ComboboxSearch,
-    ComboboxList,
-    ComboboxItem,
     ComboboxEmpty,
     ComboboxGroup,
+    ComboboxItem,
     ComboboxLabel,
+    ComboboxList,
+    ComboboxSearch,
     ComboboxSeparator,
-} from "@repo/components";
+    ComboboxTrigger,
+} from "@shery-ui/components";
 
 export default function ComboboxGroups() {
     return (
@@ -26,17 +26,11 @@ export default function ComboboxGroups() {
                         <ComboboxGroup>
                             <ComboboxLabel>Frontend</ComboboxLabel>
 
-                            <ComboboxItem value="react">
-                                React
-                            </ComboboxItem>
+                            <ComboboxItem value="react">React</ComboboxItem>
 
-                            <ComboboxItem value="vue">
-                                Vue
-                            </ComboboxItem>
+                            <ComboboxItem value="vue">Vue</ComboboxItem>
 
-                            <ComboboxItem value="svelte">
-                                Svelte
-                            </ComboboxItem>
+                            <ComboboxItem value="svelte">Svelte</ComboboxItem>
                         </ComboboxGroup>
 
                         <ComboboxSeparator />
@@ -44,17 +38,11 @@ export default function ComboboxGroups() {
                         <ComboboxGroup>
                             <ComboboxLabel>Backend</ComboboxLabel>
 
-                            <ComboboxItem value="node">
-                                Node.js
-                            </ComboboxItem>
+                            <ComboboxItem value="node">Node.js</ComboboxItem>
 
-                            <ComboboxItem value="express">
-                                Express
-                            </ComboboxItem>
+                            <ComboboxItem value="express">Express</ComboboxItem>
 
-                            <ComboboxItem value="go">
-                                Go
-                            </ComboboxItem>
+                            <ComboboxItem value="go">Go</ComboboxItem>
                         </ComboboxGroup>
                     </ComboboxList>
                 </ComboboxContent>

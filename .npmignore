@@ -1,0 +1,45 @@
+# Dependencies
+node_modules
+
+# Build outputs
+dist
+build
+out
+.next
+.vite
+
+# Environment
+.env
+.env.*
+
+# IDE & OS
+.vscode
+.idea
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test & coverage
+coverage
+*.test.*
+*.spec.*
+
+# Config & dev files
+.husky
+biome.json
+bunfig.toml
+bun.lock
+bun.lockb
+pnpm-lock.yaml
+package-lock.json
+.prettierignore
+.eslintignore
+.gitignore
+
+# Monorepo internals
+apps
+packages
+add.txt
+README.md

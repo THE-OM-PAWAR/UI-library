@@ -1,19 +1,31 @@
 {
-    "name": "ui-component-library",
+    "name": "shery-ui",
     "version": "1.0.0",
+    "lint-staged": {
+        "*": [
+            "bunx biome check --write --no-errors-on-unmatched --files-ignore-unknown=true",
+            "bunx biome format --write --no-errors-on-unmatched --files-ignore-unknown=true",
+            "bunx biome lint --write --no-errors-on-unmatched --files-ignore-unknown=true"
+        ]
+    },
     "private": true,
     "scripts": {
-        "dev": "pnpm --filter studio dev",
-        "dev:docs": "pnpm --filter docs dev",
-        "build": "pnpm -r build",
-        "clean": "pnpm -r clean",
-        "generate:theme": "pnpm --filter @repo/config generate:theme",
+        "dev": "bun run --filter shery-ui-studio dev",
+        "dev:docs": "bun run --filter shery-ui-docs dev",
+        "build": "bun run --filter='*' build",
+        "clean": "bun run --filter='*' clean",
+        "generate:theme": "bun run --filter @shery-ui/config generate:theme",
+        "cli": "node packages/cli/src/index.js",
+        "cli:add": "node packages/cli/src/index.js add",
+        "cli:list": "node packages/cli/src/index.js list",
+        "cli:init": "node packages/cli/src/index.js init",
         "lint": "biome lint --write .",
         "format": "biome format --write .",
         "check": "biome check --write ."
     },
+    "workspaces": ["apps/*", "packages/*"],
     "devDependencies": {
-        "@biomejs/biome": "^2.4.13",
-        "pnpm": "^8.15.0"
+        "@biomejs/biome": "^2.4.15",
+        "lint-staged": "^17.0.4"
     }
 }

@@ -1,4 +1,4 @@
-import { cn } from "@repo/utils";
+import { cn } from "@shery-ui/utils";
 import { cva } from "class-variance-authority";
 
 const headingVariants = cva("text-pretty", {

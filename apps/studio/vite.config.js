@@ -9,12 +9,18 @@ export default defineConfig({
     plugins: [react()],
     resolve: {
         alias: {
-            "@repo/components": path.resolve(
+            "@shery-ui/components": path.resolve(
                 __dirname,
                 "../../packages/components"
             ),
-            "@repo/utils": path.resolve(__dirname, "../../packages/utils/src"),
-            "@repo/config": path.resolve(__dirname, "../../packages/config"),
+            "@shery-ui/utils": path.resolve(
+                __dirname,
+                "../../packages/utils/src"
+            ),
+            "@shery-ui/config": path.resolve(
+                __dirname,
+                "../../packages/config"
+            ),
         },
     },
     server: {

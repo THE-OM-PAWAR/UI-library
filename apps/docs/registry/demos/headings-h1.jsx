@@ -1,4 +1,4 @@
-import { Heading } from "@repo/components";
+import { Heading } from "@shery-ui/components";
 
 export default function HeadingsH1() {
     return (

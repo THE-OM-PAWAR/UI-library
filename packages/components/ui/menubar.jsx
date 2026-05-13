@@ -1,7 +1,7 @@
 "use client";
 
 import * as MenubarPrimitive from "@radix-ui/react-menubar";
-import { cn } from "@repo/utils";
+import { cn } from "@shery-ui/utils";
 import * as React from "react";
 
 const Menubar = React.forwardRef(({ className, ...props }, ref) => {

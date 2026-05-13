@@ -1,17 +1,16 @@
-import { Badge,Spinner } from "@repo/components";
-
+import { Badge, Spinner } from "@shery-ui/components";
 
 export default function BadgeWithSpinner() {
-  return (
-    <div className="flex flex-wrap gap-2">
-      <Badge variant="destructive">
-        <Spinner data-icon="inline-start" />
-        Deleting
-      </Badge>
-      <Badge variant="secondary">
-        Generating
-        <Spinner data-icon="inline-end" />
-      </Badge>
-    </div>
-  )
+    return (
+        <div className="flex flex-wrap gap-2">
+            <Badge variant="destructive">
+                <Spinner data-icon="inline-start" />
+                Deleting
+            </Badge>
+            <Badge variant="secondary">
+                Generating
+                <Spinner data-icon="inline-end" />
+            </Badge>
+        </div>
+    );
 }

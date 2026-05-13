@@ -10,7 +10,7 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from "@repo/components";
+} from "@shery-ui/components";
 import { useState } from "react";
 
 const sizes = ["sm", "md", "lg", "xl"];

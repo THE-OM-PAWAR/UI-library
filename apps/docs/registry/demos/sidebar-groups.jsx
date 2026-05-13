@@ -8,7 +8,7 @@ import {
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem,
-} from "@repo/components";
+} from "@shery-ui/components";
 
 export default function SidebarGroups() {
     return (

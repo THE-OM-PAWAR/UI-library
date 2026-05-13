@@ -3,7 +3,7 @@
     "description": "Renders an accessible label for form controls.",
     "component": "Label",
     "installation": {
-        "cli": "npx shadcn@latest add label",
+        "cli": "npx shery-ui@latest add label",
         "manual": [
             {
                 "title": "Install dependencies",
@@ -20,7 +20,7 @@
         ]
     },
     "usage": {
-        "import": "import { Label } from '@repo/components';",
+        "import": "import { Label } from '@shery-ui/components';",
         "basic": "label-demo"
     },
     "examples": [
@@ -28,7 +28,7 @@
             "title": "Default",
             "description": "A basic label example.",
             "demo": "label-demo",
-            "code": "import { Input, Label } from \"@repo/components\";\n\nexport default function LabelDemo() {\n  return (\n    <div className=\"grid w-full max-w-sm gap-2\">\n      <Label htmlFor=\"username\">Username</Label>\n      <Input id=\"username\" placeholder=\"bhavya\" />\n    </div>\n  );\n}"
+            "code": "import { Input, Label } from \"@shery-ui/components\";\n\nexport default function LabelDemo() {\n  return (\n    <div className=\"grid w-full max-w-sm gap-2\">\n      <Label htmlFor=\"username\">Username</Label>\n      <Input id=\"username\" placeholder=\"Harshit Jain\" />\n    </div>\n  );\n}"
         }
     ]
 }

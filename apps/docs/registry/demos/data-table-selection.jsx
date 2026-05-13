@@ -1,6 +1,6 @@
 "use client";
 
-import { DataTable } from "@repo/components";
+import { DataTable } from "@shery-ui/components";
 import { useMemo } from "react";
 
 export default function DataTableSelection() {
@@ -39,9 +39,7 @@ export default function DataTableSelection() {
                         aria-label="Select all"
                         checked={table.getIsAllPageRowsSelected()}
                         onChange={(e) =>
-                            table.toggleAllPageRowsSelected(
-                                e.target.checked
-                            )
+                            table.toggleAllPageRowsSelected(e.target.checked)
                         }
                     />
                 ),
@@ -51,11 +49,7 @@ export default function DataTableSelection() {
                         type="checkbox"
                         aria-label="Select row"
                         checked={row.getIsSelected()}
-                        onChange={(e) =>
-                            row.toggleSelected(
-                                e.target.checked
-                            )
-                        }
+                        onChange={(e) => row.toggleSelected(e.target.checked)}
                     />
                 ),
             },

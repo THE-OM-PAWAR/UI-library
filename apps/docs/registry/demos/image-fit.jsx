@@ -1,4 +1,4 @@
-import { Image, Separator } from "@repo/components";
+import { Image, Separator } from "@shery-ui/components";
 
 const src =
     "https://images.unsplash.com/photo-1774711268987-a56e0de1d79d?q=80&w=800";

@@ -3,7 +3,7 @@
     "description": "A set of checkable buttons where only one option can be selected.",
     "component": "RadioGroup",
     "installation": {
-        "cli": "npx shadcn@latest add radio-group",
+        "cli": "npx shery-ui@latest add radio-group",
         "manual": [
             {
                 "title": "Install dependencies",
@@ -20,7 +20,7 @@
         ]
     },
     "usage": {
-        "import": "import { RadioGroup, RadioGroupItem } from '@repo/components';",
+        "import": "import { RadioGroup, RadioGroupItem } from '@shery-ui/components';",
         "basic": "radio-demo"
     },
     "examples": [
@@ -28,7 +28,7 @@
             "title": "Default",
             "description": "A basic radio example.",
             "demo": "radio-demo",
-            "code": "import { Label, RadioGroup, RadioGroupItem } from \"@repo/components\";\n\nexport default function RadioDemo() {\n  return (\n    <RadioGroup defaultValue=\"comfortable\" className=\"w-full max-w-sm\">\n      <div className=\"flex items-center gap-2\">\n        <RadioGroupItem value=\"default\" id=\"default\" />\n        <Label htmlFor=\"default\">Default</Label>\n      </div>\n      <div className=\"flex items-center gap-2\">\n        <RadioGroupItem value=\"comfortable\" id=\"comfortable\" />\n        <Label htmlFor=\"comfortable\">Comfortable</Label>\n      </div>\n      <div className=\"flex items-center gap-2\">\n        <RadioGroupItem value=\"compact\" id=\"compact\" />\n        <Label htmlFor=\"compact\">Compact</Label>\n      </div>\n    </RadioGroup>\n  );\n}"
+            "code": "import { Label, RadioGroup, RadioGroupItem } from \"@shery-ui/components\";\n\nexport default function RadioDemo() {\n  return (\n    <RadioGroup defaultValue=\"comfortable\" className=\"w-full max-w-sm\">\n      <div className=\"flex items-center gap-2\">\n        <RadioGroupItem value=\"default\" id=\"default\" />\n        <Label htmlFor=\"default\">Default</Label>\n      </div>\n      <div className=\"flex items-center gap-2\">\n        <RadioGroupItem value=\"comfortable\" id=\"comfortable\" />\n        <Label htmlFor=\"comfortable\">Comfortable</Label>\n      </div>\n      <div className=\"flex items-center gap-2\">\n        <RadioGroupItem value=\"compact\" id=\"compact\" />\n        <Label htmlFor=\"compact\">Compact</Label>\n      </div>\n    </RadioGroup>\n  );\n}"
         }
     ]
 }

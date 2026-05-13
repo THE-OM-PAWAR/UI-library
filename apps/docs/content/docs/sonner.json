@@ -3,7 +3,7 @@
     "description": "An opinionated toaster component for rendering toast notifications.",
     "component": "Toaster",
     "installation": {
-        "cli": "npx shadcn@latest add sonner",
+        "cli": "npx shery-ui@latest add sonner",
         "manual": [
             {
                 "title": "Install dependencies",
@@ -20,7 +20,7 @@
         ]
     },
     "usage": {
-        "import": "import { Toaster } from '@repo/components';",
+        "import": "import { Toaster } from '@shery-ui/components';",
         "basic": "sonner-demo"
     },
     "examples": [
@@ -28,7 +28,7 @@
             "title": "Default",
             "description": "A basic sonner example.",
             "demo": "sonner-demo",
-            "code": "import { Button, Toaster } from \"@repo/components\";\n\nexport default function SonnerDemo() {\n  return (\n    <div className=\"flex flex-col items-center gap-3\">\n      <Toaster />\n      <Button variant=\"outline\">Toaster mounted</Button>\n    </div>\n  );\n}"
+            "code": "import { Button, Toaster } from \"@shery-ui/components\";\n\nexport default function SonnerDemo() {\n  return (\n    <div className=\"flex flex-col items-center gap-3\">\n      <Toaster />\n      <Button variant=\"outline\">Toaster mounted</Button>\n    </div>\n  );\n}"
         }
     ]
 }

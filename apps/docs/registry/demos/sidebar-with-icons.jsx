@@ -9,7 +9,7 @@ import {
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem,
-} from "@repo/components";
+} from "@shery-ui/components";
 import {
     Bell,
     HelpCircle,

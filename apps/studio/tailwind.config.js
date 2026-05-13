@@ -1,4 +1,4 @@
-import baseConfig from "@repo/config/tailwind.config.js";
+import baseConfig from "@shery-ui/config/tailwind.config.js";
 
 /** @type {import('tailwindcss').Config} */
 export default {

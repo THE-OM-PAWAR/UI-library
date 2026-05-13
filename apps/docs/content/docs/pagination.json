@@ -3,7 +3,7 @@
     "description": "Pagination controls for navigating through pages of content.",
     "component": "Pagination",
     "installation": {
-        "cli": "npx shadcn@latest add pagination",
+        "cli": "npx shery-ui@latest add pagination",
         "manual": [
             {
                 "title": "Add utility function",
@@ -15,7 +15,7 @@
         ]
     },
     "usage": {
-        "import": "import { Pagination, PaginationContent, PaginationItem, PaginationLink } from '@repo/components';",
+        "import": "import { Pagination, PaginationContent, PaginationItem, PaginationLink } from '@shery-ui/components';",
         "basic": "pagination-demo"
     },
     "examples": [
@@ -23,7 +23,7 @@
             "title": "Default",
             "description": "A basic pagination example.",
             "demo": "pagination-demo",
-            "code": "import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from \"@repo/components\";\n\nexport default function PaginationDemo() {\n  return (\n    <Pagination>\n      <PaginationContent>\n        <PaginationItem><PaginationPrevious href=\"#\" /></PaginationItem>\n        <PaginationItem><PaginationLink href=\"#\" isActive>1</PaginationLink></PaginationItem>\n        <PaginationItem><PaginationLink href=\"#\">2</PaginationLink></PaginationItem>\n        <PaginationItem><PaginationEllipsis /></PaginationItem>\n        <PaginationItem><PaginationNext href=\"#\" /></PaginationItem>\n      </PaginationContent>\n    </Pagination>\n  );\n}"
+            "code": "import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from \"@shery-ui/components\";\n\nexport default function PaginationDemo() {\n  return (\n    <Pagination>\n      <PaginationContent>\n        <PaginationItem><PaginationPrevious href=\"#\" /></PaginationItem>\n        <PaginationItem><PaginationLink href=\"#\" isActive>1</PaginationLink></PaginationItem>\n        <PaginationItem><PaginationLink href=\"#\">2</PaginationLink></PaginationItem>\n        <PaginationItem><PaginationEllipsis /></PaginationItem>\n        <PaginationItem><PaginationNext href=\"#\" /></PaginationItem>\n      </PaginationContent>\n    </Pagination>\n  );\n}"
         }
     ]
 }

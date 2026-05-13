@@ -1,0 +1,9 @@
+# Everything except src/ is ignored (package.json "files" handles this,
+# but this is an explicit safety net)
+node_modules
+.env
+.env.*
+*.log
+coverage
+*.test.*
+*.spec.*

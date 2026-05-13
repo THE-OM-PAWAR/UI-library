@@ -3,7 +3,7 @@ import {
     AvatarBadge,
     AvatarFallback,
     AvatarImage,
-} from "@repo/components";
+} from "@shery-ui/components";
 import { Check } from "lucide-react";
 
 export default function AvatarDemo() {

@@ -1,4 +1,4 @@
-import { Spinner } from "@repo/components";
+import { Spinner } from "@shery-ui/components";
 
 const colors = [
     { cls: "text-foreground", label: "Foreground" },

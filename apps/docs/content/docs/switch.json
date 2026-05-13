@@ -3,7 +3,7 @@
     "description": "A control that toggles between checked and unchecked states.",
     "component": "Switch",
     "installation": {
-        "cli": "npx shadcn@latest add switch",
+        "cli": "npx shery-ui@latest add switch",
         "manual": [
             {
                 "title": "Install dependencies",
@@ -20,7 +20,7 @@
         ]
     },
     "usage": {
-        "import": "import { Switch } from '@repo/components';",
+        "import": "import { Switch } from '@shery-ui/components';",
         "basic": "switch-demo"
     },
     "examples": [
@@ -28,7 +28,7 @@
             "title": "Default",
             "description": "A basic switch example.",
             "demo": "switch-demo",
-            "code": "import { Label, Switch } from \"@repo/components\";\n\nexport default function SwitchDemo() {\n  return (\n    <div className=\"flex items-center gap-3\">\n      <Switch id=\"airplane-mode\" />\n      <Label htmlFor=\"airplane-mode\">Airplane mode</Label>\n    </div>\n  );\n}"
+            "code": "import { Label, Switch } from \"@shery-ui/components\";\n\nexport default function SwitchDemo() {\n  return (\n    <div className=\"flex items-center gap-3\">\n      <Switch id=\"airplane-mode\" />\n      <Label htmlFor=\"airplane-mode\">Airplane mode</Label>\n    </div>\n  );\n}"
         }
     ]
 }

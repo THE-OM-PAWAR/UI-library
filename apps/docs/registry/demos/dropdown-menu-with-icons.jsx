@@ -7,7 +7,7 @@ import {
     DropdownMenuSeparator,
     DropdownMenuShortcut,
     DropdownMenuTrigger,
-} from "@repo/components";
+} from "@shery-ui/components";
 import {
     CreditCardIcon,
     LogOutIcon,

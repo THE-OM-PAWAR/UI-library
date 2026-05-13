@@ -1,15 +1,15 @@
 "use client";
 
 import {
-    DataTable,
     Button,
+    DataTable,
     DropdownMenu,
-    DropdownMenuTrigger,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuLabel,
     DropdownMenuSeparator,
-} from "@repo/components";
+    DropdownMenuTrigger,
+} from "@shery-ui/components";
 
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 import { useMemo } from "react";
@@ -63,25 +63,15 @@ export default function DataTableDemo() {
             {
                 accessorKey: "amount",
 
-                header: () => (
-                    <div className="text-right">
-                        Amount
-                    </div>
-                ),
+                header: () => <div className="text-right">Amount</div>,
 
                 cell: ({ row }) => {
-                    const amount = parseFloat(
-                        row.getValue("amount")
-                    );
+                    const amount = parseFloat(row.getValue("amount"));
 
-                    const formatted =
-                        new Intl.NumberFormat(
-                            "en-US",
-                            {
-                                style: "currency",
-                                currency: "USD",
-                            }
-                        ).format(amount);
+                    const formatted = new Intl.NumberFormat("en-US", {
+                        style: "currency",
+                        currency: "USD",
+                    }).format(amount);
 
                     return (
                         <div className="text-right font-medium">
@@ -107,19 +97,13 @@ export default function DataTableDemo() {
                         </DropdownMenuTrigger>
 
                         <DropdownMenuContent align="end">
-                            <DropdownMenuLabel>
-                                Actions
-                            </DropdownMenuLabel>
+                            <DropdownMenuLabel>Actions</DropdownMenuLabel>
 
                             <DropdownMenuSeparator />
 
-                            <DropdownMenuItem>
-                                View details
-                            </DropdownMenuItem>
+                            <DropdownMenuItem>View details</DropdownMenuItem>
 
-                            <DropdownMenuItem>
-                                Copy ID
-                            </DropdownMenuItem>
+                            <DropdownMenuItem>Copy ID</DropdownMenuItem>
                         </DropdownMenuContent>
                     </DropdownMenu>
                 ),

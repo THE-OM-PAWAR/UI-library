@@ -1,4 +1,4 @@
-import { Button } from "@repo/components";
+import { Button } from "@shery-ui/components";
 import { ArrowRight, Mail } from "lucide-react";
 
 export default function ButtonWithIcon() {

@@ -1,4 +1,4 @@
-import { cn } from "@repo/utils";
+import { cn } from "@shery-ui/utils";
 
 export function DocsHeading({ level = 1, children, className, ...props }) {
     const Component = `h${level}`;

@@ -1,4 +1,4 @@
-import { Button, Textarea } from "@repo/components";
+import { Button, Textarea } from "@shery-ui/components";
 
 export default function TextareaWithFooter() {
     return (

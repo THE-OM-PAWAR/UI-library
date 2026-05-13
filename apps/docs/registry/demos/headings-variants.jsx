@@ -1,4 +1,4 @@
-import { Heading, Separator } from "@repo/components";
+import { Heading, Separator } from "@shery-ui/components";
 
 export default function HeadingsVariants() {
     return (

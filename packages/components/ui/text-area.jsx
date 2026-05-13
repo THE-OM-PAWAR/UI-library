@@ -1,4 +1,4 @@
-import { cn } from "@repo/utils";
+import { cn } from "@shery-ui/utils";
 import * as React from "react";
 
 function Textarea({ className, radius = "10", ...props }) {

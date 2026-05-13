@@ -36,7 +36,7 @@ export const docsConfig = {
                 {
                     title: "CLI",
                     href: "/docs/cli",
-                     label: "New",
+                    label: "New",
                 },
                 {
                     title: "Theming",

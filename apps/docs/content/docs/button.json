@@ -3,7 +3,7 @@
     "description": "Displays a button or a component that looks like a button.",
     "component": "Button",
     "installation": {
-        "cli": "npx shadcn@latest add button",
+        "cli": "npx shery-ui add button",
         "manual": [
             {
                 "title": "Install dependencies",
@@ -28,7 +28,7 @@
         ]
     },
     "usage": {
-        "import": "import { Button } from '@repo/components';",
+        "import": "import { Button } from '@shery-ui/components';",
         "basic": "button-demo"
     },
     "examples": [
@@ -36,73 +36,73 @@
             "title": "Default",
             "description": "The default button style.",
             "demo": "button-demo",
-            "code": "import { Button } from \"@repo/components\";\n\nexport default function ButtonDemo() {\n  return <Button>Button</Button>;\n}"
+            "code": "import { Button } from \"@shery-ui/components\";\n\nexport default function ButtonDemo() {\n  return <Button>Button</Button>;\n}"
         },
         {
             "title": "Secondary",
             "description": "Secondary variant — subdued background for lower-emphasis actions.",
             "demo": "button-secondary",
-            "code": "import { Button } from \"@repo/components\";\n\nexport default function ButtonSecondary() {\n  return <Button variant=\"secondary\">Secondary</Button>;\n}"
+            "code": "import { Button } from \"@shery-ui/components\";\n\nexport default function ButtonSecondary() {\n  return <Button variant=\"secondary\">Secondary</Button>;\n}"
         },
         {
             "title": "Outline",
             "description": "Outline variant — bordered button with transparent background.",
             "demo": "button-outline",
-            "code": "import { Button } from \"@repo/components\";\n\nexport default function ButtonOutline() {\n  return <Button variant=\"outline\">Outline</Button>;\n}"
+            "code": "import { Button } from \"@shery-ui/components\";\n\nexport default function ButtonOutline() {\n  return <Button variant=\"outline\">Outline</Button>;\n}"
         },
         {
             "title": "Ghost",
             "description": "Ghost variant — no background until hovered.",
             "demo": "button-ghost",
-            "code": "import { Button } from \"@repo/components\";\n\nexport default function ButtonGhost() {\n  return <Button variant=\"ghost\">Ghost</Button>;\n}"
+            "code": "import { Button } from \"@shery-ui/components\";\n\nexport default function ButtonGhost() {\n  return <Button variant=\"ghost\">Ghost</Button>;\n}"
         },
         {
             "title": "Destructive",
             "description": "Destructive variant — red-toned button for dangerous or irreversible actions.",
             "demo": "button-destructive",
-            "code": "import { Button } from \"@repo/components\";\n\nexport default function ButtonDestructive() {\n  return <Button variant=\"destructive\">Destructive</Button>;\n}"
+            "code": "import { Button } from \"@shery-ui/components\";\n\nexport default function ButtonDestructive() {\n  return <Button variant=\"destructive\">Destructive</Button>;\n}"
         },
         {
             "title": "Link",
             "description": "Link variant — appears as an inline text link with underline on hover.",
             "demo": "button-link",
-            "code": "import { Button } from \"@repo/components\";\n\nexport default function ButtonLink() {\n  return <Button variant=\"link\">Link</Button>;\n}"
+            "code": "import { Button } from \"@shery-ui/components\";\n\nexport default function ButtonLink() {\n  return <Button variant=\"link\">Link</Button>;\n}"
         },
         {
             "title": "Extra Small",
             "description": "size=\"xs\" — compact extra-small button.",
             "demo": "button-xs",
-            "code": "import { Button } from \"@repo/components\";\n\nexport default function ButtonXS() {\n  return <Button size=\"xs\">Extra Small</Button>;\n}"
+            "code": "import { Button } from \"@shery-ui/components\";\n\nexport default function ButtonXS() {\n  return <Button size=\"xs\">Extra Small</Button>;\n}"
         },
         {
             "title": "Small",
             "description": "size=\"sm\" — small button for tight layouts.",
             "demo": "button-sm",
-            "code": "import { Button } from \"@repo/components\";\n\nexport default function ButtonSm() {\n  return <Button size=\"sm\">Small</Button>;\n}"
+            "code": "import { Button } from \"@shery-ui/components\";\n\nexport default function ButtonSm() {\n  return <Button size=\"sm\">Small</Button>;\n}"
         },
         {
             "title": "Large",
             "description": "size=\"lg\" — large button for prominent calls to action.",
             "demo": "button-lg",
-            "code": "import { Button } from \"@repo/components\";\n\nexport default function ButtonLg() {\n  return <Button size=\"lg\">Large</Button>;\n}"
+            "code": "import { Button } from \"@shery-ui/components\";\n\nexport default function ButtonLg() {\n  return <Button size=\"lg\">Large</Button>;\n}"
         },
         {
             "title": "With Icon",
             "description": "Buttons with icons for enhanced visual communication.",
             "demo": "button-with-icon",
-            "code": "import { Button } from \"@repo/components\";\nimport { Mail, ArrowRight } from \"lucide-react\";\n\nexport default function ButtonWithIcon() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Button>\n        <Mail className=\"mr-2 h-4 w-4\" />\n        Login with Email\n      </Button>\n      <Button variant=\"outline\">\n        Continue\n        <ArrowRight className=\"ml-2 h-4 w-4\" />\n      </Button>\n    </div>\n  );\n}"
+            "code": "import { Button } from \"@shery-ui/components\";\nimport { Mail, ArrowRight } from \"lucide-react\";\n\nexport default function ButtonWithIcon() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Button>\n        <Mail className=\"mr-2 h-4 w-4\" />\n        Login with Email\n      </Button>\n      <Button variant=\"outline\">\n        Continue\n        <ArrowRight className=\"ml-2 h-4 w-4\" />\n      </Button>\n    </div>\n  );\n}"
         },
         {
             "title": "Button Group",
             "description": "To create a button group, use the ButtonGroup component.\n See the Button Group\n documentation for more details.",
             "demo": "button-with-group",
-            "code": "import * as React from \"react\";\nimport {\n  ArchiveIcon,\n  ArrowLeftIcon,\n  CalendarPlusIcon,\n  ClockIcon,\n  ListFilterIcon,\n  MailCheckIcon,\n  MoreHorizontalIcon,\n  TagIcon,\n  Trash2Icon,\n} from \"lucide-react\";\n\nimport { Button } from \"@repo/components\";\nimport { ButtonGroup } from \"@repo/components\";\nimport {\n  DropdownMenu,\n  DropdownMenuTrigger,\n  DropdownMenuContent,\n  DropdownMenuItem,\n  DropdownMenuSeparator,\n} from \"@repo/components\";\n\nexport default function ButtonGroupDemo({ customClassName }) {\n  return (\n    <ButtonGroup>\n      <ButtonGroup className=\"hidden sm:flex\">\n        <Button variant=\"outline\" size=\"icon\" aria-label=\"Go Back\">\n          <ArrowLeftIcon />\n        </Button>\n      </ButtonGroup>\n      <ButtonGroup>\n        <Button variant=\"outline\">Archive</Button>\n        <Button variant=\"outline\">Report</Button>\n      </ButtonGroup>\n      <ButtonGroup>\n        <Button variant=\"outline\">Snooze</Button>\n        <DropdownMenu>\n          <DropdownMenuTrigger asChild>\n            <Button variant=\"outline\" className={customClassName}>\n              <MoreHorizontalIcon />\n            </Button>\n          </DropdownMenuTrigger>\n          <DropdownMenuContent>\n            <DropdownMenuItem className=\"flex gap-2\">\n              <MailCheckIcon />\n              Mark as Read\n            </DropdownMenuItem>\n            <DropdownMenuItem className=\"flex gap-2\">\n              <ArchiveIcon />\n              Archive\n            </DropdownMenuItem>\n            <DropdownMenuSeparator />\n            <DropdownMenuItem className=\"flex gap-2\">\n              <ClockIcon />\n              Snooze\n            </DropdownMenuItem>\n            <DropdownMenuItem className=\"flex gap-2\">\n              <CalendarPlusIcon />\n              Add to Calendar\n            </DropdownMenuItem>\n            <DropdownMenuItem className=\"flex gap-2\">\n              <CalendarPlusIcon />\n              Add to Calendar\n            </DropdownMenuItem>\n            <DropdownMenuItem className=\"flex gap-2\">\n              <ListFilterIcon />\n              Add to List\n            </DropdownMenuItem>\n          </DropdownMenuContent>\n        </DropdownMenu>\n      </ButtonGroup>\n    </ButtonGroup>\n  );\n}"
+            "code": "import * as React from \"react\";\nimport {\n  ArchiveIcon,\n  ArrowLeftIcon,\n  CalendarPlusIcon,\n  ClockIcon,\n  ListFilterIcon,\n  MailCheckIcon,\n  MoreHorizontalIcon,\n  TagIcon,\n  Trash2Icon,\n} from \"lucide-react\";\n\nimport { Button } from \"@shery-ui/components\";\nimport { ButtonGroup } from \"@shery-ui/components\";\nimport {\n  DropdownMenu,\n  DropdownMenuTrigger,\n  DropdownMenuContent,\n  DropdownMenuItem,\n  DropdownMenuSeparator,\n} from \"@shery-ui/components\";\n\nexport default function ButtonGroupDemo({ customClassName }) {\n  return (\n    <ButtonGroup>\n      <ButtonGroup className=\"hidden sm:flex\">\n        <Button variant=\"outline\" size=\"icon\" aria-label=\"Go Back\">\n          <ArrowLeftIcon />\n        </Button>\n      </ButtonGroup>\n      <ButtonGroup>\n        <Button variant=\"outline\">Archive</Button>\n        <Button variant=\"outline\">Report</Button>\n      </ButtonGroup>\n      <ButtonGroup>\n        <Button variant=\"outline\">Snooze</Button>\n        <DropdownMenu>\n          <DropdownMenuTrigger asChild>\n            <Button variant=\"outline\" className={customClassName}>\n              <MoreHorizontalIcon />\n            </Button>\n          </DropdownMenuTrigger>\n          <DropdownMenuContent>\n            <DropdownMenuItem className=\"flex gap-2\">\n              <MailCheckIcon />\n              Mark as Read\n            </DropdownMenuItem>\n            <DropdownMenuItem className=\"flex gap-2\">\n              <ArchiveIcon />\n              Archive\n            </DropdownMenuItem>\n            <DropdownMenuSeparator />\n            <DropdownMenuItem className=\"flex gap-2\">\n              <ClockIcon />\n              Snooze\n            </DropdownMenuItem>\n            <DropdownMenuItem className=\"flex gap-2\">\n              <CalendarPlusIcon />\n              Add to Calendar\n            </DropdownMenuItem>\n            <DropdownMenuItem className=\"flex gap-2\">\n              <CalendarPlusIcon />\n              Add to Calendar\n            </DropdownMenuItem>\n            <DropdownMenuItem className=\"flex gap-2\">\n              <ListFilterIcon />\n              Add to List\n            </DropdownMenuItem>\n          </DropdownMenuContent>\n        </DropdownMenu>\n      </ButtonGroup>\n    </ButtonGroup>\n  );\n}"
         },
         {
             "title": "As Child",
             "description": "You can use the asChild prop on <Button /> to make another component look like a button. Here's an example of a link that looks like a button.",
             "demo": "button-aschild",
-            "code": "import Link from \"next/link\";\n\nimport { Button } from \"@repo/components\";\n\nexport default function ButtonAsChild() {\n  return (\n    <Button asChild>\n      <Link href=\"/login\">Login</Link>\n    </Button>\n  );\n}"
+            "code": "import Link from \"next/link\";\n\nimport { Button } from \"@shery-ui/components\";\n\nexport default function ButtonAsChild() {\n  return (\n    <Button asChild>\n      <Link href=\"/login\">Login</Link>\n    </Button>\n  );\n}"
         }
     ]
 }

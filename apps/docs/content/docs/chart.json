@@ -3,7 +3,7 @@
     "description": "Composable chart helpers for themed data visualizations.",
     "component": "ChartContainer",
     "installation": {
-        "cli": "npx shadcn@latest add chart",
+        "cli": "npx shery-ui add chart",
         "manual": [
             {
                 "title": "Install dependencies",
@@ -20,7 +20,7 @@
         ]
     },
     "usage": {
-        "import": "import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@repo/components';",
+        "import": "import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@shery-ui/components';",
         "basic": "chart-demo"
     },
     "examples": [
@@ -28,7 +28,7 @@
             "title": "Default",
             "description": "A basic chart example.",
             "demo": "chart-demo",
-            "code": "import { ChartContainer } from \"@repo/components\";\n\nconst chartConfig = {\n  desktop: { label: \"Desktop\", color: \"#2563eb\" },\n  mobile: { label: \"Mobile\", color: \"#16a34a\" },\n};\n\nconst data = [\n  { month: \"Jan\", desktop: 64, mobile: 42 },\n  { month: \"Feb\", desktop: 82, mobile: 58 },\n  { month: \"Mar\", desktop: 74, mobile: 66 },\n  { month: \"Apr\", desktop: 96, mobile: 72 },\n];\n\nexport default function ChartDemo() {\n  return (\n    <ChartContainer config={chartConfig} className=\"w-full max-w-md rounded-lg border p-4\">\n      <div className=\"mb-4 text-sm font-medium\">Traffic by device</div>\n      <div className=\"flex h-44 items-end gap-4\">\n        {data.map((item) => (\n          <div key={item.month} className=\"flex flex-1 flex-col items-center gap-2\">\n            <div className=\"flex h-32 items-end gap-1\">\n              <div className=\"w-5 rounded-t bg-[var(--color-desktop)]\" style={{ height: item.desktop }} />\n              <div className=\"w-5 rounded-t bg-[var(--color-mobile)]\" style={{ height: item.mobile }} />\n            </div>\n            <span className=\"text-xs text-muted-foreground\">{item.month}</span>\n          </div>\n        ))}\n      </div>\n    </ChartContainer>\n  );\n}"
+            "code": "import { ChartContainer } from \"@shery-ui/components\";\n\nconst chartConfig = {\n  desktop: { label: \"Desktop\", color: \"#2563eb\" },\n  mobile: { label: \"Mobile\", color: \"#16a34a\" },\n};\n\nconst data = [\n  { month: \"Jan\", desktop: 64, mobile: 42 },\n  { month: \"Feb\", desktop: 82, mobile: 58 },\n  { month: \"Mar\", desktop: 74, mobile: 66 },\n  { month: \"Apr\", desktop: 96, mobile: 72 },\n];\n\nexport default function ChartDemo() {\n  return (\n    <ChartContainer config={chartConfig} className=\"w-full max-w-md rounded-lg border p-4\">\n      <div className=\"mb-4 text-sm font-medium\">Traffic by device</div>\n      <div className=\"flex h-44 items-end gap-4\">\n        {data.map((item) => (\n          <div key={item.month} className=\"flex flex-1 flex-col items-center gap-2\">\n            <div className=\"flex h-32 items-end gap-1\">\n              <div className=\"w-5 rounded-t bg-[var(--color-desktop)]\" style={{ height: item.desktop }} />\n              <div className=\"w-5 rounded-t bg-[var(--color-mobile)]\" style={{ height: item.mobile }} />\n            </div>\n            <span className=\"text-xs text-muted-foreground\">{item.month}</span>\n          </div>\n        ))}\n      </div>\n    </ChartContainer>\n  );\n}"
         }
     ]
 }

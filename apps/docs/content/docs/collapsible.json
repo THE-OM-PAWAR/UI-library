@@ -3,7 +3,7 @@
     "description": "An interactive component that expands and collapses content.",
     "component": "Collapsible",
     "installation": {
-        "cli": "npx shadcn@latest add collapsible",
+        "cli": "npx shery-ui add collapsible",
         "manual": [
             {
                 "title": "Install dependencies",
@@ -20,7 +20,7 @@
         ]
     },
     "usage": {
-        "import": "import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@repo/components';",
+        "import": "import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@shery-ui/components';",
         "basic": "collapsible-demo"
     },
     "examples": [
@@ -28,7 +28,7 @@
             "title": "Default",
             "description": "A basic collapsible example.",
             "demo": "collapsible-demo",
-            "code": "\"use client\";\n\nimport { Button, Collapsible, CollapsibleContent, CollapsibleTrigger } from \"@repo/components\";\nimport { useState } from \"react\";\n\nexport default function CollapsibleDemo() {\n  const [open, setOpen] = useState(false);\n\n  return (\n    <Collapsible open={open} onOpenChange={setOpen} className=\"w-full max-w-sm space-y-2\">\n      <div className=\"flex items-center justify-between rounded-lg border px-4 py-3\">\n        <span className=\"text-sm font-medium\">Project files</span>\n        <CollapsibleTrigger asChild>\n          <Button variant=\"outline\" size=\"sm\">{open ? \"Hide\" : \"Show\"}</Button>\n        </CollapsibleTrigger>\n      </div>\n      <CollapsibleContent className=\"space-y-2\">\n        <div className=\"rounded-md border px-4 py-2 text-sm\">components.json</div>\n        <div className=\"rounded-md border px-4 py-2 text-sm\">tailwind.config.js</div>\n      </CollapsibleContent>\n    </Collapsible>\n  );\n}"
+            "code": "\"use client\";\n\nimport { Button, Collapsible, CollapsibleContent, CollapsibleTrigger } from \"@shery-ui/components\";\nimport { useState } from \"react\";\n\nexport default function CollapsibleDemo() {\n  const [open, setOpen] = useState(false);\n\n  return (\n    <Collapsible open={open} onOpenChange={setOpen} className=\"w-full max-w-sm space-y-2\">\n      <div className=\"flex items-center justify-between rounded-lg border px-4 py-3\">\n        <span className=\"text-sm font-medium\">Project files</span>\n        <CollapsibleTrigger asChild>\n          <Button variant=\"outline\" size=\"sm\">{open ? \"Hide\" : \"Show\"}</Button>\n        </CollapsibleTrigger>\n      </div>\n      <CollapsibleContent className=\"space-y-2\">\n        <div className=\"rounded-md border px-4 py-2 text-sm\">components.json</div>\n        <div className=\"rounded-md border px-4 py-2 text-sm\">tailwind.config.js</div>\n      </CollapsibleContent>\n    </Collapsible>\n  );\n}"
         }
     ]
 }

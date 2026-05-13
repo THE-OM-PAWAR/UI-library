@@ -4,7 +4,7 @@ import {
     CarouselItem,
     CarouselNext,
     CarouselPrevious,
-} from "@repo/components";
+} from "@shery-ui/components";
 
 export default function CarouselVertical() {
     const slides = [1, 2, 3, 4];

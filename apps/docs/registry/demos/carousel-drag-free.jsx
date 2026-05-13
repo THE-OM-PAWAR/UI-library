@@ -4,7 +4,7 @@ import {
     CarouselItem,
     CarouselNext,
     CarouselPrevious,
-} from "@repo/components";
+} from "@shery-ui/components";
 
 export default function CarouselDragFree() {
     const slides = [1, 2, 3, 4, 5, 6];

@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@repo/components";
+import { Card, CardContent } from "@shery-ui/components";
 
 const stats = [
     { label: "Total Revenue", value: "$45,231", change: "+20.1%" },

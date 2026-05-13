@@ -6,7 +6,7 @@ import {
     CardFooter,
     CardHeader,
     CardTitle,
-} from "@repo/components";
+} from "@shery-ui/components";
 
 export default function CardDemo() {
     return (

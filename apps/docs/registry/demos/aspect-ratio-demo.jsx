@@ -1,4 +1,4 @@
-import { AspectRatio } from "@repo/components";
+import { AspectRatio } from "@shery-ui/components";
 
 export default function AspectRatioDemo() {
     return (

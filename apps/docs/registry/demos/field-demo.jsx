@@ -4,7 +4,7 @@ import {
     FieldGroup,
     FieldLabel,
     Input,
-} from "@repo/components";
+} from "@shery-ui/components";
 
 export default function FieldDemo() {
     return (

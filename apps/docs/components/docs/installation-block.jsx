@@ -17,7 +17,7 @@ function resolveCommand(command, manager) {
             ? command.npm || ""
             : command;
 
-    // Handle npx commands (e.g. "npx shery-ui add accordion")
+    // Handle npx commands (e.g. "npx shery-ui@latest add accordion")
     if (cmd.startsWith("npx ")) {
         const rest = cmd
             .slice(4)

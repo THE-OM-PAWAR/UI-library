@@ -6,7 +6,7 @@ import {
     EmptyHeader,
     EmptyMedia,
     EmptyTitle,
-} from "@repo/components";
+} from "@shery-ui/components";
 import { Inbox } from "lucide-react";
 
 export default function EmptyDemo() {

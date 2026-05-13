@@ -1,5 +1,5 @@
 {
-    "name": "@repo/config",
+    "name": "@shery-ui/config",
     "version": "1.0.0",
     "type": "module",
     "main": "tailwind.config.js",

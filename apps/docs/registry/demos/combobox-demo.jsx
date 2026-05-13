@@ -6,7 +6,7 @@ import {
     ComboboxList,
     ComboboxSearch,
     ComboboxTrigger,
-} from "@repo/components";
+} from "@shery-ui/components";
 
 export default function ComboboxDemo() {
     const frameworks = [

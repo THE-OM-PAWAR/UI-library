@@ -8,7 +8,7 @@ import {
     ComboboxList,
     ComboboxSearch,
     ComboboxTrigger,
-} from "@repo/components";
+} from "@shery-ui/components";
 import { useState } from "react";
 
 export default function ComboboxControlled() {

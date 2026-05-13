@@ -9,7 +9,7 @@ import {
     ComboboxSearch,
     ComboboxSeparator,
     ComboboxTrigger,
-} from "@repo/components";
+} from "@shery-ui/components";
 
 export default function ComboboxGroups() {
     return (

@@ -10,7 +10,7 @@ import {
     PopoverHeader,
     PopoverTitle,
     PopoverTrigger,
-} from "@repo/components";
+} from "@shery-ui/components";
 import { useState } from "react";
 
 export default function PopoverWithForm() {

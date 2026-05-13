@@ -3,7 +3,7 @@ import {
     Popover,
     PopoverContent,
     PopoverTrigger,
-} from "@repo/components";
+} from "@shery-ui/components";
 
 export default function PopoverDemo() {
     return (

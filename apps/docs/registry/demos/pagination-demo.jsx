@@ -6,7 +6,7 @@ import {
     PaginationLink,
     PaginationNext,
     PaginationPrevious,
-} from "@repo/components";
+} from "@shery-ui/components";
 
 export default function PaginationDemo() {
     return (

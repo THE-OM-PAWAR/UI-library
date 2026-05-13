@@ -1,16 +1,15 @@
 "use client";
 
-import { Button } from "@repo/components";
+import { Button } from "@shery-ui/components";
 import { Github, Moon, Search, Sun } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export function Header() {
-    const [theme, setTheme] = useState("dark");
+    const [theme, setTheme] = useState("light");
 
     useEffect(() => {
-        // Check for saved theme preference or default to dark
-        const savedTheme = localStorage.getItem("theme") || "dark";
+        const savedTheme = localStorage.getItem("theme") || "light";
         setTheme(savedTheme);
         document.documentElement.classList.toggle(
             "dark",

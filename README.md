@@ -127,6 +127,7 @@ function MyApp() {
     </div>
   );
 }
+
 ```
 
 ## Adding New Components

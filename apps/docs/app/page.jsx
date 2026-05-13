@@ -1,4 +1,4 @@
-import { Button } from "@repo/components";
+import { Button } from "@shery-ui/components";
 import { ComponentShowcase } from "components/home/ComponentShowcase";
 import {
     ArrowRight,
@@ -71,7 +71,7 @@ export default function HomePage() {
                                 <ArrowRight className="w-4 h-4 ml-2" />
                             </Button>
                         </Link>
-                        <Link href="/docs/components/button">
+                        <Link href="/docs/components">
                             <Button size="lg" variant="outline">
                                 Browse Components
                             </Button>

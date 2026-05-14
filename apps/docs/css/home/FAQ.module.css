@@ -1,0 +1,139 @@
+.wraper {
+    width: 100%;
+    background: linear-gradient(180deg, #fefdfe 0%, #eef4ff 48%, #ffffff 100%);
+}
+
+.faq {
+    width: 100%;
+    max-width: 980px;
+    margin: auto;
+    padding: 5rem 1.5rem 6rem;
+}
+
+.heading {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.heading span {
+    color: #4f8cff;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.heading h2 {
+    margin: 0.45rem 0 0;
+    color: #061544;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: 0;
+}
+
+.items {
+    display: grid;
+    gap: 0.8rem;
+}
+
+.item {
+    border: 1px solid rgba(79, 140, 255, 0.18);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.78);
+    box-shadow: 0 14px 34px rgba(47, 88, 158, 0.08);
+    overflow: hidden;
+}
+
+.trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    min-height: 64px;
+    padding: 0 1.25rem;
+    border: 0;
+    color: #061544;
+    background: transparent;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.92rem;
+    font-weight: 700;
+    line-height: 1.35;
+    text-align: left;
+}
+
+.trigger svg {
+    width: 1rem;
+    height: 1rem;
+    color: #4f8cff;
+    transition: transform 0.22s ease, opacity 0.22s ease;
+}
+
+.trigger[data-state="open"] svg {
+    transform: rotate(180deg);
+}
+
+.content {
+    overflow: hidden;
+    color: rgba(6, 21, 68, 0.58);
+}
+
+.content[data-state="open"] {
+    animation: faqOpen 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.content[data-state="closed"] {
+    animation: faqClose 220ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.content p {
+    margin: 0;
+    padding: 0 1.25rem 1.25rem;
+    font-size: 0.82rem;
+    line-height: 1.65;
+}
+
+@keyframes faqOpen {
+    from {
+        height: 0;
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        height: var(--radix-accordion-content-height);
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes faqClose {
+    from {
+        height: var(--radix-accordion-content-height);
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        height: 0;
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .faq {
+        padding: 4rem 1rem 5rem;
+    }
+
+    .trigger {
+        min-height: 58px;
+        padding-inline: 1rem;
+        font-size: 0.82rem;
+    }
+
+    .content p {
+        padding-inline: 1rem;
+        font-size: 0.76rem;
+    }
+}

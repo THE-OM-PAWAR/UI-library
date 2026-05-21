@@ -1,4 +1,4 @@
-import CodeSnippetShowcase from '@/components/home/CodeSnippetShowcase'
+import ContributionForm from '@/components/home/ContributionForm'
 import ComponentShowcase from '@/components/home/ComponentShowcase'
 import EndBrand from '@/components/home/EndBrand'
 import FAQ from '@/components/home/FAQ'
@@ -13,7 +13,7 @@ const page = () => {
       <Hero />
       <ComponentShowcase />
       <PerformanceDX />
-      <CodeSnippetShowcase />
+      <ContributionForm />
       <FAQ />
       <EndBrand />
       <Footer />

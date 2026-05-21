@@ -10,177 +10,150 @@
 
 .showcase {
     width: 100%;
+    margin: 0;
+    padding: 3.1rem clamp(1rem, 2.2vw, 2.6rem) 3.8rem;
+}
+
+.bentoSurface {
+    width: 100%;
+    display: grid;
+    gap: 1.05rem;
     max-width: 1600px;
-    margin: auto;
-    padding: 4rem 1.5rem 5rem;
+    margin: 0 auto;
 }
 
-.frame {
-    width: min(100%, 1040px);
-    margin: auto;
+.bentoHeader {
+    display: grid;
+    gap: 0.35rem;
+    margin-bottom: 0.75rem;
+    text-align: left;
+}
+
+.bentoHeader span {
+    color: #101114;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.bentoHeader h2 {
+    margin: 0;
+    color: #0c0d10;
+    font-size: clamp(1.4rem, 2.7vw, 2rem);
+    font-weight: 600;
+    line-height: 1.15;
+}
+
+.bentoHeader p {
+    margin: 0;
+    max-width: 520px;
+    color: rgba(16, 17, 20, 0.68);
+    font-size: 0.78rem;
+    line-height: 1.5;
+}
+
+.bentoGrid {
+    column-count: 5;
+    column-gap: 0.6rem;
+}
+
+.bentoCard {
+    display: grid;
+    align-content: start;
+    gap: 0.55rem;
+    padding: 0.7rem;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    color: #0c0d10;
+    break-inside: avoid;
+    margin-bottom: 0.6rem;
     overflow: hidden;
-    border: 1px solid rgba(6, 21, 68, 0.24);
-    border-radius: 28px;
-    background: rgba(255, 255, 255, 0.94);
-    box-shadow: 0 24px 70px rgba(28, 73, 151, 0.16);
 }
 
-.topbar {
-    display: flex;
-    align-items: center;
-    height: 52px;
-    padding: 0 1.5rem;
-    border-bottom: 1px solid rgba(6, 21, 68, 0.22);
-}
-
-.dots {
-    display: flex;
-    align-items: center;
-    gap: 0.65rem;
-}
-
-.dots span {
-    width: 14px;
-    height: 14px;
-    border-radius: 999px;
-}
-
-.dots span:nth-child(1) {
-    background: #ff4343;
-}
-
-.dots span:nth-child(2) {
-    background: #f4c84d;
-}
-
-.dots span:nth-child(3) {
-    background: #2dc85f;
-}
-
-.componentTabs {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    margin: 1rem 1.5rem 1.55rem;
-    padding: 0.5rem 0.6rem;
-    overflow-x: auto;
-    border: 1px solid rgba(6, 21, 68, 0.24);
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.78);
-    scroll-snap-type: x proximity;
-    scrollbar-color: rgba(79, 140, 255, 0.55) transparent;
-    scrollbar-width: thin;
-    overscroll-behavior-inline: contain;
-    touch-action: pan-x;
-}
-
-.componentTabs::-webkit-scrollbar {
+.bentoCardHeader strong {
     display: block;
-    height: 8px;
-}
-
-.componentTabs::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.componentTabs::-webkit-scrollbar-thumb {
-    border-radius: 999px;
-    background: rgba(79, 140, 255, 0.42);
-}
-
-.componentTab {
-    flex: 0 0 auto;
-    min-height: 34px;
-    padding: 0 0.95rem;
-    border: 1px solid rgba(6, 21, 68, 0.32);
-    border-radius: 8px;
-    color: #061544;
-    background: #ffffff;
-    font: inherit;
-    font-size: 0.78rem;
-    font-weight: 500;
-    cursor: pointer;
-    scroll-snap-align: start;
-    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-}
-
-.componentTab:hover {
-    border-color: #4f8cff;
-}
-
-.activeTab {
-    color: #0d4d8f;
-    border-color: rgba(79, 140, 255, 0.46);
-    background: linear-gradient(180deg, #ffffff, #eaf5ff);
-    box-shadow: inset 0 -1px 0 rgba(79, 140, 255, 0.2);
-}
-
-.stage {
-    padding: 0 1.5rem 1.75rem;
-}
-
-.examplePanel {
-    min-height: 340px;
-    padding: clamp(1.25rem, 3vw, 2.2rem);
-    border: 1px solid rgba(6, 21, 68, 0.34);
-    border-radius: 24px;
-    background: rgba(255, 255, 255, 0.72);
-}
-
-.exampleHeader {
-    margin-bottom: 1.7rem;
-    text-align: center;
-}
-
-.exampleHeader span {
-    color: #4f8cff;
-    font-size: 0.78rem;
+    color: #0c0d10;
+    font-size: 0.8rem;
     font-weight: 700;
 }
 
-.exampleHeader h2 {
-    margin: 0.45rem auto 0;
-    max-width: 650px;
-    color: #061544;
-    font-size: clamp(1.5rem, 3vw, 2.25rem);
-    font-weight: 600;
-    line-height: 1.18;
-    letter-spacing: 0;
+.bentoCardHeader p {
+    margin: 0.35rem 0 0;
+    color: rgba(16, 17, 20, 0.6);
+    font-size: 0.66rem;
+    line-height: 1.5;
 }
 
-.exampleGrid {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    min-height: 170px;
+.bentoCardBody {
+    display: grid;
+    gap: 0.45rem;
+    align-items: start;
+    justify-items: start;
+}
+
+.bentoStack {
+    display: grid;
+    gap: 0.85rem;
+}
+
+.span3 {
+    grid-column: span 3;
+}
+
+.span4 {
+    grid-column: span 4;
+}
+
+.span5 {
+    grid-column: span 5;
+}
+
+.span6 {
+    grid-column: span 6;
+}
+
+.span8 {
+    grid-column: span 8;
+}
+
+.row2 {
+    grid-row: span 2;
 }
 
 .demoRow {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    gap: 0.8rem;
+    justify-content: flex-start;
+    gap: 0.45rem;
 }
 
 .formDemo {
     display: grid;
-    gap: 0.55rem;
-    width: min(100%, 340px);
+    gap: 0.4rem;
+    width: 100%;
 }
 
 .formDemo label {
-    margin-top: 0.35rem;
+    margin-top: 0.2rem;
+    font-size: 0.72rem;
 }
 
 .cardDemo {
-    width: min(100%, 360px);
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
 
 .cardDemo p {
-    color: rgba(6, 21, 68, 0.58);
+    color: rgba(16, 17, 20, 0.6);
     font-size: 0.78rem;
     line-height: 1.6;
 }
@@ -192,24 +165,33 @@
 }
 
 .tabsDemo {
-    width: min(100%, 380px);
+    width: 100%;
+    max-width: 260px;
 }
 
 .tabsDemo [role="tablist"] {
     width: 100%;
-    margin-bottom: 0.9rem;
+    height: 32px;
+    margin-bottom: 0.55rem;
+    padding: 0.2rem;
+    gap: 0.35rem;
+}
+
+.tabsListCompact [role="tab"] {
+    padding: 0.2rem 0.55rem;
+    font-size: 0.72rem;
 }
 
 .tabsDemo [role="tabpanel"] {
-    min-height: 78px;
+    min-height: 52px;
     margin-top: 0;
-    padding: 1rem;
-    border: 1px solid rgba(79, 140, 255, 0.16);
+    padding: 0.65rem;
+    border: 1px solid rgba(0, 0, 0, 0.12);
     border-radius: 8px;
-    color: rgba(6, 21, 68, 0.62);
-    background: white;
-    font-size: 0.78rem;
-    line-height: 1.6;
+    color: rgba(16, 17, 20, 0.68);
+    background: rgba(255, 255, 255, 0.45);
+    font-size: 0.72rem;
+    line-height: 1.45;
 }
 
 .accordionDemo {
@@ -217,58 +199,179 @@
 }
 
 .alertDemo {
-    width: min(100%, 430px);
-    background: white;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.45);
+    border-color: rgba(0, 0, 0, 0.14);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
 }
 
 .progressDemo {
     display: grid;
-    gap: 0.85rem;
-    width: min(100%, 380px);
-    padding: 1.1rem;
-    border: 1px solid rgba(79, 140, 255, 0.18);
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid rgba(0, 0, 0, 0.14);
     border-radius: 14px;
-    background: white;
-    box-shadow: 0 10px 24px rgba(47, 88, 158, 0.08);
+    background: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
 
 .progressDemo div {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
-    color: #061544;
+    color: #0c0d10;
     font-size: 0.72rem;
     font-weight: 800;
 }
 
-.tableDemo {
-    min-width: 340px;
-    overflow: hidden;
-    border: 1px solid rgba(79, 140, 255, 0.18);
-    border-radius: 12px;
-    background: white;
-    box-shadow: 0 10px 24px rgba(47, 88, 158, 0.08);
+.toggleRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.iconRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.statList {
+    display: grid;
+    gap: 0.35rem;
+    width: 100%;
+}
+
+.statList div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.35rem 0.45rem;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.35);
+    color: rgba(16, 17, 20, 0.68);
+    font-size: 0.68rem;
+}
+
+.statList strong {
+    color: #0c0d10;
+    font-size: 0.8rem;
+}
+
+.kbdStack {
+    display: grid;
+    gap: 0.35rem;
+}
+
+.kbdRow {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: rgba(16, 17, 20, 0.68);
+    font-size: 0.7rem;
+}
+
+.textareaCompact {
+    min-height: 70px;
+    padding: 0.5rem 0.65rem;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.45);
+    font-size: 0.75rem;
+}
+
+.skeletonStack {
+    display: grid;
+    gap: 0.35rem;
+    width: 100%;
+}
+
+.loadingRow {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: rgba(16, 17, 20, 0.7);
+    font-size: 0.72rem;
+}
+
+.skeletonLine {
+    height: 8px;
+    width: 100%;
+    border-radius: 999px;
+}
+
+.skeletonLineShort {
+    height: 8px;
+    width: 65%;
+    border-radius: 999px;
+}
+
+.separatorStack {
+    display: grid;
+    gap: 0.4rem;
+    width: 100%;
+    color: rgba(16, 17, 20, 0.68);
+    font-size: 0.7rem;
+}
+
+.separatorLine {
+    background: rgba(0, 0, 0, 0.12);
+}
+
+.dataTableShell {
+    width: 100%;
+}
+
+.dataTableShell > div {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.dataTableShell [data-slot="table-head"] {
+    height: 26px;
+    padding: 0.2rem 0.4rem;
+    font-size: 0.68rem;
+}
+
+.dataTableShell [data-slot="table-cell"] {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.68rem;
+}
+
+.dataTableShell [data-slot="table-row"] {
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+.moreActions {
+    display: flex;
+    justify-content: center;
+    padding-top: 0.5rem;
 }
 
 .switchDemo {
     display: grid;
-    gap: 0.8rem;
-    width: min(100%, 390px);
+    gap: 0.4rem;
+    width: 100%;
 }
 
 .switchDemo div {
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
-    gap: 0.75rem;
-    min-height: 54px;
-    padding: 0.85rem 1rem;
-    border: 1px solid rgba(79, 140, 255, 0.18);
+    gap: 0.55rem;
+    min-height: 42px;
+    padding: 0.55rem 0.7rem;
+    border: 1px solid rgba(0, 0, 0, 0.14);
     border-radius: 12px;
-    color: #061544;
-    background: white;
-    box-shadow: 0 10px 24px rgba(47, 88, 158, 0.07);
+    color: #0c0d10;
+    background: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
+
 
 .primaryButton,
 .outlineButton,
@@ -746,26 +849,28 @@
     background: white;
 }
 
+@media screen and (max-width: 1400px) {
+    .bentoGrid {
+        column-count: 4;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .bentoGrid {
+        column-count: 3;
+    }
+}
+
 @media screen and (max-width: 760px) {
     .showcase {
         padding: 3rem 0.9rem 4rem;
     }
 
-    .frame {
-        border-radius: 20px;
+    .bentoHeader {
+        text-align: center;
     }
 
-    .componentTabs {
-        gap: 0.8rem;
-        margin-inline: 1rem;
-    }
-
-    .stage {
-        padding-inline: 1rem;
-    }
-
-    .examplePanel {
-        min-height: 360px;
-        border-radius: 18px;
+    .bentoGrid {
+        column-count: 1;
     }
 }

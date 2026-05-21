@@ -1,0 +1,16 @@
+.particles {
+    position: fixed;
+    inset: 0;
+    z-index: 3;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    opacity: 0.78;
+    mix-blend-mode: screen;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .particles {
+        opacity: 0.42;
+    }
+}

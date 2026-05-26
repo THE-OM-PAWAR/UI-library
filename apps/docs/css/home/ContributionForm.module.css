@@ -197,6 +197,22 @@
     }
 }
 
+.success {
+    display: block;
+    color: #059669;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.error {
+    display: block;
+    color: #dc2626;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
 @media screen and (max-width: 640px) {
     .section {
         padding: 3rem 1rem 4rem;

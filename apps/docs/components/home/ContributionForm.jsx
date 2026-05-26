@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+// Email sending moved to a server API route to keep secrets server-side
 import {
     Avatar,
     AvatarFallback,
@@ -16,8 +17,10 @@ const CONTRIBUTORS_API =
     "https://api.github.com/repos/THE-OM-PAWAR/UI-library/contributors";
 
 const ContributionForm = () => {
+    const formRef = useRef(null);
     const [contributors, setContributors] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [submitStatus, setSubmitStatus] = useState(null);
 
     useEffect(() => {
         const controller = new AbortController();
@@ -68,16 +71,43 @@ const ContributionForm = () => {
         return () => controller.abort();
     }, []);
 
+    async function handleSubmit(e) {
+        e.preventDefault();
+        setSubmitStatus('sending');
+        try {
+            // Send form data to a server-side API route — keep EmailJS secrets out of the client
+            const form = new FormData(formRef.current);
+            const template_params = Object.fromEntries(form.entries());
+            const resp = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ template_params })
+            });
+            if (!resp.ok) {
+                const text = await resp.text();
+                console.error('Email send error:', text);
+                setSubmitStatus('error');
+                return;
+            }
+            setSubmitStatus('success');
+            e.target.reset();
+        } catch (error) {
+            console.error('Email send error:', error);
+            setSubmitStatus('error');
+        }
+    }
+
     return (
         <div className={styles.wraper}>
             <section className={styles.section}>
-                <form className={styles.form}>
+                <form ref={formRef} className={styles.form} onSubmit={handleSubmit}>
                     <h2 className={styles.heading}>Wanna Contribute ??</h2>
                     <div className={styles.row}>
                         <div className={styles.field}>
                             <Label htmlFor="contrib-name">Name</Label>
                             <Input
                                 id="contrib-name"
+                                name="from_name"
                                 className={styles.glassInput}
                                 placeholder="Your name"
                             />
@@ -86,6 +116,7 @@ const ContributionForm = () => {
                             <Label htmlFor="contrib-email">Email ID</Label>
                             <Input
                                 id="contrib-email"
+                                name="from_email"
                                 className={styles.glassInput}
                                 placeholder="you@domain.com"
                             />
@@ -95,6 +126,7 @@ const ContributionForm = () => {
                         <Label htmlFor="contrib-phone">Phone number</Label>
                         <Input
                             id="contrib-phone"
+                            name="phone"
                             className={styles.glassInput}
                             placeholder="+91 98765 43210"
                         />
@@ -103,14 +135,19 @@ const ContributionForm = () => {
                         <Label htmlFor="contrib-notes">What can you contribute</Label>
                         <Textarea
                             id="contrib-notes"
+                            name="message"
                             className={`${styles.glassInput} ${styles.textarea}`}
                             placeholder="Tell us about your idea..."
                             rows={4}
                         />
                     </div>
-                    <Button type="submit" className={styles.submitButton}>
-                        Submit contribution
-                    </Button>
+                    <div>
+                        <Button type="submit" className={styles.submitButton} disabled={submitStatus === 'sending'}>
+                            {submitStatus === 'sending' ? 'Sending...' : 'Submit contribution'}
+                        </Button>
+                        {submitStatus === 'success' && <span className={styles.success}>Thanks! We received your message.</span>}
+                        {submitStatus === 'error' && <span className={styles.error}>Failed to send. Try again later.</span>}
+                    </div>
                 </form>
                 <div className={styles.contributors}>
                     <p>OUR Contributors</p>

@@ -46,9 +46,16 @@ Message:
 Create/update `.env.local` in `apps/docs/`:
 
 ```env
-NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id_here
-NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id_here
-NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key_here
+# Required (API route reads either EMAILJS_* or NEXT_PUBLIC_EMAILJS_*)
+EMAILJS_SERVICE_ID=your_service_id_here
+EMAILJS_TEMPLATE_ID=your_template_id_here
+EMAILJS_PUBLIC_KEY=your_public_key_here
+
+# Optional but recommended for server-side auth
+EMAILJS_PRIVATE_KEY=your_private_key_here
+
+# Backward-compatible alias for private key (supported by the API route)
+# EMAILJS_API_KEY=your_private_key_here
 ```
 
 ## Step 6: Install Dependencies
@@ -79,7 +86,7 @@ yarn install
 ## Troubleshooting
 
 **"Email send error" message appears:**
-- Verify all three environment variables are set correctly
+- Verify required environment variables are set correctly
 - Check that your Service ID and Template ID match those in EmailJS
 - Ensure your email service is verified and active
 
@@ -100,9 +107,9 @@ Form fields are mapped to template variables via `name` attributes:
 - `message` → Contribution details
 
 ## Security Notes
-- The `NEXT_PUBLIC_` prefix means these variables are exposed to the client (this is expected for EmailJS)
-- For production, consider rate-limiting or adding CAPTCHA
-- EmailJS handles email validation and sending securely
+- `EMAILJS_PRIVATE_KEY` should never use the `NEXT_PUBLIC_` prefix.
+- The API route supports `EMAILJS_*` and `NEXT_PUBLIC_EMAILJS_*`, but prefer `EMAILJS_*` values in production.
+- For production, consider rate-limiting or adding CAPTCHA.
 
 ## Support
 - [EmailJS Documentation](https://www.emailjs.com/docs/)

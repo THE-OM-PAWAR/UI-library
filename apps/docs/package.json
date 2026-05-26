@@ -30,8 +30,12 @@
         "shiki": "^1.0.0",
         "three": "^0.169.0",
         "@emailjs/browser": "^3.7.0"
+<<<<<<< HEAD
     }
 >>>>>>> 0dd8ea3 (Emailjs added)
+=======
+    },
+>>>>>>> 2dfde0f (Issue fixed)
     "devDependencies": {
         "@tailwindcss/typography": "^0.5.10",
         "@types/node": "^20.11.0",

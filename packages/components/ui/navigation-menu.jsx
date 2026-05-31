@@ -49,11 +49,20 @@ const navigationMenuTriggerStyle = cva(
     "group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-[color,box-shadow] outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-accent/50 data-[state=open]:text-accent-foreground"
 );
 
-function NavigationMenuTrigger({ className, children, ...props }) {
+function NavigationMenuTrigger({ className, children, onPointerMove, onPointerLeave, ...props }) {
     return (
         <NavigationMenuPrimitive.Trigger
             data-slot="navigation-menu-trigger"
             className={cn(navigationMenuTriggerStyle(), className)}
+            // Intercept and prevent Radix's native hover events to enforce click-only behavior
+            onPointerMove={(e) => {
+                e.preventDefault();
+                onPointerMove?.(e);
+            }}
+            onPointerLeave={(e) => {
+                e.preventDefault();
+                onPointerLeave?.(e);
+            }}
             {...props}
         >
             {children}
@@ -65,18 +74,29 @@ function NavigationMenuTrigger({ className, children, ...props }) {
     );
 }
 
-function NavigationMenuContent({ className, ...props }) {
+function NavigationMenuContent({ className, onPointerEnter, onPointerLeave, ...props }) {
     return (
         <NavigationMenuPrimitive.Content
             data-slot="navigation-menu-content"
             className={cn(
                 "top-0 left-0 w-full p-2 md:absolute md:w-auto",
+                // Added z-50 to ensure non-viewport popovers sit above subsequent elements
+                "group-data-[viewport=false]/navigation-menu:z-50",
                 "group-data-[viewport=false]/navigation-menu:top-full group-data-[viewport=false]/navigation-menu:mt-1.5",
                 "group-data-[viewport=false]/navigation-menu:overflow-hidden group-data-[viewport=false]/navigation-menu:rounded-md",
                 "group-data-[viewport=false]/navigation-menu:border group-data-[viewport=false]/navigation-menu:border-border",
                 "group-data-[viewport=false]/navigation-menu:bg-popover group-data-[viewport=false]/navigation-menu:text-popover-foreground group-data-[viewport=false]/navigation-menu:shadow",
                 className
             )}
+            // Intercept and prevent Radix's native hover events to enforce click-only behavior
+            onPointerEnter={(e) => {
+                e.preventDefault();
+                onPointerEnter?.(e);
+            }}
+            onPointerLeave={(e) => {
+                e.preventDefault();
+                onPointerLeave?.(e);
+            }}
             {...props}
         />
     );

@@ -1,0 +1,36 @@
+{
+  "title": "Accordion",
+  "description": "A vertically stacked set of interactive headings that each reveal a section of content.",
+  "component": "Accordion",
+  "installation": {
+    "cli": "npx shadcn@latest add accordion",
+    "manual": [
+      {
+        "title": "Copy the component code",
+        "description": "Create a new file and paste the accordion component code.",
+        "filePath": "components/ui/accordion.jsx",
+        "code": "\"use client\";\n\nimport * as AccordionPrimitive from \"@radix-ui/react-accordion\";\nimport { cn } from \"@repo/utils\";\nimport { ChevronDown, ChevronUp } from \"lucide-react\";\nimport * as React from \"react\";\n\nconst Accordion = AccordionPrimitive.Root;\n\nconst AccordionItem = React.forwardRef(({ className, ...props }, ref) => (\n  <AccordionPrimitive.Item\n    ref={ref}\n    className={cn(\"border-b border-border\", className)}\n    {...props}\n  />\n));\n\nconst AccordionTrigger = React.forwardRef(({ className, children, ...props }, ref) => (\n  <AccordionPrimitive.Header className=\"flex\">\n    <AccordionPrimitive.Trigger\n      ref={ref}\n      className={cn(\n        \"group flex flex-1 items-start justify-between rounded-md py-3 text-left text-sm font-medium transition-all\",\n        className\n      )}\n      {...props}\n    >\n      {children}\n      <ChevronDown className=\"ml-2 size-4 shrink-0 text-muted-foreground group-data-[state=open]:hidden\" />\n      <ChevronUp className=\"ml-2 hidden size-4 shrink-0 text-muted-foreground group-data-[state=open]:block\" />\n    </AccordionPrimitive.Trigger>\n  </AccordionPrimitive.Header>\n));\n\nconst AccordionContent = React.forwardRef(({ className, children, ...props }, ref) => (\n  <AccordionPrimitive.Content\n    ref={ref}\n    className={cn(\n      \"overflow-hidden text-sm text-muted-foreground\",\n      \"data-[state=open]:animate-[accordion-down_200ms_ease-out] data-[state=closed]:animate-[accordion-up_200ms_ease-out]\",\n      className\n    )}\n    {...props}\n  >\n    <div className=\"pb-3 pt-0\">{children}</div>\n  </AccordionPrimitive.Content>\n));\n\nexport { Accordion, AccordionContent, AccordionItem, AccordionTrigger };",
+        "language": "jsx",
+        "collapsible": true
+      }
+    ]
+  },
+  "usage": {
+    "import": "import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@repo/components';",
+    "basic": "accordion-demo"
+  },
+  "examples": [
+    {
+      "title": "Default",
+      "description": "A single-open accordion with collapsible items.",
+      "demo": "accordion-demo",
+      "code": "import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from \"@repo/components\";\n\nexport default function AccordionDemo() {\n  return (\n    <Accordion type=\"single\" collapsible className=\"w-full max-w-2xl\">\n      <AccordionItem value=\"item-1\">\n        <AccordionTrigger>What is this component library?</AccordionTrigger>\n        <AccordionContent>\n          It is a collection of accessible and customizable UI components built with React, Radix UI, and Tailwind CSS.\n        </AccordionContent>\n      </AccordionItem>\n      <AccordionItem value=\"item-2\">\n        <AccordionTrigger>Is it fully customizable?</AccordionTrigger>\n        <AccordionContent>\n          Yes. You can customize styles, variants, and behavior to fit your design system and product requirements.\n        </AccordionContent>\n      </AccordionItem>\n    </Accordion>\n  );\n}"
+    },
+    {
+      "title": "Multiple Items Open",
+      "description": "Allow multiple sections to stay open at the same time.",
+      "demo": "accordion-multiple",
+      "code": "import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from \"@repo/components\";\n\nexport default function AccordionMultiple() {\n  return (\n    <Accordion type=\"multiple\" defaultValue={[\"product\", \"support\"]} className=\"w-full max-w-2xl\">\n      <AccordionItem value=\"product\">\n        <AccordionTrigger>Product updates</AccordionTrigger>\n        <AccordionContent>\n          Stay updated with the latest features and improvements across the component library.\n        </AccordionContent>\n      </AccordionItem>\n      <AccordionItem value=\"support\">\n        <AccordionTrigger>Support and guides</AccordionTrigger>\n        <AccordionContent>\n          Find setup guides, examples, and troubleshooting resources to speed up implementation.\n        </AccordionContent>\n      </AccordionItem>\n    </Accordion>\n  );\n}"
+    }
+  ]
+}

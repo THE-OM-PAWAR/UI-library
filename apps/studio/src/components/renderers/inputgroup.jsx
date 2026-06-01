@@ -1,70 +1,17 @@
-import { Separator } from "@radix-ui/react-separator";
-import {
-    CheckIcon,
-    CreditCardIcon,
-    InfoIcon,
-    LockKeyhole,
-    MailIcon,
-    SearchIcon,
-    StarIcon,
-} from "lucide-react";
+export function renderInputGroup(components, customClassName) {
+  const { InputGroup, InputGroupAddon, InputGroupInput } = components;
 
-export function renderInputGroup({
-    InputGroup,
-    InputGroupAddon,
-    InputGroupInput,
-    InputGroupButton,
-    InputGroupText,
-    InputGroupTextarea,
-}) {
-    return (
-        <div className="grid w-full max-w-sm gap-6">
-            <InputGroup>
-                <SearchIcon />
-                <InputGroupInput placeholder="Search..." />
-                <InputGroupAddon></InputGroupAddon>
-            </InputGroup>
-            <InputGroup>
-                <MailIcon />
-                <InputGroupInput type="email" placeholder="Enter your email" />
-                <InputGroupAddon></InputGroupAddon>
-            </InputGroup>
-            <InputGroup>
-                <LockKeyhole />
-                <InputGroupInput type="password" placeholder="Enter Password" />
-                <InputGroupAddon></InputGroupAddon>
-            </InputGroup>
-            <InputGroup>
-                <CreditCardIcon />
-                <InputGroupInput placeholder="Card number" />
-                <InputGroupAddon></InputGroupAddon>
-                <InputGroupAddon align="inline-end">
-                    <CheckIcon />
-                </InputGroupAddon>
-            </InputGroup>
-            <InputGroup>
-                <InputGroupInput placeholder="Card number" />
-                <InputGroupAddon align="inline-end">
-                    <StarIcon />
-                    <InfoIcon />
-                </InputGroupAddon>
-            </InputGroup>
-            <InputGroup>
-                <InputGroupTextarea
-                    id="block-end-textarea"
-                    placeholder="Write a comment..."
-                />
-                <InputGroupAddon align="block-end">
-                    <InputGroupText>0/280</InputGroupText>
-                    <InputGroupButton
-                        variant="default"
-                        size="sm"
-                        className="ml-auto"
-                    >
-                        Post
-                    </InputGroupButton>
-                </InputGroupAddon>
-            </InputGroup>
-        </div>
-    );
+  return (
+    <div className={`flex flex-col gap-4 ${customClassName || ""}`}>
+      <InputGroup>
+        <InputGroupAddon>₹</InputGroupAddon>
+        <InputGroupInput placeholder="Enter amount" type="number" />
+      </InputGroup>
+
+      <InputGroup>
+        <InputGroupInput placeholder="Search..." type="text" />
+        <InputGroupAddon position="right">🔍</InputGroupAddon>
+      </InputGroup>
+    </div>
+  );
 }

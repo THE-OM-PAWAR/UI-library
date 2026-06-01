@@ -2,7 +2,6 @@
 
 import { Badge } from "@repo/components";
 import { cn } from "@repo/utils";
-import { Dot } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { docsConfig } from "../../config/docs.js";

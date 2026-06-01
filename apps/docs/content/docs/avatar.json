@@ -1,0 +1,36 @@
+{
+  "title": "Avatar",
+  "description": "An image element with fallback, status badge, and group stacking support.",
+  "component": "Avatar",
+  "installation": {
+    "cli": "npx shadcn@latest add avatar",
+    "manual": [
+      {
+        "title": "Copy the component code",
+        "description": "Create a new file and paste the avatar component code.",
+        "filePath": "components/ui/avatar.jsx",
+        "code": "\"use client\";\n\nimport * as AvatarPrimitive from \"@radix-ui/react-avatar\";\nimport { cn } from \"@repo/utils\";\nimport * as React from \"react\";\n\nconst Avatar = React.forwardRef(({ className, size = \"default\", ...props }, ref) => (\n  <AvatarPrimitive.Root\n    ref={ref}\n    data-size={size}\n    className={cn(\n      \"group/avatar relative flex size-8 shrink-0 overflow-hidden rounded-full\",\n      \"data-[size=sm]:size-6 data-[size=default]:size-8 data-[size=lg]:size-10\",\n      className\n    )}\n    {...props}\n  />\n));\n\nconst AvatarImage = React.forwardRef(({ className, ...props }, ref) => (\n  <AvatarPrimitive.Image ref={ref} className={cn(\"aspect-square size-full\", className)} {...props} />\n));\n\nconst AvatarFallback = React.forwardRef(({ className, ...props }, ref) => (\n  <AvatarPrimitive.Fallback\n    ref={ref}\n    className={cn(\"flex size-full items-center justify-center rounded-full bg-muted text-sm text-muted-foreground\", className)}\n    {...props}\n  />\n));\n\nexport { Avatar, AvatarFallback, AvatarImage };",
+        "language": "jsx",
+        "collapsible": true
+      }
+    ]
+  },
+  "usage": {
+    "import": "import { Avatar, AvatarBadge, AvatarFallback, AvatarGroup, AvatarGroupCount, AvatarImage } from '@repo/components';",
+    "basic": "avatar-demo"
+  },
+  "examples": [
+    {
+      "title": "Default",
+      "description": "Use sizes, image fallback, and optional status badge.",
+      "demo": "avatar-demo",
+      "code": "import { Avatar, AvatarBadge, AvatarFallback, AvatarImage } from \"@repo/components\";\nimport { Check } from \"lucide-react\";\n\nexport default function AvatarDemo() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <Avatar size=\"sm\">\n        <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"User avatar\" />\n        <AvatarFallback>SM</AvatarFallback>\n        <AvatarBadge />\n      </Avatar>\n\n      <Avatar size=\"default\">\n        <AvatarImage src=\"https://github.com/leerob.png\" alt=\"User avatar\" />\n        <AvatarFallback>DF</AvatarFallback>\n        <AvatarBadge>\n          <Check />\n        </AvatarBadge>\n      </Avatar>\n\n      <Avatar size=\"lg\">\n        <AvatarFallback>LG</AvatarFallback>\n      </Avatar>\n    </div>\n  );\n}"
+    },
+    {
+      "title": "Avatar Group",
+      "description": "Stack multiple avatars and show overflow count.",
+      "demo": "avatar-group",
+      "code": "import { Avatar, AvatarFallback, AvatarGroup, AvatarGroupCount, AvatarImage } from \"@repo/components\";\n\nexport default function AvatarGroupDemo() {\n  return (\n    <AvatarGroup>\n      <Avatar>\n        <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"shadcn\" />\n        <AvatarFallback>SC</AvatarFallback>\n      </Avatar>\n      <Avatar>\n        <AvatarImage src=\"https://github.com/leerob.png\" alt=\"leerob\" />\n        <AvatarFallback>LR</AvatarFallback>\n      </Avatar>\n      <Avatar>\n        <AvatarFallback>OP</AvatarFallback>\n      </Avatar>\n      <AvatarGroupCount>+2</AvatarGroupCount>\n    </AvatarGroup>\n  );\n}"
+    }
+  ]
+}

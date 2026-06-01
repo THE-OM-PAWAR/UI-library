@@ -91,6 +91,21 @@
             "description": "Buttons with icons for enhanced visual communication.",
             "demo": "button-with-icon",
             "code": "import { Button } from \"@repo/components\";\nimport { Mail, ArrowRight } from \"lucide-react\";\n\nexport default function ButtonWithIcon() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Button>\n        <Mail className=\"mr-2 h-4 w-4\" />\n        Login with Email\n      </Button>\n      <Button variant=\"outline\">\n        Continue\n        <ArrowRight className=\"ml-2 h-4 w-4\" />\n      </Button>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Button Group",
+            "description": "To create a button group, use the ButtonGroup component.\n See the Button Group\n documentation for more details.",
+            "demo": "button-with-group",
+            "code": "import * as React from \"react\";\nimport {\n  ArchiveIcon,\n  ArrowLeftIcon,\n  CalendarPlusIcon,\n  ClockIcon,\n  ListFilterIcon,\n  MailCheckIcon,\n  MoreHorizontalIcon,\n  TagIcon,\n  Trash2Icon,\n} from \"lucide-react\";\n\nimport { Button } from \"@repo/components\";\nimport { ButtonGroup } from \"@repo/components\";\nimport {\n  DropdownMenu,\n  DropdownMenuTrigger,\n  DropdownMenuContent,\n  DropdownMenuItem,\n  DropdownMenuSeparator,\n} from \"@repo/components\";\n\nexport default function ButtonGroupDemo({ customClassName }) {\n  return (\n    <ButtonGroup>\n      <ButtonGroup className=\"hidden sm:flex\">\n        <Button variant=\"outline\" size=\"icon\" aria-label=\"Go Back\">\n          <ArrowLeftIcon />\n        </Button>\n      </ButtonGroup>\n      <ButtonGroup>\n        <Button variant=\"outline\">Archive</Button>\n        <Button variant=\"outline\">Report</Button>\n      </ButtonGroup>\n      <ButtonGroup>\n        <Button variant=\"outline\">Snooze</Button>\n        <DropdownMenu>\n          <DropdownMenuTrigger asChild>\n            <Button variant=\"outline\" className={customClassName}>\n              <MoreHorizontalIcon />\n            </Button>\n          </DropdownMenuTrigger>\n          <DropdownMenuContent>\n            <DropdownMenuItem className=\"flex gap-2\">\n              <MailCheckIcon />\n              Mark as Read\n            </DropdownMenuItem>\n            <DropdownMenuItem className=\"flex gap-2\">\n              <ArchiveIcon />\n              Archive\n            </DropdownMenuItem>\n            <DropdownMenuSeparator />\n            <DropdownMenuItem className=\"flex gap-2\">\n              <ClockIcon />\n              Snooze\n            </DropdownMenuItem>\n            <DropdownMenuItem className=\"flex gap-2\">\n              <CalendarPlusIcon />\n              Add to Calendar\n            </DropdownMenuItem>\n            <DropdownMenuItem className=\"flex gap-2\">\n              <CalendarPlusIcon />\n              Add to Calendar\n            </DropdownMenuItem>\n            <DropdownMenuItem className=\"flex gap-2\">\n              <ListFilterIcon />\n              Add to List\n            </DropdownMenuItem>\n          </DropdownMenuContent>\n        </DropdownMenu>\n      </ButtonGroup>\n    </ButtonGroup>\n  );\n}"
+        },
+        {
+            "title":"As Child",
+            "description":"You can use the asChild prop on <Button /> to make another component look like a button. Here's an example of a link that looks like a button.",
+            "demo":"button-aschild",
+            "code":"import Link from \"next/link\";\n\nimport { Button } from \"@repo/components\";\n\nexport default function ButtonAsChild() {\n  return (\n    <Button asChild>\n      <Link href=\"/login\">Login</Link>\n    </Button>\n  );\n}"
+
+
         }
+       
     ]
 }

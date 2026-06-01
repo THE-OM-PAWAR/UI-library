@@ -1,0 +1,53 @@
+.wraper {
+    position: relative;
+    display: grid;
+    width: 100%;
+    min-height: clamp(220px, 34vw, 500px);
+    place-items: center;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.brand {
+    width: max-content;
+    max-width: calc(100% - 1rem);
+    margin: 0;
+    color: #4f8cff;
+    font-size: clamp(4.4rem, 12.8vw, 16rem);
+    font-weight: 900;
+    line-height: 0.78;
+    letter-spacing: 0;
+    text-align: center;
+    text-shadow:
+        0 18px 44px rgba(79, 140, 255, 0.18),
+        0 2px 0 rgba(255, 255, 255, 0.62);
+    transform: translateY(18%);
+    white-space: nowrap;
+}
+
+.fade {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.2) 34%,
+            rgba(255, 255, 255, 0.86) 68%,
+            #ffffff 100%);
+}
+
+@media screen and (max-width: 640px) {
+    .wraper {
+        min-height: 190px;
+    }
+
+    .brand {
+        font-size: clamp(2.5rem, 13.5vw, 5rem);
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .brand {
+        font-size: 12.8vw;
+    }
+}

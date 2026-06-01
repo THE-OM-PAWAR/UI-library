@@ -1,0 +1,29 @@
+{
+    "title": "Empty",
+    "description": "A placeholder state for empty screens and missing content.",
+    "component": "Empty",
+    "installation": {
+        "cli": "npx shadcn@latest add empty",
+        "manual": [
+            {
+                "title": "Add utility function",
+                "description": "Create a cn utility function if you don't have one already.",
+                "filePath": "lib/utils.js",
+                "code": "import { clsx } from 'clsx';\nimport { twMerge } from 'tailwind-merge';\n\nexport function cn(...inputs) {\n  return twMerge(clsx(inputs));\n}",
+                "language": "javascript"
+            }
+        ]
+    },
+    "usage": {
+        "import": "import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@repo/components';",
+        "basic": "empty-demo"
+    },
+    "examples": [
+        {
+            "title": "Default",
+            "description": "A basic empty example.",
+            "demo": "empty-demo",
+            "code": "import { Button, Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from \"@repo/components\";\nimport { Inbox } from \"lucide-react\";\n\nexport default function EmptyDemo() {\n  return (\n    <Empty className=\"w-full max-w-sm\">\n      <EmptyHeader>\n        <EmptyMedia><Inbox className=\"h-6 w-6\" /></EmptyMedia>\n        <EmptyTitle>No messages</EmptyTitle>\n        <EmptyDescription>You are all caught up for now.</EmptyDescription>\n      </EmptyHeader>\n      <EmptyContent>\n        <Button size=\"sm\">Create message</Button>\n      </EmptyContent>\n    </Empty>\n  );\n}"
+        }
+    ]
+}

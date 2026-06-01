@@ -1,0 +1,36 @@
+{
+  "title": "Alert",
+  "description": "Displays a callout for important user-facing messages with optional actions.",
+  "component": "Alert",
+  "installation": {
+    "cli": "npx shadcn@latest add alert",
+    "manual": [
+      {
+        "title": "Copy the component code",
+        "description": "Create a new file and paste the alert component code.",
+        "filePath": "components/ui/alert.jsx",
+        "code": "\"use client\";\n\nimport { cn } from \"@repo/utils\";\nimport { cva } from \"class-variance-authority\";\nimport * as React from \"react\";\n\nconst alertVariants = cva(\n  \"group/alert relative grid w-full gap-0.5 rounded-lg border px-2.5 py-2 text-left text-sm\",\n  {\n    variants: {\n      variant: {\n        default: \"bg-card text-card-foreground\",\n        destructive: \"bg-card text-destructive\"\n      }\n    },\n    defaultVariants: {\n      variant: \"default\"\n    }\n  }\n);\n\nconst Alert = React.forwardRef(({ className, variant, ...props }, ref) => (\n  <div\n    ref={ref}\n    role=\"alert\"\n    className={cn(alertVariants({ variant }), className)}\n    {...props}\n  />\n));\n\nexport { Alert, alertVariants };",
+        "language": "jsx",
+        "collapsible": true
+      }
+    ]
+  },
+  "usage": {
+    "import": "import { Alert, AlertAction, AlertDescription, AlertTitle } from '@repo/components';",
+    "basic": "alert-demo"
+  },
+  "examples": [
+    {
+      "title": "Default",
+      "description": "Use the default alert variant for neutral information.",
+      "demo": "alert-demo",
+      "code": "import { Alert, AlertDescription, AlertTitle } from \"@repo/components\";\nimport { Info } from \"lucide-react\";\n\nexport default function AlertDemo() {\n  return (\n    <Alert>\n      <Info className=\"h-4 w-4\" />\n      <AlertTitle>Heads up!</AlertTitle>\n      <AlertDescription>\n        This is a default alert for general updates and contextual information.\n      </AlertDescription>\n    </Alert>\n  );\n}"
+    },
+    {
+      "title": "Destructive with Action",
+      "description": "Use destructive alerts for errors and pair with an action.",
+      "demo": "alert-destructive",
+      "code": "import { Alert, AlertAction, AlertDescription, AlertTitle, Button } from \"@repo/components\";\nimport { AlertTriangle } from \"lucide-react\";\n\nexport default function AlertDestructive() {\n  return (\n    <Alert variant=\"destructive\">\n      <AlertTriangle className=\"h-4 w-4\" />\n      <AlertTitle>Delete failed</AlertTitle>\n      <AlertDescription>\n        We couldn't delete your project due to a server error. Please try again.\n      </AlertDescription>\n      <AlertAction>\n        <Button size=\"xs\" variant=\"outline\">Retry</Button>\n      </AlertAction>\n    </Alert>\n  );\n}"
+    }
+  ]
+}

@@ -1,0 +1,876 @@
+.wraper {
+    width: 100%;
+    background: linear-gradient(180deg,
+            #76a7fd 0%,
+            #8fb7fb 24%,
+            #bed3fc 52%,
+            #e9effd 78%,
+            #fefdfe 100%);
+}
+
+.showcase {
+    width: 100%;
+    margin: 0;
+    padding: 3.1rem clamp(1rem, 2.2vw, 2.6rem) 3.8rem;
+}
+
+.bentoSurface {
+    width: 100%;
+    display: grid;
+    gap: 1.05rem;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.bentoHeader {
+    display: grid;
+    gap: 0.35rem;
+    margin-bottom: 0.75rem;
+    text-align: left;
+}
+
+.bentoHeader span {
+    color: #101114;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.bentoHeader h2 {
+    margin: 0;
+    color: #0c0d10;
+    font-size: clamp(1.4rem, 2.7vw, 2rem);
+    font-weight: 600;
+    line-height: 1.15;
+}
+
+.bentoHeader p {
+    margin: 0;
+    max-width: 520px;
+    color: rgba(16, 17, 20, 0.68);
+    font-size: 0.78rem;
+    line-height: 1.5;
+}
+
+.bentoGrid {
+    column-count: 5;
+    column-gap: 0.6rem;
+}
+
+.bentoCard {
+    display: grid;
+    align-content: start;
+    gap: 0.55rem;
+    padding: 0.7rem;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    color: #0c0d10;
+    break-inside: avoid;
+    margin-bottom: 0.6rem;
+    overflow: hidden;
+}
+
+.bentoCardHeader strong {
+    display: block;
+    color: #0c0d10;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.bentoCardHeader p {
+    margin: 0.35rem 0 0;
+    color: rgba(16, 17, 20, 0.6);
+    font-size: 0.66rem;
+    line-height: 1.5;
+}
+
+.bentoCardBody {
+    display: grid;
+    gap: 0.45rem;
+    align-items: start;
+    justify-items: start;
+}
+
+.bentoStack {
+    display: grid;
+    gap: 0.85rem;
+}
+
+.span3 {
+    grid-column: span 3;
+}
+
+.span4 {
+    grid-column: span 4;
+}
+
+.span5 {
+    grid-column: span 5;
+}
+
+.span6 {
+    grid-column: span 6;
+}
+
+.span8 {
+    grid-column: span 8;
+}
+
+.row2 {
+    grid-row: span 2;
+}
+
+.demoRow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.45rem;
+}
+
+.formDemo {
+    display: grid;
+    gap: 0.4rem;
+    width: 100%;
+}
+
+.formDemo label {
+    margin-top: 0.2rem;
+    font-size: 0.72rem;
+}
+
+.cardDemo {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.cardDemo p {
+    color: rgba(16, 17, 20, 0.6);
+    font-size: 0.78rem;
+    line-height: 1.6;
+}
+
+.cardDemo [class*="CardFooter"],
+.cardDemo > div:last-child {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.tabsDemo {
+    width: 100%;
+    max-width: 260px;
+}
+
+.tabsDemo [role="tablist"] {
+    width: 100%;
+    height: 32px;
+    margin-bottom: 0.55rem;
+    padding: 0.2rem;
+    gap: 0.35rem;
+}
+
+.tabsListCompact [role="tab"] {
+    padding: 0.2rem 0.55rem;
+    font-size: 0.72rem;
+}
+
+.tabsDemo [role="tabpanel"] {
+    min-height: 52px;
+    margin-top: 0;
+    padding: 0.65rem;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    color: rgba(16, 17, 20, 0.68);
+    background: rgba(255, 255, 255, 0.45);
+    font-size: 0.72rem;
+    line-height: 1.45;
+}
+
+.accordionDemo {
+    width: min(100%, 420px);
+}
+
+.alertDemo {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.45);
+    border-color: rgba(0, 0, 0, 0.14);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+.progressDemo {
+    display: grid;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.progressDemo div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    color: #0c0d10;
+    font-size: 0.72rem;
+    font-weight: 800;
+}
+
+.toggleRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.iconRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.statList {
+    display: grid;
+    gap: 0.35rem;
+    width: 100%;
+}
+
+.statList div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.35rem 0.45rem;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.35);
+    color: rgba(16, 17, 20, 0.68);
+    font-size: 0.68rem;
+}
+
+.statList strong {
+    color: #0c0d10;
+    font-size: 0.8rem;
+}
+
+.kbdStack {
+    display: grid;
+    gap: 0.35rem;
+}
+
+.kbdRow {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: rgba(16, 17, 20, 0.68);
+    font-size: 0.7rem;
+}
+
+.textareaCompact {
+    min-height: 70px;
+    padding: 0.5rem 0.65rem;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.45);
+    font-size: 0.75rem;
+}
+
+.skeletonStack {
+    display: grid;
+    gap: 0.35rem;
+    width: 100%;
+}
+
+.loadingRow {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: rgba(16, 17, 20, 0.7);
+    font-size: 0.72rem;
+}
+
+.skeletonLine {
+    height: 8px;
+    width: 100%;
+    border-radius: 999px;
+}
+
+.skeletonLineShort {
+    height: 8px;
+    width: 65%;
+    border-radius: 999px;
+}
+
+.separatorStack {
+    display: grid;
+    gap: 0.4rem;
+    width: 100%;
+    color: rgba(16, 17, 20, 0.68);
+    font-size: 0.7rem;
+}
+
+.separatorLine {
+    background: rgba(0, 0, 0, 0.12);
+}
+
+.dataTableShell {
+    width: 100%;
+}
+
+.dataTableShell > div {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.dataTableShell [data-slot="table-head"] {
+    height: 26px;
+    padding: 0.2rem 0.4rem;
+    font-size: 0.68rem;
+}
+
+.dataTableShell [data-slot="table-cell"] {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.68rem;
+}
+
+.dataTableShell [data-slot="table-row"] {
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+.moreActions {
+    display: flex;
+    justify-content: center;
+    padding-top: 0.5rem;
+}
+
+.switchDemo {
+    display: grid;
+    gap: 0.4rem;
+    width: 100%;
+}
+
+.switchDemo div {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.55rem;
+    min-height: 42px;
+    padding: 0.55rem 0.7rem;
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    border-radius: 12px;
+    color: #0c0d10;
+    background: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+
+.primaryButton,
+.outlineButton,
+.softButton {
+    min-height: 44px;
+    padding: 0 1.2rem;
+    border-radius: 9px;
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.primaryButton {
+    border: 0;
+    color: white;
+    background: #4f8cff;
+    box-shadow: 0 10px 22px rgba(79, 140, 255, 0.18);
+}
+
+.outlineButton {
+    border: 1px solid rgba(79, 140, 255, 0.48);
+    color: #4f8cff;
+    background: white;
+}
+
+.softButton {
+    border: 1px solid transparent;
+    color: rgba(6, 21, 68, 0.58);
+    background: rgba(79, 140, 255, 0.1);
+}
+
+.inputExample {
+    display: grid;
+    gap: 0.45rem;
+    width: min(100%, 280px);
+}
+
+.inputExample span {
+    color: rgba(6, 21, 68, 0.58);
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.inputExample input {
+    width: 100%;
+    min-height: 44px;
+    padding: 0 0.85rem;
+    border: 1px solid rgba(79, 140, 255, 0.28);
+    border-radius: 9px;
+    color: #061544;
+    background: white;
+    font: inherit;
+    font-size: 0.76rem;
+    outline: none;
+}
+
+.profileCard,
+.statCard,
+.dialogExample,
+.tabsExample {
+    border: 1px solid rgba(79, 140, 255, 0.2);
+    border-radius: 14px;
+    background: white;
+    box-shadow: 0 12px 28px rgba(47, 88, 158, 0.08);
+}
+
+.profileCard {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    width: min(100%, 300px);
+    padding: 1rem;
+}
+
+.profileCard > span {
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    width: 52px;
+    height: 52px;
+    border-radius: 999px;
+    color: white;
+    background: #4f8cff;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.profileCard strong,
+.statCard strong,
+.dialogExample strong {
+    color: #061544;
+    font-size: 0.88rem;
+}
+
+.profileCard p,
+.statCard p,
+.dialogExample p {
+    margin: 0.25rem 0 0;
+    color: rgba(6, 21, 68, 0.48);
+    font-size: 0.7rem;
+    line-height: 1.45;
+}
+
+.statCard {
+    width: 180px;
+    padding: 1.1rem;
+}
+
+.statCard strong {
+    display: block;
+    margin-top: 0.35rem;
+    font-size: 1.55rem;
+}
+
+.dialogExample {
+    width: min(100%, 340px);
+    padding: 1.25rem;
+}
+
+.dialogExample div {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.55rem;
+    margin-top: 1rem;
+}
+
+.dialogExample button {
+    min-height: 34px;
+    padding: 0 0.85rem;
+    border-radius: 8px;
+    font: inherit;
+    font-size: 0.68rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.dialogExample button:first-child {
+    border: 1px solid rgba(79, 140, 255, 0.24);
+    color: rgba(6, 21, 68, 0.58);
+    background: white;
+}
+
+.dialogExample button:last-child {
+    border: 0;
+    color: white;
+    background: #4f8cff;
+}
+
+.tabsExample {
+    width: min(100%, 360px);
+    padding: 0.9rem;
+}
+
+.tabsExample div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+    padding: 0.28rem;
+    border-radius: 10px;
+    background: rgba(79, 140, 255, 0.1);
+}
+
+.tabsExample span {
+    display: grid;
+    place-items: center;
+    min-height: 34px;
+    border-radius: 8px;
+    color: rgba(6, 21, 68, 0.58);
+    font-size: 0.66rem;
+    font-weight: 700;
+}
+
+.tabsExample span:first-child {
+    color: #061544;
+    background: white;
+}
+
+.tabsExample p {
+    height: 10px;
+    margin: 0.55rem 0;
+    border-radius: 999px;
+    background: rgba(79, 140, 255, 0.14);
+}
+
+.tabsExample p:nth-child(3) {
+    width: 76%;
+}
+
+.tabsExample p:nth-child(4) {
+    width: 58%;
+}
+
+.accordionExample {
+    display: grid;
+    gap: 0.6rem;
+    width: min(100%, 360px);
+}
+
+.accordionExample div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 44px;
+    padding: 0 0.85rem;
+    border: 1px solid rgba(79, 140, 255, 0.18);
+    border-radius: 10px;
+    color: #061544;
+    background: white;
+    box-shadow: 0 8px 20px rgba(47, 88, 158, 0.06);
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.accordionExample span {
+    color: #4f8cff;
+    font-size: 1rem;
+}
+
+.alertExample {
+    width: min(100%, 300px);
+    padding: 1rem 1rem 1rem 1.15rem;
+    border: 1px solid rgba(34, 197, 94, 0.24);
+    border-left: 5px solid #22c55e;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 10px 24px rgba(47, 88, 158, 0.07);
+}
+
+.warningAlert {
+    border-color: rgba(244, 184, 46, 0.32);
+    border-left-color: #f4b82e;
+}
+
+.alertExample strong {
+    color: #061544;
+    font-size: 0.82rem;
+}
+
+.alertExample p {
+    margin: 0.28rem 0 0;
+    color: rgba(6, 21, 68, 0.5);
+    font-size: 0.7rem;
+}
+
+.badgeRow,
+.avatarRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.7rem;
+}
+
+.badgeRow span {
+    padding: 0.5rem 0.78rem;
+    border: 1px solid rgba(79, 140, 255, 0.2);
+    border-radius: 999px;
+    color: #1f3f79;
+    background: white;
+    box-shadow: 0 8px 18px rgba(47, 88, 158, 0.06);
+    font-size: 0.68rem;
+    font-weight: 800;
+}
+
+.avatarRow span {
+    display: grid;
+    place-items: center;
+    width: 54px;
+    height: 54px;
+    border: 3px solid white;
+    border-radius: 999px;
+    color: white;
+    background: #4f8cff;
+    box-shadow: 0 9px 20px rgba(79, 140, 255, 0.14);
+    font-size: 0.78rem;
+    font-weight: 800;
+}
+
+.avatarRow span:nth-child(2) {
+    background: #22c55e;
+}
+
+.avatarRow span:nth-child(3) {
+    background: #7c8cff;
+}
+
+.avatarRow span:nth-child(4) {
+    color: #4f8cff;
+    background: white;
+}
+
+.menuExample {
+    display: grid;
+    gap: 0.25rem;
+    width: min(100%, 260px);
+    padding: 0.65rem;
+    border: 1px solid rgba(79, 140, 255, 0.18);
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 10px 24px rgba(47, 88, 158, 0.08);
+}
+
+.menuExample strong,
+.menuExample span {
+    padding: 0.62rem 0.7rem;
+    border-radius: 8px;
+    color: #061544;
+    font-size: 0.72rem;
+}
+
+.menuExample strong {
+    color: rgba(6, 21, 68, 0.52);
+}
+
+.menuExample span:nth-child(3) {
+    background: rgba(79, 140, 255, 0.1);
+}
+
+.popoverExample,
+.tooltipExample {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    gap: 0.9rem;
+}
+
+.popoverExample button,
+.tooltipExample button {
+    min-height: 42px;
+    padding: 0 1rem;
+    border: 0;
+    border-radius: 9px;
+    color: white;
+    background: #4f8cff;
+    font: inherit;
+    font-size: 0.72rem;
+    font-weight: 800;
+}
+
+.popoverExample div,
+.tooltipExample span {
+    width: min(100%, 260px);
+    padding: 0.95rem;
+    border: 1px solid rgba(79, 140, 255, 0.18);
+    border-radius: 12px;
+    color: #061544;
+    background: white;
+    box-shadow: 0 10px 24px rgba(47, 88, 158, 0.08);
+    text-align: center;
+}
+
+.popoverExample strong {
+    font-size: 0.82rem;
+}
+
+.popoverExample p {
+    margin: 0.35rem 0 0;
+    color: rgba(6, 21, 68, 0.5);
+    font-size: 0.7rem;
+}
+
+.tooltipExample span {
+    width: auto;
+    padding: 0.62rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.68rem;
+    font-weight: 700;
+}
+
+.progressExample {
+    width: min(100%, 360px);
+    padding: 1.1rem;
+    border: 1px solid rgba(79, 140, 255, 0.18);
+    border-radius: 14px;
+    background: white;
+    box-shadow: 0 10px 24px rgba(47, 88, 158, 0.08);
+}
+
+.progressExample div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    color: #061544;
+    font-size: 0.72rem;
+    font-weight: 800;
+}
+
+.progressExample p {
+    height: 12px;
+    margin: 0.9rem 0 0;
+    overflow: hidden;
+    border-radius: 999px;
+    background: rgba(79, 140, 255, 0.12);
+}
+
+.progressExample p span {
+    display: block;
+    width: 72%;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #4f8cff, #8fd8ff);
+}
+
+.tableExample {
+    display: grid;
+    width: min(100%, 420px);
+    overflow: hidden;
+    border: 1px solid rgba(79, 140, 255, 0.18);
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 10px 24px rgba(47, 88, 158, 0.08);
+}
+
+.tableExample div {
+    display: grid;
+    grid-template-columns: 1fr 0.7fr;
+    gap: 1rem;
+    padding: 0.75rem 0.9rem;
+    border-bottom: 1px solid rgba(79, 140, 255, 0.12);
+    color: rgba(6, 21, 68, 0.58);
+    font-size: 0.7rem;
+}
+
+.tableExample div:first-child {
+    color: #061544;
+    background: rgba(79, 140, 255, 0.08);
+}
+
+.tableExample div:last-child {
+    border-bottom: 0;
+}
+
+.switchExample {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2rem;
+    width: min(100%, 360px);
+    padding: 1rem;
+    border: 1px solid rgba(79, 140, 255, 0.18);
+    border-radius: 14px;
+    background: white;
+    box-shadow: 0 10px 24px rgba(47, 88, 158, 0.07);
+}
+
+.switchExample strong {
+    color: #061544;
+    font-size: 0.82rem;
+}
+
+.switchExample p {
+    margin: 0.24rem 0 0;
+    color: rgba(6, 21, 68, 0.48);
+    font-size: 0.68rem;
+}
+
+.switchExample > span {
+    position: relative;
+    flex: 0 0 auto;
+    width: 48px;
+    height: 28px;
+    border-radius: 999px;
+    background: #4f8cff;
+}
+
+.switchExample > span::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 999px;
+    background: white;
+}
+
+@media screen and (max-width: 1400px) {
+    .bentoGrid {
+        column-count: 4;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .bentoGrid {
+        column-count: 3;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .showcase {
+        padding: 3rem 0.9rem 4rem;
+    }
+
+    .bentoHeader {
+        text-align: center;
+    }
+
+    .bentoGrid {
+        column-count: 1;
+    }
+}

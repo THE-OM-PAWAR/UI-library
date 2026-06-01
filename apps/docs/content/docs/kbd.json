@@ -1,0 +1,29 @@
+{
+    "title": "Kbd",
+    "description": "Displays keyboard shortcuts and key combinations.",
+    "component": "Kbd",
+    "installation": {
+        "cli": "npx shadcn@latest add kbd",
+        "manual": [
+            {
+                "title": "Add utility function",
+                "description": "Create a cn utility function if you don't have one already.",
+                "filePath": "lib/utils.js",
+                "code": "import { clsx } from 'clsx';\nimport { twMerge } from 'tailwind-merge';\n\nexport function cn(...inputs) {\n  return twMerge(clsx(inputs));\n}",
+                "language": "javascript"
+            }
+        ]
+    },
+    "usage": {
+        "import": "import { Kbd } from '@repo/components';",
+        "basic": "kbd-demo"
+    },
+    "examples": [
+        {
+            "title": "Default",
+            "description": "A basic kbd example.",
+            "demo": "kbd-demo",
+            "code": "import { Kbd } from \"@repo/components\";\n\nexport default function KbdDemo() {\n  return (\n    <div className=\"flex items-center gap-2 text-sm\">\n      Press <Kbd>Ctrl</Kbd><Kbd>K</Kbd> to open command search.\n    </div>\n  );\n}"
+        }
+    ]
+}

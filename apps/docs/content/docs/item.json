@@ -1,0 +1,29 @@
+{
+    "title": "Item",
+    "description": "A flexible item row with optional leading and trailing content.",
+    "component": "Item",
+    "installation": {
+        "cli": "npx shadcn@latest add item",
+        "manual": [
+            {
+                "title": "Add utility function",
+                "description": "Create a cn utility function if you don't have one already.",
+                "filePath": "lib/utils.js",
+                "code": "import { clsx } from 'clsx';\nimport { twMerge } from 'tailwind-merge';\n\nexport function cn(...inputs) {\n  return twMerge(clsx(inputs));\n}",
+                "language": "javascript"
+            }
+        ]
+    },
+    "usage": {
+        "import": "import { Item } from '@repo/components';",
+        "basic": "item-demo"
+    },
+    "examples": [
+        {
+            "title": "Default",
+            "description": "A basic item example.",
+            "demo": "item-demo",
+            "code": "import { Item } from \"@repo/components\";\nimport { Bell, ChevronRight } from \"lucide-react\";\n\nexport default function ItemDemo() {\n  return (\n    <div className=\"w-full max-w-sm rounded-lg border p-1\">\n      <Item leftIcon={<Bell className=\"h-4 w-4\" />} rightIcon={<ChevronRight className=\"h-4 w-4\" />}>\n        Notifications\n      </Item>\n    </div>\n  );\n}"
+        }
+    ]
+}

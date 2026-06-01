@@ -1,0 +1,60 @@
+{
+    "title": "Dialog",
+    "description": "A window overlaid on either the primary window or another dialog window, built on Radix UI Dialog.",
+    "component": "Dialog",
+    "installation": {
+        "cli": "npx shadcn@latest add dialog",
+        "manual": [
+            {
+                "title": "Install dependencies",
+                "description": "Install the Radix UI dialog primitive.",
+                "command": "npm install @radix-ui/react-dialog"
+            },
+            {
+                "title": "Add utility function",
+                "description": "Create a cn utility function if you don't have one already.",
+                "filePath": "lib/utils.js",
+                "code": "import { clsx } from 'clsx';\nimport { twMerge } from 'tailwind-merge';\n\nexport function cn(...inputs) {\n  return twMerge(clsx(inputs));\n}",
+                "language": "javascript"
+            },
+            {
+                "title": "Copy the component code",
+                "description": "Create a new file and paste the dialog component code.",
+                "filePath": "components/ui/dialog.jsx",
+                "code": "\"use client\";\n\nimport * as DialogPrimitive from \"@radix-ui/react-dialog\";\nimport { cn } from \"@/lib/utils\";\nimport { XIcon } from \"lucide-react\";\nimport * as React from \"react\";\n\nconst sizeClasses = {\n  sm: \"max-w-sm\",\n  md: \"max-w-lg\",\n  lg: \"max-w-2xl\",\n  xl: \"max-w-4xl\",\n  full: \"max-w-[calc(100vw-2rem)]\",\n};\n\nfunction Dialog(props) {\n  return <DialogPrimitive.Root data-slot=\"dialog\" {...props} />;\n}\n\nfunction DialogTrigger(props) {\n  return <DialogPrimitive.Trigger data-slot=\"dialog-trigger\" {...props} />;\n}\n\nfunction DialogPortal(props) {\n  return <DialogPrimitive.Portal data-slot=\"dialog-portal\" {...props} />;\n}\n\nfunction DialogClose(props) {\n  return <DialogPrimitive.Close data-slot=\"dialog-close\" {...props} />;\n}\n\nconst DialogOverlay = React.forwardRef(({ className, ...props }, ref) => (\n  <DialogPrimitive.Overlay\n    ref={ref}\n    data-slot=\"dialog-overlay\"\n    className={cn(\n      \"fixed inset-0 z-50 bg-black/50 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:animate-out data-[state=closed]:fade-out-0\",\n      className\n    )}\n    {...props}\n  />\n));\nDialogOverlay.displayName = \"DialogOverlay\";\n\nconst DialogContent = React.forwardRef(\n  ({ className, children, size = \"md\", ...props }, ref) => (\n    <DialogPortal>\n      <DialogOverlay />\n      <DialogPrimitive.Content\n        ref={ref}\n        data-slot=\"dialog-content\"\n        className={cn(\n          \"fixed left-1/2 top-1/2 z-50 grid w-full -translate-x-1/2 -translate-y-1/2 gap-4 rounded-xl border border-border bg-popover p-6 shadow-xl ring-1 ring-foreground/10 duration-200 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%]\",\n          sizeClasses[size] ?? sizeClasses.md,\n          className\n        )}\n        {...props}\n      >\n        {children}\n        <DialogPrimitive.Close className=\"absolute right-4 top-4 rounded-md opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none\">\n          <XIcon className=\"size-4\" />\n          <span className=\"sr-only\">Close</span>\n        </DialogPrimitive.Close>\n      </DialogPrimitive.Content>\n    </DialogPortal>\n  )\n);\nDialogContent.displayName = \"DialogContent\";\n\nfunction DialogHeader({ className, ...props }) {\n  return (\n    <div\n      data-slot=\"dialog-header\"\n      className={cn(\"flex flex-col gap-1\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction DialogFooter({ className, ...props }) {\n  return (\n    <div\n      data-slot=\"dialog-footer\"\n      className={cn(\"flex flex-col-reverse gap-2 sm:flex-row sm:justify-end\", className)}\n      {...props}\n    />\n  );\n}\n\nconst DialogTitle = React.forwardRef(({ className, ...props }, ref) => (\n  <DialogPrimitive.Title\n    ref={ref}\n    data-slot=\"dialog-title\"\n    className={cn(\"text-base font-semibold text-foreground\", className)}\n    {...props}\n  />\n));\nDialogTitle.displayName = \"DialogTitle\";\n\nconst DialogDescription = React.forwardRef(({ className, ...props }, ref) => (\n  <DialogPrimitive.Description\n    ref={ref}\n    data-slot=\"dialog-description\"\n    className={cn(\"text-sm text-muted-foreground\", className)}\n    {...props}\n  />\n));\nDialogDescription.displayName = \"DialogDescription\";\n\nexport {\n  Dialog,\n  DialogClose,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogOverlay,\n  DialogPortal,\n  DialogTitle,\n  DialogTrigger,\n};",
+                "language": "jsx",
+                "collapsible": true
+            }
+        ]
+    },
+    "usage": {
+        "import": "import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose } from '@repo/components';",
+        "basic": "dialog-demo"
+    },
+    "examples": [
+        {
+            "title": "Default",
+            "description": "A basic dialog with title, description, and action buttons.",
+            "demo": "dialog-demo",
+            "code": "import {\n  Button,\n  Dialog,\n  DialogClose,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger,\n} from \"@repo/components\";\n\nexport default function DialogDemo() {\n  return (\n    <Dialog>\n      <DialogTrigger asChild>\n        <Button variant=\"outline\">Open Dialog</Button>\n      </DialogTrigger>\n      <DialogContent>\n        <DialogHeader>\n          <DialogTitle>Dialog Title</DialogTitle>\n          <DialogDescription>\n            This is a dialog component. Use it to display important\n            information or ask for user confirmation.\n          </DialogDescription>\n        </DialogHeader>\n        <p className=\"text-sm text-muted-foreground\">\n          Dialog body content goes here. You can place any content inside.\n        </p>\n        <DialogFooter>\n          <DialogClose asChild>\n            <Button variant=\"outline\">Cancel</Button>\n          </DialogClose>\n          <Button>Confirm</Button>\n        </DialogFooter>\n      </DialogContent>\n    </Dialog>\n  );\n}"
+        },
+        {
+            "title": "Sizes",
+            "description": "Control dialog width with the size prop: sm, md (default), lg, xl.",
+            "demo": "dialog-sizes",
+            "code": "\"use client\";\n\nimport { useState } from \"react\";\nimport {\n  Button,\n  Dialog,\n  DialogClose,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger,\n} from \"@repo/components\";\n\nconst sizes = [\"sm\", \"md\", \"lg\", \"xl\"];\n\nexport default function DialogSizes() {\n  const [openSize, setOpenSize] = useState(null);\n\n  return (\n    <div className=\"flex flex-wrap items-center gap-3\">\n      {sizes.map((size) => (\n        <Dialog\n          key={size}\n          open={openSize === size}\n          onOpenChange={(v) => setOpenSize(v ? size : null)}\n        >\n          <DialogTrigger asChild>\n            <Button variant=\"outline\" className=\"uppercase\">{size}</Button>\n          </DialogTrigger>\n          <DialogContent size={size}>\n            <DialogHeader>\n              <DialogTitle className=\"capitalize\">{size} Dialog</DialogTitle>\n              <DialogDescription>\n                This dialog uses the{\" \"}\n                <code className=\"font-mono text-xs\">size=\"{size}\"</code> prop.\n              </DialogDescription>\n            </DialogHeader>\n            <p className=\"text-sm text-muted-foreground\">\n              The content area adjusts to match the selected size variant.\n            </p>\n            <DialogFooter>\n              <DialogClose asChild>\n                <Button variant=\"outline\">Close</Button>\n              </DialogClose>\n            </DialogFooter>\n          </DialogContent>\n        </Dialog>\n      ))}\n    </div>\n  );\n}"
+        },
+        {
+            "title": "With Form",
+            "description": "A dialog containing an editable form with controlled open state.",
+            "demo": "dialog-with-form",
+            "code": "\"use client\";\n\nimport { useState } from \"react\";\nimport {\n  Button,\n  Dialog,\n  DialogClose,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger,\n  Input,\n  Label,\n} from \"@repo/components\";\n\nexport default function DialogWithForm() {\n  const [open, setOpen] = useState(false);\n\n  function handleSave() {\n    setOpen(false);\n  }\n\n  return (\n    <Dialog open={open} onOpenChange={setOpen}>\n      <DialogTrigger asChild>\n        <Button variant=\"outline\">Edit Profile</Button>\n      </DialogTrigger>\n      <DialogContent>\n        <DialogHeader>\n          <DialogTitle>Edit Profile</DialogTitle>\n          <DialogDescription>\n            Update your profile information. Click save when you're done.\n          </DialogDescription>\n        </DialogHeader>\n        <div className=\"grid gap-4 py-2\">\n          <div className=\"grid gap-1.5\">\n            <Label htmlFor=\"name\">Name</Label>\n            <Input id=\"name\" defaultValue=\"John Doe\" />\n          </div>\n          <div className=\"grid gap-1.5\">\n            <Label htmlFor=\"username\">Username</Label>\n            <Input id=\"username\" defaultValue=\"@johndoe\" />\n          </div>\n          <div className=\"grid gap-1.5\">\n            <Label htmlFor=\"email\">Email</Label>\n            <Input id=\"email\" type=\"email\" defaultValue=\"john@example.com\" />\n          </div>\n        </div>\n        <DialogFooter>\n          <DialogClose asChild>\n            <Button variant=\"outline\">Cancel</Button>\n          </DialogClose>\n          <Button onClick={handleSave}>Save changes</Button>\n        </DialogFooter>\n      </DialogContent>\n    </Dialog>\n  );\n}"
+        },
+        {
+            "title": "Scrollable",
+            "description": "A dialog with scrollable content for long body text.",
+            "demo": "dialog-scrollable",
+            "code": "import {\n  Button,\n  Dialog,\n  DialogClose,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger,\n} from \"@repo/components\";\n\nexport default function DialogScrollable() {\n  return (\n    <Dialog>\n      <DialogTrigger asChild>\n        <Button variant=\"outline\">Scrollable Dialog</Button>\n      </DialogTrigger>\n      <DialogContent className=\"max-h-[80vh] overflow-y-auto\">\n        <DialogHeader>\n          <DialogTitle>Terms of Service</DialogTitle>\n          <DialogDescription>\n            Please read through the full terms before accepting.\n          </DialogDescription>\n        </DialogHeader>\n        <div className=\"space-y-4 text-sm text-muted-foreground\">\n          {Array.from({ length: 8 }).map((_, i) => (\n            <p key={i}>\n              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do\n              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut\n              enim ad minim veniam, quis nostrud exercitation ullamco laboris\n              nisi ut aliquip ex ea commodo consequat.\n            </p>\n          ))}\n        </div>\n        <DialogFooter>\n          <DialogClose asChild>\n            <Button variant=\"outline\">Decline</Button>\n          </DialogClose>\n          <Button>Accept</Button>\n        </DialogFooter>\n      </DialogContent>\n    </Dialog>\n  );\n}"
+        }
+    ]
+}

@@ -1,0 +1,72 @@
+{
+    "title": "ButtonGroup",
+    "description": "Groups multiple buttons together in a connected row with optional sizes and dropdown integration.",
+    "component": "ButtonGroup",
+    "installation": {
+        "cli": "npx shadcn@latest add buttongroup",
+        "manual": [
+            {
+                "title": "Copy the component code",
+                "description": "Create a new file and paste the button group component code.",
+                "filePath": "components/ui/buttongroup.jsx",
+                "code": "\"use client\";\n\nimport React, { useEffect, useRef, useState } from \"react\";\n\nexport function ButtonGroup({ children }) {\n  return <div className=\"flex items-center gap-1\">{children}</div>;\n}\n\nexport function Dropdown({ children }) {\n  const [open, setOpen] = useState(false);\n  const ref = useRef();\n\n  useEffect(() => {\n    function handleClick(e) {\n      if (ref.current && !ref.current.contains(e.target)) setOpen(false);\n    }\n    document.addEventListener(\"click\", handleClick);\n    return () => document.removeEventListener(\"click\", handleClick);\n  }, []);\n\n  return (\n    <div ref={ref} className=\"relative\">\n      {React.Children.map(children, (child) =>\n        React.cloneElement(child, { open, setOpen })\n      )}\n    </div>\n  );\n}\n\nexport function DropdownTrigger({ children, setOpen }) {\n  return (\n    <button\n      onClick={() => setOpen((prev) => !prev)}\n      className=\"px-3 py-2 border bg-white hover:bg-gray-100 rounded-xl\"\n    >\n      {children}\n    </button>\n  );\n}\n\nexport function DropdownContent({ children, open }) {\n  if (!open) return null;\n  return (\n    <div className=\"absolute right-0 mt-2 w-40 bg-white border shadow rounded\">\n      {children}\n    </div>\n  );\n}\n\nexport function DropdownItem({ children, setOpen }) {\n  return (\n    <div\n      onClick={() => setOpen(false)}\n      className=\"px-3 py-2 hover:bg-gray-100 cursor-pointer\"\n    >\n      {children}\n    </div>\n  );\n}",
+                "language": "jsx",
+                "collapsible": true
+            }
+        ]
+    },
+    "usage": {
+        "import": "import { ButtonGroup, Button } from '@repo/components';",
+        "basic": "buttongroup-demo"
+    },
+    "examples": [
+        {
+            "title": "Default",
+            "description": "A basic button group with an icon button at the end.",
+            "demo": "buttongroup-demo",
+            "code": "import { ButtonGroup, Button } from \"@repo/components\";\nimport { Plus } from \"lucide-react\";\n\nexport default function ButtonGroupDemo() {\n  return (\n    <ButtonGroup>\n      <Button variant=\"outline\">Default</Button>\n      <Button variant=\"outline\">Button</Button>\n      <Button variant=\"outline\">Group</Button>\n      <Button variant=\"outline\" size=\"icon\">\n        <Plus />\n      </Button>\n    </ButtonGroup>\n  );\n}"
+        },
+        {
+            "title": "Outline",
+            "description": "Button group using variant=\"outline\" buttons.",
+            "demo": "buttongroup-outline",
+            "code": "import { ButtonGroup, Button } from \"@repo/components\";\nimport { Plus } from \"lucide-react\";\n\nexport default function ButtonGroupOutline() {\n  return (\n    <ButtonGroup>\n      <Button variant=\"outline\">Save</Button>\n      <Button variant=\"outline\">Cancel</Button>\n      <Button variant=\"outline\" size=\"icon\"><Plus /></Button>\n    </ButtonGroup>\n  );\n}"
+        },
+        {
+            "title": "Secondary",
+            "description": "Button group using variant=\"secondary\" buttons.",
+            "demo": "buttongroup-secondary",
+            "code": "import { ButtonGroup, Button } from \"@repo/components\";\nimport { Plus } from \"lucide-react\";\n\nexport default function ButtonGroupSecondary() {\n  return (\n    <ButtonGroup>\n      <Button variant=\"secondary\">Save</Button>\n      <Button variant=\"secondary\">Cancel</Button>\n      <Button variant=\"secondary\" size=\"icon\"><Plus /></Button>\n    </ButtonGroup>\n  );\n}"
+        },
+        {
+            "title": "Ghost",
+            "description": "Button group using variant=\"ghost\" buttons.",
+            "demo": "buttongroup-ghost",
+            "code": "import { ButtonGroup, Button } from \"@repo/components\";\nimport { Plus } from \"lucide-react\";\n\nexport default function ButtonGroupGhost() {\n  return (\n    <ButtonGroup>\n      <Button variant=\"ghost\">Save</Button>\n      <Button variant=\"ghost\">Cancel</Button>\n      <Button variant=\"ghost\" size=\"icon\"><Plus /></Button>\n    </ButtonGroup>\n  );\n}"
+        },
+        {
+            "title": "Destructive",
+            "description": "Button group using variant=\"destructive\" buttons.",
+            "demo": "buttongroup-destructive",
+            "code": "import { ButtonGroup, Button } from \"@repo/components\";\nimport { Plus } from \"lucide-react\";\n\nexport default function ButtonGroupDestructive() {\n  return (\n    <ButtonGroup>\n      <Button variant=\"destructive\">Delete</Button>\n      <Button variant=\"destructive\">Remove</Button>\n      <Button variant=\"destructive\" size=\"icon\"><Plus /></Button>\n    </ButtonGroup>\n  );\n}"
+        },
+        {
+            "title": "Small",
+            "description": "Button group with size=\"sm\" on all buttons.",
+            "demo": "buttongroup-sm",
+            "code": "import { ButtonGroup, Button } from \"@repo/components\";\nimport { Plus } from \"lucide-react\";\n\nexport default function ButtonGroupSm() {\n  return (\n    <ButtonGroup>\n      <Button variant=\"outline\" size=\"sm\">Save</Button>\n      <Button variant=\"outline\" size=\"sm\">Cancel</Button>\n      <Button variant=\"outline\" size=\"sm\"><Plus className=\"size-3\" /></Button>\n    </ButtonGroup>\n  );\n}"
+        },
+        {
+            "title": "Large",
+            "description": "Button group with size=\"lg\" on all buttons.",
+            "demo": "buttongroup-lg",
+            "code": "import { ButtonGroup, Button } from \"@repo/components\";\nimport { Plus } from \"lucide-react\";\n\nexport default function ButtonGroupLg() {\n  return (\n    <ButtonGroup>\n      <Button variant=\"outline\" size=\"lg\">Save</Button>\n      <Button variant=\"outline\" size=\"lg\">Cancel</Button>\n      <Button variant=\"outline\" size=\"lg\"><Plus /></Button>\n    </ButtonGroup>\n  );\n}"
+        },
+        {
+            "title": "With Dropdown",
+            "description": "A button group with an integrated dropdown for additional actions.",
+            "demo": "buttongroup-with-dropdown",
+            "code": "import {\n  ButtonGroup,\n  Button,\n  Dropdown,\n  DropdownTrigger,\n  DropdownContent,\n  DropdownItem,\n} from \"@repo/components\";\n\nexport default function ButtonGroupWithDropdown() {\n  return (\n    <ButtonGroup>\n      <Button className=\"rounded-l-md border-r-0\">Save</Button>\n      <Button className=\"border-r-0\">Cancel</Button>\n      <Dropdown>\n        <DropdownTrigger className=\"rounded-r-md\">More ▾</DropdownTrigger>\n        <DropdownContent>\n          <DropdownItem>Edit</DropdownItem>\n          <DropdownItem>Delete</DropdownItem>\n          <DropdownItem>Share</DropdownItem>\n        </DropdownContent>\n      </Dropdown>\n    </ButtonGroup>\n  );\n}"
+        }
+    ]
+}

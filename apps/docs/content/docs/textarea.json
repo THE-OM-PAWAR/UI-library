@@ -1,0 +1,67 @@
+{
+    "title": "Textarea",
+    "description": "A multi-line text input with support for custom radius, rows, labels, validation states, and footers.",
+    "component": "Textarea",
+    "installation": {
+        "cli": "npx shadcn@latest add textarea",
+        "manual": [
+            {
+                "title": "Add utility function",
+                "description": "Create a cn utility function if you don't have one already.",
+                "filePath": "lib/utils.js",
+                "code": "import { clsx } from 'clsx';\nimport { twMerge } from 'tailwind-merge';\n\nexport function cn(...inputs) {\n  return twMerge(clsx(inputs));\n}",
+                "language": "javascript"
+            },
+            {
+                "title": "Copy the component code",
+                "description": "Create a new file and paste the textarea component code.",
+                "filePath": "components/ui/textarea.jsx",
+                "code": "import { cn } from \"@/lib/utils\";\nimport * as React from \"react\";\n\nfunction Textarea({ className, radius = \"10\", ...props }) {\n  return (\n    <textarea\n      data-slot=\"textarea\"\n      className={cn(\n        \"flex field-sizing-content min-h-16 w-full resize-none border border-transparent bg-input/50 px-3 py-3 text-base transition-[color,box-shadow,background-color] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 md:text-sm\",\n        className\n      )}\n      style={{ borderRadius: `${radius}px` }}\n      {...props}\n    />\n  );\n}\n\nexport { Textarea };",
+                "language": "jsx",
+                "collapsible": true
+            }
+        ]
+    },
+    "usage": {
+        "import": "import { Textarea } from '@repo/components';",
+        "basic": "textarea-demo"
+    },
+    "examples": [
+        {
+            "title": "Default",
+            "description": "A basic textarea input.",
+            "demo": "textarea-demo",
+            "code": "import { Textarea } from \"@repo/components\";\n\nexport default function TextareaDemo() {\n  return <Textarea placeholder=\"Type something…\" />;\n}"
+        },
+        {
+            "title": "With Label",
+            "description": "A textarea paired with a Label component.",
+            "demo": "textarea-with-label",
+            "code": "import { Textarea, Label } from \"@repo/components\";\n\nexport default function TextareaWithLabel() {\n  return (\n    <div className=\"flex flex-col gap-1.5 w-full max-w-sm\">\n      <Label htmlFor=\"bio\">Bio</Label>\n      <Textarea id=\"bio\" placeholder=\"Tell us about yourself…\" />\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Disabled",
+            "description": "A textarea in a disabled state.",
+            "demo": "textarea-disabled",
+            "code": "import { Textarea } from \"@repo/components\";\n\nexport default function TextareaDisabled() {\n  return <Textarea placeholder=\"This field is disabled\" disabled />;\n}"
+        },
+        {
+            "title": "Invalid",
+            "description": "A textarea in an error/invalid state.",
+            "demo": "textarea-invalid",
+            "code": "import { Textarea } from \"@repo/components\";\n\nexport default function TextareaInvalid() {\n  return (\n    <div className=\"flex flex-col gap-1.5 w-full max-w-sm\">\n      <Textarea aria-invalid=\"true\" defaultValue=\"Bad input value\" />\n      <p className=\"text-sm text-destructive\">This field has an error.</p>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "With Footer",
+            "description": "A textarea with a character limit note and submit button.",
+            "demo": "textarea-with-footer",
+            "code": "import { Textarea, Button } from \"@repo/components\";\n\nexport default function TextareaWithFooter() {\n  return (\n    <div className=\"flex flex-col gap-2 w-full max-w-sm\">\n      <Textarea id=\"message\" placeholder=\"Write your message…\" rows={4} />\n      <div className=\"flex items-center justify-between\">\n        <p className=\"text-xs text-muted-foreground\">Max 500 characters</p>\n        <Button size=\"sm\">Submit</Button>\n      </div>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Border Radius",
+            "description": "Control the border radius using the radius prop.",
+            "demo": "textarea-radius",
+            "code": "import { Textarea } from \"@repo/components\";\n\nexport default function TextareaRadius() {\n  return (\n    <div className=\"flex flex-col gap-4 w-full max-w-sm\">\n      <div className=\"flex flex-col gap-1.5\">\n        <p className=\"text-sm font-medium\">radius=\"4\"</p>\n        <Textarea placeholder=\"Subtle radius…\" radius=\"4\" />\n      </div>\n      <div className=\"flex flex-col gap-1.5\">\n        <p className=\"text-sm font-medium\">radius=\"10\" (default)</p>\n        <Textarea placeholder=\"Default radius…\" radius=\"10\" />\n      </div>\n      <div className=\"flex flex-col gap-1.5\">\n        <p className=\"text-sm font-medium\">radius=\"20\"</p>\n        <Textarea placeholder=\"Rounder radius…\" radius=\"20\" />\n      </div>\n    </div>\n  );\n}"
+        }
+    ]
+}

@@ -1,0 +1,66 @@
+{
+    "title": "Progress",
+    "description": "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+    "component": "Progress",
+    "installation": {
+        "cli": "npx shadcn@latest add progress",
+        "manual": [
+            {
+                "title": "Install dependencies",
+                "description": "Install the Radix UI progress primitive.",
+                "command": "npm install @radix-ui/react-progress"
+            },
+            {
+                "title": "Add utility function",
+                "description": "Create a cn utility function if you don't have one already.",
+                "filePath": "lib/utils.js",
+                "code": "import { clsx } from 'clsx';\nimport { twMerge } from 'tailwind-merge';\n\nexport function cn(...inputs) {\n  return twMerge(clsx(inputs));\n}",
+                "language": "javascript"
+            },
+            {
+                "title": "Copy the component code",
+                "description": "Create a new file and paste the progress component code.",
+                "filePath": "components/ui/progress.jsx",
+                "code": "\"use client\";\nimport * as ProgressPrimitive from \"@radix-ui/react-progress\";\nimport { cn } from \"@/lib/utils\";\n\nfunction Progress({\n  className,\n  color = \"primary\",\n  height = 10,\n  value,\n  speed = 700,\n  ...props\n}) {\n  return (\n    <ProgressPrimitive.Root\n      className={cn(\n        \"relative flex w-full items-center overflow-x-hidden rounded-full bg-muted\",\n        className\n      )}\n      style={{ height }}\n      data-slot=\"progress\"\n      {...props}\n    >\n      <ProgressPrimitive.Indicator\n        className={cn(\"flex-1 transition-all size-full bg-primary\")}\n        style={{\n          transform: `translateX(-${100 - (value || 0)}%)`,\n          backgroundColor: color,\n          transitionDuration: `${speed}ms`,\n        }}\n        data-slot=\"progress-indicator\"\n      />\n    </ProgressPrimitive.Root>\n  );\n}\n\nexport { Progress };",
+                "language": "jsx",
+                "collapsible": true
+            }
+        ]
+    },
+    "usage": {
+        "import": "import { Progress } from '@repo/components';",
+        "basic": "progress-demo"
+    },
+    "examples": [
+        {
+            "title": "Default",
+            "description": "A basic animated progress bar.",
+            "demo": "progress-demo",
+            "code": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\nimport { Progress } from \"@repo/components\";\n\nexport default function ProgressDemo() {\n  const [value, setValue] = useState(0);\n\n  useEffect(() => {\n    const timer = setTimeout(() => setValue(60), 500);\n    return () => clearTimeout(timer);\n  }, []);\n\n  return (\n    <div className=\"w-full max-w-md\">\n      <Progress value={value} />\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Custom Color",
+            "description": "Progress bar with a custom fill color using the color prop.",
+            "demo": "progress-color",
+            "code": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\nimport { Progress } from \"@repo/components\";\n\nexport default function ProgressColor() {\n  const [value, setValue] = useState(0);\n\n  useEffect(() => {\n    const timer = setTimeout(() => setValue(65), 500);\n    return () => clearTimeout(timer);\n  }, []);\n\n  return (\n    <div className=\"w-full max-w-md\">\n      <Progress value={value} color=\"#F1A839\" speed={300} />\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Custom Height",
+            "description": "Progress bar with a taller track using the height prop.",
+            "demo": "progress-height",
+            "code": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\nimport { Progress } from \"@repo/components\";\n\nexport default function ProgressHeight() {\n  const [value, setValue] = useState(0);\n\n  useEffect(() => {\n    const timer = setTimeout(() => setValue(65), 500);\n    return () => clearTimeout(timer);\n  }, []);\n\n  return (\n    <div className=\"w-full max-w-md\">\n      <Progress value={value} height={20} />\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Custom Speed",
+            "description": "Progress bar with a slow transition using the speed prop (in ms).",
+            "demo": "progress-speed",
+            "code": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\nimport { Progress } from \"@repo/components\";\n\nexport default function ProgressSpeed() {\n  const [value, setValue] = useState(0);\n\n  useEffect(() => {\n    const timer = setTimeout(() => setValue(65), 500);\n    return () => clearTimeout(timer);\n  }, []);\n\n  return (\n    <div className=\"w-full max-w-md\">\n      <Progress value={value} speed={1500} />\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Variants",
+            "description": "Progress bars showcasing different colors, heights, and speeds together.",
+            "demo": "progress-variants",
+            "code": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\nimport { Progress } from \"@repo/components\";\n\nexport default function ProgressVariants() {\n  const [value, setValue] = useState(0);\n\n  useEffect(() => {\n    const timer = setTimeout(() => setValue(65), 500);\n    return () => clearTimeout(timer);\n  }, []);\n\n  return (\n    <div className=\"flex flex-col gap-6 w-full max-w-md\">\n      <Progress value={value} />\n      <Progress value={value} color=\"#F1A839\" speed={300} />\n      <Progress value={value} height={20} />\n      <Progress value={value} speed={1500} />\n    </div>\n  );\n}"
+        }
+    ]
+}

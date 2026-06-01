@@ -1,0 +1,60 @@
+{
+    "title": "Popover",
+    "description": "Displays rich content in a portal, triggered by a button. Supports forms, headers, and alignment control.",
+    "component": "Popover",
+    "installation": {
+        "cli": "npx shadcn@latest add popover",
+        "manual": [
+            {
+                "title": "Install dependencies",
+                "description": "Install the Radix UI popover primitive.",
+                "command": "npm install @radix-ui/react-popover"
+            },
+            {
+                "title": "Add utility function",
+                "description": "Create a cn utility function if you don't have one already.",
+                "filePath": "lib/utils.js",
+                "code": "import { clsx } from 'clsx';\nimport { twMerge } from 'tailwind-merge';\n\nexport function cn(...inputs) {\n  return twMerge(clsx(inputs));\n}",
+                "language": "javascript"
+            },
+            {
+                "title": "Copy the component code",
+                "description": "Create a new file and paste the popover component code.",
+                "filePath": "components/ui/popover.jsx",
+                "code": "\"use client\";\nimport * as PopoverPrimitive from \"@radix-ui/react-popover\";\nimport { cn } from \"@/lib/utils\";\n\nfunction Popover({ ...props }) {\n  return <PopoverPrimitive.Root data-slot=\"popover\" {...props} />;\n}\n\nfunction PopoverTrigger({ ...props }) {\n  return <PopoverPrimitive.Trigger data-slot=\"popover-trigger\" {...props} />;\n}\n\nfunction PopoverContent({ className, align = \"center\", sideOffset = 4, ...props }) {\n  return (\n    <PopoverPrimitive.Portal>\n      <PopoverPrimitive.Content\n        data-slot=\"popover-content\"\n        align={align}\n        sideOffset={sideOffset}\n        className={cn(\n          \"z-50 flex w-96 flex-col gap-4 rounded-xl bg-popover p-4 text-popover-foreground shadow-xl ring-1 ring-foreground/10 outline-hidden duration-300 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95\",\n          className\n        )}\n        {...props}\n      />\n    </PopoverPrimitive.Portal>\n  );\n}\n\nfunction PopoverHeader({ className, ...props }) {\n  return <div data-slot=\"popover-header\" className={cn(\"flex flex-col\", className)} {...props} />;\n}\n\nfunction PopoverTitle({ className, ...props }) {\n  return <h4 data-slot=\"popover-title\" className={cn(\"text-sm font-medium\", className)} {...props} />;\n}\n\nfunction PopoverDescription({ className, ...props }) {\n  return <p data-slot=\"popover-description\" className={cn(\"text-sm text-muted-foreground\", className)} {...props} />;\n}\n\nexport { Popover, PopoverContent, PopoverDescription, PopoverHeader, PopoverTitle, PopoverTrigger };",
+                "language": "jsx",
+                "collapsible": true
+            }
+        ]
+    },
+    "usage": {
+        "import": "import { Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverTitle, PopoverDescription } from '@repo/components';",
+        "basic": "popover-demo"
+    },
+    "examples": [
+        {
+            "title": "Default",
+            "description": "A basic popover with simple text content.",
+            "demo": "popover-demo",
+            "code": "import { Button, Popover, PopoverTrigger, PopoverContent } from \"@repo/components\";\n\nexport default function PopoverDemo() {\n  return (\n    <Popover>\n      <PopoverTrigger asChild>\n        <Button variant=\"outline\">Open Popover</Button>\n      </PopoverTrigger>\n      <PopoverContent>\n        <p className=\"text-sm\">This is a simple popover with some content inside.</p>\n      </PopoverContent>\n    </Popover>\n  );\n}"
+        },
+        {
+            "title": "With Header",
+            "description": "A popover with a title and description header.",
+            "demo": "popover-with-header",
+            "code": "import {\n  Button,\n  Popover,\n  PopoverTrigger,\n  PopoverContent,\n  PopoverHeader,\n  PopoverTitle,\n  PopoverDescription,\n} from \"@repo/components\";\n\nexport default function PopoverWithHeader() {\n  return (\n    <Popover>\n      <PopoverTrigger asChild>\n        <Button variant=\"outline\">Info</Button>\n      </PopoverTrigger>\n      <PopoverContent>\n        <PopoverHeader>\n          <PopoverTitle>What is a Popover?</PopoverTitle>\n          <PopoverDescription>\n            A popover displays rich content in a portal, triggered by a button.\n          </PopoverDescription>\n        </PopoverHeader>\n        <p className=\"text-sm text-muted-foreground\">\n          Use it to show extra details without cluttering the main UI.\n        </p>\n      </PopoverContent>\n    </Popover>\n  );\n}"
+        },
+        {
+            "title": "With Form",
+            "description": "A popover containing an editable form.",
+            "demo": "popover-with-form",
+            "code": "\"use client\";\n\nimport { useState } from \"react\";\nimport {\n  Button, Input, Label,\n  Popover, PopoverContent, PopoverDescription,\n  PopoverHeader, PopoverTitle, PopoverTrigger,\n} from \"@repo/components\";\n\nexport default function PopoverWithForm() {\n  const [open, setOpen] = useState(false);\n\n  return (\n    <Popover open={open} onOpenChange={setOpen}>\n      <PopoverTrigger asChild>\n        <Button variant=\"outline\">Edit Profile</Button>\n      </PopoverTrigger>\n      <PopoverContent>\n        <PopoverHeader>\n          <PopoverTitle>Edit Profile</PopoverTitle>\n          <PopoverDescription>Make changes to your profile here.</PopoverDescription>\n        </PopoverHeader>\n        <div className=\"grid gap-2\">\n          <div className=\"grid gap-1\">\n            <Label htmlFor=\"name\">Name</Label>\n            <Input id=\"name\" defaultValue=\"John Doe\" />\n          </div>\n          <div className=\"grid gap-1\">\n            <Label htmlFor=\"username\">Username</Label>\n            <Input id=\"username\" defaultValue=\"@johndoe\" />\n          </div>\n        </div>\n        <div className=\"flex justify-end\">\n          <Button size=\"sm\" onClick={() => setOpen(false)}>Save changes</Button>\n        </div>\n      </PopoverContent>\n    </Popover>\n  );\n}"
+        },
+        {
+            "title": "Alignments",
+            "description": "Control horizontal alignment with the align prop: start, center, or end.",
+            "demo": "popover-alignments",
+            "code": "import {\n  Button, Popover, PopoverContent,\n  PopoverHeader, PopoverTitle, PopoverDescription, PopoverTrigger,\n} from \"@repo/components\";\n\nexport default function PopoverAlignments() {\n  return (\n    <div className=\"flex gap-2\">\n      {[\"start\", \"center\", \"end\"].map((align) => (\n        <Popover key={align}>\n          <PopoverTrigger asChild>\n            <Button variant=\"outline\" size=\"sm\" className=\"capitalize\">{align}</Button>\n          </PopoverTrigger>\n          <PopoverContent align={align}>\n            <PopoverHeader>\n              <PopoverTitle>Align: {align}</PopoverTitle>\n              <PopoverDescription>This popover is aligned to the {align}.</PopoverDescription>\n            </PopoverHeader>\n          </PopoverContent>\n        </Popover>\n      ))}\n    </div>\n  );\n}"
+        }
+    ]
+}

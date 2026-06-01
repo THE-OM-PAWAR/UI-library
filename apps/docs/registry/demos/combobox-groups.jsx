@@ -1,13 +1,12 @@
 import {
     Combobox,
-    ComboboxTrigger,
     ComboboxContent,
-    ComboboxSearch,
-    ComboboxList,
-    ComboboxItem,
     ComboboxEmpty,
     ComboboxGroup,
+    ComboboxInput,
+    ComboboxItem,
     ComboboxLabel,
+    ComboboxList,
     ComboboxSeparator,
 } from "@repo/components";
 
@@ -15,28 +14,20 @@ export default function ComboboxGroups() {
     return (
         <div className="w-72">
             <Combobox>
-                <ComboboxTrigger placeholder="Select technology..." />
+                <ComboboxInput placeholder="Select technology..." />
 
                 <ComboboxContent>
-                    <ComboboxSearch placeholder="Search..." />
-
                     <ComboboxList>
                         <ComboboxEmpty />
 
                         <ComboboxGroup>
                             <ComboboxLabel>Frontend</ComboboxLabel>
 
-                            <ComboboxItem value="react">
-                                React
-                            </ComboboxItem>
+                            <ComboboxItem value="react">React</ComboboxItem>
 
-                            <ComboboxItem value="vue">
-                                Vue
-                            </ComboboxItem>
+                            <ComboboxItem value="vue">Vue</ComboboxItem>
 
-                            <ComboboxItem value="svelte">
-                                Svelte
-                            </ComboboxItem>
+                            <ComboboxItem value="svelte">Svelte</ComboboxItem>
                         </ComboboxGroup>
 
                         <ComboboxSeparator />
@@ -44,17 +35,11 @@ export default function ComboboxGroups() {
                         <ComboboxGroup>
                             <ComboboxLabel>Backend</ComboboxLabel>
 
-                            <ComboboxItem value="node">
-                                Node.js
-                            </ComboboxItem>
+                            <ComboboxItem value="node">Node.js</ComboboxItem>
 
-                            <ComboboxItem value="express">
-                                Express
-                            </ComboboxItem>
+                            <ComboboxItem value="express">Express</ComboboxItem>
 
-                            <ComboboxItem value="go">
-                                Go
-                            </ComboboxItem>
+                            <ComboboxItem value="go">Go</ComboboxItem>
                         </ComboboxGroup>
                     </ComboboxList>
                 </ComboboxContent>

@@ -1,11 +1,10 @@
 import {
     Combobox,
-    ComboboxTrigger,
     ComboboxContent,
-    ComboboxSearch,
-    ComboboxList,
-    ComboboxItem,
     ComboboxEmpty,
+    ComboboxInput,
+    ComboboxItem,
+    ComboboxList,
 } from "@repo/components";
 
 export default function ComboboxDemo() {
@@ -19,9 +18,8 @@ export default function ComboboxDemo() {
     return (
         <div className="w-64">
             <Combobox>
-                <ComboboxTrigger placeholder="Select framework..." />
+                <ComboboxInput placeholder="Select framework..." />
                 <ComboboxContent>
-                    <ComboboxSearch placeholder="Search framework..." />
                     <ComboboxList>
                         <ComboboxEmpty />
                         {frameworks.map((framework) => (

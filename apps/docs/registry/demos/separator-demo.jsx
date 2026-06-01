@@ -7,7 +7,7 @@ export default function SeparatorDemo() {
         <h4 className="text-sm font-medium">UI Library</h4>
         <p className="text-sm text-muted-foreground">Reusable components and patterns.</p>
       </div>
-      <Separator className="my-4" />
+      <Separator className="my-6" />
       <div className="flex h-5 items-center gap-4 text-sm">
         <span>Docs</span>
         <Separator orientation="vertical" />

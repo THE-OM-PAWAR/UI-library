@@ -1,8 +1,7 @@
 export function renderCombobox({
     Combobox,
-    ComboboxTrigger,
+    ComboboxInput,
     ComboboxContent,
-    ComboboxSearch,
     ComboboxList,
     ComboboxItem,
     ComboboxEmpty,
@@ -19,9 +18,8 @@ export function renderCombobox({
     return (
         <div className="w-64">
             <Combobox>
-                <ComboboxTrigger placeholder="Select a framework…" />
+                <ComboboxInput placeholder="Select a framework…" />
                 <ComboboxContent>
-                    <ComboboxSearch placeholder="Search frameworks…" />
                     <ComboboxList>
                         <ComboboxEmpty />
                         {frameworks.map((f) => (

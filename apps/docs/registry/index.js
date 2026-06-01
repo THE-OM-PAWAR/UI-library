@@ -6,6 +6,12 @@ export const demoRegistry = {
     "alert-demo": () => import("./demos/alert-demo"),
     "alert-destructive": () => import("./demos/alert-destructive"),
     "aspect-ratio-demo": () => import("./demos/aspect-ratio-demo"),
+    "aspect-ratio-gallery": () => import("./demos/aspect-ratio-gallery"),
+    "aspect-ratio-portrait": () => import("./demos/aspect-ratio-portrait"),
+    "aspect-ratio-square": () => import("./demos/aspect-ratio-square"),
+    "aspect-ratio-ultrawide": () => import("./demos/aspect-ratio-ultrawide"),
+    "aspect-ratio-widescreen": () =>
+        import("./demos/aspect-ratio-widescreen"),
     "avatar-demo": () => import("./demos/avatar-demo"),
     "avatar-group": () => import("./demos/avatar-group"),
     "badge-color": () => import("./demos/badge-color"),

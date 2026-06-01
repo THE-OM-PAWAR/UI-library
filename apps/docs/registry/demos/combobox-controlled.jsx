@@ -2,12 +2,11 @@
 
 import {
     Combobox,
-    ComboboxTrigger,
     ComboboxContent,
-    ComboboxSearch,
-    ComboboxList,
-    ComboboxItem,
     ComboboxEmpty,
+    ComboboxInput,
+    ComboboxItem,
+    ComboboxList,
 } from "@repo/components";
 import { useState } from "react";
 
@@ -24,9 +23,8 @@ export default function ComboboxControlled() {
     return (
         <div className="w-64 space-y-2">
             <Combobox value={value} onValueChange={setValue}>
-                <ComboboxTrigger placeholder="Choose framework..." />
+                <ComboboxInput placeholder="Choose framework..." />
                 <ComboboxContent>
-                    <ComboboxSearch placeholder="Search..." />
                     <ComboboxList>
                         <ComboboxEmpty />
                         {frameworks.map((framework) => (

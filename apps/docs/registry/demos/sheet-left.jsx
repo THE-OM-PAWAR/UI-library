@@ -3,30 +3,30 @@ import {
     Sheet,
     SheetContent,
     SheetDescription,
-    SheetFooter,
     SheetHeader,
     SheetTitle,
     SheetTrigger,
+    SheetFooter
 } from "@repo/components";
 
-export default function SheetDemo() {
+export default function sheetLeft() {
     return (
         <div className="grid grid-cols-2 gap-3">
             <Sheet>
                 <SheetTrigger asChild>
-                    <Button variant="outline" className="w-full">Right sheet</Button>
+                    <Button variant="ghost" className="w-full">Left sheet</Button>
                 </SheetTrigger>
-                <SheetContent side="right">
+                <SheetContent side="left">
                     <SheetHeader>
-                        <SheetTitle>Edit profile</SheetTitle>
-                        <SheetDescription>Right side default panel.</SheetDescription>
+                        <SheetTitle>Filters</SheetTitle>
+                        <SheetDescription>Left side variant.</SheetDescription>
                     </SheetHeader>
                     <SheetFooter>
-                        <Button variant="outline">Cancel</Button>
-                        <Button>Save</Button>
+                        <Button variant="outline">Dismiss</Button>
+                        <Button>Continue</Button>
                     </SheetFooter>
                 </SheetContent>
             </Sheet>
         </div>
-    );
+    )
 }

@@ -9,24 +9,24 @@ import {
     SheetTrigger,
 } from "@repo/components";
 
-export default function SheetDemo() {
+export default function sheetBottom() {
     return (
         <div className="grid grid-cols-2 gap-3">
             <Sheet>
                 <SheetTrigger asChild>
-                    <Button variant="outline" className="w-full">Right sheet</Button>
+                    <Button className="w-full">Bottom sheet</Button>
                 </SheetTrigger>
-                <SheetContent side="right">
+                <SheetContent side="bottom">
                     <SheetHeader>
-                        <SheetTitle>Edit profile</SheetTitle>
-                        <SheetDescription>Right side default panel.</SheetDescription>
+                        <SheetTitle>Quick actions</SheetTitle>
+                        <SheetDescription>Bottom sheet variant.</SheetDescription>
                     </SheetHeader>
                     <SheetFooter>
-                        <Button variant="outline">Cancel</Button>
-                        <Button>Save</Button>
+                        <Button variant="outline">Dismiss</Button>
+                        <Button>Continue</Button>
                     </SheetFooter>
                 </SheetContent>
             </Sheet>
         </div>
-    );
+    )
 }

@@ -1,6 +1,7 @@
 "use client";
 import { cn } from "@repo/utils";
 import { cva } from "class-variance-authority";
+import { CheckCircle2, Info, XCircle } from "lucide-react";
 import * as React from "react";
 
 const alertVariants = cva(
@@ -9,6 +10,8 @@ const alertVariants = cva(
         variants: {
             variant: {
                 default: "bg-card text-card-foreground",
+                success:
+                    "bg-card text-emerald-600 *:data-[slot=alert-description]:text-emerald-600/90 *:[svg]:text-current",
                 destructive:
                     "bg-card text-destructive *:data-[slot=alert-description]:text-destructive/90 *:[svg]:text-current",
             },
@@ -19,7 +22,14 @@ const alertVariants = cva(
     }
 );
 
-const Alert = React.forwardRef(({ className, variant, ...props }, ref) => {
+const ALERT_ICONS = {
+    default: Info,
+    destructive: XCircle,
+    success: CheckCircle2,
+};
+
+const Alert = React.forwardRef(({ className, variant = "default", children, ...props }, ref) => {
+    const Icon = ALERT_ICONS[variant];
     return (
         <div
             ref={ref}
@@ -27,7 +37,10 @@ const Alert = React.forwardRef(({ className, variant, ...props }, ref) => {
             role="alert"
             className={cn(alertVariants({ variant }), className)}
             {...props}
-        />
+        >
+            {Icon && <Icon />}
+            {children}
+        </div>
     );
 });
 Alert.displayName = "Alert";

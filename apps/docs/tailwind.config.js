@@ -7,6 +7,7 @@ module.exports = {
         "./app/**/*.{js,jsx,mdx}",
         "./content/**/*.{js,jsx,mdx,json}",
         "./registry/**/*.{js,jsx,mdx}",
+        "./registry/**/*.{js,jsx}",
         "../../packages/components/ui/**/*.{js,jsx}",
         "../../packages/components/lib/**/*.{js,jsx}",
     ],

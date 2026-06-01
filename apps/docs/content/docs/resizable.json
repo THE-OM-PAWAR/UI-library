@@ -29,6 +29,12 @@
             "description": "A basic resizable example.",
             "demo": "resizable-demo",
             "code": "import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from \"@repo/components\";\n\nexport default function ResizableDemo() {\n  return (\n    <ResizablePanelGroup direction=\"horizontal\" className=\"h-48 max-w-md rounded-lg border\">\n      <ResizablePanel defaultSize={50} className=\"flex items-center justify-center p-4 text-sm\">Sidebar</ResizablePanel>\n      <ResizableHandle withHandle />\n      <ResizablePanel defaultSize={50} className=\"flex items-center justify-center p-4 text-sm\">Content</ResizablePanel>\n    </ResizablePanelGroup>\n  );\n}"
+        },
+        {
+            "title": "Vertical",
+            "description": "A vertical resizable example.",
+            "demo": "resizable-vertical",
+            "code": "import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from \"@repo/components\";\n\nexport default function ResizableVertical() {\n  return (\n    <ResizablePanelGroup direction=\"vertical\" className=\"h-48 max-w-md rounded-lg border\">\n      <ResizablePanel defaultSize={25} className=\"flex items-center justify-center p-4 text-sm\">Header</ResizablePanel>\n      <ResizableHandle withHandle />\n      <ResizablePanel defaultSize={75} className=\"flex items-center justify-center p-4 text-sm\">Content</ResizablePanel>\n    </ResizablePanelGroup>\n  );\n}"
         }
     ]
 }

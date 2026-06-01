@@ -129,6 +129,7 @@ export const demoRegistry = {
     "progress-variants": () => import("./demos/progress-variants"),
     "radio-demo": () => import("./demos/radio-demo"),
     "resizable-demo": () => import("./demos/resizable-demo"),
+    "resizable-vertical": () => import("./demos/resizable-vertical"),
     "scroll-area-demo": () => import("./demos/scroll-area-demo"),
     "separator-demo": () => import("./demos/separator-demo"),
     "sheet-demo": () => import("./demos/sheet-demo"),

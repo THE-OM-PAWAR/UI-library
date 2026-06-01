@@ -3,7 +3,7 @@
     "description": "A segmented one-time password input.",
     "component": "InputOTP",
     "installation": {
-        "cli": "npx shadcn@latest add input-otp",
+        "cli": "npx frostui@latest add input-otp",
         "manual": [
             {
                 "title": "Add utility function",

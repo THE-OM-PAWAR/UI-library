@@ -4,7 +4,7 @@
     "component": "Combobox",
 
     "installation": {
-        "cli": "npx shadcn@latest add combobox",
+        "cli": "npx frostui@latest add combobox",
 
         "manual": [
             {

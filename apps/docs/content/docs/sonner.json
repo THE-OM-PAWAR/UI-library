@@ -3,7 +3,7 @@
     "description": "An opinionated toaster component for rendering toast notifications.",
     "component": "Toaster",
     "installation": {
-        "cli": "npx shadcn@latest add sonner",
+        "cli": "npx frostui@latest add sonner",
         "manual": [
             {
                 "title": "Install dependencies",

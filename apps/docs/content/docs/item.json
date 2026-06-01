@@ -3,7 +3,7 @@
     "description": "A flexible item row with optional leading and trailing content.",
     "component": "Item",
     "installation": {
-        "cli": "npx shadcn@latest add item",
+        "cli": "npx frostui@latest add item",
         "manual": [
             {
                 "title": "Add utility function",

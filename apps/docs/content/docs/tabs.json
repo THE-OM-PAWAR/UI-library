@@ -3,7 +3,7 @@
     "description": "A set of layered sections of content, one visible at a time.",
     "component": "Tabs",
     "installation": {
-        "cli": "npx shadcn@latest add tabs",
+        "cli": "npx frostui@latest add tabs",
         "manual": [
             {
                 "title": "Install dependencies",

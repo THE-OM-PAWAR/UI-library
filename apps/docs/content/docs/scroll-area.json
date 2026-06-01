@@ -3,7 +3,7 @@
     "description": "A custom scrollable area with styled scrollbars.",
     "component": "ScrollArea",
     "installation": {
-        "cli": "npx shadcn@latest add scroll-area",
+        "cli": "npx frostui@latest add scroll-area",
         "manual": [
             {
                 "title": "Install dependencies",

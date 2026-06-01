@@ -3,7 +3,7 @@
     "description": "Composable chart helpers for themed data visualizations.",
     "component": "ChartContainer",
     "installation": {
-        "cli": "npx shadcn@latest add chart",
+        "cli": "npx frostui@latest add chart",
         "manual": [
             {
                 "title": "Install dependencies",

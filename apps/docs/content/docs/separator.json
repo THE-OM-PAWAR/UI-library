@@ -3,7 +3,7 @@
     "description": "Visually or semantically separates content.",
     "component": "Separator",
     "installation": {
-        "cli": "npx shadcn@latest add separator",
+        "cli": "npx frostui@latest add separator",
         "manual": [
             {
                 "title": "Install dependencies",

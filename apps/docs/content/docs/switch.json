@@ -3,7 +3,7 @@
     "description": "A control that toggles between checked and unchecked states.",
     "component": "Switch",
     "installation": {
-        "cli": "npx shadcn@latest add switch",
+        "cli": "npx frostui@latest add switch",
         "manual": [
             {
                 "title": "Install dependencies",

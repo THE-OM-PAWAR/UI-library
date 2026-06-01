@@ -3,7 +3,7 @@
     "description": "Displays a badge or a component that looks like a badge.",
     "component": "Badge",
     "installation": {
-        "cli": "pnpm dlx shadcn@latest add badge",
+        "cli": "pnpm dlx frostui@latest add badge",
         "manual": [
             {
                 "title": "Install dependencies",

@@ -3,7 +3,7 @@
     "description": "Groups multiple buttons together in a connected row with optional sizes and dropdown integration.",
     "component": "ButtonGroup",
     "installation": {
-        "cli": "npx shadcn@latest add buttongroup",
+        "cli": "npx frostui@latest add buttongroup",
         "manual": [
             {
                 "title": "Copy the component code",

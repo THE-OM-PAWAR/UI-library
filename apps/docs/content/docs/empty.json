@@ -3,7 +3,7 @@
     "description": "A placeholder state for empty screens and missing content.",
     "component": "Empty",
     "installation": {
-        "cli": "npx shadcn@latest add empty",
+        "cli": "npx frostui@latest add empty",
         "manual": [
             {
                 "title": "Add utility function",

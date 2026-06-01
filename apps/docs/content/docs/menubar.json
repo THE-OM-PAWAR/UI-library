@@ -3,7 +3,7 @@
     "description": "A horizontal menu for application commands.",
     "component": "Menubar",
     "installation": {
-        "cli": "npx shadcn@latest add menubar",
+        "cli": "npx frostui@latest add menubar",
         "manual": [
             {
                 "title": "Install dependencies",

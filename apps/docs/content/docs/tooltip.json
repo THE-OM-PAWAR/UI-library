@@ -3,7 +3,7 @@
     "description": "A small popup that appears when an element receives hover or focus.",
     "component": "Tooltip",
     "installation": {
-        "cli": "npx shadcn@latest add tooltip",
+        "cli": "npx frostui@latest add tooltip",
         "manual": [
             {
                 "title": "Install dependencies",

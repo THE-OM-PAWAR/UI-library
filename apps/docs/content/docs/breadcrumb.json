@@ -3,7 +3,7 @@
     "description": "Displays the path to the current resource using a hierarchy of links.",
     "component": "Breadcrumb",
     "installation": {
-        "cli": "pnpm dlx shadcn@latest add breadcrumb",
+        "cli": "pnpm dlx frostui@latest add breadcrumb",
         "manual": [
             {
                 "title": "Install dependencies",

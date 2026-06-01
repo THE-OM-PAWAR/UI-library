@@ -3,7 +3,7 @@
     "description": "A set of checkable buttons where only one option can be selected.",
     "component": "RadioGroup",
     "installation": {
-        "cli": "npx shadcn@latest add radio-group",
+        "cli": "npx frostui@latest add radio-group",
         "manual": [
             {
                 "title": "Install dependencies",

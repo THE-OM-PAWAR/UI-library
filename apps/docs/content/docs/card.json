@@ -3,7 +3,7 @@
     "description": "Displays content in a structured container with header, body, and footer sections.",
     "component": "Card",
     "installation": {
-        "cli": "npx shadcn@latest add card",
+        "cli": "npx frostui@latest add card",
         "manual": [
             {
                 "title": "Install dependencies",

@@ -3,7 +3,7 @@
     "description": "Displays content within a desired ratio.",
     "component": "AspectRatio",
     "installation": {
-        "cli": "npx shadcn@latest add aspect-ratio",
+        "cli": "npx frostui@latest add aspect-ratio",
         "manual": [
             {
                 "title": "Install dependencies",

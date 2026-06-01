@@ -3,7 +3,7 @@
     "description": "A responsive table for displaying tabular data.",
     "component": "Table",
     "installation": {
-        "cli": "npx shadcn@latest add table",
+        "cli": "npx frostui@latest add table",
         "manual": [
             {
                 "title": "Add utility function",

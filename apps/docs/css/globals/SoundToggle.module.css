@@ -14,7 +14,11 @@
     box-shadow: 0 14px 34px rgba(47, 88, 158, 0.16);
     cursor: pointer;
     backdrop-filter: blur(12px);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
 }
 
 .toggle:hover {

@@ -1,10 +1,10 @@
 import {
     ContextMenu,
-    ContextMenuTrigger,
     ContextMenuContent,
     ContextMenuItem,
     ContextMenuLabel,
     ContextMenuSeparator,
+    ContextMenuTrigger,
 } from "@repo/components";
 
 export default function ContextMenuDemo() {
@@ -22,9 +22,7 @@ export default function ContextMenuDemo() {
                 <ContextMenuItem>New File</ContextMenuItem>
                 <ContextMenuItem>Duplicate</ContextMenuItem>
 
-                <ContextMenuItem variant="destructive">
-                    Delete
-                </ContextMenuItem>
+                <ContextMenuItem variant="destructive">Delete</ContextMenuItem>
             </ContextMenuContent>
         </ContextMenu>
     );

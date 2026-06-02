@@ -79,7 +79,9 @@
     color: rgba(6, 21, 68, 0.58);
     font-size: 0.72rem;
     text-decoration: none;
-    transition: color 0.2s ease, transform 0.2s ease;
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
 }
 
 .group a:hover {

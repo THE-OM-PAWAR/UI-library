@@ -1,15 +1,14 @@
 "use client";
-import React, { useRef, useEffect, useState } from "react";
-import styles from '@/css/globals/Navbar.module.css';
-import Image from "next/image";
-import logoimg from "@/assets/images/logo.png";
-import Link from "next/link";
 import { Howl, Howler } from "howler";
+import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
+import React, { useEffect, useRef, useState } from "react";
+import logoimg from "@/assets/images/logo.png";
 import { useSound } from "@/context/SoundContext";
+import styles from "@/css/globals/Navbar.module.css";
 
 const Navbar = () => {
-
     const navLinks = [
         {
             name: "Docs",
@@ -111,7 +110,10 @@ const Navbar = () => {
 
             if (currentScrollY > lastScrollYRef.current + hideThreshold) {
                 setIsHidden(true);
-            } else if (currentScrollY < lastScrollYRef.current - hideThreshold) {
+            } else if (
+                currentScrollY <
+                lastScrollYRef.current - hideThreshold
+            ) {
                 setIsHidden(false);
             }
 
@@ -120,7 +122,10 @@ const Navbar = () => {
 
         handleScroll();
         window.addEventListener("scroll", handleScroll, { passive: true });
-        document.addEventListener("scroll", handleScroll, { passive: true, capture: true });
+        document.addEventListener("scroll", handleScroll, {
+            passive: true,
+            capture: true,
+        });
 
         return () => {
             window.removeEventListener("scroll", handleScroll);
@@ -176,20 +181,38 @@ const Navbar = () => {
             <nav
                 className={`${styles.nav} ${isDetached ? styles.detached : ""} ${isHidden && !isOpen ? styles.hidden : ""}`.trim()}
             >
-                <div className={styles.logoCont} onClick={() => router.push("/")}>
-                    <Image src={logoimg} alt="Frost Ui" className={styles.logoImg} />
+                <div
+                    className={styles.logoCont}
+                    onClick={() => router.push("/")}
+                >
+                    <Image
+                        src={logoimg}
+                        alt="Frost Ui"
+                        className={styles.logoImg}
+                    />
                     <p className={styles.logotxt}>Frost UI</p>
                 </div>
-                <div className={`${styles.links} ${ isOpen ? styles.active : ""}`}>
-                    {
-                        navLinks.map((ele, i) => {
-                            return <Link className={styles.link} href={ele.path} key={i} onMouseEnter={startHoverSoundTimer} onMouseLeave={clearHoverSoundTimer}>
+                <div
+                    className={`${styles.links} ${isOpen ? styles.active : ""}`}
+                >
+                    {navLinks.map((ele, i) => {
+                        return (
+                            <Link
+                                className={styles.link}
+                                href={ele.path}
+                                key={i}
+                                onMouseEnter={startHoverSoundTimer}
+                                onMouseLeave={clearHoverSoundTimer}
+                            >
                                 {ele.name}
                             </Link>
-                        })
-                    }
+                        );
+                    })}
                 </div>
-                <div className={`${styles.hamburger} ${isOpen ? styles.active : ""}`} onClick={() => setIsOpen(prev => !prev)}>
+                <div
+                    className={`${styles.hamburger} ${isOpen ? styles.active : ""}`}
+                    onClick={() => setIsOpen((prev) => !prev)}
+                >
                     <span className={styles.line}></span>
                     <span className={styles.line}></span>
                     <span className={styles.line}></span>

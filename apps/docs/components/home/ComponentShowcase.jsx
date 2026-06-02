@@ -1,7 +1,5 @@
 "use client";
 
-import React from "react";
-import Link from "next/link";
 import {
     Alert,
     AlertDescription,
@@ -27,14 +25,16 @@ import {
     Skeleton,
     Spinner,
     Switch,
-    Textarea,
-    Toggle,
     Tabs,
     TabsContent,
     TabsList,
     TabsTrigger,
+    Textarea,
+    Toggle,
 } from "@repo/components";
 import { Bell, Info, Settings } from "lucide-react";
+import Link from "next/link";
+import React from "react";
 import styles from "@/css/home/ComponentShowcase.module.css";
 
 const dataTableColumns = [
@@ -83,8 +83,12 @@ const bentoItems = [
         content: (
             <div className={styles.demoRow}>
                 <Button size="xs">Get Started</Button>
-                <Button size="xs" variant="outline">View Docs</Button>
-                <Button size="xs" variant="secondary">Install</Button>
+                <Button size="xs" variant="outline">
+                    View Docs
+                </Button>
+                <Button size="xs" variant="secondary">
+                    Install
+                </Button>
             </div>
         ),
     },
@@ -109,14 +113,20 @@ const bentoItems = [
             <Card className={styles.cardDemo}>
                 <CardHeader>
                     <CardTitle>Component Kit</CardTitle>
-                    <CardDescription>Ready-made primitives for product UI.</CardDescription>
+                    <CardDescription>
+                        Ready-made primitives for product UI.
+                    </CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <p>Build consistent forms, overlays, lists, and navigation.</p>
+                    <p>
+                        Build consistent forms, overlays, lists, and navigation.
+                    </p>
                 </CardContent>
                 <CardFooter>
                     <Button size="xs">Open</Button>
-                    <Button size="xs" variant="outline">Preview</Button>
+                    <Button size="xs" variant="outline">
+                        Preview
+                    </Button>
                 </CardFooter>
             </Card>
         ),
@@ -132,9 +142,13 @@ const bentoItems = [
                     <TabsTrigger value="code">Code</TabsTrigger>
                     <TabsTrigger value="install">Install</TabsTrigger>
                 </TabsList>
-                <TabsContent value="preview">Preview before shipping.</TabsContent>
+                <TabsContent value="preview">
+                    Preview before shipping.
+                </TabsContent>
                 <TabsContent value="code">Copy examples quickly.</TabsContent>
-                <TabsContent value="install">Install what you need.</TabsContent>
+                <TabsContent value="install">
+                    Install what you need.
+                </TabsContent>
             </Tabs>
         ),
     },
@@ -162,7 +176,9 @@ const bentoItems = [
             <Alert className={styles.alertDemo}>
                 <Info className="size-4" />
                 <AlertTitle>Deployment complete</AlertTitle>
-                <AlertDescription>Your latest build is now live.</AlertDescription>
+                <AlertDescription>
+                    Your latest build is now live.
+                </AlertDescription>
             </Alert>
         ),
     },
@@ -185,9 +201,15 @@ const bentoItems = [
         className: "",
         content: (
             <AvatarGroup>
-                <Avatar><AvatarFallback>AK</AvatarFallback></Avatar>
-                <Avatar><AvatarFallback>UI</AvatarFallback></Avatar>
-                <Avatar><AvatarFallback>RS</AvatarFallback></Avatar>
+                <Avatar>
+                    <AvatarFallback>AK</AvatarFallback>
+                </Avatar>
+                <Avatar>
+                    <AvatarFallback>UI</AvatarFallback>
+                </Avatar>
+                <Avatar>
+                    <AvatarFallback>RS</AvatarFallback>
+                </Avatar>
                 <AvatarGroupCount>+4</AvatarGroupCount>
             </AvatarGroup>
         ),
@@ -212,9 +234,15 @@ const bentoItems = [
         className: "",
         content: (
             <div className={styles.toggleRow}>
-                <Toggle size="sm" variant="outline">Grid</Toggle>
-                <Toggle size="sm" variant="outline">Cards</Toggle>
-                <Toggle size="sm" variant="outline">List</Toggle>
+                <Toggle size="sm" variant="outline">
+                    Grid
+                </Toggle>
+                <Toggle size="sm" variant="outline">
+                    Cards
+                </Toggle>
+                <Toggle size="sm" variant="outline">
+                    List
+                </Toggle>
             </div>
         ),
     },
@@ -290,8 +318,12 @@ const bentoItems = [
         content: (
             <div className={styles.demoRow}>
                 <Button size="xs">Import</Button>
-                <Button size="xs" variant="outline">Copy</Button>
-                <Button size="xs" variant="secondary">Share</Button>
+                <Button size="xs" variant="outline">
+                    Copy
+                </Button>
+                <Button size="xs" variant="secondary">
+                    Share
+                </Button>
             </div>
         ),
     },
@@ -315,7 +347,11 @@ const bentoItems = [
         className: "",
         content: (
             <div className={styles.iconRow}>
-                <Button size="icon-xs" variant="outline" aria-label="Notifications">
+                <Button
+                    size="icon-xs"
+                    variant="outline"
+                    aria-label="Notifications"
+                >
                     <Bell className="size-3" />
                 </Button>
                 <Button size="icon-xs" variant="outline" aria-label="Info">
@@ -358,7 +394,10 @@ const ComponentShowcase = () => {
                     <div className={styles.bentoHeader}>
                         <span>Components</span>
                         <h2>Preview the library from every angle.</h2>
-                        <p>Each tile spotlights a core building block, ready to compose into real UI.</p>
+                        <p>
+                            Each tile spotlights a core building block, ready to
+                            compose into real UI.
+                        </p>
                     </div>
                     <div className={styles.bentoGrid}>
                         {bentoItems.map((item) => (

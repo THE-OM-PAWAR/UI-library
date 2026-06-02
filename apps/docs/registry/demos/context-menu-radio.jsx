@@ -1,12 +1,12 @@
 "use client";
 import {
     ContextMenu,
-    ContextMenuTrigger,
     ContextMenuContent,
+    ContextMenuLabel,
     ContextMenuRadioGroup,
     ContextMenuRadioItem,
-    ContextMenuLabel,
     ContextMenuSeparator,
+    ContextMenuTrigger,
 } from "@repo/components";
 
 import { useState } from "react";
@@ -22,9 +22,7 @@ export default function ContextMenuRadio() {
                 </ContextMenuTrigger>
 
                 <ContextMenuContent>
-                    <ContextMenuLabel>
-                        Panel Position
-                    </ContextMenuLabel>
+                    <ContextMenuLabel>Panel Position</ContextMenuLabel>
 
                     <ContextMenuSeparator />
 

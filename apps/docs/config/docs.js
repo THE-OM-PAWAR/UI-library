@@ -71,7 +71,11 @@ export const docsConfig = {
                 { title: "Breadcrumb", href: "/docs/breadcrumb" },
                 { title: "Button", href: "/docs/button" },
 
-                { title: "Button Group", href: "/docs/button-group", label: "New" },
+                {
+                    title: "Button Group",
+                    href: "/docs/button-group",
+                    label: "New",
+                },
                 { title: "Calendar", href: "/docs/calendar" },
                 { title: "Card", href: "/docs/card" },
                 { title: "Carousel", href: "/docs/carousel" },
@@ -83,7 +87,11 @@ export const docsConfig = {
                 { title: "Data Table", href: "/docs/data-table" },
                 { title: "Dialog", href: "/docs/dialog", label: "New" },
                 { title: "Drawer", href: "/docs/drawer", label: "New" },
-                { title: "Dropdown Menu", href: "/docs/dropdown-menu", label: "New" },
+                {
+                    title: "Dropdown Menu",
+                    href: "/docs/dropdown-menu",
+                    label: "New",
+                },
                 { title: "Empty", href: "/docs/empty" },
                 { title: "Field", href: "/docs/field" },
                 { title: "Headings", href: "/docs/headings", label: "New" },
@@ -273,7 +281,6 @@ export const docsConfig = {
                     title: "Avatar",
                     href: "/docs/avatar",
                 },
-
             ],
         },
     ],

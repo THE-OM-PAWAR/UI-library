@@ -1,10 +1,10 @@
-import React from "react";
 import {
     Accordion,
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
 } from "@repo/components";
+import React from "react";
 import styles from "@/css/home/FAQ.module.css";
 
 const faqs = [

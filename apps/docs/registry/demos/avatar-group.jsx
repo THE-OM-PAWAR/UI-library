@@ -10,10 +10,7 @@ export default function AvatarGroupDemo() {
     return (
         <AvatarGroup>
             <Avatar>
-                <AvatarImage
-                    src="https://github.com/shadcn.png"
-                    alt="shadcn"
-                />
+                <AvatarImage src="https://github.com/shadcn.png" alt="shadcn" />
                 <AvatarFallback>SC</AvatarFallback>
             </Avatar>
             <Avatar>

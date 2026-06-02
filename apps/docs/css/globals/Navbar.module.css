@@ -14,7 +14,12 @@
     left: 0;
     right: 0;
     z-index: 50;
-    transition: top 0.25s ease, transform 0.25s ease, width 0.25s ease, margin 0.25s ease, border-radius 0.25s ease;
+    transition:
+        top 0.25s ease,
+        transform 0.25s ease,
+        width 0.25s ease,
+        margin 0.25s ease,
+        border-radius 0.25s ease;
     background: var(--color-base-100);
     margin-inline: auto;
 }
@@ -95,28 +100,25 @@
         linear-gradient(to bottom, #bfdbfe, #3b82f6) 66% 0 / 8px 22px no-repeat,
         linear-gradient(to bottom, #dbeafe, #3b82f6) 82% 0 / 9px 13px no-repeat;
 
-    clip-path: polygon(12% 0,
-            18% 65%,
-            24% 0,
+    clip-path: polygon(
+        12% 0,
+        18% 65%,
+        24% 0,
+        32% 0,
+        37% 100%,
+        42% 0,
+        50% 0,
+        55% 45%,
+        60% 0,
+        68% 0,
+        73% 85%,
+        78% 0,
+        86% 0,
+        91% 55%,
+        96% 0
+    );
 
-            32% 0,
-            37% 100%,
-            42% 0,
-
-            50% 0,
-            55% 45%,
-            60% 0,
-
-            68% 0,
-            73% 85%,
-            78% 0,
-
-            86% 0,
-            91% 55%,
-            96% 0);
-
-    filter:
-        drop-shadow(0 0 6px #3b82f6) drop-shadow(0 0 12px #60a5fa);
+    filter: drop-shadow(0 0 6px #3b82f6) drop-shadow(0 0 12px #60a5fa);
 }
 
 .link:hover::after {
@@ -169,7 +171,7 @@
     .hamburger {
         display: flex;
     }
-    
+
     .links {
         position: fixed;
         top: 0;
@@ -187,18 +189,25 @@
         pointer-events: none;
         transform: translateX(100%);
         visibility: hidden;
-        transition: right 0.3s ease, transform 0.3s ease, opacity 0.2s ease, visibility 0s linear 0.3s;
+        transition:
+            right 0.3s ease,
+            transform 0.3s ease,
+            opacity 0.2s ease,
+            visibility 0s linear 0.3s;
     }
-    
+
     .links.active {
         right: 0;
         opacity: 1;
         pointer-events: auto;
         transform: translateX(0);
         visibility: visible;
-        transition: right 0.3s ease, transform 0.3s ease, opacity 0.2s ease;
+        transition:
+            right 0.3s ease,
+            transform 0.3s ease,
+            opacity 0.2s ease;
     }
-    
+
     .link {
         font-size: 20px;
     }

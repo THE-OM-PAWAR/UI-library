@@ -81,12 +81,12 @@ function Calendar({
                     defaultClassNames.caption_label
                 ),
                 table: cn("w-full border-collapse", defaultClassNames.table),
-                weekdays: cn("flex", defaultClassNames.weekdays),
+                weekdays: cn("flex gap-1", defaultClassNames.weekdays),
                 weekday: cn(
                     "flex-1 rounded-md text-[0.8rem] font-normal text-muted-foreground select-none",
                     defaultClassNames.weekday
                 ),
-                week: cn("mt-2 flex w-full", defaultClassNames.week),
+                week: cn("mt-2 flex w-full gap-2", defaultClassNames.week),
                 week_number_header: cn(
                     "w-8 select-none",
                     defaultClassNames.week_number_header

@@ -20,6 +20,7 @@ import React from "react";
 
 export default function PaginationLanguage() {
   const [language, setLanguage] = React.useState("english");
+  const [currentPage, setCurrentPage] = React.useState(2);
 
   const translations = {
     english: { prev: "Previous", next: "Next", n1: "1", n2: "2", n3: "3" },
@@ -59,24 +60,36 @@ export default function PaginationLanguage() {
         <Pagination>
           <PaginationContent>
             <PaginationItem>
-              <PaginationPrevious href="#" text={t.prev} />
+              <PaginationPrevious 
+                href="#" 
+                text={t.prev} 
+                onClick={(e) => { e.preventDefault(); setCurrentPage(prev => Math.max(prev - 1, 1)); }}
+                className={currentPage === 1 ? "pointer-events-none opacity-50" : "cursor-pointer"}
+              />
             </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#">{t.n1}</PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#" isActive>
-                {t.n2}
-              </PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#">{t.n3}</PaginationLink>
-            </PaginationItem>
+            
+            {[1, 2, 3].map((page) => (
+              <PaginationItem key={page}>
+                <PaginationLink 
+                  href="#" 
+                  isActive={currentPage === page}
+                  onClick={(e) => { e.preventDefault(); setCurrentPage(page); }}
+                >
+                  {page === 1 ? t.n1 : page === 2 ? t.n2 : t.n3}
+                </PaginationLink>
+              </PaginationItem>
+            ))}
+            
             <PaginationItem>
               <PaginationEllipsis />
             </PaginationItem>
             <PaginationItem>
-              <PaginationNext href="#" text={t.next} />
+              <PaginationNext 
+                href="#" 
+                text={t.next} 
+                onClick={(e) => { e.preventDefault(); setCurrentPage(prev => Math.min(prev + 1, 3)); }}
+                className={currentPage === 3 ? "pointer-events-none opacity-50" : "cursor-pointer"}
+              />
             </PaginationItem>
           </PaginationContent>
         </Pagination>

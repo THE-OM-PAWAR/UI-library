@@ -1,14 +1,25 @@
+"use client";
+
 import { Pagination, PaginationContent, PaginationItem, PaginationLink } from "@repo/components";
+import React, { useState } from "react";
 
 export default function PaginationNumbers() {
+  const [currentPage, setCurrentPage] = useState(2);
+
   return (
     <Pagination>
       <PaginationContent>
-        <PaginationItem><PaginationLink href="#">1</PaginationLink></PaginationItem>
-        <PaginationItem><PaginationLink href="#" isActive>2</PaginationLink></PaginationItem>
-        <PaginationItem><PaginationLink href="#">3</PaginationLink></PaginationItem>
-        <PaginationItem><PaginationLink href="#">4</PaginationLink></PaginationItem>
-        <PaginationItem><PaginationLink href="#">5</PaginationLink></PaginationItem>
+        {[1, 2, 3, 4, 5].map((page) => (
+          <PaginationItem key={page}>
+            <PaginationLink 
+              href="#" 
+              isActive={currentPage === page}
+              onClick={(e) => { e.preventDefault(); setCurrentPage(page); }}
+            >
+              {page}
+            </PaginationLink>
+          </PaginationItem>
+        ))}
       </PaginationContent>
     </Pagination>
   );

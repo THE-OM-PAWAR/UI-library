@@ -281,6 +281,7 @@ export const docsConfig = {
                     title: "Avatar",
                     href: "/docs/avatar",
                 },
+                
             ],
         },
     ],

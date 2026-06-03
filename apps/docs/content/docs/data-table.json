@@ -4,7 +4,7 @@
     "component": "DataTable",
 
     "installation": {
-        "cli": "npx shadcn@latest add table",
+        "cli": "npx frostui@latest add table",
 
         "manual": [
             {

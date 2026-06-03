@@ -3,7 +3,7 @@
     "description": "A flexible image component with support for object-fit, object-position, loading priority, and lazy loading.",
     "component": "Image",
     "installation": {
-        "cli": "npx shadcn@latest add image",
+        "cli": "npx frostui@latest add image",
         "manual": [
             {
                 "title": "Add utility function",

@@ -3,7 +3,7 @@
     "description": "Displays keyboard shortcuts and key combinations.",
     "component": "Kbd",
     "installation": {
-        "cli": "npx shadcn@latest add kbd",
+        "cli": "npx frostui@latest add kbd",
         "manual": [
             {
                 "title": "Add utility function",

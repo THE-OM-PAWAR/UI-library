@@ -3,7 +3,7 @@
     "description": "A sidebar component for building navigation layouts with header, content, menu items, groups, and footer.",
     "component": "Sidebar",
     "installation": {
-        "cli": "npx shadcn@latest add sidebar",
+        "cli": "npx frostui@latest add sidebar",
         "manual": [
             {
                 "title": "Copy the component code",

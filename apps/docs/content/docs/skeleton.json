@@ -3,7 +3,7 @@
     "description": "A loading placeholder that previews the shape of content.",
     "component": "Skeleton",
     "installation": {
-        "cli": "npx shadcn@latest add skeleton",
+        "cli": "npx frostui@latest add skeleton",
         "manual": [
             {
                 "title": "Add utility function",

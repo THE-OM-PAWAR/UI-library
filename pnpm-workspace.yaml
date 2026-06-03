@@ -1,11 +1,5 @@
 packages:
   - 'apps/*'
   - 'packages/*'
-supportedArchitectures:
-  os:
-    - win32
-  cpu:
-    - x64
-    - arm64
 allowBuilds:
   esbuild: false

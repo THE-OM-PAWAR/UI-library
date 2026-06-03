@@ -3,7 +3,7 @@
     "description": "Pagination controls for navigating through pages of content.",
     "component": "Pagination",
     "installation": {
-        "cli": "npx shadcn@latest add pagination",
+        "cli": "npx frostui@latest add pagination",
         "manual": [
             {
                 "title": "Add utility function",

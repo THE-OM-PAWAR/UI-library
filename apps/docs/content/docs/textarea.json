@@ -3,7 +3,7 @@
     "description": "A multi-line text input with support for custom radius, rows, labels, validation states, and footers.",
     "component": "Textarea",
     "installation": {
-        "cli": "npx shadcn@latest add textarea",
+        "cli": "npx frostui@latest add textarea",
         "manual": [
             {
                 "title": "Add utility function",

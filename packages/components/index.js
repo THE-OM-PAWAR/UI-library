@@ -230,21 +230,15 @@ export {
 // Combobox
 export {
     Combobox,
-    ComboboxChip,
-    ComboboxChips,
-    ComboboxChipsInput,
-    ComboboxCollection,
     ComboboxContent,
     ComboboxEmpty,
     ComboboxGroup,
-    ComboboxInput,
     ComboboxItem,
     ComboboxLabel,
     ComboboxList,
+    ComboboxSearch,
     ComboboxSeparator,
     ComboboxTrigger,
-    ComboboxValue,
-    useComboboxAnchor,
 } from "./ui/combobox.jsx";
 export { DirectionProvider } from "./ui/direction.jsx";
 export {
@@ -269,7 +263,6 @@ export {
 export {
     InputGroup,
     InputGroupAddon,
-    InputGroupButton,
     InputGroupInput,
 } from "./ui/inputgroup.jsx";
 // Navigation Menu
@@ -340,3 +333,4 @@ export {
     SidebarMenuItem,
     SidebarSeparator,
 } from "./ui/sidebar.jsx";
+

@@ -3,7 +3,7 @@
     "description": "Displays rich preview content when users hover over a trigger.",
     "component": "HoverCard",
     "installation": {
-        "cli": "npx shadcn@latest add hover-card",
+        "cli": "npx frostui@latest add hover-card",
         "manual": [
             {
                 "title": "Install dependencies",

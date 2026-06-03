@@ -3,7 +3,7 @@
     "description": "Renders an accessible label for form controls.",
     "component": "Label",
     "installation": {
-        "cli": "npx shadcn@latest add label",
+        "cli": "npx frostui@latest add label",
         "manual": [
             {
                 "title": "Install dependencies",

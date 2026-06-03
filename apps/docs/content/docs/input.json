@@ -3,7 +3,7 @@
     "description": "Displays a form input field.",
     "component": "Input",
     "installation": {
-        "cli": "npx shadcn@latest add input",
+        "cli": "npx frostui@latest add input",
         "manual": [
             {
                 "title": "Add utility function",

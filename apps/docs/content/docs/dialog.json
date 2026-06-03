@@ -3,7 +3,7 @@
     "description": "A window overlaid on either the primary window or another dialog window, built on Radix UI Dialog.",
     "component": "Dialog",
     "installation": {
-        "cli": "npx shadcn@latest add dialog",
+        "cli": "npx frostui@latest add dialog",
         "manual": [
             {
                 "title": "Install dependencies",

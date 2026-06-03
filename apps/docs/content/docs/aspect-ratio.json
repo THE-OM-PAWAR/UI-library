@@ -3,7 +3,7 @@
     "description": "Displays content within a desired ratio.",
     "component": "AspectRatio",
     "installation": {
-        "cli": "npx shadcn@latest add aspect-ratio",
+        "cli": "npx frostui@latest add aspect-ratio",
         "manual": [
             {
                 "title": "Install dependencies",
@@ -26,39 +26,9 @@
     "examples": [
         {
             "title": "Default",
-            "description": "A portrait card using a 4:5 ratio.",
+            "description": "A basic aspect ratio example.",
             "demo": "aspect-ratio-demo",
-            "code": "import { AspectRatio } from \"@repo/components\";\n\nexport default function AspectRatioDemo() {\n    return (\n        <div className=\"w-full max-w-xs overflow-hidden rounded-lg border bg-muted shadow-sm\">\n            <AspectRatio ratio={4 / 5}>\n                <img\n                    src=\"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop\"\n                    alt=\"House surrounded by trees at sunset\"\n                    className=\"h-full w-full object-cover\"\n                />\n            </AspectRatio>\n        </div>\n    );\n}"
-        },
-        {
-            "title": "Widescreen",
-            "description": "A classic 16:9 frame for videos, hero media, and landscape images.",
-            "demo": "aspect-ratio-widescreen",
-            "code": "import { AspectRatio } from \"@repo/components\";\n\nexport default function AspectRatioWidescreen() {\n    return (\n        <div className=\"w-full max-w-lg overflow-hidden rounded-lg border bg-muted shadow-sm\">\n            <AspectRatio ratio={16 / 9}>\n                <img\n                    src=\"https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1200&auto=format&fit=crop\"\n                    alt=\"Mountain valley under a cloudy sky\"\n                    className=\"h-full w-full object-cover\"\n                />\n            </AspectRatio>\n        </div>\n    );\n}"
-        },
-        {
-            "title": "Square",
-            "description": "A 1:1 frame for avatars, thumbnails, and compact previews.",
-            "demo": "aspect-ratio-square",
-            "code": "import { AspectRatio } from \"@repo/components\";\n\nexport default function AspectRatioSquare() {\n    return (\n        <div className=\"w-full max-w-xs overflow-hidden rounded-lg border bg-muted shadow-sm\">\n            <AspectRatio ratio={1}>\n                <img\n                    src=\"https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1200&auto=format&fit=crop\"\n                    alt=\"Geometric building facade\"\n                    className=\"h-full w-full object-cover\"\n                />\n            </AspectRatio>\n        </div>\n    );\n}"
-        },
-        {
-            "title": "Portrait",
-            "description": "A 3:4 frame for mobile previews, posters, and vertical images.",
-            "demo": "aspect-ratio-portrait",
-            "code": "import { AspectRatio } from \"@repo/components\";\n\nexport default function AspectRatioPortrait() {\n    return (\n        <div className=\"w-full max-w-64 overflow-hidden rounded-lg border bg-muted shadow-sm\">\n            <AspectRatio ratio={3 / 4}>\n                <img\n                    src=\"https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?q=80&w=1200&auto=format&fit=crop\"\n                    alt=\"Canal between colorful buildings\"\n                    className=\"h-full w-full object-cover\"\n                />\n            </AspectRatio>\n        </div>\n    );\n}"
-        },
-        {
-            "title": "Ultrawide",
-            "description": "A 21:9 frame for panoramic images and cinematic banners.",
-            "demo": "aspect-ratio-ultrawide",
-            "code": "import { AspectRatio } from \"@repo/components\";\n\nexport default function AspectRatioUltrawide() {\n    return (\n        <div className=\"w-full max-w-xl overflow-hidden rounded-lg border bg-muted shadow-sm\">\n            <AspectRatio ratio={21 / 9}>\n                <img\n                    src=\"https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?q=80&w=1400&auto=format&fit=crop\"\n                    alt=\"Forest landscape with mist\"\n                    className=\"h-full w-full object-cover\"\n                />\n            </AspectRatio>\n        </div>\n    );\n}"
-        },
-        {
-            "title": "Gallery",
-            "description": "A mixed layout showing multiple ratios together.",
-            "demo": "aspect-ratio-gallery",
-            "code": "import { AspectRatio } from \"@repo/components\";\n\nconst items = [\n    {\n        ratio: 16 / 9,\n        src: \"https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1000&auto=format&fit=crop\",\n        alt: \"Lake and mountains\",\n        label: \"16:9\",\n    },\n    {\n        ratio: 1,\n        src: \"https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=1000&auto=format&fit=crop\",\n        alt: \"Sunlight through forest trees\",\n        label: \"1:1\",\n    },\n    {\n        ratio: 4 / 5,\n        src: \"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1000&auto=format&fit=crop\",\n        alt: \"House surrounded by trees at sunset\",\n        label: \"4:5\",\n    },\n];\n\nexport default function AspectRatioGallery() {\n    return (\n        <div className=\"grid w-full max-w-3xl gap-4 sm:grid-cols-3\">\n            {items.map((item) => (\n                <div\n                    key={item.label}\n                    className=\"overflow-hidden rounded-lg border bg-muted shadow-sm\"\n                >\n                    <AspectRatio ratio={item.ratio}>\n                        <img\n                            src={item.src}\n                            alt={item.alt}\n                            className=\"h-full w-full object-cover\"\n                        />\n                    </AspectRatio>\n                    <div className=\"border-t bg-background px-3 py-2 text-sm font-medium\">\n                        {item.label}\n                    </div>\n                </div>\n            ))}\n        </div>\n    );\n}"
+            "code": "import { AspectRatio } from \"@repo/components\";\n\nexport default function AspectRatioDemo() {\n  return (\n    <div className=\"w-full max-w-sm overflow-hidden rounded-lg border bg-muted\">\n      <AspectRatio ratio={16 / 9}>\n        <img\n          src=\"https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop\"\n          alt=\"Workspace\"\n          className=\"h-full w-full object-cover\"\n        />\n      </AspectRatio>\n    </div>\n  );\n}"
         }
     ]
 }

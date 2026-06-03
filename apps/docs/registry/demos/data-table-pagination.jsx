@@ -13,8 +13,8 @@ export default function DataTablePagination() {
                     index % 3 === 0
                         ? "Paid"
                         : index % 3 === 1
-                        ? "Pending"
-                        : "Failed",
+                          ? "Pending"
+                          : "Failed",
                 amount: `$${(index + 1) * 25}`,
             })),
         []
@@ -42,11 +42,7 @@ export default function DataTablePagination() {
 
     return (
         <div className="w-full max-w-5xl">
-            <DataTable
-                columns={columns}
-                data={data}
-                showFilter={false}
-            />
+            <DataTable columns={columns} data={data} showFilter={false} />
         </div>
     );
 }

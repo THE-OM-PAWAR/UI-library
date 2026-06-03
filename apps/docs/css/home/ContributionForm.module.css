@@ -1,11 +1,13 @@
 .wraper {
     width: 100%;
-    background: linear-gradient(180deg,
-            #76a7fd 0%,
-            #8fb7fb 24%,
-            #bed3fc 52%,
-            #e9effd 78%,
-            #fefdfe 100%);
+    background: linear-gradient(
+        180deg,
+        #76a7fd 0%,
+        #8fb7fb 24%,
+        #bed3fc 52%,
+        #e9effd 78%,
+        #fefdfe 100%
+    );
 }
 
 .section {
@@ -53,12 +55,16 @@
     border-radius: 16px;
     background: rgba(255, 255, 255, 0.28);
     color: #173158;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.42),
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.42),
         0 12px 28px rgba(67, 109, 178, 0.12);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-    transition: border-color 180ms ease, box-shadow 180ms ease,
-        background 180ms ease, transform 180ms ease;
+    transition:
+        border-color 180ms ease,
+        box-shadow 180ms ease,
+        background 180ms ease,
+        transform 180ms ease;
 }
 
 .glassInput::placeholder {
@@ -68,7 +74,8 @@
 .glassInput:focus-visible {
     border-color: rgba(37, 99, 235, 0.72);
     background: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.14),
+    box-shadow:
+        0 0 0 4px rgba(37, 99, 235, 0.14),
         0 16px 34px rgba(67, 109, 178, 0.18);
     outline: none;
 }
@@ -88,7 +95,9 @@
     box-shadow: 0 16px 34px rgba(37, 99, 235, 0.32);
     color: #ffffff;
     font-weight: 700;
-    transition: box-shadow 180ms ease, transform 180ms ease,
+    transition:
+        box-shadow 180ms ease,
+        transform 180ms ease,
         filter 180ms ease;
 }
 
@@ -126,7 +135,9 @@
     display: inline-flex;
     position: relative;
     border-radius: 999px;
-    transition: transform 180ms ease, filter 180ms ease;
+    transition:
+        transform 180ms ease,
+        filter 180ms ease;
 }
 
 .contributorList a:hover {
@@ -154,7 +165,9 @@
     pointer-events: none;
     text-overflow: ellipsis;
     transform: translate(-50%, 0.35rem) scale(0.96);
-    transition: opacity 160ms ease, transform 160ms ease;
+    transition:
+        opacity 160ms ease,
+        transform 160ms ease;
     white-space: nowrap;
 }
 
@@ -181,7 +194,8 @@
     height: 6rem;
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.36);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
         0 12px 28px rgba(67, 109, 178, 0.12);
     animation: pulse 1.2s ease-in-out infinite;
 }

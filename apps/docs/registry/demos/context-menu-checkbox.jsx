@@ -1,11 +1,11 @@
 "use client";
 import {
     ContextMenu,
-    ContextMenuTrigger,
-    ContextMenuContent,
     ContextMenuCheckboxItem,
+    ContextMenuContent,
     ContextMenuLabel,
     ContextMenuSeparator,
+    ContextMenuTrigger,
 } from "@repo/components";
 
 import { useState } from "react";
@@ -21,9 +21,7 @@ export default function ContextMenuCheckbox() {
             </ContextMenuTrigger>
 
             <ContextMenuContent>
-                <ContextMenuLabel>
-                    Preferences
-                </ContextMenuLabel>
+                <ContextMenuLabel>Preferences</ContextMenuLabel>
 
                 <ContextMenuSeparator />
 

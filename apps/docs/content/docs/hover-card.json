@@ -29,6 +29,12 @@
             "description": "A basic hover card example.",
             "demo": "hover-card-demo",
             "code": "import { HoverCard, HoverCardContent, HoverCardTrigger } from \"@repo/components\";\n\nexport default function HoverCardDemo() {\n  return (\n    <HoverCard>\n      <HoverCardTrigger asChild>\n        <button className=\"rounded-md border px-3 py-2 text-sm font-medium\">@uilib</button>\n      </HoverCardTrigger>\n      <HoverCardContent className=\"w-72\">\n        <div className=\"space-y-1\">\n          <h4 className=\"text-sm font-semibold\">UI Library</h4>\n          <p className=\"text-sm text-muted-foreground\">Composable components for polished application interfaces.</p>\n        </div>\n      </HoverCardContent>\n    </HoverCard>\n  );\n}"
+        },
+        {
+            "title": "Placement",
+            "description": "The hover card can be placed on different sides of the trigger using the side prop.",
+            "demo": "HoverCardSides",
+            "code": "import { Button, HoverCard, HoverCardContent, HoverCardTrigger } from \"@repo/components\";\n\nconst HOVER_CARD_SIDES = [\"left\", \"top\", \"bottom\", \"right\"];\n\nexport default function HoverCardSides() {\n  return (\n    <div className=\"flex flex-wrap justify-center gap-2\">\n      {HOVER_CARD_SIDES.map((side) => (\n        <HoverCard key={side} openDelay={100} closeDelay={100}>\n          <HoverCardTrigger asChild>\n            <Button variant=\"outline\" className=\"capitalize\">\n              {side}\n            </Button>\n          </HoverCardTrigger>\n          <HoverCardContent side={side}>\n            <div className=\"flex flex-col gap-1\">\n              <h4 className=\"font-medium\">Hover Card</h4>\n              <p className=\"text-sm text-muted-foreground\">This hover card appears on the {side} side of the trigger.</p>\n            </div>\n          </HoverCardContent>\n        </HoverCard>\n      ))}\n    </div>\n  );\n}"
         }
     ]
 }

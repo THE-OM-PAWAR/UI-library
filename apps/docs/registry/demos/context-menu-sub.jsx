@@ -1,11 +1,11 @@
 import {
     ContextMenu,
-    ContextMenuTrigger,
     ContextMenuContent,
     ContextMenuItem,
     ContextMenuSub,
-    ContextMenuSubTrigger,
     ContextMenuSubContent,
+    ContextMenuSubTrigger,
+    ContextMenuTrigger,
 } from "@repo/components";
 
 export default function ContextMenuSubDemo() {
@@ -19,9 +19,7 @@ export default function ContextMenuSubDemo() {
                 <ContextMenuItem>Dashboard</ContextMenuItem>
 
                 <ContextMenuSub>
-                    <ContextMenuSubTrigger>
-                        Share
-                    </ContextMenuSubTrigger>
+                    <ContextMenuSubTrigger>Share</ContextMenuSubTrigger>
 
                     <ContextMenuSubContent>
                         <ContextMenuItem>Email</ContextMenuItem>

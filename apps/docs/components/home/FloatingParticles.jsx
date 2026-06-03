@@ -95,13 +95,25 @@ const FloatingParticles = () => {
                     particle.y,
                     particle.radius * 4
                 );
-                gradient.addColorStop(0, `rgba(${PARTICLE_GLOW}, ${particle.alpha})`);
-                gradient.addColorStop(0.45, `rgba(${PARTICLE_COLOR}, ${particle.alpha})`);
+                gradient.addColorStop(
+                    0,
+                    `rgba(${PARTICLE_GLOW}, ${particle.alpha})`
+                );
+                gradient.addColorStop(
+                    0.45,
+                    `rgba(${PARTICLE_COLOR}, ${particle.alpha})`
+                );
                 gradient.addColorStop(1, `rgba(${PARTICLE_COLOR}, 0)`);
 
                 context.beginPath();
                 context.fillStyle = gradient;
-                context.arc(particle.x, particle.y, particle.radius * 4, 0, Math.PI * 2);
+                context.arc(
+                    particle.x,
+                    particle.y,
+                    particle.radius * 4,
+                    0,
+                    Math.PI * 2
+                );
                 context.fill();
             });
 
@@ -124,7 +136,13 @@ const FloatingParticles = () => {
         };
     }, []);
 
-    return <canvas ref={canvasRef} className={styles.particles} aria-hidden="true" />;
+    return (
+        <canvas
+            ref={canvasRef}
+            className={styles.particles}
+            aria-hidden="true"
+        />
+    );
 };
 
 export default FloatingParticles;

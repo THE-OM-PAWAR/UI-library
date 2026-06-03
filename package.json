@@ -8,12 +8,23 @@
         "build": "pnpm -r build",
         "clean": "pnpm -r clean",
         "generate:theme": "pnpm --filter @repo/config generate:theme",
-        "lint": "biome lint --write .",
-        "format": "biome format --write .",
-        "check": "biome check --write ."
+        "biome:format": "pnpx @biomejs/biome format --write --no-errors-on-unmatched --max-diagnostics=none",
+        "biome:lint": "pnpx @biomejs/biome lint --write --no-errors-on-unmatched --max-diagnostics=none",
+        "biome:check": "pnpx @biomejs/biome check --write --no-errors-on-unmatched --max-diagnostics=none",
+        "biome:clean": "pnpx @biomejs/biome clean",
+        "prepare": "husky"
+    },
+    "lint-staged": {
+        "*": [
+            "pnpx @biomejs/biome check --write --no-errors-on-unmatched --max-diagnostics=none",
+            "pnpx @biomejs/biome format --write --no-errors-on-unmatched --max-diagnostics=none",
+            "pnpx @biomejs/biome lint --write --no-errors-on-unmatched --max-diagnostics=none"
+        ]
     },
     "devDependencies": {
         "@biomejs/biome": "^2.4.13",
+        "husky": "^9.1.7",
+        "lint-staged": "^17.0.7",
         "pnpm": "^8.15.0"
     }
 }

@@ -30,15 +30,26 @@ function PaginationItem(props) {
     return <li data-slot="pagination-item" {...props} />;
 }
 
-function PaginationLink({ className, isActive, size = "icon", ...props }) {
+function PaginationLink({ className, isActive, size = "icon", onClick, href, ...props }) {
+    const handleClick = (e) => {
+        if (href === "#") {
+            e.preventDefault();
+        }
+        if (onClick) {
+            onClick(e);
+        }
+    };
+
     return (
         <Button
             asChild
-            variant={isActive ? "outline" : "ghost"}
+            variant={isActive ? "default" : "ghost"}
             size={size}
             className={cn(className)}
         >
             <a
+                href={href}
+                onClick={handleClick}
                 aria-current={isActive ? "page" : undefined}
                 data-slot="pagination-link"
                 data-active={isActive}

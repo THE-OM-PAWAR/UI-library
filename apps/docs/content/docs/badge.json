@@ -29,7 +29,7 @@
     },
     "usage": {
         "import": "import { Badge } from '@repo/components';",
-    
+
         "basic": "badge-demo"
     },
     "examples": [
@@ -45,7 +45,7 @@
             "demo": "badge-with-icon",
             "code": "import { BadgeCheck, BookmarkIcon } from \"lucide-react\";\nimport { Badge } from \"@repo/components\";\n\nexport default function BadgeWithIcon() {\n  return (\n    <div className=\"flex flex-wrap gap-2\">\n      <Badge variant=\"secondary\">\n        <BadgeCheck data-icon=\"inline-start\" />\n        Verified\n      </Badge>\n      <Badge variant=\"outline\">\n        Bookmark\n        <BookmarkIcon data-icon=\"inline-end\" />\n      </Badge>\n    </div>\n  );\n}"
         },
-      
+
         {
             "title": "Spinner",
             "description": "You can render a spinner inside the badge. Remember to add the data-icon=\"inline-start\" or data-icon=\"inline-end\" prop to the spinner.",
@@ -57,15 +57,12 @@
             "description": "Use the asChild prop to render a link as a badge.",
             "demo": "badge-link",
             "code": "import { ArrowUpRightIcon } from \"lucide-react\";\n\nimport { Badge } from \"@repo/components\";\n\nexport default function BadgeAsLink() {\n  return (\n    <Badge asChild>\n      <a href=\"#link\" className=\"flex items-center\">\n        Open Link <ArrowUpRightIcon data-icon=\"inline-end\" />\n      </a>\n    </Badge>\n  );\n}"
-
         },
         {
             "title": "Customs Colors",
             "description": "You can customize the colors of a badge by adding custom classes such as bg-green-50 dark:bg-green-800 to the Badge component.",
             "demo": "badge-color",
             "code": "import { Badge } from \"@/components/ui/badge\";\n\nexport function BadgeCustomColors() {\n  return (\n    <div className=\"flex flex-wrap gap-2\">\n      <Badge className=\"bg-blue-50 text-blue-700 dark:bg-blue-950 dark:text-blue-300\">\n        Blue\n      </Badge>\n      <Badge className=\"bg-green-50 text-green-700 dark:bg-green-950 dark:text-green-300\">\n        Green\n      </Badge>\n      <Badge className=\"bg-sky-50 text-sky-700 dark:bg-sky-950 dark:text-sky-300\">\n        Sky\n      </Badge>\n      <Badge className=\"bg-purple-50 text-purple-700 dark:bg-purple-950 dark:text-purple-300\">\n        Purple\n      </Badge>\n      <Badge className=\"bg-red-50 text-red-700 dark:bg-red-950 dark:text-red-300\">\n        Red\n      </Badge>\n    </div>\n  );\n}"
-
         }
-        
     ]
 }

@@ -1,7 +1,7 @@
-import React from 'react';
-import dynamic from 'next/dynamic';
-import styles from '@/css/home/Hero.module.css';
-import { div } from 'three/tsl';
+import dynamic from "next/dynamic";
+import React from "react";
+import { div } from "three/tsl";
+import styles from "@/css/home/Hero.module.css";
 
 const ReindeerModel = dynamic(() => import("./ReindeerModel"), {
     ssr: false,
@@ -13,14 +13,11 @@ const Hero = () => {
             <section className={styles.hero}>
                 <div className={styles.content}>
                     <div className={styles.heading}>
-                        Make Your UI 
-                        look Cool With 
-                        Frost UI.
+                        Make Your UI look Cool With Frost UI.
                     </div>
 
                     <div className={styles.description}>
-                        Don&apos;t waste time on writing css
-                        when we had did it.
+                        Don&apos;t waste time on writing css when we had did it.
                     </div>
 
                     <div className={styles.actions}>
@@ -39,7 +36,7 @@ const Hero = () => {
                 </div>
             </section>
         </div>
-    )
-}
+    );
+};
 
-export default Hero
+export default Hero;

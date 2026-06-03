@@ -30,3 +30,18 @@ export default function SheetDemo() {
         </div>
     );
 }
+        <Sheet>
+            <SheetTrigger asChild>
+                <Button variant="outline">Open sheet</Button>
+            </SheetTrigger>
+            <SheetContent>
+                <SheetHeader>
+                    <SheetTitle>Edit profile</SheetTitle>
+                    <SheetDescription>
+                        Make quick updates without leaving the page.
+                    </SheetDescription>
+                </SheetHeader>
+            </SheetContent>
+        </Sheet>
+    );
+}

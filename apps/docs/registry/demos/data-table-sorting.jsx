@@ -1,9 +1,6 @@
 "use client";
 
-import {
-    DataTable,
-    Button,
-} from "@repo/components";
+import { Button, DataTable } from "@repo/components";
 
 import { ArrowUpDown } from "lucide-react";
 import { useMemo } from "react";
@@ -40,9 +37,7 @@ export default function DataTableSorting() {
                         variant="ghost"
                         size="sm"
                         onClick={() =>
-                            column.toggleSorting(
-                                column.getIsSorted() === "asc"
-                            )
+                            column.toggleSorting(column.getIsSorted() === "asc")
                         }
                     >
                         Email

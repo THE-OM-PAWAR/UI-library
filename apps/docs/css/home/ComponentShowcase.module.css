@@ -1,11 +1,13 @@
 .wraper {
     width: 100%;
-    background: linear-gradient(180deg,
-            #76a7fd 0%,
-            #8fb7fb 24%,
-            #bed3fc 52%,
-            #e9effd 78%,
-            #fefdfe 100%);
+    background: linear-gradient(
+        180deg,
+        #76a7fd 0%,
+        #8fb7fb 24%,
+        #bed3fc 52%,
+        #e9effd 78%,
+        #fefdfe 100%
+    );
 }
 
 .showcase {
@@ -371,7 +373,6 @@
     background: rgba(255, 255, 255, 0.45);
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
-
 
 .primaryButton,
 .outlineButton,

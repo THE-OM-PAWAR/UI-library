@@ -10,11 +10,11 @@ export function DocsSidebar() {
     const pathname = usePathname();
 
     return (
-        <aside className="fixed top-16 z-30 hidden h-[calc(100vh-4rem)] w-64 shrink-0 overflow-y-auto border-r bg-background md:block">
-            <div className="px-4 py-6 lg:px-6">
+        <aside className="fixed top-16 z-30 hidden h-[calc(100vh-4rem)] shrink-0 overflow-y-auto border-r bg-background w-full max-w-xs md:block">
+            <div className="p-6">
                 {docsConfig.sidebarNav.map((section, i) => (
-                    <div key={i} className="pb-6">
-                        <h4 className="px-2 py-1 mb-2 text-sm font-semibold text-foreground">
+                    <div key={i} className="py-4">
+                        <h4 className="py-3 text-sm font-semibold text-foreground">
                             {section.title}
                         </h4>
                         <div className="grid grid-flow-row gap-1 text-sm auto-rows-max">
@@ -23,7 +23,7 @@ export function DocsSidebar() {
                                     key={index}
                                     href={item.href}
                                     className={cn(
-                                        "group flex w-auto items-center justify-between rounded-md px-2 py-1.5 text-sm transition-colors hover:text-foreground hover:bg-muted/50",
+                                        "group flex w-auto items-center justify-between rounded-md py-2 text-sm transition-colors hover:text-foreground hover:bg-muted/50",
                                         pathname === item.href
                                             ? "font-medium text-foreground bg-muted/30"
                                             : "text-muted-foreground"

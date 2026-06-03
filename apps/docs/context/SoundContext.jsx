@@ -1,5 +1,6 @@
 "use client";
 
+import { Howl, Howler } from "howler";
 import React, {
     createContext,
     useCallback,
@@ -9,7 +10,6 @@ import React, {
     useRef,
     useState,
 } from "react";
-import { Howl, Howler } from "howler";
 
 const SoundContext = createContext(null);
 const SOUND_STORAGE_KEY = "frost-ui-sound-enabled";

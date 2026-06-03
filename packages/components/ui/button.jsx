@@ -59,19 +59,30 @@ const Button = React.forwardRef(
         },
         ref
     ) => {
-        const Comp = asChild ? Slot : "button";
+        if (asChild) {
+            return (
+                <Slot
+                    ref={ref}
+                    className={cn(
+                        buttonVariants({ variant, size, fullWidth }),
+                        className
+                    )}
+                    {...props}
+                >
+                    {children}
+                </Slot>
+            );
+        }
 
         return (
-            <Comp
+            <button
                 ref={ref}
+                type={type}
                 className={cn(
                     buttonVariants({ variant, size, fullWidth }),
                     className
                 )}
-                {...(!asChild && {
-                    type,
-                    disabled: disabled || isLoading,
-                })}
+                disabled={disabled || isLoading}
                 aria-disabled={disabled || isLoading}
                 {...props}
             >
@@ -84,7 +95,7 @@ const Button = React.forwardRef(
                         {rightIcon && <span className="ml-2">{rightIcon}</span>}
                     </>
                 )}
-            </Comp>
+            </button>
         );
     }
 );

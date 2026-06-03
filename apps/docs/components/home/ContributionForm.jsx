@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
 // Email sending moved to a server API route to keep secrets server-side
 import {
     Avatar,
@@ -11,6 +10,7 @@ import {
     Label,
     Textarea,
 } from "@repo/components";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "@/css/home/ContributionForm.module.css";
 
 const CONTRIBUTORS_API =
@@ -73,34 +73,36 @@ const ContributionForm = () => {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        setSubmitStatus('sending');
+        setSubmitStatus("sending");
         try {
             // Send form data to a server-side API route — keep EmailJS secrets out of the client
             const form = new FormData(formRef.current);
             const template_params = Object.fromEntries(form.entries());
-            const resp = await fetch('/api/send-email', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ template_params })
+            const resp = await fetch("/api/send-email", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ template_params }),
             });
             if (!resp.ok) {
-                const text = await resp.text();
-                console.error('Email send error:', text);
-                setSubmitStatus('error');
+                await resp.text();
+                setSubmitStatus("error");
                 return;
             }
-            setSubmitStatus('success');
+            setSubmitStatus("success");
             e.target.reset();
-        } catch (error) {
-            console.error('Email send error:', error);
-            setSubmitStatus('error');
+        } catch {
+            setSubmitStatus("error");
         }
     }
 
     return (
         <div className={styles.wraper}>
             <section className={styles.section}>
-                <form ref={formRef} className={styles.form} onSubmit={handleSubmit}>
+                <form
+                    ref={formRef}
+                    className={styles.form}
+                    onSubmit={handleSubmit}
+                >
                     <h2 className={styles.heading}>Wanna Contribute ??</h2>
                     <div className={styles.row}>
                         <div className={styles.field}>
@@ -132,7 +134,9 @@ const ContributionForm = () => {
                         />
                     </div>
                     <div className={styles.field}>
-                        <Label htmlFor="contrib-notes">What can you contribute</Label>
+                        <Label htmlFor="contrib-notes">
+                            What can you contribute
+                        </Label>
                         <Textarea
                             id="contrib-notes"
                             name="message"
@@ -142,11 +146,25 @@ const ContributionForm = () => {
                         />
                     </div>
                     <div>
-                        <Button type="submit" className={styles.submitButton} disabled={submitStatus === 'sending'}>
-                            {submitStatus === 'sending' ? 'Sending...' : 'Submit contribution'}
+                        <Button
+                            type="submit"
+                            className={styles.submitButton}
+                            disabled={submitStatus === "sending"}
+                        >
+                            {submitStatus === "sending"
+                                ? "Sending..."
+                                : "Submit contribution"}
                         </Button>
-                        {submitStatus === 'success' && <span className={styles.success}>Thanks! We received your message.</span>}
-                        {submitStatus === 'error' && <span className={styles.error}>Failed to send. Try again later.</span>}
+                        {submitStatus === "success" && (
+                            <span className={styles.success}>
+                                Thanks! We received your message.
+                            </span>
+                        )}
+                        {submitStatus === "error" && (
+                            <span className={styles.error}>
+                                Failed to send. Try again later.
+                            </span>
+                        )}
                     </div>
                 </form>
                 <div className={styles.contributors}>
@@ -154,32 +172,37 @@ const ContributionForm = () => {
                     <div className={styles.contributorList}>
                         {isLoading
                             ? Array.from({ length: 5 }).map((_, index) => (
-                                <span
-                                    aria-hidden="true"
-                                    className={styles.avatarSkeleton}
-                                    key={index}
-                                />
-                            ))
+                                  <span
+                                      aria-hidden="true"
+                                      className={styles.avatarSkeleton}
+                                      key={index}
+                                  />
+                              ))
                             : contributors.map((contributor) => (
-                                <a
-                                    href={contributor.html_url}
-                                    key={contributor.id}
-                                    rel="noreferrer"
-                                    target="_blank"
-                                    data-name={contributor.login}
-                                    title={contributor.login}
-                                >
-                                    <Avatar size="lg" className={styles.contributorAvatar}>
-                                        <AvatarImage
-                                            alt={contributor.login}
-                                            src={contributor.avatar_url}
-                                        />
-                                        <AvatarFallback>
-                                            {contributor.login.slice(0, 2).toUpperCase()}
-                                        </AvatarFallback>
-                                    </Avatar>
-                                </a>
-                            ))}
+                                  <a
+                                      href={contributor.html_url}
+                                      key={contributor.id}
+                                      rel="noreferrer"
+                                      target="_blank"
+                                      data-name={contributor.login}
+                                      title={contributor.login}
+                                  >
+                                      <Avatar
+                                          size="lg"
+                                          className={styles.contributorAvatar}
+                                      >
+                                          <AvatarImage
+                                              alt={contributor.login}
+                                              src={contributor.avatar_url}
+                                          />
+                                          <AvatarFallback>
+                                              {contributor.login
+                                                  .slice(0, 2)
+                                                  .toUpperCase()}
+                                          </AvatarFallback>
+                                      </Avatar>
+                                  </a>
+                              ))}
                         {!isLoading && contributors.length === 0 ? (
                             <span className={styles.contributorEmpty}>
                                 Contributors could not be loaded right now.

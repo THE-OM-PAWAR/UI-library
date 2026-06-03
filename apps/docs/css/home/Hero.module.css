@@ -1,10 +1,12 @@
 .wraper {
-    background: linear-gradient(180deg,
-            #fefdfe 0%,
-            #e9effd 26%,
-            #bed3fc 52%,
-            #8fb7fb 78%,
-            #76a7fd 100%);
+    background: linear-gradient(
+        180deg,
+        #fefdfe 0%,
+        #e9effd 26%,
+        #bed3fc 52%,
+        #8fb7fb 78%,
+        #76a7fd 100%
+    );
     width: 100%;
 }
 

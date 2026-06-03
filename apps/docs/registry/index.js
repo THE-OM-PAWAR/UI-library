@@ -10,8 +10,7 @@ export const demoRegistry = {
     "aspect-ratio-portrait": () => import("./demos/aspect-ratio-portrait"),
     "aspect-ratio-square": () => import("./demos/aspect-ratio-square"),
     "aspect-ratio-ultrawide": () => import("./demos/aspect-ratio-ultrawide"),
-    "aspect-ratio-widescreen": () =>
-        import("./demos/aspect-ratio-widescreen"),
+    "aspect-ratio-widescreen": () => import("./demos/aspect-ratio-widescreen"),
     "avatar-demo": () => import("./demos/avatar-demo"),
     "avatar-group": () => import("./demos/avatar-group"),
     "badge-color": () => import("./demos/badge-color"),
@@ -47,7 +46,8 @@ export const demoRegistry = {
     "buttongroup-sizes": () => import("./demos/buttongroup-sizes"),
     "buttongroup-sm": () => import("./demos/buttongroup-sm"),
     "buttongroup-variants": () => import("./demos/buttongroup-variants"),
-    "buttongroup-with-dropdown": () => import("./demos/buttongroup-with-dropdown"),
+    "buttongroup-with-dropdown": () =>
+        import("./demos/buttongroup-with-dropdown"),
     "calendar-demo": () => import("./demos/calendar-demo"),
     "card-custom": () => import("./demos/card-custom"),
     "card-demo": () => import("./demos/card-demo"),
@@ -91,11 +91,13 @@ export const demoRegistry = {
     "dialog-with-form": () => import("./demos/dialog-with-form"),
     "drawer-demo": () => import("./demos/drawer-demo"),
     "drawer-directions": () => import("./demos/drawer-directions"),
-    "dropdown-menu-checkboxes": () => import("./demos/dropdown-menu-checkboxes"),
+    "dropdown-menu-checkboxes": () =>
+        import("./demos/dropdown-menu-checkboxes"),
     "dropdown-menu-demo": () => import("./demos/dropdown-menu-demo"),
     "dropdown-menu-radio": () => import("./demos/dropdown-menu-radio"),
     "dropdown-menu-submenu": () => import("./demos/dropdown-menu-submenu"),
-    "dropdown-menu-with-icons": () => import("./demos/dropdown-menu-with-icons"),
+    "dropdown-menu-with-icons": () =>
+        import("./demos/dropdown-menu-with-icons"),
     "empty-demo": () => import("./demos/empty-demo"),
     "field-demo": () => import("./demos/field-demo"),
     "headings-code": () => import("./demos/headings-code"),

@@ -14,8 +14,8 @@ export default function AlertDestructive() {
                 <AlertTriangle className="h-4 w-4" />
                 <AlertTitle>Delete failed</AlertTitle>
                 <AlertDescription>
-                    We couldn't delete your project due to a server error. Please
-                    try again.
+                    We couldn't delete your project due to a server error.
+                    Please try again.
                 </AlertDescription>
                 <AlertAction>
                     <Button size="xs" variant="outline">

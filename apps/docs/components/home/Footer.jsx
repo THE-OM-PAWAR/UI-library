@@ -1,7 +1,7 @@
-import Link from "next/link";
-import Image from "next/image";
-import React from "react";
 import { Github } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 import logoimg from "@/assets/images/logo.png";
 import styles from "@/css/home/Footer.module.css";
 
@@ -30,11 +30,18 @@ const Footer = () => {
             <div className={styles.inner}>
                 <div className={styles.brand}>
                     <div className={styles.mark}>
-                        <Image src={logoimg} alt="Frost UI" className={styles.logo} />
+                        <Image
+                            src={logoimg}
+                            alt="Frost UI"
+                            className={styles.logo}
+                        />
                     </div>
                     <div>
                         <h2>Frost UI</h2>
-                        <p>Clean React components for fast, polished interfaces.</p>
+                        <p>
+                            Clean React components for fast, polished
+                            interfaces.
+                        </p>
                     </div>
                 </div>
 
@@ -54,7 +61,11 @@ const Footer = () => {
 
             <div className={styles.bottom}>
                 <span>Made for crisp interfaces.</span>
-                <a href="https://github.com/THE-OM-PAWAR/UI-library" rel="noreferrer" target="_blank">
+                <a
+                    href="https://github.com/THE-OM-PAWAR/UI-library"
+                    rel="noreferrer"
+                    target="_blank"
+                >
                     <Github aria-hidden="true" />
                     GitHub
                 </a>

@@ -28,14 +28,12 @@ export default function DocsPage() {
         {
             title: "Sidebar",
             href: "/docs/sidebar",
-            description:
-                "A sidebar component for building navigation layouts.",
+            description: "A sidebar component for building navigation layouts.",
         },
         {
             title: "Accordion",
             href: "/docs/accordion",
-            description:
-                "A vertically stacked set of interactive headings.",
+            description: "A vertically stacked set of interactive headings.",
         },
         {
             title: "Alert",
@@ -46,8 +44,7 @@ export default function DocsPage() {
         {
             title: "Avatar",
             href: "/docs/avatar",
-            description:
-                "An image element with fallback and group support.",
+            description: "An image element with fallback and group support.",
         },
     ];
 

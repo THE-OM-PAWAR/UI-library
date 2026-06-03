@@ -1,5 +1,5 @@
-import React from "react";
 import { Blocks, Code2, Gauge, Server, Sparkles } from "lucide-react";
+import React from "react";
 import styles from "@/css/home/PerformanceDX.module.css";
 
 const features = [
@@ -36,7 +36,9 @@ const PerformanceDX = () => {
             <div className={styles.section}>
                 <div className={styles.heading}>
                     <span>Performance / DX</span>
-                    <h2>Built to feel light in production and clear in code.</h2>
+                    <h2>
+                        Built to feel light in production and clear in code.
+                    </h2>
                 </div>
 
                 <div className={styles.grid}>

@@ -142,12 +142,11 @@ Usually worth replacing:
 
 ## 4. Set up the files properly
 
-Inside `packages/components/ui/[component-name]/`:
+Inside `packages/components/ui/` (current repo structure):
 
 - [ ] `[component-name].jsx`
-- [ ] `[component-name].styles.js` when the component has real variant logic
-- [ ] `[component-name].demo.jsx`
-- [ ] `index.js`
+
+Demos/previews live in the apps (e.g. `apps/studio/src/components/renderers/` and `apps/docs/registry/demos/`), so update those as part of the migration rather than adding `*.demo.jsx` files in `packages/components`.
 
 Also:
 

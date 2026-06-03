@@ -26,9 +26,39 @@
     "examples": [
         {
             "title": "Default",
-            "description": "A basic aspect ratio example.",
+            "description": "A basic 16:9 aspect ratio example.",
             "demo": "aspect-ratio-demo",
-            "code": "import { AspectRatio } from \"@repo/components\";\n\nexport default function AspectRatioDemo() {\n  return (\n    <div className=\"w-full max-w-sm overflow-hidden rounded-lg border bg-muted\">\n      <AspectRatio ratio={16 / 9}>\n        <img\n          src=\"https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop\"\n          alt=\"Workspace\"\n          className=\"h-full w-full object-cover\"\n        />\n      </AspectRatio>\n    </div>\n  );\n}"
+            "code": "import { AspectRatio } from \"@repo/components\";\n\nexport default function AspectRatioDemo() {\n  return (\n    <div className=\"w-full max-w-sm overflow-hidden rounded-lg border bg-muted\">\n      <AspectRatio ratio={16 / 9}>\n        <div className=\"h-full w-full bg-gray-200 dark:bg-gray-800\" />\n      </AspectRatio>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Square",
+            "description": "A 1:1 square aspect ratio, perfect for profile images or social media posts.",
+            "demo": "aspect-ratio-square",
+            "code": "import { AspectRatio } from \"@repo/components\";\n\nexport default function AspectRatioSquare() {\n  return (\n    <div className=\"w-full max-w-xs overflow-hidden rounded-lg border bg-muted shadow-sm\">\n      <AspectRatio ratio={1}>\n        <div className=\"h-full w-full bg-gray-200 dark:bg-gray-800\" />\n      </AspectRatio>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Portrait",
+            "description": "A 3:4 portrait aspect ratio, ideal for vertical images and mobile-first layouts.",
+            "demo": "aspect-ratio-portrait",
+            "code": "import { AspectRatio } from \"@repo/components\";\n\nexport default function AspectRatioPortrait() {\n  return (\n    <div className=\"w-full max-w-64 overflow-hidden rounded-lg border bg-muted shadow-sm\">\n      <AspectRatio ratio={3 / 4}>\n        <div className=\"h-full w-full bg-gray-200 dark:bg-gray-800\" />\n      </AspectRatio>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Widescreen",
+            "description": "A wider 16:9 layout with increased max-width for cinematic content.",
+            "demo": "aspect-ratio-widescreen",
+            "code": "import { AspectRatio } from \"@repo/components\";\n\nexport default function AspectRatioWidescreen() {\n  return (\n    <div className=\"w-full max-w-lg overflow-hidden rounded-lg border bg-muted shadow-sm\">\n      <AspectRatio ratio={16 / 9}>\n        <div className=\"h-full w-full bg-gray-200 dark:bg-gray-800\" />\n      </AspectRatio>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Ultrawide",
+            "description": "A 21:9 ultrawide aspect ratio for panoramic or cinematic imagery.",
+            "demo": "aspect-ratio-ultrawide",
+            "code": "import { AspectRatio } from \"@repo/components\";\n\nexport default function AspectRatioUltrawide() {\n  return (\n    <div className=\"w-full max-w-xl overflow-hidden rounded-lg border bg-muted shadow-sm\">\n      <AspectRatio ratio={21 / 9}>\n        <div className=\"h-full w-full bg-gray-200 dark:bg-gray-800\" />\n      </AspectRatio>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Gallery",
+            "description": "A gallery grid showcasing multiple aspect ratios side by side.",
+            "demo": "aspect-ratio-gallery",
+            "code": "import { AspectRatio } from \"@repo/components\";\n\nconst items = [\n  { ratio: 16 / 9, label: \"16:9\" },\n  { ratio: 1, label: \"1:1\" },\n  { ratio: 4 / 5, label: \"4:5\" },\n];\n\nexport default function AspectRatioGallery() {\n  return (\n    <div className=\"grid w-full max-w-3xl gap-4 sm:grid-cols-3\">\n      {items.map((item) => (\n        <div key={item.label} className=\"overflow-hidden rounded-lg border bg-muted shadow-sm\">\n          <AspectRatio ratio={item.ratio}>\n            <div className=\"h-full w-full bg-gray-200 dark:bg-gray-800\" />\n          </AspectRatio>\n          <div className=\"border-t bg-background px-3 py-2 text-sm font-medium\">\n            {item.label}\n          </div>\n        </div>\n      ))}\n    </div>\n  );\n}"
         }
     ]
 }

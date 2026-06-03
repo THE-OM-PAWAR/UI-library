@@ -206,8 +206,8 @@ Avoid hardcoding colors in reusable components unless there is a clear reason.
 
 If a visual change can be solved in:
 
-- `packages/config/theme.config.js`
-- `packages/config/tokens.css`
+- `packages/config/theme.config.js` (source of truth)
+- regenerated tokens (`pnpm generate:theme` updates `packages/config/tokens.css` — avoid editing `tokens.css` by hand)
 - shared semantic token mappings
 
 then do that before editing a bunch of component class strings.

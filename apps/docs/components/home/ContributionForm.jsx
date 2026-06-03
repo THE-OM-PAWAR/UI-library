@@ -84,13 +84,15 @@ const ContributionForm = () => {
                 body: JSON.stringify({ template_params }),
             });
             if (!resp.ok) {
-                await resp.text();
+                const text = await resp.text();
+                console.error("Email send error:", text);
                 setSubmitStatus("error");
                 return;
             }
             setSubmitStatus("success");
             e.target.reset();
-        } catch {
+        } catch (error) {
+            console.error("Email send error:", error);
             setSubmitStatus("error");
         }
     }

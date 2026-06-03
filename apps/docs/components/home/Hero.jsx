@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import React from "react";
-import { div } from "three/tsl";
 import styles from "@/css/home/Hero.module.css";
 
 const ReindeerModel = dynamic(() => import("./ReindeerModel"), {
@@ -21,13 +21,17 @@ const Hero = () => {
                     </div>
 
                     <div className={styles.actions}>
-                        <button className={styles.primaryBtn}>
-                            ✦ Get Started
-                        </button>
+                        <Link href="/docs">
+                            <button className={styles.primaryBtn}>
+                                ✦ Get Started
+                            </button>
+                        </Link>
 
-                        <button className={styles.secondaryBtn}>
-                            Explore Components
-                        </button>
+                        <Link href="/docs/components">
+                            <button className={styles.secondaryBtn}>
+                                Explore Components
+                            </button>
+                        </Link>
                     </div>
                 </div>
 

@@ -90,6 +90,7 @@ export const SoundProvider = ({ children }) => {
             }
 
             if (
+                backgroundSound &&
                 backgroundSound.state() === "loaded" &&
                 !backgroundSound.playing()
             ) {

@@ -7,11 +7,10 @@ import { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
+const DEFAULT_MANAGERS = ["npm", "yarn", "pnpm", "bun"];
+
 // Package Manager Selector Component
-function PackageManagerCommand({
-    command,
-    managers = ["npm", "yarn", "pnpm", "bun"],
-}) {
+function PackageManagerCommand({ command, managers = DEFAULT_MANAGERS }) {
     const [selectedManager, setSelectedManager] = useState(managers[0]);
     const [isCopied, setIsCopied] = useState(false);
 
@@ -208,14 +207,7 @@ function ManualSteps({ steps }) {
                         {step.command && (
                             <PackageManagerCommand
                                 command={step.command}
-                                managers={
-                                    step.managers || [
-                                        "npm",
-                                        "yarn",
-                                        "pnpm",
-                                        "bun",
-                                    ]
-                                }
+                                managers={step.managers || DEFAULT_MANAGERS}
                             />
                         )}
 
@@ -266,14 +258,7 @@ export function InstallationBlock({ title = "Installation", tabs }) {
                         {tab.type === "command" && tab.command && (
                             <PackageManagerCommand
                                 command={tab.command}
-                                managers={
-                                    tab.managers || [
-                                        "npm",
-                                        "yarn",
-                                        "pnpm",
-                                        "bun",
-                                    ]
-                                }
+                                managers={tab.managers || DEFAULT_MANAGERS}
                             />
                         )}
 

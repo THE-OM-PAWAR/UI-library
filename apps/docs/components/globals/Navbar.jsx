@@ -2,13 +2,15 @@
 import { Howl, Howler } from "howler";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 import logoimg from "@/assets/images/logo.png";
 import { useSound } from "@/context/SoundContext";
 import styles from "@/css/globals/Navbar.module.css";
 
 const Navbar = () => {
+    const pathname = usePathname();
+    const isHome = pathname === "/";
     const navLinks = [
         {
             name: "Docs",
@@ -88,6 +90,8 @@ const Navbar = () => {
     }, []);
 
     useEffect(() => {
+        if (!isHome) return;
+
         const getCurrentScrollY = () =>
             Math.max(
                 window.scrollY || 0,
@@ -131,7 +135,7 @@ const Navbar = () => {
             window.removeEventListener("scroll", handleScroll);
             document.removeEventListener("scroll", handleScroll, true);
         };
-    }, []);
+    }, [isHome]);
 
     const playHoverSound = () => {
         const sound = soundRef.current;
@@ -179,7 +183,7 @@ const Navbar = () => {
     return (
         <>
             <nav
-                className={`${styles.nav} ${isDetached ? styles.detached : ""} ${isHidden && !isOpen ? styles.hidden : ""}`.trim()}
+                className={`${styles.nav} ${!isHome ? styles.simpleNav : ""} ${isHome && isDetached ? styles.detached : ""} ${isHome && isHidden && !isOpen ? styles.hidden : ""}`.trim()}
             >
                 <div
                     className={styles.logoCont}
@@ -203,6 +207,7 @@ const Navbar = () => {
                                 key={i}
                                 onMouseEnter={startHoverSoundTimer}
                                 onMouseLeave={clearHoverSoundTimer}
+                                onClick={() => setIsOpen(false)}
                             >
                                 {ele.name}
                             </Link>

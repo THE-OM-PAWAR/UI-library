@@ -13,6 +13,38 @@ export const metadata = {
 
 const components = [
     {
+        name: "Accordion",
+        slug: "accordion",
+        description: "A collapsible content area that expands and collapses.",
+    },
+    {
+        name: "Alert",
+        slug: "alert",
+        description:
+            "Displays a callout for important information or messages.",
+    },
+    {
+        name: "Aspect Ratio",
+        slug: "aspect-ratio",
+        description: "Displays content within a desired ratio.",
+    },
+    {
+        name: "Avatar",
+        slug: "avatar",
+        description:
+            "An image element with a fallback for representing the user.",
+    },
+    {
+        name: "Badge",
+        slug: "badge",
+        description: "Displays a badge or a component that looks like a badge.",
+    },
+    {
+        name: "Breadcrumb",
+        slug: "breadcrumb",
+        description: "Displays the path to the current page.",
+    },
+    {
         name: "Button",
         slug: "button",
         description:
@@ -24,15 +56,52 @@ const components = [
         description: "Groups multiple buttons together into a single unit.",
     },
     {
+        name: "Calendar",
+        slug: "calendar",
+        description: "A date picker component for selecting dates.",
+    },
+    {
         name: "Card",
         slug: "card",
         description: "Displays a card with header, content, and footer.",
+    },
+    {
+        name: "Carousel",
+        slug: "carousel",
+        description: "A slider or carousel for cycling through content.",
+    },
+    {
+        name: "Chart",
+        slug: "chart",
+        description: "Displays data visualization charts.",
     },
     {
         name: "Checkbox",
         slug: "checkbox",
         description:
             "A control that allows the user to toggle between checked and not checked.",
+    },
+    {
+        name: "Collapsible",
+        slug: "collapsible",
+        description:
+            "A collapsible section that can be expanded and collapsed.",
+    },
+    {
+        name: "Combobox",
+        slug: "combobox",
+        description: "A dropdown with search and autocomplete functionality.",
+    },
+    {
+        name: "Context Menu",
+        slug: "context-menu",
+        description: "A menu that appears on right-click.",
+    },
+    {
+        name: "Data Table",
+        slug: "data-table",
+        description:
+            "A table component with sorting, filtering, and pagination.",
     },
     {
         name: "Dialog",
@@ -49,14 +118,71 @@ const components = [
     {
         name: "Dropdown Menu",
         slug: "dropdown-menu",
+        description: "Displays a menu triggered by a button.",
+    },
+    {
+        name: "Empty",
+        slug: "empty",
+        description: "An empty state component for when there is no data.",
+    },
+    {
+        name: "Field",
+        slug: "field",
+        description: "A form field wrapper with label and error messaging.",
+    },
+    {
+        name: "Headings",
+        slug: "headings",
         description:
-            "Displays a menu to the user, such as a set of actions or functions, triggered by a button.",
+            "Styles for headings, paragraphs, lists and other typographic elements.",
+    },
+    {
+        name: "Hover Card",
+        slug: "hover-card",
+        description: "Displays rich content when hovering over a trigger.",
     },
     {
         name: "Image",
         slug: "image",
         description:
             "An image component with support for fallback and various fit modes.",
+    },
+    {
+        name: "Input",
+        slug: "input",
+        description: "A form input component for text entry.",
+    },
+    {
+        name: "Input Group",
+        slug: "inputgroup",
+        description: "Groups input elements with addons or buttons.",
+    },
+    {
+        name: "Input OTP",
+        slug: "inputotp",
+        description: "A one-time password input component.",
+    },
+    { name: "Item", slug: "item", description: "A list item component." },
+    {
+        name: "Kbd",
+        slug: "kbd",
+        description: "Displays keyboard input or shortcuts.",
+    },
+    { name: "Label", slug: "label", description: "A form label component." },
+    {
+        name: "Menubar",
+        slug: "menubar",
+        description: "A horizontal menu bar with nested menus.",
+    },
+    {
+        name: "Navigation Menu",
+        slug: "navigation-menu",
+        description: "A navigation component with dropdowns.",
+    },
+    {
+        name: "Pagination",
+        slug: "pagination",
+        description: "Pagination navigation for navigating between pages.",
     },
     {
         name: "Popover",
@@ -71,15 +197,67 @@ const components = [
             "Displays an indicator showing the completion progress of a task.",
     },
     {
+        name: "Radio",
+        slug: "radio",
+        description:
+            "A radio button input for selecting one option from a set.",
+    },
+    {
+        name: "Resizable",
+        slug: "resizable",
+        description: "A resizable panel component.",
+    },
+    {
+        name: "Scroll Area",
+        slug: "scroll-area",
+        description: "A custom scrollbar component.",
+    },
+    {
+        name: "Separator",
+        slug: "separator",
+        description: "A visual divider between content sections.",
+    },
+    {
+        name: "Sheet",
+        slug: "sheet",
+        description:
+            "A sliding panel that appears from the edge of the screen.",
+    },
+    {
         name: "Sidebar",
         slug: "sidebar",
         description:
             "A composable, themeable and customizable sidebar component.",
     },
     {
+        name: "Skeleton",
+        slug: "skeleton",
+        description: "A placeholder loading component.",
+    },
+    {
+        name: "Sonner",
+        slug: "sonner",
+        description: "A toast notification component.",
+    },
+    {
         name: "Spinner",
         slug: "spinner",
         description: "Displays an animated loading spinner.",
+    },
+    {
+        name: "Switch",
+        slug: "switch",
+        description: "A toggle switch for on/off states.",
+    },
+    {
+        name: "Table",
+        slug: "table",
+        description: "A styled HTML table component.",
+    },
+    {
+        name: "Tabs",
+        slug: "tabs",
+        description: "A tabbed interface for organizing content.",
     },
     {
         name: "Textarea",
@@ -93,10 +271,9 @@ const components = [
         description: "A two-state button that can be either on or off.",
     },
     {
-        name: "Headings",
-        slug: "headings",
-        description:
-            "Styles for headings, paragraphs, lists and other typographic elements.",
+        name: "Tooltip",
+        slug: "tooltip",
+        description: "Displays a tooltip on hover.",
     },
 ];
 

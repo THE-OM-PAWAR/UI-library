@@ -52,6 +52,9 @@ export function UsageBlock({ code, language = "jsx", title = "Usage" }) {
                             background: "transparent",
                             fontSize: "0.8125rem",
                             lineHeight: "1.6",
+                            overflowX: "auto",
+                            whiteSpace: "pre-wrap",
+                            wordBreak: "break-word",
                         }}
                         showLineNumbers={false}
                     >

@@ -99,6 +99,9 @@ export function ComponentPreview({
                                     background: "transparent",
                                     fontSize: "14px",
                                     lineHeight: "1.5",
+                                    overflowX: "auto",
+                                    whiteSpace: "pre-wrap",
+                                    wordBreak: "break-word",
                                 }}
                                 showLineNumbers={true}
                                 lineNumberStyle={{

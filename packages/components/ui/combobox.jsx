@@ -110,6 +110,7 @@ function Combobox({
     const [internalValue, setInternalValue] = React.useState(defaultValue);
     const [open, setOpen] = React.useState(false);
     const [search, setSearch] = React.useState("");
+    const [visibleCount, setVisibleCount] = React.useState(0);
     const searchRef = React.useRef(null);
 
     const selectedValue = isControlled ? value : internalValue;
@@ -152,8 +153,18 @@ function Combobox({
             setSearch,
             disabled,
             searchRef,
+            visibleCount,
+            setVisibleCount,
         }),
-        [open, handleOpenChange, selectedValue, handleSelect, search, disabled]
+        [
+            open,
+            handleOpenChange,
+            selectedValue,
+            handleSelect,
+            search,
+            disabled,
+            visibleCount,
+        ]
     );
 
     return (
@@ -320,13 +331,23 @@ ComboboxList.displayName = "ComboboxList";
 // ─── ComboboxItem
 const ComboboxItem = React.forwardRef(
     ({ className, value, children, disabled = false, ...props }, ref) => {
-        const { selectedValue, handleSelect, search } = useCombobox();
+        const { selectedValue, handleSelect, search, setVisibleCount } =
+            useCombobox();
         const isSelected = selectedValue === value;
 
         // Filter by search
         const label = typeof children === "string" ? children : value;
-        if (search && !label.toLowerCase().includes(search.toLowerCase()))
-            return null;
+        const isVisible =
+            !search || label.toLowerCase().includes(search.toLowerCase());
+
+        React.useEffect(() => {
+            if (isVisible) {
+                setVisibleCount((c) => c + 1);
+                return () => setVisibleCount((c) => c - 1);
+            }
+        }, [isVisible, setVisibleCount]);
+
+        if (!isVisible) return null;
 
         return (
             <li
@@ -366,6 +387,10 @@ const ComboboxItem = React.forwardRef(
 ComboboxItem.displayName = "ComboboxItem";
 
 function ComboboxEmpty({ children = "No results found." }) {
+    const { search, visibleCount } = useCombobox();
+
+    if (!search || visibleCount > 0) return null;
+
     return (
         <div
             data-slot="combobox-empty"

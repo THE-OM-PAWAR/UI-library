@@ -10,7 +10,7 @@ import {
 
 export default function TableDemo() {
     return (
-        <Table className="max-w-md">
+        <Table className="mx-auto max-w-md">
             <TableCaption>Recent invoices.</TableCaption>
             <TableHeader>
                 <TableRow>
@@ -29,6 +29,16 @@ export default function TableDemo() {
                     <TableCell>INV002</TableCell>
                     <TableCell>Pending</TableCell>
                     <TableCell className="text-right">$150.00</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>INV003</TableCell>
+                    <TableCell>Unpaid</TableCell>
+                    <TableCell className="text-right">$350.00</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>INV004</TableCell>
+                    <TableCell>Paid</TableCell>
+                    <TableCell className="text-right">$450.00</TableCell>
                 </TableRow>
             </TableBody>
         </Table>

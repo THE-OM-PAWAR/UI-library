@@ -15,18 +15,9 @@ import { AlertCircle } from "lucide-react";
 import React, { useState } from "react";
 
 export default function HoverCardLanguage() {
-  const [language, setLanguage] = useState("english");
+  const [language, setLanguage] = useState("sanskrit");
 
   const translations = {
-    english: {
-      left: "Left",
-      top: "Top",
-      bottom: "Bottom",
-      right: "Right",
-      langSelect: "English",
-      title: "Hover Card",
-      desc: (side) => `This hover card appears on the ${side} side of the trigger.`,
-    },
     sanskrit: {
       left: "वामम्",
       top: "उपरि",
@@ -71,7 +62,6 @@ export default function HoverCardLanguage() {
           </DropdownMenuTrigger>
           <DropdownMenuContent align="start" className="w-[200px]">
             <DropdownMenuRadioGroup value={language} onValueChange={setLanguage}>
-              <DropdownMenuRadioItem value="english">English</DropdownMenuRadioItem>
               <DropdownMenuRadioItem value="sanskrit">Sanskrit (संस्कृतम्)</DropdownMenuRadioItem>
               <DropdownMenuRadioItem value="hindi">Hindi (हिन्दी)</DropdownMenuRadioItem>
             </DropdownMenuRadioGroup>

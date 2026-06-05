@@ -43,10 +43,34 @@
             "code": "import { Field, FieldDescription, FieldLabel, FieldLegend, FieldSet } from '@repo/components';\nimport { RadioGroup, RadioGroupItem } from '@repo/components';\n\nexport default function RadioGroupFieldset() {\n  return (\n    <FieldSet className='w-full max-w-xs'>\n      <FieldLegend variant='label'>Subscription Plan</FieldLegend>\n      <FieldDescription>\n        Yearly and lifetime plans offer significant savings.\n      </FieldDescription>\n\n      <RadioGroup defaultValue='monthly'>\n        <Field orientation='horizontal'>\n          <RadioGroupItem value='monthly' id='plan-monthly' />\n          <FieldLabel htmlFor='plan-monthly' className='font-normal'>\n            Monthly ($9.99/month)\n          </FieldLabel>\n        </Field>\n\n        <Field orientation='horizontal'>\n          <RadioGroupItem value='yearly' id='plan-yearly' />\n          <FieldLabel htmlFor='plan-yearly' className='font-normal'>\n            Yearly ($99.99/year)\n          </FieldLabel>\n        </Field>\n\n        <Field orientation='horizontal'>\n          <RadioGroupItem value='lifetime' id='plan-lifetime' />\n          <FieldLabel htmlFor='plan-lifetime' className='font-normal'>\n            Lifetime ($299.99)\n          </FieldLabel>\n        </Field>\n      </RadioGroup>\n    </FieldSet>\n  );\n}"
         },
         {
-            "title": "Fieldset",
-            "description": "Use FieldSet and FieldLegend to group radio items with a label and description.",
+            "title": "Checkbox",
+            "description": "Same feature with check variant",
             "demo": "radio-check",
-            "code": "import { Field, FieldDescription, FieldLabel, FieldLegend, FieldSet } from '@repo/components';\nimport { RadioGroup, RadioGroupItem } from '@repo/components';\n\nexport default function RadioGroupFieldset() {\n  return (\n    <FieldSet className='w-full max-w-xs'>\n      <FieldLegend variant='label'>Subscription Plan</FieldLegend>\n      <FieldDescription>\n        Yearly and lifetime plans offer significant savings.\n      </FieldDescription>\n\n      <RadioGroup defaultValue='monthly'>\n        <Field orientation='horizontal'>\n          <RadioGroupItem value='monthly' id='plan-monthly' />\n          <FieldLabel htmlFor='plan-monthly' className='font-normal'>\n            Monthly ($9.99/month)\n          </FieldLabel>\n        </Field>\n\n        <Field orientation='horizontal'>\n          <RadioGroupItem value='yearly' id='plan-yearly' />\n          <FieldLabel htmlFor='plan-yearly' className='font-normal'>\n            Yearly ($99.99/year)\n          </FieldLabel>\n        </Field>\n\n        <Field orientation='horizontal'>\n          <RadioGroupItem value='lifetime' id='plan-lifetime' />\n          <FieldLabel htmlFor='plan-lifetime' className='font-normal'>\n            Lifetime ($299.99)\n          </FieldLabel>\n        </Field>\n      </RadioGroup>\n    </FieldSet>\n  );\n}"
+            "code": "import { Label, RadioGroup, RadioGroupItem } from '@repo/components';\n\nexport default function RadioGroupCheckStyle() {\n  return (\n    <RadioGroup\n      defaultValue='comfortable'\n      className='space-y-3 flex justify-center items-center'\n    >\n      <div className='flex flex-col gap-4'>\n        <div className='flex items-center gap-3'>\n          <RadioGroupItem\n            value='default'\n            variant='checkbox'\n            id='r1'\n            className='rounded-sm'\n          />\n          <Label htmlFor='r1'>Default</Label>\n        </div>\n\n        <div className='flex items-center gap-3'>\n          <RadioGroupItem\n            value='comfortable'\n            variant='checkbox'\n            id='r2'\n            className='rounded-sm'\n          />\n          <Label htmlFor='r2'>Comfortable</Label>\n        </div>\n\n        <div className='flex items-center gap-3'>\n          <RadioGroupItem\n            value='compact'\n            variant='checkbox'\n            id='r3'\n            className='rounded-sm'\n          />\n          <Label htmlFor='r3'>Compact</Label>\n        </div>\n      </div>\n    </RadioGroup>\n  );\n}"
+        },
+        {
+            "title": "Small",
+            "description": "size='sm'",
+            "demo": "radio-sm",
+            "code": "import { Label, RadioGroup, RadioGroupItem } from '@repo/components';\n\nexport default function RadioDemoSm() {\n  return (\n    <RadioGroup defaultValue='comfortable' className='w-full max-w-sm'>\n      <div className='flex items-center gap-2 justify-center'>\n        <RadioGroupItem value='default' id='default' size='sm' />\n        <Label htmlFor='default' className='text-sm'>\n          Small\n        </Label>\n      </div>\n    </RadioGroup>\n  );\n}"
+        },
+        {
+            "title": "Medium",
+            "description": "size='md'",
+            "demo": "radio-md",
+            "code": "import { Label, RadioGroup, RadioGroupItem } from '@repo/components';\n\nexport default function RadioDemoMdm() {\n  return (\n    <RadioGroup defaultValue='comfortable' className='w-full max-w-sm'>\n      <div className='flex items-center gap-2 justify-center'>\n        <RadioGroupItem value='default' id='default' size='md' />\n        <Label htmlFor='default' className='text-md'>\n          Small\n        </Label>\n      </div>\n    </RadioGroup>\n  );\n}"
+        },
+        {
+            "title": "Large",
+            "description": "size='lg'",
+            "demo": "radio-lg",
+            "code": "import { Label, RadioGroup, RadioGroupItem } from '@repo/components';\n\nexport default function RadioDemoLarge() {\n  return (\n    <RadioGroup defaultValue='comfortable' className='w-full max-w-sm'>\n      <div className='flex items-center gap-2 justify-center'>\n        <RadioGroupItem value='default' id='default' size='lg' />\n        <Label htmlFor='default' className='text-lg'>\n          Large\n        </Label>\n      </div>\n    </RadioGroup>\n  );\n}"
+        },
+        {
+            "title": "Extra Large",
+            "description": "size='xl'",
+            "demo": "radio-xl",
+            "code": "import { Label, RadioGroup, RadioGroupItem } from '@repo/components';\n\nexport default function RadioDemoXlarge() {\n  return (\n    <RadioGroup defaultValue='comfortable' className='w-full max-w-sm'>\n      <div className='flex items-center gap-2 justify-center'>\n        <RadioGroupItem value='default' id='default' size='xl' />\n        <Label htmlFor='default' className='text-xl'>\n         Extra Large\n        </Label>\n      </div>\n    </RadioGroup>\n  );\n}"
         }
     ]
 }

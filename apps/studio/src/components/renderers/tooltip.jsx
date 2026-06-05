@@ -1,7 +1,17 @@
 export function renderTooltip(
-    { Button, Tooltip, TooltipTrigger, TooltipContent },
-    customClassName
+    { Button, Tooltip, TooltipTrigger, TooltipContent, renderTooltip },
+    customClassName,
+    options = {}
 ) {
+    const {
+        variant = "default",
+        size = "default",
+        sideOffset = 4,
+        alignOffset = 0,
+        side = "top",
+        content = "Tooltip content",
+    } = options;
+
     return (
         <Tooltip>
             <TooltipTrigger asChild>
@@ -9,8 +19,14 @@ export function renderTooltip(
                     Hover me
                 </Button>
             </TooltipTrigger>
-            <TooltipContent>
-                <p>Tooltip content</p>
+            <TooltipContent
+                variant={variant}
+                size={size}
+                sideOffset={sideOffset}
+                alignOffset={alignOffset}
+                side={side}
+            >
+                <p>{content}</p>
             </TooltipContent>
         </Tooltip>
     );

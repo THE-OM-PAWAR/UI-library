@@ -203,4 +203,5 @@ export const demoRegistry = {
     "toggle-variants": () => import("./demos/toggle-variants"),
     "toggle-with-text": () => import("./demos/toggle-with-text"),
     "tooltip-demo": () => import("./demos/tooltip-demo"),
+    "tooltip-demo-placements": () => import("./demos/tooltip-demo-placements"),
 };

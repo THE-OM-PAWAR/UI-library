@@ -8,7 +8,7 @@
             {
                 "title": "Install dependencies",
                 "description": "Install the required dependencies for the tooltip component.",
-                "command": "npm install @radix-ui/react-tooltip"
+                "command": "npm install @radix-ui/react-tooltip class-variance-authority"
             },
             {
                 "title": "Add utility function",
@@ -25,10 +25,28 @@
     },
     "examples": [
         {
-            "title": "Default",
+            "title": "Basic",
             "description": "A basic tooltip example.",
             "demo": "tooltip-demo",
-            "code": "import { Button, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from \"@repo/components\";\n\nexport default function TooltipDemo() {\n  return (\n    <TooltipProvider>\n      <Tooltip>\n        <TooltipTrigger asChild>\n          <Button variant=\"outline\">Hover</Button>\n        </TooltipTrigger>\n        <TooltipContent>\n          <p>Add to library</p>\n        </TooltipContent>\n      </Tooltip>\n    </TooltipProvider>\n  );\n}"
+            "code": "import {\n    Button,\n    Tooltip,\n    TooltipContent,\n    TooltipProvider,\n    TooltipTrigger,\n} from \"@repo/components\";\n\nexport default function TooltipDemoBasic() {\n    return (\n        <TooltipProvider delayDuration={200}>\n            <Tooltip>\n                <TooltipTrigger asChild>\n                    <Button variant=\"outline\">Hover me</Button>\n                </TooltipTrigger>\n                <TooltipContent>\n                    <p>Add to library</p>\n                </TooltipContent>\n            </Tooltip>\n        </TooltipProvider>\n    );\n}"
+        },
+        {
+            "title": "Placements",
+            "description": "Tooltips can be placed on different sides of the trigger using the side prop.",
+            "demo": "tooltip-demo-placements",
+            "code": "import {\n    Button,\n    Tooltip,\n    TooltipContent,\n    TooltipProvider,\n    TooltipTrigger,\n} from \"@repo/components\";\n\nexport default function TooltipDemoPlacements() {\n    const sides = [\"top\", \"bottom\", \"left\", \"right\"];\n\n    return (\n        <TooltipProvider delayDuration={200}>\n            <div className=\"flex gap-4\">\n                {sides.map((side) => (\n                    <Tooltip key={side}>\n                        <TooltipTrigger asChild>\n                            <Button variant=\"secondary\" className=\"capitalize\">\n                                {side}\n                            </Button>\n                        </TooltipTrigger>\n                        <TooltipContent side={side}>\n                            <p>I am on the {side}</p>\n                        </TooltipContent>\n                    </Tooltip>\n                ))}\n            </div>\n        </TooltipProvider>\n    );\n}"
+        },
+        {
+            "title": "Rich Content",
+            "description": "You can add rich content like icons and keyboard shortcuts inside a tooltip.",
+            "demo": "tooltip-demo-rich",
+            "code": "import { Info } from \"lucide-react\";\nimport {\n    Button,\n    Tooltip,\n    TooltipContent,\n    TooltipProvider,\n    TooltipTrigger,\n} from \"@repo/components\";\n\nexport default function TooltipDemoRich() {\n    return (\n        <TooltipProvider delayDuration={200}>\n            <Tooltip>\n                <TooltipTrigger asChild>\n                    <Button variant=\"ghost\" size=\"icon\">\n                        <Info className=\"h-5 w-5\" />\n                        <span className=\"sr-only\">Info</span>\n                    </Button>\n                </TooltipTrigger>\n                <TooltipContent className=\"flex items-center gap-3\">\n                    <span>View documentation</span>\n                    <kbd className=\"rounded border bg-muted px-1.5 py-0.5 text-[10px] font-mono font-medium text-muted-foreground\">\n                        ⌘+D\n                    </kbd>\n                </TooltipContent>\n            </Tooltip>\n        </TooltipProvider>\n    );\n}"
+        },
+        {
+            "title": "Disabled State",
+            "description": "To display a tooltip on a disabled button, wrap the button in a focusable element like a span.",
+            "demo": "tooltip-demo-disabled",
+            "code": "import {\n    Button,\n    Tooltip,\n    TooltipContent,\n    TooltipProvider,\n    TooltipTrigger,\n} from \"@repo/components\";\n\nexport default function TooltipDemoDisabled() {\n    return (\n        <TooltipProvider delayDuration={200}>\n            <Tooltip>\n                <TooltipTrigger asChild>\n                    <span className=\"inline-block\" tabIndex={0}>\n                        <Button variant=\"outline\" disabled>\n                            Disabled Action\n                        </Button>\n                    </span>\n                </TooltipTrigger>\n                <TooltipContent>\n                    <p>This feature is currently unavailable.</p>\n                </TooltipContent>\n            </Tooltip>\n        </TooltipProvider>\n    );\n}"
         }
     ]
 }

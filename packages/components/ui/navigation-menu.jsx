@@ -52,6 +52,7 @@ const navigationMenuTriggerStyle = cva(
 function NavigationMenuTrigger({
     className,
     children,
+    hover = false,
     onPointerMove,
     onPointerLeave,
     ...props
@@ -60,15 +61,22 @@ function NavigationMenuTrigger({
         <NavigationMenuPrimitive.Trigger
             data-slot="navigation-menu-trigger"
             className={cn(navigationMenuTriggerStyle(), className)}
-            // Intercept and prevent Radix's native hover events to enforce click-only behavior
-            onPointerMove={(e) => {
-                e.preventDefault();
-                onPointerMove?.(e);
-            }}
-            onPointerLeave={(e) => {
-                e.preventDefault();
-                onPointerLeave?.(e);
-            }}
+            onPointerMove={
+                hover
+                    ? onPointerMove
+                    : (e) => {
+                          e.preventDefault();
+                          onPointerMove?.(e);
+                      }
+            }
+            onPointerLeave={
+                hover
+                    ? onPointerLeave
+                    : (e) => {
+                          e.preventDefault();
+                          onPointerLeave?.(e);
+                      }
+            }
             {...props}
         >
             {children}
@@ -79,9 +87,9 @@ function NavigationMenuTrigger({
         </NavigationMenuPrimitive.Trigger>
     );
 }
-
 function NavigationMenuContent({
     className,
+    hover = false,
     onPointerEnter,
     onPointerLeave,
     ...props
@@ -91,7 +99,6 @@ function NavigationMenuContent({
             data-slot="navigation-menu-content"
             className={cn(
                 "top-0 left-0 w-full p-2 md:absolute md:w-auto",
-                // Added z-50 to ensure non-viewport popovers sit above subsequent elements
                 "group-data-[viewport=false]/navigation-menu:z-50",
                 "group-data-[viewport=false]/navigation-menu:top-full group-data-[viewport=false]/navigation-menu:mt-1.5",
                 "group-data-[viewport=false]/navigation-menu:overflow-hidden group-data-[viewport=false]/navigation-menu:rounded-md",
@@ -99,20 +106,26 @@ function NavigationMenuContent({
                 "group-data-[viewport=false]/navigation-menu:bg-popover group-data-[viewport=false]/navigation-menu:text-popover-foreground group-data-[viewport=false]/navigation-menu:shadow",
                 className
             )}
-            // Intercept and prevent Radix's native hover events to enforce click-only behavior
-            onPointerEnter={(e) => {
-                e.preventDefault();
-                onPointerEnter?.(e);
-            }}
-            onPointerLeave={(e) => {
-                e.preventDefault();
-                onPointerLeave?.(e);
-            }}
+            onPointerEnter={
+                hover
+                    ? onPointerEnter
+                    : (e) => {
+                          e.preventDefault();
+                          onPointerEnter?.(e);
+                      }
+            }
+            onPointerLeave={
+                hover
+                    ? onPointerLeave
+                    : (e) => {
+                          e.preventDefault();
+                          onPointerLeave?.(e);
+                      }
+            }
             {...props}
         />
     );
 }
-
 function NavigationMenuViewport({ className, ...props }) {
     return (
         <div className="absolute top-full left-0 isolate z-50 flex justify-center">

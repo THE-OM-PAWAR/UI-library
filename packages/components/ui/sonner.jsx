@@ -9,9 +9,25 @@ import {
 } from "lucide-react";
 import { Toaster as Sonner } from "sonner";
 
-const Toaster = ({ ...props }) => {
+const Toaster = ({
+    position = "bottom-right",
+    closeButton = false,
+    richColors = false,
+    dir = "auto",
+    gap = 14,
+    visibleToasts = 3,
+    swipeDirections = ["right"],
+    ...props
+}) => {
     return (
         <Sonner
+            position={position}
+            closeButton={closeButton}
+            richColors={richColors}
+            dir={dir}
+            gap={gap}
+            visibleToasts={visibleToasts}
+            swipeDirections={swipeDirections}
             className="toaster group"
             icons={{
                 success: <CheckCircle2 className="size-4" />,
@@ -19,12 +35,6 @@ const Toaster = ({ ...props }) => {
                 warning: <AlertTriangleIcon className="size-4" />,
                 error: <AlertOctagonIcon className="size-4" />,
                 loading: <Loader2Icon className="size-4 animate-spin" />,
-            }}
-            style={{
-                "--normal-bg": "var(--popover)",
-                "--normal-text": "var(--popover-foreground)",
-                "--normal-border": "var(--border)",
-                "--border-radius": "var(--radius-md)",
             }}
             toastOptions={{
                 classNames: {

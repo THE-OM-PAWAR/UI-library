@@ -5,7 +5,14 @@ import * as React from "react";
 import { cn } from "../lib/utils.js";
 
 function HoverCard({ openDelay = 200, closeDelay = 150, ...props }) {
-    return <HoverCardPrimitive.Root data-slot="hover-card" openDelay={openDelay} closeDelay={closeDelay} {...props} />;
+    return (
+        <HoverCardPrimitive.Root
+            data-slot="hover-card"
+            openDelay={openDelay}
+            closeDelay={closeDelay}
+            {...props}
+        />
+    );
 }
 
 function HoverCardTrigger({ ...props }) {

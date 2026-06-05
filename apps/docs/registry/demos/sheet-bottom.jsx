@@ -19,7 +19,9 @@ export default function sheetBottom() {
                 <SheetContent side="bottom">
                     <SheetHeader>
                         <SheetTitle>Quick actions</SheetTitle>
-                        <SheetDescription>Bottom sheet variant.</SheetDescription>
+                        <SheetDescription>
+                            Bottom sheet variant.
+                        </SheetDescription>
                     </SheetHeader>
                     <SheetFooter>
                         <Button variant="outline">Dismiss</Button>
@@ -28,5 +30,5 @@ export default function sheetBottom() {
                 </SheetContent>
             </Sheet>
         </div>
-    )
+    );
 }

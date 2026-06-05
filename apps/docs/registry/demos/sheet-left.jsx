@@ -3,10 +3,10 @@ import {
     Sheet,
     SheetContent,
     SheetDescription,
+    SheetFooter,
     SheetHeader,
     SheetTitle,
     SheetTrigger,
-    SheetFooter
 } from "@repo/components";
 
 export default function sheetLeft() {
@@ -14,7 +14,9 @@ export default function sheetLeft() {
         <div className="grid grid-cols-2 gap-3">
             <Sheet>
                 <SheetTrigger asChild>
-                    <Button variant="ghost" className="w-full">Left sheet</Button>
+                    <Button variant="ghost" className="w-full">
+                        Left sheet
+                    </Button>
                 </SheetTrigger>
                 <SheetContent side="left">
                     <SheetHeader>
@@ -28,5 +30,5 @@ export default function sheetLeft() {
                 </SheetContent>
             </Sheet>
         </div>
-    )
+    );
 }

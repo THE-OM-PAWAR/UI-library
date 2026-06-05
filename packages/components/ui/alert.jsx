@@ -28,21 +28,23 @@ const ALERT_ICONS = {
     success: CheckCircle2,
 };
 
-const Alert = React.forwardRef(({ className, variant = "default", children, ...props }, ref) => {
-    const Icon = ALERT_ICONS[variant];
-    return (
-        <div
-            ref={ref}
-            data-slot="alert"
-            role="alert"
-            className={cn(alertVariants({ variant }), className)}
-            {...props}
-        >
-            {Icon && <Icon />}
-            {children}
-        </div>
-    );
-});
+const Alert = React.forwardRef(
+    ({ className, variant = "default", children, ...props }, ref) => {
+        const Icon = ALERT_ICONS[variant];
+        return (
+            <div
+                ref={ref}
+                data-slot="alert"
+                role="alert"
+                className={cn(alertVariants({ variant }), className)}
+                {...props}
+            >
+                {Icon && <Icon />}
+                {children}
+            </div>
+        );
+    }
+);
 Alert.displayName = "Alert";
 
 const AlertTitle = React.forwardRef(({ className, ...props }, ref) => {

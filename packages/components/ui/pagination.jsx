@@ -30,7 +30,14 @@ function PaginationItem(props) {
     return <li data-slot="pagination-item" {...props} />;
 }
 
-function PaginationLink({ className, isActive, size = "icon", onClick, href, ...props }) {
+function PaginationLink({
+    className,
+    isActive,
+    size = "icon",
+    onClick,
+    href,
+    ...props
+}) {
     const handleClick = (e) => {
         if (href === "#") {
             e.preventDefault();

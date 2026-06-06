@@ -7,37 +7,21 @@ import Link from "next/link";
 import { Howl, Howler } from "howler";
 import { useRouter } from "next/navigation";
 import { useSound } from "@/context/SoundContext";
+import CommandSearch from "./CommandSearch";
 
 const Navbar = () => {
 
     const navLinks = [
-        {
-            name: "Docs",
-            path: "/docs",
-        },
-        {
-            name: "Components",
-            path: "/docs/components",
-        },
-        {
-            name: "Blocks",
-            path: "/docs/blocks",
-        },
-        {
-            name: "Charts",
-            path: "/docs/charts",
-        },
-        {
-            name: "Directory",
-            path: "/docs/directory",
-        },
-        {
-            name: "Create",
-            path: "/docs/create",
-        },
+        { name: "Docs", path: "/docs" },
+        { name: "Components", path: "/docs/components" },
+        { name: "Blocks", path: "/docs/blocks" },
+        { name: "Charts", path: "/docs/charts" },
+        { name: "Directory", path: "/docs/directory" },
+        { name: "Create", path: "/docs/create" },
     ];
 
     const [isOpen, setIsOpen] = useState(false);
+    const [searchOpen, setSearchOpen] = useState(false);
 
     const soundRef = useRef(null);
     const hoverSoundTimeoutRef = useRef(null);
@@ -49,6 +33,21 @@ const Navbar = () => {
     const router = useRouter();
     const { soundEnabled } = useSound();
 
+    // Ctrl/Cmd+K → open command search
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            const isMac = navigator.platform.toUpperCase().includes("MAC");
+            const modifier = isMac ? e.metaKey : e.ctrlKey;
+            if (modifier && e.key.toLowerCase() === "k") {
+                e.preventDefault();
+                setSearchOpen((prev) => !prev);
+            }
+        };
+        document.addEventListener("keydown", handleKeyDown);
+        return () => document.removeEventListener("keydown", handleKeyDown);
+    }, []);
+
+    // Sound setup
     useEffect(() => {
         const sound = new Howl({
             src: ["/sounds/freeze.mp3"],
@@ -65,7 +64,6 @@ const Navbar = () => {
                 isUnlockedRef.current = true;
                 return;
             }
-
             Howler.ctx.resume().then(() => {
                 isUnlockedRef.current = true;
             });
@@ -88,6 +86,7 @@ const Navbar = () => {
         };
     }, []);
 
+    // Scroll behaviour
     useEffect(() => {
         const getCurrentScrollY = () =>
             Math.max(
@@ -130,41 +129,22 @@ const Navbar = () => {
 
     const playHoverSound = () => {
         const sound = soundRef.current;
-
-        if (!soundEnabled || !sound || !isUnlockedRef.current) {
-            return;
-        }
-
-        if (sound.state() !== "loaded") {
-            sound.load();
-            return;
-        }
-
+        if (!soundEnabled || !sound || !isUnlockedRef.current) return;
+        if (sound.state() !== "loaded") { sound.load(); return; }
         const id = sound.play();
-
         sound.seek(1.5, id);
-
-        window.setTimeout(() => {
-            sound.stop(id);
-        }, 200);
+        window.setTimeout(() => { sound.stop(id); }, 200);
     };
 
     const clearHoverSoundTimer = () => {
-        if (!hoverSoundTimeoutRef.current) {
-            return;
-        }
-
+        if (!hoverSoundTimeoutRef.current) return;
         window.clearTimeout(hoverSoundTimeoutRef.current);
         hoverSoundTimeoutRef.current = null;
     };
 
     const startHoverSoundTimer = () => {
         clearHoverSoundTimer();
-
-        if (!soundEnabled) {
-            return;
-        }
-
+        if (!soundEnabled) return;
         hoverSoundTimeoutRef.current = window.setTimeout(() => {
             playHoverSound();
             hoverSoundTimeoutRef.current = null;
@@ -180,22 +160,30 @@ const Navbar = () => {
                     <Image src={logoimg} alt="Frost Ui" className={styles.logoImg} />
                     <p className={styles.logotxt}>Frost UI</p>
                 </div>
-                <div className={`${styles.links} ${ isOpen ? styles.active : ""}`}>
-                    {
-                        navLinks.map((ele, i) => {
-                            return <Link className={styles.link} href={ele.path} key={i} onMouseEnter={startHoverSoundTimer} onMouseLeave={clearHoverSoundTimer}>
-                                {ele.name}
-                            </Link>
-                        })
-                    }
+                <div className={`${styles.links} ${isOpen ? styles.active : ""}`}>
+                    {navLinks.map((ele, i) => (
+                        <Link
+                            className={styles.link}
+                            href={ele.path}
+                            key={i}
+                            onMouseEnter={startHoverSoundTimer}
+                            onMouseLeave={clearHoverSoundTimer}
+                        >
+                            {ele.name}
+                        </Link>
+                    ))}
                 </div>
-                <div className={`${styles.hamburger} ${isOpen ? styles.active : ""}`} onClick={() => setIsOpen(prev => !prev)}>
+                <div
+                    className={`${styles.hamburger} ${isOpen ? styles.active : ""}`}
+                    onClick={() => setIsOpen(prev => !prev)}
+                >
                     <span className={styles.line}></span>
                     <span className={styles.line}></span>
                     <span className={styles.line}></span>
                 </div>
             </nav>
             <div className={styles.mobileNavSpacer} aria-hidden="true" />
+            <CommandSearch open={searchOpen} onClose={() => setSearchOpen(false)} />
         </>
     );
 };

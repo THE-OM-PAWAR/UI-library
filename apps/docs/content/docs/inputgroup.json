@@ -24,6 +24,18 @@
             "description": "A basic input group example.",
             "demo": "inputgroup-demo",
             "code": "import { InputGroup, InputGroupAddon, InputGroupInput } from \"@repo/components\";\nimport { Search } from \"lucide-react\";\n\nexport default function InputGroupDemo() {\n  return (\n    <InputGroup className=\"w-full max-w-sm\">\n      <InputGroupAddon><Search className=\"h-4 w-4\" /></InputGroupAddon>\n      <InputGroupInput placeholder=\"Search components\" />\n      <InputGroupAddon position=\"right\">Ctrl K</InputGroupAddon>\n    </InputGroup>\n  );\n}"
+        },
+        {
+            "title": "Trailing Addon",
+            "description": "Use position=\"right\" on InputGroupAddon to append a unit or label.",
+            "demo": "inputgroup-addon-right",
+            "code": "import { InputGroup, InputGroupAddon, InputGroupInput } from \"@repo/components\";\n\nexport default function InputGroupAddonRight() {\n  return (\n    <InputGroup className=\"w-full max-w-sm\">\n      <InputGroupInput placeholder=\"Enter amount\" type=\"number\" />\n      <InputGroupAddon position=\"right\">USD</InputGroupAddon>\n    </InputGroup>\n  );\n}"
+        },
+        {
+            "title": "With Button",
+            "description": "Use InputGroupButton to attach an action button to the input.",
+            "demo": "inputgroup-with-button",
+            "code": "import { InputGroup, InputGroupAddon, InputGroupInput, InputGroupButton } from \"@repo/components\";\nimport { Search } from \"lucide-react\";\n\nexport default function InputGroupWithButton() {\n  return (\n    <InputGroup className=\"w-full max-w-sm\">\n      <InputGroupAddon><Search className=\"h-4 w-4\" /></InputGroupAddon>\n      <InputGroupInput placeholder=\"Search...\" />\n      <InputGroupButton variant=\"secondary\">Go</InputGroupButton>\n    </InputGroup>\n  );\n}"
         }
     ]
 }

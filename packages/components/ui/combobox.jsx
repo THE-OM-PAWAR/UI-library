@@ -9,7 +9,7 @@ import {
     InputGroupAddon,
     InputGroupButton,
     InputGroupInput,
-} from "./inputgroup.jsx";
+}from "./inputgroup.jsx";
 
 const ComboboxContext = React.createContext(null);
 

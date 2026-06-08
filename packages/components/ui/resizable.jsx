@@ -1,1 +1,49 @@
-"use client";import { cn } from "@repo/utils";import * as ResizablePrimitive from "react-resizable-panels";function ResizablePanelGroup({ className, direction, ...props }) {    return (        <ResizablePrimitive.PanelGroup            direction={direction}            data-slot="resizable-panel-group"            className={cn(                "flex h-full w-full min-w-0 min-h-0",                direction === "vertical" ? "flex-col" : "",                className            )}            {...props}        />    );}function ResizablePanel({ className, ...props }) {    return (        <ResizablePrimitive.Panel            data-slot="resizable-panel"            className={cn("min-w-0 min-h-0", className)}            {...props}        />    );}function ResizableHandle({ withHandle, className, ...props }) {    return (        <ResizablePrimitive.PanelResizeHandle            data-slot="resizable-handle"            className={cn(                "relative flex w-px items-center justify-center bg-border transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-1 data-[panel-group-direction=vertical]:h-px data-[panel-group-direction=vertical]:w-full data-[panel-group-direction=vertical]:after:absolute data-[panel-group-direction=vertical]:after:left-0 data-[panel-group-direction=vertical]:after:h-1 data-[panel-group-direction=vertical]:after:w-full data-[panel-group-direction=vertical]:after:-translate-y-1/2 [&[data-panel-group-direction=vertical]>div]:rotate-90",                className            )}            {...props}        >            {withHandle ? (                <div className="z-10 flex h-4 w-3 items-center justify-center rounded-sm border bg-border">                    <div className="h-2.5 w-px bg-muted-foreground" />                </div>            ) : null}        </ResizablePrimitive.PanelResizeHandle>    );}export { ResizableHandle, ResizablePanel, ResizablePanelGroup };
+﻿"use client";
+import { cn } from "@repo/utils";
+import * as ResizablePrimitive from "react-resizable-panels";
+
+function ResizablePanelGroup({ className, direction, ...props }) {
+    return (
+        <ResizablePrimitive.PanelGroup
+            direction={direction}
+            data-slot="resizable-panel-group"
+            className={cn(
+                "flex h-full w-full min-w-0 min-h-0",
+                direction === "vertical" ? "flex-col" : "",
+                className
+            )}
+            {...props}
+        />
+    );
+}
+
+function ResizablePanel({ className, ...props }) {
+    return (
+        <ResizablePrimitive.Panel
+            data-slot="resizable-panel"
+            className={cn("min-w-0 min-h-0", className)}
+            {...props}
+        />
+    );
+}
+
+function ResizableHandle({ withHandle, className, ...props }) {
+    return (
+        <ResizablePrimitive.PanelResizeHandle
+            data-slot="resizable-handle"
+            className={cn(
+                "relative flex w-px items-center justify-center bg-border transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-1 data-[panel-group-direction=vertical]:h-px data-[panel-group-direction=vertical]:w-full data-[panel-group-direction=vertical]:after:absolute data-[panel-group-direction=vertical]:after:left-0 data-[panel-group-direction=vertical]:after:h-1 data-[panel-group-direction=vertical]:after:w-full data-[panel-group-direction=vertical]:after:-translate-y-1/2 [&[data-panel-group-direction=vertical]>div]:rotate-90",
+                className
+            )}
+            {...props}
+        >
+            {withHandle ? (
+                <div className="z-10 flex h-4 w-3 items-center justify-center rounded-sm border bg-border">
+                    <div className="h-2.5 w-px bg-muted-foreground" />
+                </div>
+            ) : null}
+        </ResizablePrimitive.PanelResizeHandle>
+    );
+}
+
+export { ResizableHandle, ResizablePanel, ResizablePanelGroup };

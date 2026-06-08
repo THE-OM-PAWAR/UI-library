@@ -154,6 +154,9 @@ function CodeBlock({ filePath, code, language = "tsx", collapsible = false }) {
                                 background: "transparent",
                                 fontSize: "1.3rem",
                                 lineHeight: "1.3",
+                                overflowX: "auto",
+                                whiteSpace: "pre-wrap",
+                                wordBreak: "break-word",
                             }}
                             showLineNumbers={false}
                         >

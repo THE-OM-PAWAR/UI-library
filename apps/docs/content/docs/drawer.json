@@ -3,7 +3,7 @@
     "description": "A panel that slides in from the edge of the screen, built on top of Vaul.",
     "component": "Drawer",
     "installation": {
-        "cli": "npx shadcn@latest add drawer",
+        "cli": "npx frostui@latest add drawer",
         "manual": [
             {
                 "title": "Install dependencies",

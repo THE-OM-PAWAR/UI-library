@@ -3,7 +3,7 @@
     "description": "Composable chart helpers for themed data visualizations.",
     "component": "ChartContainer",
     "installation": {
-        "cli": "npx shadcn@latest add chart",
+        "cli": "npx frostui@latest add chart",
         "manual": [
             {
                 "title": "Install dependencies",
@@ -25,10 +25,40 @@
     },
     "examples": [
         {
-            "title": "Default",
-            "description": "A basic chart example.",
+            "title": "Bar Chart",
+            "description": "A grouped bar chart comparing two data sets.",
             "demo": "chart-demo",
             "code": "import { ChartContainer } from \"@repo/components\";\n\nconst chartConfig = {\n  desktop: { label: \"Desktop\", color: \"#2563eb\" },\n  mobile: { label: \"Mobile\", color: \"#16a34a\" },\n};\n\nconst data = [\n  { month: \"Jan\", desktop: 64, mobile: 42 },\n  { month: \"Feb\", desktop: 82, mobile: 58 },\n  { month: \"Mar\", desktop: 74, mobile: 66 },\n  { month: \"Apr\", desktop: 96, mobile: 72 },\n];\n\nexport default function ChartDemo() {\n  return (\n    <ChartContainer config={chartConfig} className=\"w-full max-w-md rounded-lg border p-4\">\n      <div className=\"mb-4 text-sm font-medium\">Traffic by device</div>\n      <div className=\"flex h-44 items-end gap-4\">\n        {data.map((item) => (\n          <div key={item.month} className=\"flex flex-1 flex-col items-center gap-2\">\n            <div className=\"flex h-32 items-end gap-1\">\n              <div className=\"w-5 rounded-t bg-[var(--color-desktop)]\" style={{ height: item.desktop }} />\n              <div className=\"w-5 rounded-t bg-[var(--color-mobile)]\" style={{ height: item.mobile }} />\n            </div>\n            <span className=\"text-xs text-muted-foreground\">{item.month}</span>\n          </div>\n        ))}\n      </div>\n    </ChartContainer>\n  );\n}"
+        },
+        {
+            "title": "Line Chart",
+            "description": "A line chart with area fill showing trends over time.",
+            "demo": "chart-line",
+            "code": "import { ChartContainer } from \"@repo/components\";\n\nconst data = [\n  { month: \"Jan\", value: 42 },\n  { month: \"Feb\", value: 58 },\n  { month: \"Mar\", value: 34 },\n  { month: \"Apr\", value: 72 },\n  { month: \"May\", value: 64 },\n  { month: \"Jun\", value: 88 },\n];\n\nexport default function ChartLine() {\n  const max = Math.max(...data.map((d) => d.value));\n  const points = data\n    .map((d, i) => {\n      const x = (i / (data.length - 1)) * 100;\n      const y = 100 - (d.value / max) * 80;\n      return `${x},${y}`;\n    })\n    .join(\" \");\n\n  return (\n    <ChartContainer className=\"w-full max-w-md rounded-lg border p-4\">\n      <div className=\"mb-4 text-sm font-medium\">Revenue over time</div>\n      <div className=\"relative h-44\">\n        <svg viewBox=\"0 0 100 100\" className=\"h-full w-full\" preserveAspectRatio=\"none\">\n          <polyline points={points} fill=\"none\" stroke=\"#8b5cf6\" strokeWidth=\"1\" vectorEffect=\"non-scaling-stroke\" />\n        </svg>\n      </div>\n    </ChartContainer>\n  );\n}"
+        },
+        {
+            "title": "Pie Chart",
+            "description": "A donut chart with legend showing proportions.",
+            "demo": "chart-pie",
+            "code": "import { ChartContainer } from \"@repo/components\";\n\nconst data = [\n  { label: \"Desktop\", value: 55, color: \"#3b82f6\" },\n  { label: \"Mobile\", value: 35, color: \"#10b981\" },\n  { label: \"Tablet\", value: 10, color: \"#f59e0b\" },\n];\n\nexport default function ChartPie() {\n  const total = data.reduce((sum, d) => sum + d.value, 0);\n  let cumulative = 0;\n\n  const segments = data.map((d) => {\n    const start = (cumulative / total) * 100;\n    cumulative += d.value;\n    const end = (cumulative / total) * 100;\n    return { ...d, start, end };\n  });\n\n  return (\n    <ChartContainer className=\"w-full max-w-md rounded-lg border p-4\">\n      <div className=\"mb-4 text-sm font-medium\">Device usage</div>\n      <div className=\"flex items-center gap-6\">\n        <div className=\"relative h-40 w-40 shrink-0\">\n          <svg viewBox=\"0 0 36 36\" className=\"h-full w-full -rotate-90\">\n            {segments.map((seg, i) => (\n              <circle key={i} cx=\"18\" cy=\"18\" r=\"14\" fill=\"none\" stroke={seg.color} strokeWidth=\"5\"\n                strokeDasharray={`${seg.end - seg.start} ${100 - (seg.end - seg.start)}`} strokeDashoffset={-seg.start} />\n            ))}\n          </svg>\n        </div>\n        <div className=\"space-y-3\">\n          {data.map((d) => (\n            <div key={d.label} className=\"flex items-center gap-2\">\n              <div className=\"h-3 w-3 rounded-full\" style={{ backgroundColor: d.color }} />\n              <span className=\"text-sm text-muted-foreground\">{d.label}</span>\n              <span className=\"text-sm font-medium ml-auto\">{d.value}%</span>\n            </div>\n          ))}\n        </div>\n      </div>\n    </ChartContainer>\n  );\n}"
+        },
+        {
+            "title": "Stacked Bar",
+            "description": "A stacked bar chart showing composition of each category.",
+            "demo": "chart-stacked",
+            "code": "import { ChartContainer } from \"@repo/components\";\n\nconst data = [\n  { month: \"Jan\", direct: 30, organic: 40, referral: 20 },\n  { month: \"Feb\", direct: 45, organic: 35, referral: 25 },\n  { month: \"Mar\", direct: 35, organic: 50, referral: 30 },\n  { month: \"Apr\", direct: 50, organic: 45, referral: 20 },\n];\n\nexport default function ChartStacked() {\n  const max = Math.max(...data.map((d) => d.direct + d.organic + d.referral));\n\n  return (\n    <ChartContainer className=\"w-full max-w-md rounded-lg border p-4\">\n      <div className=\"mb-4 text-sm font-medium\">Traffic sources</div>\n      <div className=\"flex h-44 items-end gap-3\">\n        {data.map((item) => {\n          const total = item.direct + item.organic + item.referral;\n          const h = (total / max) * 128;\n          return (\n            <div key={item.month} className=\"flex flex-1 flex-col items-center gap-2\">\n              <div className=\"flex w-full flex-col\" style={{ height: h }}>\n                <div className=\"w-full rounded-t\" style={{ flex: item.referral, backgroundColor: \"#f59e0b\" }} />\n                <div className=\"w-full\" style={{ flex: item.organic, backgroundColor: \"#10b981\" }} />\n                <div className=\"w-full rounded-b\" style={{ flex: item.direct, backgroundColor: \"#3b82f6\" }} />\n              </div>\n              <span className=\"text-xs text-muted-foreground\">{item.month}</span>\n            </div>\n          );\n        })}\n      </div>\n    </ChartContainer>\n  );\n}"
+        },
+        {
+            "title": "Horizontal Bar",
+            "description": "A horizontal bar chart for comparing categories.",
+            "demo": "chart-horizontal",
+            "code": "import { ChartContainer } from \"@repo/components\";\n\nconst data = [\n  { label: \"Electronics\", value: 840 },\n  { label: \"Clothing\", value: 620 },\n  { label: \"Food\", value: 480 },\n  { label: \"Books\", value: 320 },\n  { label: \"Sports\", value: 240 },\n];\n\nexport default function ChartHorizontal() {\n  const max = Math.max(...data.map((d) => d.value));\n\n  return (\n    <ChartContainer className=\"w-full max-w-md rounded-lg border p-4\">\n      <div className=\"mb-4 text-sm font-medium\">Sales by category</div>\n      <div className=\"space-y-3\">\n        {data.map((item) => (\n          <div key={item.label} className=\"flex items-center gap-3\">\n            <span className=\"w-20 shrink-0 text-right text-xs text-muted-foreground\">{item.label}</span>\n            <div className=\"flex-1 overflow-hidden rounded-full bg-muted\">\n              <div className=\"h-6 rounded-full\" style={{ width: `${(item.value / max) * 100}%`, backgroundColor: \"#06b6d4\" }} />\n            </div>\n            <span className=\"w-12 text-right text-xs font-medium\">{item.value}</span>\n          </div>\n        ))}\n      </div>\n    </ChartContainer>\n  );\n}"
+        },
+        {
+            "title": "Area Chart",
+            "description": "An area chart with gradient fill showing user activity.",
+            "demo": "chart-area",
+            "code": "import { ChartContainer } from \"@repo/components\";\n\nconst data = [\n  { day: \"Mon\", value: 120 },\n  { day: \"Tue\", value: 180 },\n  { day: \"Wed\", value: 140 },\n  { day: \"Thu\", value: 220 },\n  { day: \"Fri\", value: 190 },\n  { day: \"Sat\", value: 280 },\n  { day: \"Sun\", value: 240 },\n];\n\nexport default function ChartArea() {\n  const max = Math.max(...data.map((d) => d.value));\n  const points = data\n    .map((d, i) => {\n      const x = (i / (data.length - 1)) * 100;\n      const y = 100 - (d.value / max) * 80;\n      return `${x},${y}`;\n    })\n    .join(\" \");\n\n  return (\n    <ChartContainer className=\"w-full max-w-md rounded-lg border p-4\">\n      <div className=\"mb-4 text-sm font-medium\">Weekly active users</div>\n      <div className=\"relative h-44\">\n        <svg viewBox=\"0 0 100 100\" className=\"h-full w-full\" preserveAspectRatio=\"none\">\n          <defs>\n            <linearGradient id=\"areaGrad\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n              <stop offset=\"0%\" stopColor=\"#ec4899\" stopOpacity=\"0.4\" />\n              <stop offset=\"100%\" stopColor=\"#ec4899\" stopOpacity=\"0.05\" />\n            </linearGradient>\n          </defs>\n          <polygon points={`0,100 ${points} 100,100`} fill=\"url(#areaGrad)\" />\n          <polyline points={points} fill=\"none\" stroke=\"#ec4899\" strokeWidth=\"1\" vectorEffect=\"non-scaling-stroke\" />\n        </svg>\n      </div>\n    </ChartContainer>\n  );\n}"
         }
     ]
 }

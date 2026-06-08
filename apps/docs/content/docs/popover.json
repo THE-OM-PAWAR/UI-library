@@ -3,7 +3,7 @@
     "description": "Displays rich content in a portal, triggered by a button. Supports forms, headers, and alignment control.",
     "component": "Popover",
     "installation": {
-        "cli": "npx shadcn@latest add popover",
+        "cli": "npx frostui@latest add popover",
         "manual": [
             {
                 "title": "Install dependencies",

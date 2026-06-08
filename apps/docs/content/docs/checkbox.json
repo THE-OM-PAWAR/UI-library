@@ -3,7 +3,7 @@
     "description": "An accessible checkbox component with multiple variants, sizes, and label support.",
     "component": "Checkbox",
     "installation": {
-        "cli": "npx shadcn@latest add checkbox",
+        "cli": "npx frostui@latest add checkbox",
         "manual": [
             {
                 "title": "Install dependencies",

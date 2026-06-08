@@ -3,7 +3,7 @@
     "description": "A panel that slides in from the edge of the screen.",
     "component": "Sheet",
     "installation": {
-        "cli": "npx shadcn@latest add sheet",
+        "cli": "npx frostui@latest add sheet",
         "manual": [
             {
                 "title": "Install dependencies",
@@ -25,10 +25,34 @@
     },
     "examples": [
         {
-            "title": "Default",
-            "description": "A basic sheet example.",
+            "title": "Default (Right)",
+            "description": "Default sheet slides in from the right.",
             "demo": "sheet-demo",
-            "code": "import { Button, Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from \"@repo/components\";\n\nexport default function SheetDemo() {\n  return (\n    <Sheet>\n      <SheetTrigger asChild>\n        <Button variant=\"outline\">Open sheet</Button>\n      </SheetTrigger>\n      <SheetContent>\n        <SheetHeader>\n          <SheetTitle>Edit profile</SheetTitle>\n          <SheetDescription>Make quick updates without leaving the page.</SheetDescription>\n        </SheetHeader>\n      </SheetContent>\n    </Sheet>\n  );\n}"
+            "code": "import {\n    Button,\n    Sheet,\n    SheetContent,\n    SheetDescription,\n    SheetFooter,\n    SheetHeader,\n    SheetTitle,\n    SheetTrigger,\n} from \"@repo/components\";\n\nexport default function SheetDemo() {\n    return (\n        <div className=\"grid grid-cols-2 gap-3\">\n            <Sheet>\n                <SheetTrigger asChild>\n                    <Button variant=\"outline\" className=\"w-full\">Right sheet</Button>\n                </SheetTrigger>\n                <SheetContent side=\"right\">\n                    <SheetHeader>\n                        <SheetTitle>Edit profile</SheetTitle>\n                        <SheetDescription>Right side default panel.</SheetDescription>\n                    </SheetHeader>\n                    <SheetFooter>\n                        <Button variant=\"outline\">Cancel</Button>\n                        <Button>Save</Button>\n                    </SheetFooter>\n                </SheetContent>\n            </Sheet>\n        </div>\n    );\n}"
+        },
+        {
+            "title": "Left",
+            "description": "Sheet slides in from the left. Useful for navigation or filters.",
+            "demo": "sheet-left",
+            "code": "import {\n    Button,\n    Sheet,\n    SheetContent,\n    SheetDescription,\n    SheetHeader,\n    SheetTitle,\n    SheetTrigger,\n    SheetFooter\n} from \"@repo/components\";\n\nexport default function SheetLeft() {\n    return (\n        <div className=\"grid grid-cols-2 gap-3\">\n            <Sheet>\n                <SheetTrigger asChild>\n                    <Button variant=\"ghost\" className=\"w-full\">Left sheet</Button>\n                </SheetTrigger>\n                <SheetContent side=\"left\">\n                    <SheetHeader>\n                        <SheetTitle>Filters</SheetTitle>\n                        <SheetDescription>Left side variant.</SheetDescription>\n                    </SheetHeader>\n                    <SheetFooter>\n                        <Button variant=\"outline\">Dismiss</Button>\n                        <Button>Continue</Button>\n                    </SheetFooter>\n                </SheetContent>\n            </Sheet>\n        </div>\n    )\n}"
+        },
+        {
+            "title": "Top",
+            "description": "Sheet slides in from the top. Useful for announcements or banners.",
+            "demo": "sheet-top",
+            "code": "import {\n    Button,\n    Sheet,\n    SheetContent,\n    SheetDescription,\n    SheetHeader,\n    SheetTitle,\n    SheetTrigger,\n    SheetFooter\n} from \"@repo/components\";\n\nexport default function SheetTop() {\n    return (\n        <div className=\"grid grid-cols-2 gap-3\">\n            <Sheet>\n                <SheetTrigger asChild>\n                    <Button variant=\"secondary\" className=\"w-full\">Top sheet</Button>\n                </SheetTrigger>\n                <SheetContent side=\"top\">\n                    <SheetHeader>\n                        <SheetTitle>Announcements</SheetTitle>\n                        <SheetDescription>Top slide-in variant.</SheetDescription>\n                    </SheetHeader>\n                    <SheetFooter>\n                        <Button variant=\"outline\">Dismiss</Button>\n                        <Button>Continue</Button>\n                    </SheetFooter>\n                </SheetContent>\n            </Sheet>\n        </div>\n    )\n}"
+        },
+        {
+            "title": "Bottom",
+            "description": "Sheet slides in from the bottom. Great for mobile action sheets.",
+            "demo": "sheet-bottom",
+            "code": "import {\n    Button,\n    Sheet,\n    SheetContent,\n    SheetDescription,\n    SheetFooter,\n    SheetHeader,\n    SheetTitle,\n    SheetTrigger,\n} from \"@repo/components\";\n\nexport default function SheetBottom() {\n    return (\n        <div className=\"grid grid-cols-2 gap-3\">\n            <Sheet>\n                <SheetTrigger asChild>\n                    <Button className=\"w-full\">Bottom sheet</Button>\n                </SheetTrigger>\n                <SheetContent side=\"bottom\">\n                    <SheetHeader>\n                        <SheetTitle>Quick actions</SheetTitle>\n                        <SheetDescription>Bottom sheet variant.</SheetDescription>\n                    </SheetHeader>\n                    <SheetFooter>\n                        <Button variant=\"outline\">Dismiss</Button>\n                        <Button>Continue</Button>\n                    </SheetFooter>\n                </SheetContent>\n            </Sheet>\n        </div>\n    )\n}"
+        },
+        {
+            "title": "Side",
+            "description": "Use the side prop on SheetContent to set the edge of the screen where the sheet appears. Values are top, right, bottom, or left.",
+            "demo": "sheet-side-demo",
+            "code": "import { Button } from \"@repo/components\";\nimport { Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from \"@repo/components\";\n\nconst SHEET_SIDES = [\"top\", \"right\", \"bottom\", \"left\"];\n\nexport default function SheetSide() {\n  return (\n    <div className=\"flex flex-wrap gap-2\">\n      {SHEET_SIDES.map((side) => (\n        <Sheet key={side}>\n          <SheetTrigger asChild>\n            <Button variant=\"outline\" className=\"capitalize\">\n              {side}\n            </Button>\n          </SheetTrigger>\n          <SheetContent\n            side={side}\n            className=\"data-[side=bottom]:max-h-[50vh] data-[side=top]:max-h-[50vh]\"\n          >\n            <SheetHeader>\n              <SheetTitle>Edit profile</SheetTitle>\n              <SheetDescription>\n                Make changes to your profile here. Click save when you&apos;re done.\n              </SheetDescription>\n            </SheetHeader>\n            <div className=\"no-scrollbar overflow-y-auto px-4\">\n              {Array.from({ length: 10 }).map((_, index) => (\n                <p key={index} className=\"mb-2 leading-relaxed\">\n                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n                </p>\n              ))}\n            </div>\n            <SheetFooter>\n              <Button type=\"submit\">Save changes</Button>\n              <SheetClose asChild>\n                <Button variant=\"outline\">Cancel</Button>\n              </SheetClose>\n            </SheetFooter>\n          </SheetContent>\n        </Sheet>\n      ))}\n    </div>\n  );\n}"
         }
     ]
 }

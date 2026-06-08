@@ -6,12 +6,12 @@ import {
     TooltipTrigger,
 } from "@repo/components";
 
-export default function TooltipDemo() {
+export default function TooltipDemoBasic() {
     return (
-        <TooltipProvider>
+        <TooltipProvider delayDuration={200}>
             <Tooltip>
                 <TooltipTrigger asChild>
-                    <Button variant="outline">Hover</Button>
+                    <Button variant="outline">Hover me</Button>
                 </TooltipTrigger>
                 <TooltipContent>
                     <p>Add to library</p>

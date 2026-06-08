@@ -3,7 +3,7 @@
     "description": "A flexible heading component with size variants from h1 to h6, plus paragraph, label, code, and span styles.",
     "component": "Heading",
     "installation": {
-        "cli": "npx shadcn@latest add headings",
+        "cli": "npx frostui@latest add headings",
         "manual": [
             {
                 "title": "Install dependencies",

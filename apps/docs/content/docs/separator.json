@@ -3,7 +3,7 @@
     "description": "Visually or semantically separates content.",
     "component": "Separator",
     "installation": {
-        "cli": "npx shadcn@latest add separator",
+        "cli": "npx frostui@latest add separator",
         "manual": [
             {
                 "title": "Install dependencies",
@@ -28,7 +28,7 @@
             "title": "Default",
             "description": "A basic separator example.",
             "demo": "separator-demo",
-            "code": "import { Separator } from \"@repo/components\";\n\nexport default function SeparatorDemo() {\n  return (\n    <div className=\"w-full max-w-sm\">\n      <div className=\"space-y-1\">\n        <h4 className=\"text-sm font-medium\">UI Library</h4>\n        <p className=\"text-sm text-muted-foreground\">Reusable components and patterns.</p>\n      </div>\n      <Separator className=\"my-4\" />\n      <div className=\"flex h-5 items-center gap-4 text-sm\">\n        <span>Docs</span>\n        <Separator orientation=\"vertical\" />\n        <span>Components</span>\n        <Separator orientation=\"vertical\" />\n        <span>Blocks</span>\n      </div>\n    </div>\n  );\n}"
+            "code": "import { Separator } from \"@repo/components\";\n\nexport default function SeparatorDemo() {\n  return (\n    <div className=\"w-full max-w-sm\">\n      <div className=\"space-y-1\">\n        <h4 className=\"text-sm font-medium\">UI Library</h4>\n        <p className=\"text-sm text-muted-foreground\">Reusable components and patterns.</p>\n      </div>\n      <Separator className=\"my-6\" />\n      <div className=\"flex h-5 items-center gap-4 text-sm\">\n        <span>Docs</span>\n        <Separator orientation=\"vertical\" />\n        <span>Components</span>\n        <Separator orientation=\"vertical\" />\n        <span>Blocks</span>\n      </div>\n    </div>\n  );\n}"
         }
     ]
 }

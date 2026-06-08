@@ -3,7 +3,7 @@
     "description": "Resizable panel groups for split views and adjustable layouts.",
     "component": "ResizablePanelGroup",
     "installation": {
-        "cli": "npx shadcn@latest add resizable",
+        "cli": "npx frostui@latest add resizable",
         "manual": [
             {
                 "title": "Install dependencies",

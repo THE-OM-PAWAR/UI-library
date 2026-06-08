@@ -15,13 +15,13 @@ const components = [
     {
         name: "Accordion",
         slug: "accordion",
-        description:
-            "A vertically stacked set of interactive headings that each reveal a section of content.",
+        description: "A collapsible content area that expands and collapses.",
     },
     {
         name: "Alert",
         slug: "alert",
-        description: "Displays a callout for user attention.",
+        description:
+            "Displays a callout for important information or messages.",
     },
     {
         name: "Aspect Ratio",
@@ -42,8 +42,7 @@ const components = [
     {
         name: "Breadcrumb",
         slug: "breadcrumb",
-        description:
-            "Displays the path to the current resource using a hierarchy of links.",
+        description: "Displays the path to the current page.",
     },
     {
         name: "Button",
@@ -59,8 +58,7 @@ const components = [
     {
         name: "Calendar",
         slug: "calendar",
-        description:
-            "A date field component that allows users to enter and edit date.",
+        description: "A date picker component for selecting dates.",
     },
     {
         name: "Card",
@@ -70,12 +68,12 @@ const components = [
     {
         name: "Carousel",
         slug: "carousel",
-        description: "A carousel with motion and swipe built using Embla.",
+        description: "A slider or carousel for cycling through content.",
     },
     {
         name: "Chart",
         slug: "chart",
-        description: "Beautiful and interactive charts built with Recharts.",
+        description: "Displays data visualization charts.",
     },
     {
         name: "Checkbox",
@@ -87,24 +85,23 @@ const components = [
         name: "Collapsible",
         slug: "collapsible",
         description:
-            "An interactive component which expands/collapses a panel.",
+            "A collapsible section that can be expanded and collapsed.",
     },
     {
         name: "Combobox",
         slug: "combobox",
-        description:
-            "Autocomplete input and command palette with a list of suggestions.",
+        description: "A dropdown with search and autocomplete functionality.",
     },
     {
         name: "Context Menu",
         slug: "context-menu",
-        description:
-            "Displays a menu to the user — such as a set of actions or functions — triggered by a button.",
+        description: "A menu that appears on right-click.",
     },
     {
         name: "Data Table",
         slug: "data-table",
-        description: "Powerful table and datagrids built using TanStack Table.",
+        description:
+            "A table component with sorting, filtering, and pagination.",
     },
     {
         name: "Dialog",
@@ -121,19 +118,17 @@ const components = [
     {
         name: "Dropdown Menu",
         slug: "dropdown-menu",
-        description:
-            "Displays a menu to the user, such as a set of actions or functions, triggered by a button.",
+        description: "Displays a menu triggered by a button.",
     },
     {
         name: "Empty",
         slug: "empty",
-        description:
-            "Displays an empty state for when there is no data to show.",
+        description: "An empty state component for when there is no data.",
     },
     {
         name: "Field",
         slug: "field",
-        description: "A flexible input field component.",
+        description: "A form field wrapper with label and error messaging.",
     },
     {
         name: "Headings",
@@ -144,8 +139,7 @@ const components = [
     {
         name: "Hover Card",
         slug: "hover-card",
-        description:
-            "For sighted users to preview content available behind a link.",
+        description: "Displays rich content when hovering over a trigger.",
     },
     {
         name: "Image",
@@ -156,47 +150,39 @@ const components = [
     {
         name: "Input",
         slug: "input",
-        description:
-            "Displays a form input field or a component that looks like an input field.",
+        description: "A form input component for text entry.",
     },
     {
         name: "Input Group",
         slug: "inputgroup",
-        description: "Displays a group of inputs.",
+        description: "Groups input elements with addons or buttons.",
     },
     {
         name: "Input OTP",
         slug: "inputotp",
-        description:
-            "Accessible one-time password component with copy paste functionality.",
+        description: "A one-time password input component.",
     },
+    { name: "Item", slug: "item", description: "A list item component." },
     {
-        name: "Item",
-        slug: "item",
-        description: "A sub-component for displaying an item within a list.",
+        name: "Kbd",
+        slug: "kbd",
+        description: "Displays keyboard input or shortcuts.",
     },
-    { name: "Kbd", slug: "kbd", description: "A keyboard shortcut component." },
-    {
-        name: "Label",
-        slug: "label",
-        description: "Renders an accessible label associated with controls.",
-    },
+    { name: "Label", slug: "label", description: "A form label component." },
     {
         name: "Menubar",
         slug: "menubar",
-        description:
-            "A visually persistent menu common in desktop applications.",
+        description: "A horizontal menu bar with nested menus.",
     },
     {
         name: "Navigation Menu",
         slug: "navigation-menu",
-        description: "A collection of links for navigating websites.",
+        description: "A navigation component with dropdowns.",
     },
     {
         name: "Pagination",
         slug: "pagination",
-        description:
-            "Pagination with page navigation, next and previous links.",
+        description: "Pagination navigation for navigating between pages.",
     },
     {
         name: "Popover",
@@ -214,30 +200,28 @@ const components = [
         name: "Radio",
         slug: "radio",
         description:
-            "A set of checkable buttons where no more than one can be checked at a time.",
+            "A radio button input for selecting one option from a set.",
     },
     {
         name: "Resizable",
         slug: "resizable",
-        description:
-            "Accessible resizable panel groups and layouts with keyboard support.",
+        description: "A resizable panel component.",
     },
     {
         name: "Scroll Area",
         slug: "scroll-area",
-        description:
-            "Augments native scroll functionality for custom, cross-browser styling.",
+        description: "A custom scrollbar component.",
     },
     {
         name: "Separator",
         slug: "separator",
-        description: "Visually or semantically separates content.",
+        description: "A visual divider between content sections.",
     },
     {
         name: "Sheet",
         slug: "sheet",
         description:
-            "Extends the Dialog component to display content that complements the main content of the screen.",
+            "A sliding panel that appears from the edge of the screen.",
     },
     {
         name: "Sidebar",
@@ -248,12 +232,12 @@ const components = [
     {
         name: "Skeleton",
         slug: "skeleton",
-        description: "Use to show a placeholder while content is loading.",
+        description: "A placeholder loading component.",
     },
     {
         name: "Sonner",
         slug: "sonner",
-        description: "An opinionated toast component for React.",
+        description: "A toast notification component.",
     },
     {
         name: "Spinner",
@@ -263,19 +247,17 @@ const components = [
     {
         name: "Switch",
         slug: "switch",
-        description:
-            "A control that allows the user to toggle between checked and not checked.",
+        description: "A toggle switch for on/off states.",
     },
     {
         name: "Table",
         slug: "table",
-        description: "A responsive table component.",
+        description: "A styled HTML table component.",
     },
     {
         name: "Tabs",
         slug: "tabs",
-        description:
-            "A set of layered sections of content that are displayed one at a time.",
+        description: "A tabbed interface for organizing content.",
     },
     {
         name: "Textarea",
@@ -291,8 +273,7 @@ const components = [
     {
         name: "Tooltip",
         slug: "tooltip",
-        description:
-            "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+        description: "Displays a tooltip on hover.",
     },
 ];
 

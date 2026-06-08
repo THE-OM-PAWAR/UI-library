@@ -3,7 +3,7 @@
     "description": "A loading placeholder that previews the shape of content.",
     "component": "Skeleton",
     "installation": {
-        "cli": "npx shadcn@latest add skeleton",
+        "cli": "npx frostui@latest add skeleton",
         "manual": [
             {
                 "title": "Add utility function",
@@ -21,9 +21,45 @@
     "examples": [
         {
             "title": "Default",
-            "description": "A basic skeleton example.",
+            "description": "A basic skeleton with avatar and text lines.",
             "demo": "skeleton-demo",
             "code": "import { Skeleton } from \"@repo/components\";\n\nexport default function SkeletonDemo() {\n  return (\n    <div className=\"flex w-full max-w-sm items-center gap-4\">\n      <Skeleton className=\"h-12 w-12 rounded-full bg-muted\" />\n      <div className=\"space-y-2\">\n        <Skeleton className=\"h-4 w-48 bg-muted\" />\n        <Skeleton className=\"h-4 w-32 bg-muted\" />\n      </div>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Card",
+            "description": "A skeleton mimicking a card with image, title, and text.",
+            "demo": "skeleton-card",
+            "code": "import { Skeleton } from \"@repo/components\";\n\nexport default function SkeletonCard() {\n  return (\n    <div className=\"w-full max-w-sm rounded-lg border bg-card p-6 space-y-4\">\n      <Skeleton className=\"h-48 w-full rounded-md bg-muted\" />\n      <Skeleton className=\"h-6 w-3/4 bg-muted\" />\n      <Skeleton className=\"h-4 w-full bg-muted\" />\n      <Skeleton className=\"h-4 w-5/6 bg-muted\" />\n      <div className=\"flex gap-2 pt-2\">\n        <Skeleton className=\"h-8 w-20 rounded-md bg-muted\" />\n        <Skeleton className=\"h-8 w-20 rounded-md bg-muted\" />\n      </div>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Table",
+            "description": "A skeleton simulating a data table with header and rows.",
+            "demo": "skeleton-table",
+            "code": "import { Skeleton } from \"@repo/components\";\n\nexport default function SkeletonTable() {\n  return (\n    <div className=\"w-full max-w-lg space-y-3\">\n      <div className=\"flex gap-4 pb-3 border-b\">\n        <Skeleton className=\"h-4 w-1/4 bg-muted\" />\n        <Skeleton className=\"h-4 w-1/4 bg-muted\" />\n        <Skeleton className=\"h-4 w-1/4 bg-muted\" />\n        <Skeleton className=\"h-4 w-1/4 bg-muted\" />\n      </div>\n      {[1, 2, 3, 4].map((i) => (\n        <div key={i} className=\"flex gap-4 items-center\">\n          <Skeleton className=\"h-4 w-1/4 bg-muted\" />\n          <Skeleton className=\"h-4 w-1/4 bg-muted\" />\n          <Skeleton className=\"h-4 w-1/4 bg-muted\" />\n          <Skeleton className=\"h-4 w-1/4 bg-muted\" />\n        </div>\n      ))}\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Profile",
+            "description": "A skeleton for a user profile card with avatar and bio.",
+            "demo": "skeleton-profile",
+            "code": "import { Skeleton } from \"@repo/components\";\n\nexport default function SkeletonProfile() {\n  return (\n    <div className=\"w-full max-w-sm rounded-lg border bg-card p-6 space-y-4\">\n      <div className=\"flex items-center gap-4\">\n        <Skeleton className=\"h-16 w-16 rounded-full bg-muted\" />\n        <div className=\"space-y-2\">\n          <Skeleton className=\"h-5 w-32 bg-muted\" />\n          <Skeleton className=\"h-4 w-48 bg-muted\" />\n        </div>\n      </div>\n      <div className=\"space-y-2 pt-2\">\n        <Skeleton className=\"h-4 w-full bg-muted\" />\n        <Skeleton className=\"h-4 w-full bg-muted\" />\n        <Skeleton className=\"h-4 w-2/3 bg-muted\" />\n      </div>\n      <div className=\"flex gap-4 pt-2\">\n        <Skeleton className=\"h-10 w-24 rounded-md bg-muted\" />\n        <Skeleton className=\"h-10 w-24 rounded-md bg-muted\" />\n      </div>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "List",
+            "description": "A skeleton for a list of items with icons and text.",
+            "demo": "skeleton-list",
+            "code": "import { Skeleton } from \"@repo/components\";\n\nexport default function SkeletonList() {\n  return (\n    <div className=\"w-full max-w-sm space-y-4\">\n      {[1, 2, 3, 4, 5].map((i) => (\n        <div key={i} className=\"flex items-center gap-3\">\n          <Skeleton className=\"h-10 w-10 rounded-md bg-muted shrink-0\" />\n          <div className=\"flex-1 space-y-2\">\n            <Skeleton className=\"h-4 w-3/4 bg-muted\" />\n            <Skeleton className=\"h-3 w-1/2 bg-muted\" />\n          </div>\n          <Skeleton className=\"h-8 w-8 rounded-full bg-muted shrink-0\" />\n        </div>\n      ))}\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Blog",
+            "description": "A skeleton for a blog post card with image, tags, and author.",
+            "demo": "skeleton-blog",
+            "code": "import { Skeleton } from \"@repo/components\";\n\nexport default function SkeletonBlog() {\n  return (\n    <div className=\"w-full max-w-md rounded-lg border bg-card overflow-hidden\">\n      <Skeleton className=\"h-48 w-full bg-muted rounded-none\" />\n      <div className=\"p-6 space-y-3\">\n        <div className=\"flex gap-2\">\n          <Skeleton className=\"h-5 w-16 rounded-full bg-muted\" />\n          <Skeleton className=\"h-5 w-20 rounded-full bg-muted\" />\n        </div>\n        <Skeleton className=\"h-6 w-3/4 bg-muted\" />\n        <Skeleton className=\"h-4 w-full bg-muted\" />\n        <Skeleton className=\"h-4 w-full bg-muted\" />\n        <Skeleton className=\"h-4 w-2/3 bg-muted\" />\n        <div className=\"flex items-center gap-3 pt-3 border-t\">\n          <Skeleton className=\"h-8 w-8 rounded-full bg-muted\" />\n          <Skeleton className=\"h-4 w-24 bg-muted\" />\n        </div>\n      </div>\n    </div>\n  );\n}"
+        },
+        {
+            "title": "Form",
+            "description": "A skeleton for a form with input fields and buttons.",
+            "demo": "skeleton-form",
+            "code": "import { Skeleton } from \"@repo/components\";\n\nexport default function SkeletonForm() {\n  return (\n    <div className=\"w-full max-w-sm space-y-5\">\n      <div className=\"space-y-2\">\n        <Skeleton className=\"h-4 w-24 bg-muted\" />\n        <Skeleton className=\"h-10 w-full rounded-md bg-muted\" />\n      </div>\n      <div className=\"space-y-2\">\n        <Skeleton className=\"h-4 w-20 bg-muted\" />\n        <Skeleton className=\"h-10 w-full rounded-md bg-muted\" />\n      </div>\n      <div className=\"space-y-2\">\n        <Skeleton className=\"h-4 w-28 bg-muted\" />\n        <Skeleton className=\"h-24 w-full rounded-md bg-muted\" />\n      </div>\n      <div className=\"flex gap-3 pt-2\">\n        <Skeleton className=\"h-10 w-28 rounded-md bg-muted\" />\n        <Skeleton className=\"h-10 w-20 rounded-md bg-muted\" />\n      </div>\n    </div>\n  );\n}"
         }
     ]
 }

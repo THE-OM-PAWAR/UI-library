@@ -3,7 +3,7 @@
     "description": "An interactive component that expands and collapses content.",
     "component": "Collapsible",
     "installation": {
-        "cli": "npx shadcn@latest add collapsible",
+        "cli": "npx frostui@latest add collapsible",
         "manual": [
             {
                 "title": "Install dependencies",

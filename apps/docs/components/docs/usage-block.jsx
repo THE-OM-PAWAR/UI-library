@@ -4,7 +4,7 @@ import { cn } from "@repo/utils";
 import { Check, Copy } from "lucide-react";
 import { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { oneLight } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export function UsageBlock({ code, language = "jsx", title = "Usage" }) {
     const [isCopied, setIsCopied] = useState(false);
@@ -41,17 +41,20 @@ export function UsageBlock({ code, language = "jsx", title = "Usage" }) {
             </div>
 
             {/* Code Content */}
-            <div className="relative bg-muted/30 dark:bg-[#0d1117]">
+            <div className="relative bg-white">
                 <div className="[&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                     <SyntaxHighlighter
                         language={language}
-                        style={vscDarkPlus}
+                        style={oneLight}
                         customStyle={{
                             margin: 0,
                             padding: "1rem",
                             background: "transparent",
                             fontSize: "0.8125rem",
                             lineHeight: "1.6",
+                            overflowX: "auto",
+                            whiteSpace: "pre-wrap",
+                            wordBreak: "break-word",
                         }}
                         showLineNumbers={false}
                     >

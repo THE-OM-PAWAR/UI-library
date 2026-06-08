@@ -3,7 +3,7 @@
     "description": "Field primitives for labels, descriptions, validation, and grouped form layout.",
     "component": "Field",
     "installation": {
-        "cli": "npx shadcn@latest add field",
+        "cli": "npx frostui@latest add field",
         "manual": [
             {
                 "title": "Install dependencies",

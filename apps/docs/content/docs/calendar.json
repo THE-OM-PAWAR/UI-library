@@ -3,7 +3,7 @@
     "description": "A date picker calendar built on React DayPicker.",
     "component": "Calendar",
     "installation": {
-        "cli": "npx shadcn@latest add calendar",
+        "cli": "npx frostui@latest add calendar",
         "manual": [
             {
                 "title": "Install dependencies",

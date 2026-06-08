@@ -3,7 +3,7 @@
     "description": "Displays a button or a component that looks like a button.",
     "component": "Button",
     "installation": {
-        "cli": "npx shadcn@latest add button",
+        "cli": "npx frostui@latest add button",
         "manual": [
             {
                 "title": "Install dependencies",

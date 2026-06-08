@@ -4,7 +4,7 @@
     "component": "ContextMenu",
 
     "installation": {
-        "cli": "npx shadcn@latest add context-menu",
+        "cli": "npx frostui@latest add context-menu",
 
         "manual": [
             {

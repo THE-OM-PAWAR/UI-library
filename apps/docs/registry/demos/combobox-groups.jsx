@@ -3,20 +3,23 @@ import {
     ComboboxContent,
     ComboboxEmpty,
     ComboboxGroup,
-    ComboboxInput,
     ComboboxItem,
     ComboboxLabel,
     ComboboxList,
+    ComboboxSearch,
     ComboboxSeparator,
+    ComboboxTrigger,
 } from "@repo/components";
 
 export default function ComboboxGroups() {
     return (
         <div className="w-72">
             <Combobox>
-                <ComboboxInput placeholder="Select technology..." />
+                <ComboboxTrigger placeholder="Select technology..." />
 
                 <ComboboxContent>
+                    <ComboboxSearch placeholder="Search..." />
+
                     <ComboboxList>
                         <ComboboxEmpty />
 

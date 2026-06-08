@@ -3,7 +3,7 @@
     "description": "An image element with fallback, status badge, and group stacking support.",
     "component": "Avatar",
     "installation": {
-        "cli": "npx shadcn@latest add avatar",
+        "cli": "npx frostui@latest add avatar",
         "manual": [
             {
                 "title": "Copy the component code",
@@ -24,13 +24,13 @@
             "title": "Default",
             "description": "Use sizes, image fallback, and optional status badge.",
             "demo": "avatar-demo",
-            "code": "import { Avatar, AvatarBadge, AvatarFallback, AvatarImage } from \"@repo/components\";\nimport { Check } from \"lucide-react\";\n\nexport default function AvatarDemo() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <Avatar size=\"sm\">\n        <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"User avatar\" />\n        <AvatarFallback>SM</AvatarFallback>\n        <AvatarBadge />\n      </Avatar>\n\n      <Avatar size=\"default\">\n        <AvatarImage src=\"https://github.com/leerob.png\" alt=\"User avatar\" />\n        <AvatarFallback>DF</AvatarFallback>\n        <AvatarBadge>\n          <Check />\n        </AvatarBadge>\n      </Avatar>\n\n      <Avatar size=\"lg\">\n        <AvatarFallback>LG</AvatarFallback>\n      </Avatar>\n    </div>\n  );\n}"
+            "code": "import { Avatar, AvatarBadge, AvatarFallback, AvatarImage } from \"@repo/components\";\nimport { Check } from \"lucide-react\";\n\nexport default function AvatarDemo() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <Avatar size=\"sm\">\n        <AvatarImage src=\"https://github.com/frostui.png\" alt=\"User avatar\" />\n        <AvatarFallback>SM</AvatarFallback>\n        <AvatarBadge />\n      </Avatar>\n\n      <Avatar size=\"default\">\n        <AvatarImage src=\"https://github.com/leerob.png\" alt=\"User avatar\" />\n        <AvatarFallback>DF</AvatarFallback>\n        <AvatarBadge>\n          <Check />\n        </AvatarBadge>\n      </Avatar>\n\n      <Avatar size=\"lg\">\n        <AvatarFallback>LG</AvatarFallback>\n      </Avatar>\n    </div>\n  );\n}"
         },
         {
             "title": "Avatar Group",
             "description": "Stack multiple avatars and show overflow count.",
             "demo": "avatar-group",
-            "code": "import { Avatar, AvatarFallback, AvatarGroup, AvatarGroupCount, AvatarImage } from \"@repo/components\";\n\nexport default function AvatarGroupDemo() {\n  return (\n    <AvatarGroup>\n      <Avatar>\n        <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"shadcn\" />\n        <AvatarFallback>SC</AvatarFallback>\n      </Avatar>\n      <Avatar>\n        <AvatarImage src=\"https://github.com/leerob.png\" alt=\"leerob\" />\n        <AvatarFallback>LR</AvatarFallback>\n      </Avatar>\n      <Avatar>\n        <AvatarFallback>OP</AvatarFallback>\n      </Avatar>\n      <AvatarGroupCount>+2</AvatarGroupCount>\n    </AvatarGroup>\n  );\n}"
+            "code": "import { Avatar, AvatarFallback, AvatarGroup, AvatarGroupCount, AvatarImage } from \"@repo/components\";\n\nexport default function AvatarGroupDemo() {\n  return (\n    <AvatarGroup>\n      <Avatar>\n        <AvatarImage src=\"https://github.com/frostui.png\" alt=\"frostui\" />\n        <AvatarFallback>SC</AvatarFallback>\n      </Avatar>\n      <Avatar>\n        <AvatarImage src=\"https://github.com/leerob.png\" alt=\"leerob\" />\n        <AvatarFallback>LR</AvatarFallback>\n      </Avatar>\n      <Avatar>\n        <AvatarFallback>OP</AvatarFallback>\n      </Avatar>\n      <AvatarGroupCount>+2</AvatarGroupCount>\n    </AvatarGroup>\n  );\n}"
         }
     ]
 }

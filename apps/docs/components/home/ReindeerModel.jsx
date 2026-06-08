@@ -2,11 +2,34 @@
 
 import { Bounds, Center, useGLTF } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Suspense, useRef } from "react";
+import { Suspense, useEffect, useRef } from "react";
+import * as THREE from "three";
 
 function Reindeer() {
     const groupRef = useRef(null);
     const { scene } = useGLTF("/models/reindeer.glb");
+
+    useEffect(() => {
+        scene.traverse((child) => {
+            if (child.isMesh) {
+                child.material.side = THREE.DoubleSide;
+                if (child.material.map)
+                    child.material.map.colorSpace = THREE.SRGBColorSpace;
+                if (child.material.emissiveMap)
+                    child.material.emissiveMap.colorSpace =
+                        THREE.SRGBColorSpace;
+                if (child.material.aoMap)
+                    child.material.aoMap.colorSpace = THREE.SRGBColorSpace;
+                if (child.material.normalMap)
+                    child.material.normalMap.colorSpace = THREE.NoColorSpace;
+                if (child.material.roughnessMap)
+                    child.material.roughnessMap.colorSpace = THREE.NoColorSpace;
+                if (child.material.metalnessMap)
+                    child.material.metalnessMap.colorSpace = THREE.NoColorSpace;
+                child.material.needsUpdate = true;
+            }
+        });
+    }, [scene]);
 
     useFrame((state) => {
         if (!groupRef.current) {
@@ -41,7 +64,11 @@ const ReindeerModel = () => {
     return (
         <Canvas
             dpr={[1, 1.8]}
-            gl={{ alpha: true }}
+            gl={{
+                alpha: true,
+                outputColorSpace: THREE.SRGBColorSpace,
+                toneMapping: THREE.ACESFilmicToneMapping,
+            }}
             camera={{ position: [0, 0, 6.5], fov: 30 }}
             style={{ background: "transparent", width: "100%", height: "100%" }}
         >

@@ -6,7 +6,7 @@
         "doc": "https://sonner.emilkowal.ski"
     },
     "installation": {
-        "cli": "npx shadcn@latest add sonner",
+        "cli": "npx frostui@latest add sonner",
         "manual": [
             {
                 "title": "Install dependencies",

@@ -1,28 +1,39 @@
+"use client";
 import { cn } from "@repo/utils";
 import { cva } from "class-variance-authority";
-import React from "react";
-import { badgeVariants } from "./badge";
+import * as React from "react";
 
-export const AspectRatioVarients = cva("bg-[#111]", {
+const aspectRatioVariants = cva("relative w-full", {
     variants: {
         variant: {
-            landscape: "h-[16rem] w-[9rem]",
-            square: "h-[8rem] w-[8rem]",
-            protrait: "h-[9rem] w-[16rem]",
+            landscape: "",
+            square: "",
+            protrait: "",
         },
-        defaultVarients: {
-            varient: "landscape",
-        },
+    },
+    defaultVariants: {
+        variant: "landscape",
     },
 });
 
-export const AspectRatio = React.forwardRef(
-    ({ className, varient, ...props }, ref) => {
-        <div
-            ref={ref}
-            data-slot="aspect-ratio"
-            className={cn(badgeVariants({ variant }), className)}
-            {...props}
-        />;
+const AspectRatio = React.forwardRef(
+    ({ ratio = 1, variant, className, children, ...props }, ref) => {
+        return (
+            <div
+                ref={ref}
+                className={cn(aspectRatioVariants({ variant }), className)}
+                {...props}
+            >
+                <div
+                    className="absolute inset-0"
+                    style={{ aspectRatio: ratio }}
+                />
+                <div className="absolute inset-0">{children}</div>
+            </div>
+        );
     }
 );
+
+AspectRatio.displayName = "AspectRatio";
+
+export { AspectRatio, aspectRatioVariants };

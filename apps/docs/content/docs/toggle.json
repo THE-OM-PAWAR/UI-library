@@ -3,7 +3,7 @@
     "description": "A two-state button that can be toggled on or off. Supports multiple variants, sizes, and can be used as toolbar controls.",
     "component": "Toggle",
     "installation": {
-        "cli": "npx shadcn@latest add toggle",
+        "cli": "npx frostui@latest add toggle",
         "manual": [
             {
                 "title": "Install dependencies",

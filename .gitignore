@@ -12,7 +12,6 @@ build
 .env.*.local
 
 # IDE
-.vscode
 .idea
 *.swp
 *.swo
@@ -26,3 +25,6 @@ Thumbs.db
 npm-debug.log*
 pnpm-debug.log*
 config.bat
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat

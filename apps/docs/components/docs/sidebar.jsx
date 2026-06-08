@@ -10,7 +10,7 @@ export function DocsSidebar() {
     const pathname = usePathname();
 
     return (
-        <aside className="fixed top-16 z-30 hidden h-[calc(100vh-4rem)] w-full max-w-xs shrink-0 overflow-y-auto border-r bg-background md:block">
+        <aside className="fixed top-[88px] z-30 hidden h-[calc(100vh-88px)] w-full max-w-xs shrink-0 overflow-y-auto border-r bg-background md:block">
             <div className="px-4 py-6 lg:px-6">
                 {docsConfig.sidebarNav.map((section, i) => (
                     <div key={i} className="pb-6">

@@ -8,7 +8,7 @@ import {
 
 export default function PaginationRows() {
     return (
-        <div className="flex items-center space-x-6 px-2 py-4">
+        <div className="flex items-center px-2 py-4 space-x-6">
             <div className="flex items-center space-x-2 text-sm font-medium">
                 <span className="text-muted-foreground">Rows per page</span>
                 <select className="h-8 w-[70px] rounded-md border border-input bg-transparent px-2 py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring dark:bg-background">

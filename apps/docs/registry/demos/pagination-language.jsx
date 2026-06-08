@@ -76,7 +76,7 @@ export default function PaginationLanguage() {
             </div>
 
             {/* Centered Pagination at the bottom */}
-            <div className="mt-auto pt-10">
+            <div className="pt-10 mt-auto">
                 <Pagination>
                     <PaginationContent>
                         <PaginationItem>

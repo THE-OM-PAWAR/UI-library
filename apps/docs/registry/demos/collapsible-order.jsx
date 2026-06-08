@@ -17,26 +17,26 @@ export default function CollapsibleOrder() {
             onOpenChange={setOpen}
             className="w-full max-w-sm space-y-2"
         >
-            <div className="flex items-center justify-between rounded-lg px-4 py-3 bg-card text-card-foreground shadow-sm border">
+            <div className="flex items-center justify-between px-4 py-3 border rounded-lg shadow-sm bg-card text-card-foreground">
                 <h4 className="text-sm font-semibold">Order #4189</h4>
                 <CollapsibleTrigger asChild>
-                    <button className="flex items-center justify-center h-8 w-8 rounded-md bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors">
-                        <ChevronsUpDown className="h-4 w-4" />
+                    <button className="flex items-center justify-center w-8 h-8 transition-colors rounded-md bg-secondary text-secondary-foreground hover:bg-secondary/80">
+                        <ChevronsUpDown className="w-4 h-4" />
                         <span className="sr-only">Toggle</span>
                     </button>
                 </CollapsibleTrigger>
             </div>
 
             <CollapsibleContent className="space-y-2">
-                <div className="rounded-lg border bg-card text-card-foreground shadow-sm px-4 py-3 flex justify-between items-center text-sm">
-                    <span className="text-muted-foreground font-medium">
+                <div className="flex items-center justify-between px-4 py-3 text-sm border rounded-lg shadow-sm bg-card text-card-foreground">
+                    <span className="font-medium text-muted-foreground">
                         Status
                     </span>
                     <span className="font-semibold">Shipped</span>
                 </div>
 
-                <div className="rounded-lg border bg-card text-card-foreground shadow-sm px-4 py-3 text-sm">
-                    <span className="text-muted-foreground font-medium block mb-1">
+                <div className="px-4 py-3 text-sm border rounded-lg shadow-sm bg-card text-card-foreground">
+                    <span className="block mb-1 font-medium text-muted-foreground">
                         Shipping address
                     </span>
                     <span className="text-foreground">
@@ -44,8 +44,8 @@ export default function CollapsibleOrder() {
                     </span>
                 </div>
 
-                <div className="rounded-lg border bg-card text-card-foreground shadow-sm px-4 py-3 text-sm">
-                    <span className="text-muted-foreground font-medium block mb-1">
+                <div className="px-4 py-3 text-sm border rounded-lg shadow-sm bg-card text-card-foreground">
+                    <span className="block mb-1 font-medium text-muted-foreground">
                         Items
                     </span>
                     <span className="text-foreground">

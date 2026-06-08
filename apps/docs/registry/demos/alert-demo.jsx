@@ -8,7 +8,8 @@ export default function AlertDemo() {
                 <Info className="h-4 w-4" />
                 <AlertTitle>Heads up!</AlertTitle>
                 <AlertDescription>
-                    This is a default alert for general updates and contextual information.
+                    This is a default alert for general updates and contextual
+                    information.
                 </AlertDescription>
             </Alert>
         </div>

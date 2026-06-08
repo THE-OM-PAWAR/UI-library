@@ -3,10 +3,10 @@ import {
     Sheet,
     SheetContent,
     SheetDescription,
+    SheetFooter,
     SheetHeader,
     SheetTitle,
     SheetTrigger,
-    SheetFooter
 } from "@repo/components";
 
 export default function sheetTop() {
@@ -14,12 +14,16 @@ export default function sheetTop() {
         <div className="grid grid-cols-2 gap-3">
             <Sheet>
                 <SheetTrigger asChild>
-                    <Button variant="secondary" className="w-full">Top sheet</Button>
+                    <Button variant="secondary" className="w-full">
+                        Top sheet
+                    </Button>
                 </SheetTrigger>
                 <SheetContent side="top">
                     <SheetHeader>
                         <SheetTitle>Announcements</SheetTitle>
-                        <SheetDescription>Top slide-in variant.</SheetDescription>
+                        <SheetDescription>
+                            Top slide-in variant.
+                        </SheetDescription>
                     </SheetHeader>
                     <SheetFooter>
                         <Button variant="outline">Dismiss</Button>
@@ -28,5 +32,5 @@ export default function sheetTop() {
                 </SheetContent>
             </Sheet>
         </div>
-    )
+    );
 }

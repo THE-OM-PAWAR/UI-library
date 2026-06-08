@@ -1,11 +1,11 @@
 import {
     Combobox,
-    ComboboxTrigger,
     ComboboxContent,
-    ComboboxSearch,
-    ComboboxList,
-    ComboboxItem,
     ComboboxEmpty,
+    ComboboxItem,
+    ComboboxList,
+    ComboboxSearch,
+    ComboboxTrigger,
 } from "@repo/components";
 
 export default function ComboboxDemo() {

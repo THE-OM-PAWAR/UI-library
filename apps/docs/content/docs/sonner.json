@@ -1,7 +1,10 @@
 {
     "title": "Sonner",
-    "description": "An opinionated toaster component for rendering toast notifications.",
+    "description": "An opinionated toast component for React.",
     "component": "Toaster",
+    "links": {
+        "doc": "https://sonner.emilkowal.ski"
+    },
     "installation": {
         "cli": "npx frostui@latest add sonner",
         "manual": [
@@ -16,19 +19,82 @@
                 "filePath": "lib/utils.js",
                 "code": "import { clsx } from 'clsx';\nimport { twMerge } from 'tailwind-merge';\n\nexport function cn(...inputs) {\n  return twMerge(clsx(inputs));\n}",
                 "language": "javascript"
+            },
+            {
+                "title": "Copy the component code",
+                "description": "Create a new file and paste the Toaster component code.",
+                "filePath": "components/ui/sonner.jsx",
+                "language": "jsx",
+                "collapsible": true,
+                "code": "\"use client\";\n\nimport {\n    AlertOctagonIcon,\n    AlertTriangleIcon,\n    CheckCircle2,\n    Info,\n    Loader2Icon,\n} from \"lucide-react\";\nimport { Toaster as Sonner } from \"sonner\";\n\nconst Toaster = ({\n    theme = \"system\",\n    position = \"bottom-right\",\n    closeButton = false,\n    richColors = false,\n    dir = \"auto\",\n    gap = 14,\n    visibleToasts = 3,\n    swipeDirections = [\"right\"],\n    ...props\n}) => {\n    return (\n        <Sonner\n            theme={theme}\n            position={position}\n            closeButton={closeButton}\n            richColors={richColors}\n            dir={dir}\n            gap={gap}\n            visibleToasts={visibleToasts}\n            swipeDirections={swipeDirections}\n            className=\"toaster group\"\n            icons={{\n                success: <CheckCircle2 className=\"size-4\" />,\n                info: <Info className=\"size-4\" />,\n                warning: <AlertTriangleIcon className=\"size-4\" />,\n                error: <AlertOctagonIcon className=\"size-4\" />,\n                loading: <Loader2Icon className=\"size-4 animate-spin\" />,\n            }}\n            style={{\n                \"--normal-bg\": \"var(--popover)\",\n                \"--normal-text\": \"var(--popover-foreground)\",\n                \"--normal-border\": \"var(--border)\",\n                \"--border-radius\": \"var(--radius-md)\",\n            }}\n            toastOptions={{\n                classNames: {\n                    toast: \"cn-toast\",\n                },\n            }}\n            {...props}\n        />\n    );\n};\n\nexport { Toaster };"
+            },
+            {
+                "title": "Add the Toaster to your layout",
+                "description": "Add the Toaster component to your root layout.",
+                "filePath": "app/layout.jsx",
+                "language": "jsx",
+                "code": "import { Toaster } from \"@/components/ui/sonner\"\n\nexport default function RootLayout({ children }) {\n  return (\n    <html lang=\"en\">\n      <head />\n      <body>\n        <Toaster />\n        <main>{children}</main>\n      </body>\n    </html>\n  )\n}"
             }
         ]
     },
     "usage": {
-        "import": "import { Toaster } from '@repo/components';",
+        "import": "import { toast } from 'sonner';",
         "basic": "sonner-demo"
     },
     "examples": [
         {
             "title": "Default",
-            "description": "A basic sonner example.",
+            "description": "A basic example showing a toast triggered by a button click.",
             "demo": "sonner-demo",
-            "code": "import { Button, Toaster } from \"@repo/components\";\n\nexport default function SonnerDemo() {\n  return (\n    <div className=\"flex flex-col items-center gap-3\">\n      <Toaster />\n      <Button variant=\"outline\">Toaster mounted</Button>\n    </div>\n  );\n}"
+            "code": "import { toast } from \"sonner\";\nimport { Button, Toaster } from \"@repo/components\";\n\nexport default function SonnerDemo() {\n    return (\n        <div className=\"flex flex-col items-center gap-3\">\n            <Toaster />\n            <Button\n                variant=\"outline\"\n                onClick={() => toast(\"Event has been created.\")}\n            >\n                Show Toast\n            </Button>\n        </div>\n    );\n}"
+        },
+        {
+            "title": "Types",
+            "description": "Use the toast function variants to display different types of toasts.",
+            "demo": "sonner-types",
+            "code": "import { toast } from \"sonner\";\nimport { Button, Toaster } from \"@repo/components\";\n\nexport default function SonnerTypes() {\n    return (\n        <div className=\"flex flex-wrap justify-center gap-2\">\n            <Toaster />\n            <Button variant=\"outline\" onClick={() => toast(\"Default toast message\")}>Default</Button>\n            <Button variant=\"outline\" onClick={() => toast.success(\"Operation successful!\")}>Success</Button>\n            <Button variant=\"outline\" onClick={() => toast.error(\"Something went wrong.\")}>Error</Button>\n            <Button variant=\"outline\" onClick={() => toast.warning(\"This is a warning.\")}>Warning</Button>\n            <Button variant=\"outline\" onClick={() => toast.info(\"For your information.\")}>Info</Button>\n            <Button variant=\"outline\" onClick={() => toast.loading(\"Uploading file...\")}>Loading</Button>\n        </div>\n    );\n}"
+        },
+        {
+            "title": "Description",
+            "description": "Pass a description option to add more context below the toast title.",
+            "demo": "sonner-description",
+            "code": "import { toast } from \"sonner\";\nimport { Button, Toaster } from \"@repo/components\";\n\nexport default function SonnerDescription() {\n    return (\n        <div className=\"flex flex-col items-center gap-3\">\n            <Toaster />\n            <Button\n                variant=\"outline\"\n                onClick={() =>\n                    toast(\"Event has been created\", {\n                        description: \"Monday, January 3rd at 6:00pm\",\n                    })\n                }\n            >\n                Show Toast\n            </Button>\n        </div>\n    );\n}"
+        },
+        {
+            "title": "Position",
+            "description": "Use the position prop on the Toaster to change where toasts appear on screen.",
+            "demo": "sonner-position",
+            "code": "import { useState } from \"react\";\nimport { toast } from \"sonner\";\nimport { Button, Toaster } from \"@repo/components\";\n\nconst positions = [\"top-left\", \"top-center\", \"top-right\", \"bottom-left\", \"bottom-center\", \"bottom-right\"];\n\nexport default function SonnerPosition() {\n    const [position, setPosition] = useState(\"bottom-right\");\n\n    return (\n        <div className=\"flex flex-col items-center gap-3\">\n            <Toaster position={position} />\n            <div className=\"flex flex-wrap justify-center gap-2\">\n                {positions.map((pos) => (\n                    <Button\n                        key={pos}\n                        variant={position === pos ? \"default\" : \"outline\"}\n                        onClick={() => {\n                            setPosition(pos);\n                            toast(`Position: ${pos}`);\n                        }}\n                    >\n                        {pos}\n                    </Button>\n                ))}\n            </div>\n        </div>\n    );\n}"
+        },
+        {
+            "title": "Close Button",
+            "description": "Set closeButton on the Toaster to show a dismiss button on each toast.",
+            "demo": "sonner-close-button",
+            "code": "import { toast } from \"sonner\";\nimport { Button, Toaster } from \"@repo/components\";\n\nexport default function SonnerCloseButton() {\n    return (\n        <div className=\"flex flex-col items-center gap-3\">\n            <Toaster closeButton />\n            <Button variant=\"outline\" onClick={() => toast(\"Event has been created.\")}>\n                Show Toast\n            </Button>\n        </div>\n    );\n}"
+        },
+        {
+            "title": "Rich Colors",
+            "description": "Set richColors on the Toaster to apply semantic background colors to each toast type.",
+            "demo": "sonner-rich-colors",
+            "code": "import { toast } from \"sonner\";\nimport { Button, Toaster } from \"@repo/components\";\n\nexport default function SonnerRichColors() {\n    return (\n        <div className=\"flex flex-wrap justify-center gap-2\">\n            <Toaster richColors />\n            <Button variant=\"outline\" onClick={() => toast.success(\"Operation successful!\")}>Success</Button>\n            <Button variant=\"outline\" onClick={() => toast.error(\"Something went wrong.\")}>Error</Button>\n            <Button variant=\"outline\" onClick={() => toast.warning(\"This is a warning.\")}>Warning</Button>\n            <Button variant=\"outline\" onClick={() => toast.info(\"For your information.\")}>Info</Button>\n        </div>\n    );\n}"
+        },
+        {
+            "title": "Direction",
+            "description": "Use the dir prop to control text direction. Accepts ltr, rtl, or auto.",
+            "demo": "sonner-direction",
+            "code": "import { useState } from \"react\";\nimport { toast } from \"sonner\";\nimport { Button, Toaster } from \"@repo/components\";\n\nconst directions = [\"ltr\", \"rtl\", \"auto\"];\n\nexport default function SonnerDirection() {\n    const [dir, setDir] = useState(\"auto\");\n\n    return (\n        <div className=\"flex flex-col items-center gap-3\">\n            <Toaster dir={dir} />\n            <div className=\"flex flex-wrap justify-center gap-2\">\n                {directions.map((d) => (\n                    <Button\n                        key={d}\n                        variant={dir === d ? \"default\" : \"outline\"}\n                        onClick={() => { setDir(d); toast(`Direction: ${d}`); }}\n                    >\n                        {d.toUpperCase()}\n                    </Button>\n                ))}\n            </div>\n        </div>\n    );\n}"
+        },
+        {
+            "title": "Visible Toasts",
+            "description": "Use the visibleToasts prop to control how many toasts are shown at once.",
+            "demo": "sonner-visible-toasts",
+            "code": "import { useState } from \"react\";\nimport { toast } from \"sonner\";\nimport { Button, Toaster } from \"@repo/components\";\n\nconst counts = [1, 3, 5, 9];\n\nexport default function SonnerVisibleToasts() {\n    const [visibleToasts, setVisibleToasts] = useState(3);\n\n    return (\n        <div className=\"flex flex-col items-center gap-3\">\n            <Toaster visibleToasts={visibleToasts} />\n            <p className=\"text-sm text-muted-foreground\">\n                Max visible: <span className=\"font-medium text-foreground\">{visibleToasts}</span>\n            </p>\n            <div className=\"flex flex-wrap justify-center gap-2\">\n                {counts.map((n) => (\n                    <Button key={n} variant={visibleToasts === n ? \"default\" : \"outline\"} onClick={() => setVisibleToasts(n)}>{n}</Button>\n                ))}\n            </div>\n            <Button variant=\"outline\" onClick={() => toast(`Toast at ${new Date().toLocaleTimeString()}`)}>Add Toast</Button>\n        </div>\n    );\n}"
+        },
+        {
+            "title": "Gap",
+            "description": "Use the gap prop to control the spacing between stacked toasts.",
+            "demo": "sonner-gap",
+            "code": "import { useState } from \"react\";\nimport { toast } from \"sonner\";\nimport { Button, Toaster } from \"@repo/components\";\n\nconst gaps = [4, 8, 14, 24];\n\nexport default function SonnerGap() {\n    const [gap, setGap] = useState(14);\n\n    return (\n        <div className=\"flex flex-col items-center gap-3\">\n            <Toaster gap={gap} />\n            <p className=\"text-sm text-muted-foreground\">\n                Gap: <span className=\"font-medium text-foreground\">{gap}px</span>\n            </p>\n            <div className=\"flex flex-wrap justify-center gap-2\">\n                {gaps.map((g) => (\n                    <Button key={g} variant={gap === g ? \"default\" : \"outline\"} onClick={() => setGap(g)}>{g}px</Button>\n                ))}\n            </div>\n            <Button variant=\"outline\" onClick={() => toast(`Toast — gap is ${gap}px`)}>Add Toast</Button>\n        </div>\n    );\n}"
         }
     ]
 }
